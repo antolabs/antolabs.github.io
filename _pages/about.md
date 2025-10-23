@@ -1,34 +1,17 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
-
-profile:
-  align: right
-  image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
-
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
-
-announcements:
-  enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
-
-latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Welcome! I am a Scientist (Staff) at the [Facility for Rare Isotope Beams (FRIB), Michigan State University](https://frib.msu.edu/).
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+My research is focused on a new approach that combines **artificial intelligence (AI)** and **additive manufacturing (3D printing)** to solve complex challenges in nuclear engineering.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+I develop and apply novel AI frameworks, particularly deep reinforcement learning (DRL), to discover innovative component designs that are far more efficient than what is possible by human intuition. This work has already provided high-impact solutions for mission-critical applications, such as improving the power-handling capabilities of accelerator components and pioneering more efficient designs for heat exchangers and electromagnetic pumps in advanced reactors.
+
+My main research interests include:
+* AI (Reinforcement Learning) design optimization
+* Heat exchangers
+* Electromagnetic pumps
+* Metal 3D printing
