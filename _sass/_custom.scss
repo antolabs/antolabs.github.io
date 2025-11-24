@@ -1,0 +1,12 @@
+/* Override lowercase transformation for navigation */
+.navbar-nav .nav-item .nav-link {
+  text-transform: none !important;
+}
+
+.post .post-header .post-title {
+  text-transform: none !important;
+}
+
+h1, h2, h3 {
+  text-transform: none !important;
+}
