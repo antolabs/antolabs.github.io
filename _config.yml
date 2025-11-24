@@ -11,16 +11,13 @@ social:
   linkedin: geunhyeong-lee-31a9842a4
   google_scholar: YPq9l98AAAAJ
   researchgate: Geunhyeong-Lee-3
-  email: "ghLee1129@gmail.com"
 
 contact_note: >
-  Feel free to contact me via email (leeg@frib.msu.edu / ghLee1129@gmail.com (personal))
+  Contact mail (leeg@frib.msu.edu / ghLee1129@gmail.com)
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Personal website of Geunhyeong Lee, a scientist at FRIB. My research focuses on AI-driven design and additive manufacturing for nuclear engineering applications.
+  Personal website of Geunhyeong Lee, a Scientist at FRIB. My research focuses on AI-driven design and additive manufacturing for nuclear engineering applications.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 keywords: Geunhyeong Lee, AI design optimization, Heat exchanger, Electromagnetic pump, Magnetohydrodynamics, MHD, Small modular reactor, SMR, 3D printing, Additive Manufacturing, FRIB, Nuclear Engineering # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
@@ -55,10 +52,10 @@ repo_trophies:
 
 navbar_fixed: true
 footer_fixed: true
-search_enabled: true
+search_enabled: false
 socials_in_search: true
 posts_in_search: true
-bib_search: true
+bib_search: false
 
 # Dimensions
 max_width: 930px
@@ -129,13 +126,13 @@ disqus_shortname: al-folio # put your disqus shortname
 # External sources.
 # If you have blog posts published on medium.com or other external sources,
 # you can display them in your blog by adding a link to the RSS feed.
-external_sources:
-  - name: medium.com
-    rss_url: https://medium.com/@al-folio/feed
-  - name: Google Blog
-    posts:
-      - url: https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/
-        published_date: 2024-05-14
+# external_sources:
+#   - name: medium.com
+#     rss_url: https://medium.com/@al-folio/feed
+#   - name: Google Blog
+#     posts:
+#       - url: https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/
+#         published_date: 2024-05-14
 
 # -----------------------------------------------------------------------------
 # Newsletter
@@ -269,6 +266,8 @@ display_categories: ["external-services"] # these categories will be displayed o
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
 # -----------------------------------------------------------------------------
+# Maximum number of authors to show in bibliography (set high to show all)
+max_author_limit: 999
 
 scholar:
   last_name: [Lee]
@@ -632,20 +631,20 @@ third_party_libraries:
 # Get external JSON data
 # -----------------------------------------------------------------------------
 
-jekyll_get_json:
-  - data: resume
-    json: assets/json/resume.json # it can also be an url
+# jekyll_get_json:
+#   - data: resume
+#     json: assets/json/resume.json # it can also be an url
 
-jsonresume:
-  - basics
-  - work
-  - education
-  - publications
-  - projects
-  - volunteer
-  - awards
-  - certificates
-  - skills
-  - languages
-  - interests
-  - references
+# jsonresume:
+#   - basics
+#   - work
+#   - education
+#   - publications
+#   - projects
+#   - volunteer
+#   - awards
+#   - certificates
+#   - skills
+#   - languages
+#   - interests
+#   - references
