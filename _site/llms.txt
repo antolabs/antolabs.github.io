@@ -1,0 +1,114 @@
+# Geunhyeong Lee - Research Publications
+
+> Dr. Geunhyeong Lee is a Scientist at FRIB (Facility for Rare Isotope Beams) at Michigan State University. His research focuses on AI-driven design optimization, additive manufacturing, heat exchangers, electromagnetic pumps, and magnetohydrodynamics for nuclear engineering applications.
+
+## About
+- Name: Dr. Geunhyeong Lee (이근형)
+- Position: Scientist at FRIB, Michigan State University
+- Research Areas: AI/ML optimization, Heat transfer, Electromagnetic pumps, MHD, Nuclear engineering, 3D printing
+- Website: https://geunhyeong.com
+- Publications: https://geunhyeong.com/publications/
+
+## Publications (SCIE Journals)
+
+### [13] 3D-Printable DC Electromagnetic Pump (2026)
+- Title: Conceptual Design of a 3D-Printable DC Electromagnetic Pump for Additive Manufacturing
+- Authors: Geunhyeong Lee
+- Journal: Nuclear Engineering and Technology, 58(1), 103916
+- DOI: https://doi.org/10.1016/j.net.2025.103916
+- Keywords: electromagnetic pump, 3D printing, additive manufacturing, liquid metal
+
+### [12] AI Anomaly Detection for Accelerator (2025)
+- Title: Deep learning-based anomaly detection in drift tube quadrupole operation for the KOMAC linac
+- Authors: D. Kim, H. Kim, H. Kwon, Y. Yu, Geunhyeong Lee
+- Journal: Journal of Nuclear Science and Technology, 62(8), 709-714
+- DOI: https://doi.org/10.1080/00223131.2025.2464742
+- Keywords: deep learning, anomaly detection, LSTM, particle accelerator, KOMAC
+
+### [11] Deep Reinforcement Learning Heat Exchanger Optimization (2024)
+- Title: Design optimization of heat exchanger using deep reinforcement learning
+- Authors: Geunhyeong Lee, Y. Joo, S.U. Lee, T. Kim, Y. Yu, H.G. Kim
+- Journal: International Communications in Heat and Mass Transfer, 159, 107991
+- DOI: https://doi.org/10.1016/j.icheatmasstransfer.2024.107991
+- Impact: JCR Top 5.1% in Mechanics (IF: 6.4)
+- Keywords: deep reinforcement learning, topology optimization, heat exchanger, experimental validation
+
+### [10] PCHE Dual-Fluid Topology Optimization (2023)
+- Title: Dual-fluid Topology Optimization of Printed-circuit Heat Exchanger with Low-pumping-power Design
+- Authors: Geunhyeong Lee, Y. Joo, Y. Yu, H.G. Kim
+- Journal: Case Studies in Thermal Engineering, 49, 103318
+- DOI: https://doi.org/10.1016/j.csite.2023.103318
+- Impact: JCR Top 5.8% in Thermodynamics (IF: 6.4)
+- Keywords: topology optimization, PCHE, printed-circuit heat exchanger, thermal design
+
+### [9] RAON Lithium Film Electromagnetic Thruster (2023)
+- Title: Experimental characterization of the flowline of a lithium film formed using an electromagnetic thruster for a RAON prototype charge stripper
+- Authors: T. Kang, Geunhyeong Lee, H.R. Kim
+- Journal: Nuclear Engineering and Design, 412, 112481
+- DOI: https://doi.org/10.1016/j.nucengdes.2023.112481
+- Keywords: electromagnetic pump, lithium film, RAON, charge stripper, heavy ion accelerator
+
+### [8] MHD Generator Numerical Study (2021)
+- Title: Numerical study of Faraday-type nitrogen plasma magnetohydrodynamic generator
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: Journal of the Korean Physical Society, 78(7), 600-606
+- DOI: https://doi.org/10.1007/s40042-021-00116-z
+- Keywords: MHD generator, plasma, magnetohydrodynamics, Faraday type
+
+### [7] MHD Generator 10kW Design (2020)
+- Title: The variable analysis of an MHD generator with electrical output of 10 kW for application to bi-plant method electricity generation
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: International Journal of Energy Research, 44(10), 8125-8132
+- DOI: https://doi.org/10.1002/er.5100
+- Impact: JCR Top 1.5% in Nuclear Science & Technology (IF: 5.2)
+- Keywords: MHD generator, electricity generation, bi-plant method
+
+### [6] MHD Circulation Optimization (2019)
+- Title: Mathematical approach for optimization of magnetohydrodynamic circulation system
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: Nuclear Engineering and Technology, 51(3), 654-664
+- DOI: https://doi.org/10.1016/j.net.2018.12.008
+- Keywords: MHD optimization, liquid metal circulation, nuclear reactor
+
+### [5] MHD Decay Heat Removal (2018)
+- Title: Magnetohydrodynamics approach for active decay heat removal system in future generation IV reactor
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: International Journal of Energy Research, 42(10), 3266-3278
+- DOI: https://doi.org/10.1002/er.4080
+- Impact: JCR Top 1.5% in Nuclear Science & Technology (IF: 3.3)
+- Keywords: decay heat removal, Generation IV reactor, passive safety, MHD
+
+### [4] Electromagnetic Pump Design Optimization (2018)
+- Title: Numerical analysis of the electromagnetic force for design optimization of a rectangular direct current electromagnetic pump
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: Nuclear Engineering and Technology, 50(6), 869-876
+- DOI: https://doi.org/10.1016/j.net.2018.04.010
+- Keywords: electromagnetic pump, DC EMP, liquid sodium, design optimization
+
+### [3] MHD Channel Analysis for GenIV Reactor (2018)
+- Title: Magnetic-field analysis of an MHD channel in a liquid-metal circulation system of a prototype GenIV sodium fast reactor
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: Annals of Nuclear Energy, 115, 343-351
+- DOI: https://doi.org/10.1016/j.anucene.2018.01.049
+- Keywords: MHD channel, sodium fast reactor, Generation IV, liquid metal
+
+### [2] Sodium-CO2 Reaction EMP (2017)
+- Title: Design analysis of DC electromagnetic pump for liquid sodium–CO2 reaction experimental characterization
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: Annals of Nuclear Energy, 109, 490-497
+- DOI: https://doi.org/10.1016/j.anucene.2017.05.054
+- Keywords: electromagnetic pump, sodium-CO2 reaction, nuclear safety
+
+### [1] EMP Type Comparison Study (2017)
+- Title: Numerical investigation and comparison of the rectangular, cylindrical, and helical-type DC electromagnetic pumps
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: Magnetohydrodynamics, 53(2), 429-438
+- DOI: https://doi.org/10.22364/mhd.53.2.23
+- Keywords: electromagnetic pump comparison, rectangular EMP, cylindrical EMP, helical EMP
+
+## Citation Information
+All publications are available with BibTeX, RIS, and plain text citations at https://geunhyeong.com/publications/
+PDF downloads available for most papers.
+
+## Contact
+For collaboration inquiries: Visit https://geunhyeong.com
