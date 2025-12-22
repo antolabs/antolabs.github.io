@@ -27,7 +27,7 @@ Using deep reinforcement learning to discover innovative component designs beyon
 </div>
 </li>
 <li>
-<span class="what-i-do-icon"><img src="/assets/img/icons/3d-printing-icon.png" alt="3D Printing" /></span>
+<span class="what-i-do-icon"><img src="/assets/img/icons/3d-printing-icon.png" alt="3D Printing" width="28" height="28" style="object-fit: contain;" /></span>
 <div class="what-i-do-content">
 <strong>Metal 3D Printing</strong><br/>
 Building complex geometries that traditional manufacturing cannot achieve.
