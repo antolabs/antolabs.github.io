@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: Scientist at <a href='https://frib.msu.edu/'>FRIB, Michigan State University</a>
+subtitle: <strong>Scientist at FRIB</strong> | AI-driven Nuclear Engineering | Metal Additive Manufacturing
 
 profile:
   align: right
@@ -14,11 +14,33 @@ nav_order: 1
 social: true
 ---
 
-I develop AI-driven design methodologies for advanced nuclear engineering systems, combining deep reinforcement learning with metal 3D printing to create innovative components.
+I am a Scientist at [FRIB](https://frib.msu.edu/) (Facility for Rare Isotope Beams) at Michigan State University. I use **AI to design** advanced components that conventional methods cannot create, then bring them to life with **metal 3D printing**.
 
-My research focuses on:
-* AI optimization of thermal-fluid devices for high-power applications
-* Magnetohydrodynamic pump designs for liquid metal systems
-* 3D printing applications
+<div class="what-i-do-section">
+<h4>What I Do</h4>
 
-I'm particularly interested in bridging computational design and physical fabrication—turning AI-discovered geometries into real, manufacturable parts for next-generation reactors and accelerators.
+<ul class="what-i-do-list">
+  <li>
+    <span class="what-i-do-icon">🧠</span>
+    <div class="what-i-do-content">
+      <strong>AI-Driven Design</strong><br/>
+      Using deep reinforcement learning to discover innovative component designs beyond human intuition.
+    </div>
+  </li>
+  <li>
+    <span class="what-i-do-icon"><img src="/assets/img/icons/3d-printing-icon.png" alt="3D Printing" /></span>
+    <div class="what-i-do-content">
+      <strong>Metal 3D Printing</strong><br/>
+      Building complex geometries that traditional manufacturing cannot achieve.
+    </div>
+  </li>
+  <li>
+    <span class="what-i-do-icon">⚛️</span>
+    <div class="what-i-do-content">
+      <strong>Nuclear Systems</strong><br/>
+      Improving performance of accelerators, advanced reactors, and liquid metal systems.
+    </div>
+  </li>
+</ul>
+</div>
+
