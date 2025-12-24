@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: <strong>Scientist at FRIB</strong> | AI-driven Nuclear Engineering | Metal Additive Manufacturing
+subtitle: <strong>Scientist</strong> at <strong><a href="https://frib.msu.edu/" style="color:#5bc0de;">FRIB</strong></a> (Facility for Rare Isotope Beams) | <strong><a href="https://msu.edu/" style="color:#5bc0de;">MSU</strong></a> (Michigan State University)</strong>
 
 profile:
   align: right
@@ -14,7 +14,7 @@ nav_order: 1
 social: true
 ---
 
-I am a Scientist at [FRIB](https://frib.msu.edu/) (Facility for Rare Isotope Beams) at Michigan State University. I use **AI to design** advanced components that conventional methods cannot create, then bring them to life with **metal 3D printing**.
+I design next-generation nuclear and accelerator components with AI, and bring them to life through metal additive manufacturing.
 
 <div class="what-i-do-section">
 <h4>What I Do</h4>
@@ -23,21 +23,21 @@ I am a Scientist at [FRIB](https://frib.msu.edu/) (Facility for Rare Isotope Bea
 <span class="what-i-do-icon">🧠</span>
 <div class="what-i-do-content">
 <strong>AI-Driven Design</strong><br/>
-Using deep reinforcement learning to discover innovative component designs beyond human intuition.
+AI frameworks that discover high-performance, manufacturable designs.
 </div>
 </li>
 <li>
 <span class="what-i-do-icon"><img src="/assets/img/icons/3d-printing-icon.png" alt="3D Printing" width="28" height="28" /></span>
 <div class="what-i-do-content">
 <strong>Metal 3D Printing</strong><br/>
-Building complex geometries that traditional manufacturing cannot achieve.
+Building complex metal parts from AI designs & improving print quality.
 </div>
 </li>
 <li>
-<span class="what-i-do-icon">⚛️</span>
+<span class="what-i-do-icon">⚡️</span>
 <div class="what-i-do-content">
-<strong>Nuclear Systems</strong><br/>
-Improving performance of accelerators, advanced reactors, and liquid metal systems.
+<strong>Thermo-Fluid & Electromagnetic Systems</strong><br/>
+Multiphysics engineering for heat exchangers and electromagnetic pumps in reactor and accelerator components.
 </div>
 </li>
 </ul>
