@@ -97,7 +97,7 @@ jobs:
       - name: Purge unused CSS 🧹
         run: |
           npm install -g purgecss
-          purgecss -c purgecss.config.js
+          purgecss -c purgecss.config.js --safelist what-i-do-section what-i-do-list what-i-do-icon what-i-do-content
       - name: Deploy 🚀
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4
