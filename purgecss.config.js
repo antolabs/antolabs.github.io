@@ -4,12 +4,17 @@ module.exports = {
   output: "_site/assets/css/",
   skippedContentGlobs: ["_site/assets/**/*.html"],
   // Safelist to preserve classes that might be stripped incorrectly
-  safelist: [
-    // What I Do section styles on About page
-    /^what-i-do-/,
-    "what-i-do-section",
-    "what-i-do-list",
-    "what-i-do-icon",
-    "what-i-do-content",
-  ],
+  safelist: {
+    standard: [
+      // What I Do section styles on About page
+      "what-i-do-section",
+      "what-i-do-list",
+      "what-i-do-icon",
+      "what-i-do-content",
+    ],
+    // Deep option matches classes and their children
+    deep: [/what-i-do/],
+    // Greedy option to preserve all variations
+    greedy: [/what-i-do/],
+  },
 };
