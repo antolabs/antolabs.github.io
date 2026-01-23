@@ -21,7 +21,10 @@ manage_gemfile_lock() {
 
 start_jekyll() {
     manage_gemfile_lock
-    bundle exec jekyll serve --watch --port=8080 --host=0.0.0.0 --livereload --verbose --trace --force_polling &
+    chown -R jekyll:ruby /srv/jekyll
+    su jekyll -c "bundle install" && \
+    su jekyll -c "mkdir -p .jekyll-cache" && \
+    su jekyll -c "bundle exec jekyll serve --watch --port=8080 --host=0.0.0.0 --livereload --verbose --trace --force_polling" &
 }
 
 start_jekyll

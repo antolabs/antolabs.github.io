@@ -2,36 +2,37 @@ FROM ruby:slim
 
 # uncomment these if you are having this issue with the build:
 # /usr/local/bundle/gems/jekyll-4.3.4/lib/jekyll/site.rb:509:in `initialize': Permission denied @ rb_sysopen - /srv/jekyll/.jekyll-cache/.gitignore (Errno::EACCES)
-# ARG GROUPID=901
-# ARG GROUPNAME=ruby
-# ARG USERID=901
-# ARG USERNAME=jekyll
+ARG GROUPID=901
+ARG GROUPNAME=ruby
+ARG USERID=901
+ARG USERNAME=jekyll
 
 ENV DEBIAN_FRONTEND noninteractive
 
 LABEL authors="Amir Pourmand,George Araújo" \
-      description="Docker image for al-folio academic template" \
-      maintainer="Amir Pourmand"
+    description="Docker image for al-folio academic template" \
+    maintainer="Amir Pourmand"
 
 # uncomment these if you are having this issue with the build:
 # /usr/local/bundle/gems/jekyll-4.3.4/lib/jekyll/site.rb:509:in `initialize': Permission denied @ rb_sysopen - /srv/jekyll/.jekyll-cache/.gitignore (Errno::EACCES)
 # add a non-root user to the image with a specific group and user id to avoid permission issues
-# RUN groupadd -r $GROUPNAME -g $GROUPID && \
-#     useradd -u $USERID -m -g $GROUPNAME $USERNAME
+RUN groupadd -r $GROUPNAME -g $GROUPID && \
+    useradd -u $USERID -m -g $GROUPNAME $USERNAME && \
+    chown -R $USERNAME:$GROUPNAME /usr/local/bundle
 
 # install system dependencies
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
-        build-essential \
-        curl \
-        git \
-        imagemagick \
-        inotify-tools \
-        locales \
-        nodejs \
-        procps \
-        python3-pip \
-        zlib1g-dev && \
+    build-essential \
+    curl \
+    git \
+    imagemagick \
+    inotify-tools \
+    locales \
+    nodejs \
+    procps \
+    python3-pip \
+    zlib1g-dev && \
     pip --no-cache-dir install --upgrade --break-system-packages nbconvert
 
 # clean up
@@ -51,10 +52,13 @@ ENV EXECJS_RUNTIME=Node \
     LC_ALL=en_US.UTF-8
 
 # create a directory for the jekyll site
-RUN mkdir /srv/jekyll
+RUN mkdir /srv/jekyll && \
+    mkdir -p /srv/jekyll/.jekyll-cache && \
+    chown -R $USERNAME:$GROUPNAME /srv/jekyll/.jekyll-cache
+RUN chown -R $USERNAME:$GROUPNAME /srv/jekyll
 
 # copy the Gemfile and Gemfile.lock to the image
-ADD Gemfile.lock /srv/jekyll
+# ADD Gemfile.lock /srv/jekyll
 ADD Gemfile /srv/jekyll
 
 # set the working directory
@@ -62,6 +66,9 @@ WORKDIR /srv/jekyll
 
 # install jekyll and dependencies
 RUN gem install --no-document jekyll bundler
+ENV BUNDLE_PATH=/srv/jekyll/.bundle
+RUN mkdir -p $BUNDLE_PATH && chown -R $USERNAME:$GROUPNAME $BUNDLE_PATH
+RUN bundle config set --local path $BUNDLE_PATH
 RUN bundle install --no-cache
 
 EXPOSE 8080
