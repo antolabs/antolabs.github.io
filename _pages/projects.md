@@ -2,20 +2,21 @@
 layout: page
 title: Projects
 permalink: /projects/
-description: Details will be updated soon.
+description:
 nav: true
 nav_order: 4
-#display_categories: []
+display_categories: [Thermo-fluid devices, Electromagnetic devices, Others]
 horizontal: false
 ---
 
 <!-- pages/projects.md -->
+<p style="color: var(--global-text-color-light); font-size: 0.9rem; margin-bottom: 1.5rem;">Click on each project card for more details.</p>
 <div class="projects">
 {% if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->
   {% for category in page.display_categories %}
-  <a id="{{ category }}" href=".#{{ category }}">
-    <h2 class="category">{{ category }}</h2>
+  <a id="{{ category }}" href=".#{{ category }}" style="text-decoration: none;">
+    <h2 style="color: var(--global-text-color); border-bottom: 3px solid #2698BA; padding: 0.5rem 0; margin: 2rem 0 1rem 0; text-align: left; font-weight: 700; font-size: 1.4rem;">{{ category }}</h2>
   </a>
   {% assign categorized_projects = site.projects | where: "category", category %}
   {% assign sorted_projects = categorized_projects | sort: "importance" %}
