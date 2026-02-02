@@ -14,7 +14,7 @@ nav_order: 1
 social: true
 ---
 
-I design next-generation nuclear and accelerator components with AI, and bring them to life through metal additive manufacturing.
+<p class="about-subheadline">AI-Driven Optimization to Realization: Nuclear Systems</p>
 
 <div class="what-i-do-section">
 <h4>What I Do</h4>
@@ -22,22 +22,22 @@ I design next-generation nuclear and accelerator components with AI, and bring t
 <li>
 <span class="what-i-do-icon">🧠</span>
 <div class="what-i-do-content">
-<strong>AI-Driven Design</strong><br/>
-AI frameworks that discover high-performance, manufacturable designs.
-</div>
-</li>
-<li>
-<span class="what-i-do-icon"><img src="/assets/img/icons/3d-printing-icon.png" alt="3D Printing" width="28" height="28" /></span>
-<div class="what-i-do-content">
-<strong>Metal 3D Printing</strong><br/>
-Building complex metal parts from AI designs & improving print quality.
+<strong>AI-Driven Optimization</strong><br/>
+Deep RL & Genetic Algorithms for extreme thermal geometry optimization.
 </div>
 </li>
 <li>
 <span class="what-i-do-icon">⚡️</span>
 <div class="what-i-do-content">
-<strong>Thermo-Fluid & Electromagnetic Systems</strong><br/>
-Multiphysics engineering for heat exchangers and electromagnetic pumps in reactor and accelerator components.
+<strong>Multi-Physics Systems</strong><br/>
+High performance Heat Exchangers & Electromagnetic Pumps engineering.
+</div>
+</li>
+<li>
+<span class="what-i-do-icon"><img src="/assets/img/icons/3d-printing-icon.png" alt="3D Printing" width="28" height="28" /></span>
+<div class="what-i-do-content">
+<strong>Metal Additive Manufacturing</strong><br/>
+Fabrication of complex AI designs using metal 3D printing.
 </div>
 </li>
 </ul>

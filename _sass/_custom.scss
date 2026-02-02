@@ -10,3 +10,10 @@
 h1, h2, h3 {
   text-transform: none !important;
 }
+
+/* About page profile image alignment */
+.post article .profile.float-right {
+  position: relative;
+  top: -3rem;
+  margin-bottom: -3rem;
+}
