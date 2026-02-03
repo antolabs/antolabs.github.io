@@ -66,10 +66,12 @@
   font-weight: 600;
 }
 
-/* Profile image alignment - align bottom with What I Do section */
-.profile.float-right {
-  position: relative;
-  top: -3rem !important;
-  margin-bottom: -3rem !important;
+/* Profile image alignment - align bottom with What I Do section (desktop only) */
+@media (min-width: 768px) {
+  .profile.float-right {
+    position: relative;
+    top: -4rem !important;
+    margin-bottom: -4rem !important;
+  }
 }
 </style>
