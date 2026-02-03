@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OLED Display Flow Channel Optimization
+title: OLED Display AI Flow Channel Generation
 
 importance: 3
 category: Thermo-fluid devices
