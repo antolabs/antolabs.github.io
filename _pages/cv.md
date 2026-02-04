@@ -4,8 +4,7 @@ permalink: /cv/
 title: CV
 nav: true
 nav_order: 3
-cv_pdf: CV_GLee.pdf # you can also use external links here
-description: "Please click the PDF icon on the top right to download my full CV (Last updated: 01/26/2026)."
+cv_pdf: CV_GLee_260204.pdf # Format: CV_GLee_YYMMDD.pdf - date auto-extracted for display
 toc:
   sidebar: left
 ---
