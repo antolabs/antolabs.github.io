@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Other Designs
+description: Thermal-structural analysis projects including rotating beam dump, post-target shielding, plasma chamber, and target systems at FRIB
 importance: 99
 category: Thermo-fluid devices
 ---

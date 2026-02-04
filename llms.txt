@@ -11,6 +11,13 @@
 
 ## Publications (SCIE Journals)
 
+### [14] FRIB Beam Dump Optimization (2026) - Accepted
+- Title: Optimization of the FRIB Beam Dump: A Hybrid Genetic Algorithm and Reinforcement Learning Approach
+- Authors: Geunhyeong Lee, J. Song, R. Quispe-Adab, M. Patil, T. Kanemura
+- Journal: Nuclear Science and Techniques (Accepted)
+- Impact: JCR Top 3.7% in Nuclear Science & Technology (IF: 3.8)
+- Keywords: genetic algorithm, reinforcement learning, FRIB, beam dump, optimization, thermal management
+
 ### [13] 3D-Printable DC Electromagnetic Pump (2026)
 - Title: Conceptual Design of a 3D-Printable DC Electromagnetic Pump for Additive Manufacturing
 - Authors: Geunhyeong Lee

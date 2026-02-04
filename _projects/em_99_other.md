@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Other Designs
+description: DC electromagnetic pump designs for sodium fast reactors and heavy-ion accelerators, and MHD generator analysis for power generation
 importance: 99
 category: Electromagnetic devices
 ---
