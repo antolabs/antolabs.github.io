@@ -10,7 +10,7 @@ year: 2023-2024
 
 ## Challenge
 
-**Direct-current (DC) electromagnetic pumps** drive liquid metals using Lorentz forces without mechanical impellers, making them ideal for high-temperature and corrosive fluid applications. However, conventional helical-type DC pumps require high input currents and complex manufacturing processes involving multiple brazed segments.
+**Direct-current (DC) electromagnetic pumps** drive liquid metals using Lorentz forces without mechanical impellers, making them ideal for high-temperature and corrosive fluid applications, such as Sodium Fast Reactors (SFR). However, conventional helical-type DC pumps require high input currents and complex manufacturing processes involving multiple brazed segments.
 
 <div class="row justify-content-center">
     <div class="col-sm-6">
