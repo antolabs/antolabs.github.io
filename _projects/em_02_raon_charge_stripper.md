@@ -22,7 +22,7 @@ year: 2020-2021
     </div>
 </div>
 <div class="caption">
-    Design evolution: conventional EM thruster (left) vs redesigned lightweight thruster (right)
+    <strong>Fig.</strong> Design evolution: conventional EM thruster (left) vs redesigned lightweight thruster (right)
 </div>
 
 ### Electromagnetic Thruster Optimization
@@ -46,7 +46,7 @@ year: 2020-2021
     </div>
 </div>
 <div class="caption">
-    Experimental test loop system (left) and successfully formed liquid lithium thin film (right)
+    <strong>Fig.</strong> Experimental test loop system (left) and successfully formed liquid lithium thin film (right)
 </div>
 
 | Parameter | Conventional | Redesigned |

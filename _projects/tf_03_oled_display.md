@@ -18,7 +18,7 @@ year: 2022
     </div>
 </div>
 <div class="caption">
-    Susceptor system schematic: Galinstan liquid metal circulation via electromagnetic pump
+    <strong>Fig.</strong> Susceptor system schematic: Galinstan liquid metal circulation via electromagnetic pump
 </div>
 
 ---
@@ -31,7 +31,7 @@ year: 2022
     </div>
 </div>
 <div class="caption">
-    Reinforcement learning environment with General, Record, and FDM spaces
+    <strong>Fig.</strong> Reinforcement learning environment with General, Record, and FDM spaces
 </div>
 
 ### Flow Channel Optimization
@@ -57,7 +57,7 @@ year: 2022
     </div>
 </div>
 <div class="caption">
-    Flow path evolution during RL training: paths become more complex as learning progresses
+    <strong>Fig.</strong> Flow path evolution during RL training: paths become more complex as learning progresses
 </div>
 
 - Achieved **uniform temperature distribution** across susceptor surface
@@ -71,7 +71,7 @@ year: 2022
     </div>
 </div>
 <div class="caption">
-    Helical EM pump analysis: magnetic flux density distribution (left) and pressure distribution achieving 10 bar (right)
+    <strong>Fig.</strong> Helical EM pump analysis: magnetic flux density distribution (left) and pressure distribution achieving 10 bar (right)
 </div>
 
 - Validated for **10 bar** discharge pressure at 2 kg/s flow rate

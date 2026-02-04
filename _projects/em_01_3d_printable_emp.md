@@ -18,7 +18,7 @@ year: 2023-2024
     </div>
 </div>
 <div class="caption">
-    Conventional helical-type EM pump requires complex brazing process and specialized coatings
+    <strong>Fig.</strong> Conventional helical-type EM pump requires complex brazing process and specialized coatings
 </div>
 
 ---
@@ -31,7 +31,7 @@ year: 2023-2024
     </div>
 </div>
 <div class="caption">
-    Novel 3D-printable EM pump design with working principle
+    <strong>Fig.</strong> Novel 3D-printable EM pump design with working principle
 </div>
 
 ### Multiple Lorentz Force Design
@@ -55,7 +55,7 @@ year: 2023-2024
     </div>
 </div>
 <div class="caption">
-    MHD simulation results: magnetic flux density distribution (top) and pressure distribution (bottom)
+    <strong>Fig.</strong> MHD simulation results: magnetic flux density distribution (top) and pressure distribution (bottom)
 </div>
 
 | Parameter | Helical-type | 3D-Printable |

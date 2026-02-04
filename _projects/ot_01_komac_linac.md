@@ -18,7 +18,7 @@ year: 2022-2023
     </div>
 </div>
 <div class="caption">
-    DTQ magnet structure (left) and failed DTQ after enamel wire corrosion (right)
+    <strong>Fig.</strong> DTQ magnet structure (left) and failed DTQ after enamel wire corrosion (right)
 </div>
 
 ---
@@ -31,7 +31,7 @@ year: 2022-2023
     </div>
 </div>
 <div class="caption">
-    LSTM Autoencoder architecture for DTQ magnet anomaly detection
+    <strong>Fig.</strong> LSTM Autoencoder architecture for DTQ magnet anomaly detection
 </div>
 
 ### Deep Learning Model
@@ -55,7 +55,7 @@ year: 2022-2023
     </div>
 </div>
 <div class="caption">
-    Anomaly score over time: normal cases vs detected anomaly cases
+    <strong>Fig.</strong> Anomaly score over time: normal cases vs detected anomaly cases
 </div>
 
 | Metric | Value |
