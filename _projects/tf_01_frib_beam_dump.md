@@ -18,7 +18,7 @@ The **FRIB** beam dump must be upgraded from **20 kW to 50 kW**. Heavy ion beams
     </div>
 </div>
 <div class="caption">
-    Current FRIB beam dump with CuCrZr/Al2219 bi-metal plate and 3D-printed AlSi10Mg wings
+    <strong>Fig.</strong> Current FRIB beam dump with CuCrZr/Al2219 bi-metal plate and 3D-printed AlSi10Mg wings
 </div>
 
 ---
@@ -31,7 +31,7 @@ The **FRIB** beam dump must be upgraded from **20 kW to 50 kW**. Heavy ion beams
     </div>
 </div>
 <div class="caption">
-    Two-stage optimization: GA global search → SAC reinforcement learning fine-tuning
+    <strong>Fig.</strong> Two-stage optimization: GA global search → SAC reinforcement learning fine-tuning
 </div>
 
 - **Stage 1 (GA)**: 13 design parameters, 100 population → Max temp: 554.7°C → **345.9°C**
@@ -47,7 +47,7 @@ The **FRIB** beam dump must be upgraded from **20 kW to 50 kW**. Heavy ion beams
     </div>
 </div>
 <div class="caption">
-    Temperature comparison: Current design (left) vs Optimized design (right)
+    <strong>Fig.</strong> Temperature comparison: Current design (left) vs Optimized design (right)
 </div>
 
 - **72% increase** in power-handling capability

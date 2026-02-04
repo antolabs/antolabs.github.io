@@ -18,7 +18,7 @@ year: 2021-2023
     </div>
 </div>
 <div class="caption">
-    PCHE structure with hot/cold fluid plates and pseudo-3D optimization domains
+    <strong>Fig.</strong> PCHE structure with hot/cold fluid plates and pseudo-3D optimization domains
 </div>
 
 ---
@@ -31,7 +31,7 @@ year: 2021-2023
     </div>
 </div>
 <div class="caption">
-    DRL-assisted topology optimization: PPO generates initial design → SIMP topology optimization refines geometry
+    <strong>Fig.</strong> DRL-assisted topology optimization: PPO generates initial design → SIMP topology optimization refines geometry
 </div>
 
 ### Dual-Fluid Topology Optimization
@@ -55,7 +55,7 @@ year: 2021-2023
     </div>
 </div>
 <div class="caption">
-    Topology optimization results showing fluid (white) and solid (black) regions
+    <strong>Fig.</strong> Topology optimization results showing fluid (white) and solid (black) regions
 </div>
 
 | Method | Heat Transfer Improvement |
@@ -74,7 +74,7 @@ year: 2021-2023
     </div>
 </div>
 <div class="caption">
-    Metal 3D printed PCHE (SUS316L) with experimental validation
+    <strong>Fig.</strong> Metal 3D printed PCHE (SUS316L) with experimental validation
 </div>
 
 - Fabricated using **powder bed fusion** metal 3D printing
