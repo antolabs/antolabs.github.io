@@ -2,7 +2,7 @@
 layout: page
 title: Projects
 permalink: /projects/
-description:
+description: Research projects in AI-driven design optimization, thermo-fluid systems, electromagnetic devices, and nuclear engineering applications
 nav: true
 nav_order: 4
 display_categories: [Thermo-fluid devices, Electromagnetic devices, Others]
