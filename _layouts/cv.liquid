@@ -23,7 +23,13 @@ layout: default
         {% endif %}
         {% endif %}
       </h1>
-      {% if page.description %}
+      {% if page.cv_pdf contains 'CV_GLee_' %}
+        {% assign cv_date_raw = page.cv_pdf | remove: '.pdf' | split: '_' | last %}
+        {% assign cv_yy = cv_date_raw | slice: 0, 2 %}
+        {% assign cv_mm = cv_date_raw | slice: 2, 2 %}
+        {% assign cv_dd = cv_date_raw | slice: 4, 2 %}
+        <p class="post-description">Please click the PDF icon on the top right to download my full CV (Last updated: {{ cv_mm }}/{{ cv_dd }}/20{{ cv_yy }}).</p>
+      {% elsif page.description %}
         <p class="post-description">{{ page.description }}</p>
       {% endif %}
     </header>
@@ -76,7 +82,13 @@ layout: default
           </a>
         {% endif %}
       </h1>
-      {% if page.description %}
+      {% if page.cv_pdf contains 'CV_GLee_' %}
+        {% assign cv_date_raw = page.cv_pdf | remove: '.pdf' | split: '_' | last %}
+        {% assign cv_yy = cv_date_raw | slice: 0, 2 %}
+        {% assign cv_mm = cv_date_raw | slice: 2, 2 %}
+        {% assign cv_dd = cv_date_raw | slice: 4, 2 %}
+        <p class="post-description">Please click the PDF icon on the top right to download my full CV (Last updated: {{ cv_mm }}/{{ cv_dd }}/20{{ cv_yy }}).</p>
+      {% elsif page.description %}
         <p class="post-description">{{ page.description }}</p>
       {% endif %}
     </header>
