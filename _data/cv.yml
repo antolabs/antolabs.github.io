@@ -10,33 +10,40 @@
   type: time_table
   contents:
     - title: Scientist (Staff)
-      institution: Facility for Rare Isotope Beams (FRIB)/ Michigan State University (MSU)
+      institution: Facility for Rare Isotope Beams (FRIB) | Michigan State University (MSU)
+      department: High Power Targetry Department
       location: Michigan, US
       year: 12/2023 - Present
       description:
-        - 'High Power Targetry Team'
-        - 'Heat removal system AI optimization and validation'
+        - 'Develop Genetic Algorithms (GA) and Reinforcement Learning (RL) frameworks to optimize heat removal systems.'
+        - 'Optimize thermo-fluid devices and validate for practical implementation.'
 
     - title: Postdoc
       institution: Korea Atomic Energy Research Institute (KAERI)
+      department: Applied Artificial Intelligence Lab
       location: Daejeon, South Korea
       year: 08/2021 - 12/2023
       description:
-        - 'Applied Artificial Intelligence Lab'
-        - 'SMR heat exchanger 3D printing AI optimization'
+        - 'Optimized SMR heat exchangers (PCHE) using RL-based Topology Optimization.'
+        - 'Designed flow channels for Samsung OLED susceptors using RL models.'
+        - 'Applied AI anomaly detection to the RAON accelerator for operational stability.'
 
 - title: Education
   type: time_table
   contents:
-    - title: Ph.D. & M.S. / Nuclear Engineering
+    - title: Ph.D. & M.S.
       institution: Ulsan National Institute of Science and Technology (UNIST)
+      department: 'Nuclear Engineering (Advisor: HeeReyoung Kim)'
       location: Ulsan, South Korea
       year: 03/2016 - 08/2021
       description:
-        - Thesis 'Optimization of Lithium Charge Stripper through MHD Circulator Development'
+        - title: Thesis
+          contents:
+            - 'Optimization of Lithium Charge Stripper through MHD Circulator Development'
 
-    - title: B.S. / Nuclear Engineering & Mechanical Engineering (Dual)
+    - title: B.S.
       institution: Ulsan National Institute of Science and Technology (UNIST)
+      department: Nuclear Engineering & Mechanical Engineering (Dual Major)
       location: Ulsan, South Korea
       year: 03/2010 - 02/2016
 

@@ -65,11 +65,43 @@ i.icondepartment {
 }
 
 table.institution {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 td.department {
   font-size: 0.8rem;
+}
+
+ul.items {
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+  padding-left: 0;
+
+  li {
+    margin-bottom: 0.2rem;
+  }
+
+  .item {
+    font-size: 0.85rem;
+  }
+
+  .item-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--global-text-color);
+  }
+}
+
+ul.subitems {
+  list-style: none;
+  padding-left: 0.5rem;
+  margin-top: 0.1rem;
+
+  .subitem {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--global-text-color-light);
+  }
 }
 
 div.container-links {
