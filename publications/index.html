@@ -1695,7 +1695,7 @@ ER  -`,
       var currentFormat = 'bibtex';
 
       // Citation Modal Functions
-      function showCitationModal(paperId) {
+      window.showCitationModal = function (paperId) {
         currentPaperId = paperId;
         currentFormat = 'bibtex';
         var modal = document.getElementById('citation-modal');
@@ -1709,7 +1709,7 @@ ER  -`,
 
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
-      }
+      };
 
       function updateCitationContent() {
         var contentEl = document.getElementById('citation-content');
