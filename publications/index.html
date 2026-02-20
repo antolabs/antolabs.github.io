@@ -650,12 +650,36 @@ ER  -`,
         }
       });
 
+      // Create citation modal dynamically to prevent jekyll-minifier from removing empty elements
+      var modalHTML = '<div id="citation-modal" class="citation-modal">'
+        + '<div class="citation-modal-content">'
+        + '<span class="citation-modal-close" id="citation-close-btn">\u00d7</span>'
+        + '<h3>\ud83d\udcda Export Citation</h3>'
+        + '<div class="citation-tabs">'
+        + '<button class="citation-tab active" data-format="bibtex" id="tab-bibtex">BibTeX</button>'
+        + '<button class="citation-tab" data-format="ris" id="tab-ris">RIS</button>'
+        + '<button class="citation-tab" data-format="plain" id="tab-plain">Plain Text</button>'
+        + '</div>'
+        + '<pre class="citation-box" id="citation-content">Loading...</pre>'
+        + '<button class="citation-copy-btn" id="citation-copy-btn">Copy to Clipboard</button>'
+        + '</div></div>';
+      var modalContainer = document.createElement('div');
+      modalContainer.innerHTML = modalHTML;
+      document.body.appendChild(modalContainer.firstChild);
+
+      // Attach modal event listeners
+      document.getElementById('citation-close-btn').onclick = function () { closeCitationModal(); };
+      document.getElementById('tab-bibtex').onclick = function () { switchCitationFormat('bibtex'); };
+      document.getElementById('tab-ris').onclick = function () { switchCitationFormat('ris'); };
+      document.getElementById('tab-plain').onclick = function () { switchCitationFormat('plain'); };
+      document.getElementById('citation-copy-btn').onclick = function () { copyCitation(); };
+
       // Current paper ID for modal
       var currentPaperId = null;
       var currentFormat = 'bibtex';
 
       // Citation Modal Functions
-      window.showCitationModal = function (paperId) {
+      function showCitationModal(paperId) {
         currentPaperId = paperId;
         currentFormat = 'bibtex';
         var modal = document.getElementById('citation-modal');
@@ -669,7 +693,7 @@ ER  -`,
 
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
-      };
+      }
 
       function updateCitationContent() {
         var contentEl = document.getElementById('citation-content');
@@ -678,7 +702,7 @@ ER  -`,
         }
       }
 
-      window.switchCitationFormat = function (format) {
+      function switchCitationFormat(format) {
         currentFormat = format;
         updateCitationContent();
 
@@ -686,26 +710,26 @@ ER  -`,
           tab.classList.remove('active');
         });
         document.querySelector('.citation-tab[data-format="' + format + '"]').classList.add('active');
-      };
+      }
 
-      window.closeCitationModal = function () {
+      function closeCitationModal() {
         var modal = document.getElementById('citation-modal');
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
-      };
+      }
 
-      window.copyCitation = function () {
+      function copyCitation() {
         var content = document.getElementById('citation-content').textContent;
         navigator.clipboard.writeText(content).then(function () {
-          var btn = document.querySelector('.citation-copy-btn');
-          btn.textContent = '✓ Copied!';
+          var btn = document.getElementById('citation-copy-btn');
+          btn.textContent = '\u2713 Copied!';
           btn.classList.add('copied');
           setTimeout(function () {
             btn.textContent = 'Copy to Clipboard';
             btn.classList.remove('copied');
           }, 2000);
         });
-      };
+      }
 
       // Close modal when clicking outside
       window.onclick = function (event) {
@@ -722,4 +746,4 @@ ER  -`,
         }
       });
     });
-  </script> <div id="citation-modal" class="citation-modal"> <div class="citation-modal-content"> <span class="citation-modal-close" onclick="closeCitationModal()">×</span> <h3>📚 Export Citation</h3> <div class="citation-tabs"> <button class="citation-tab active" data-format="bibtex" onclick="switchCitationFormat('bibtex')">BibTeX</button> <button class="citation-tab" data-format="ris" onclick="switchCitationFormat('ris')">RIS</button> <button class="citation-tab" data-format="plain" onclick="switchCitationFormat('plain')">Plain Text</button> </div> <button class="citation-copy-btn" onclick="copyCitation()">Copy to Clipboard</button> </div> </div> </body> </html>
+  </script> </body> </html>
