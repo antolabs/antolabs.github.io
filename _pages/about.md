@@ -14,7 +14,7 @@ nav_order: 1
 social: true
 ---
 
-<p class="about-subheadline">AI-Driven Optimization to Realization: Nuclear Systems</p>
+<p class="about-subheadline">AI-Driven Optimization to Realization: Thermal-Fluid Systems</p>
 
 <div class="what-i-do-section">
 <h4>What I Do</h4>
@@ -23,21 +23,21 @@ social: true
 <span class="what-i-do-icon">🧠</span>
 <div class="what-i-do-content">
 <strong>AI-Driven Optimization</strong><br/>
-Deep RL & Genetic Algorithms for extreme thermal geometry optimization.
+Deep RL, Genetic Algorithms & Surrogate Modeling for system design.
 </div>
 </li>
 <li>
 <span class="what-i-do-icon">⚡️</span>
 <div class="what-i-do-content">
-<strong>Multi-Physics Systems</strong><br/>
-High performance Heat Exchangers & Electromagnetic Pumps engineering.
+<strong>Multi-Physics Simulation</strong><br/>
+Heat Exchangers, EM Pumps & thermal management engineering.
 </div>
 </li>
 <li>
 <span class="what-i-do-icon"><img src="/assets/img/icons/3d-printing-icon.png" alt="3D Printing" width="28" height="28" /></span>
 <div class="what-i-do-content">
 <strong>Metal Additive Manufacturing</strong><br/>
-Fabrication of complex AI designs using metal 3D printing.
+Fabrication & validation of AI-designed components via metal 3D printing.
 </div>
 </li>
 </ul>

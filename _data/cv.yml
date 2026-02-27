@@ -15,8 +15,9 @@
       location: Michigan, US
       year: 12/2023 - Present
       description:
-        - 'Develop Genetic Algorithms (GA) and Reinforcement Learning (RL) frameworks to optimize heat removal systems.'
-        - 'Optimize thermo-fluid devices and validate for practical implementation.'
+        - 'Achieved 72% improvement in beam dump power handling through hybrid GA-Reinforcement Learning optimization framework.'
+        - 'Developed CNN-MLP surrogate model for real-time thermal limit prediction of rotating beam dumps.'
+        - 'Performed multi-physics thermal-fluid-electromagnetic simulation and validation for high-power targetry devices.'
 
     - title: Postdoc
       institution: Korea Atomic Energy Research Institute (KAERI)
@@ -24,8 +25,9 @@
       location: Daejeon, South Korea
       year: 08/2021 - 12/2023
       description:
-        - 'Optimized SMR heat exchangers (PCHE) using RL-based Topology Optimization.'
-        - 'Designed flow channels for Samsung OLED susceptors using RL models.'
+        - 'Achieved 14.8% heat exchanger performance improvement via deep RL topology optimization; validated through metal 3D printing and thermal-fluid loop experiments.'
+        - 'Designed a novel 3D-printable single-body DC electromagnetic pump with 52% reduction in required input current.'
+        - 'Designed flow channels for Samsung OLED susceptors using RL-based optimization models.'
         - 'Applied AI anomaly detection to the RAON accelerator for operational stability.'
 
 - title: Education
@@ -48,12 +50,12 @@
       year: 03/2010 - 02/2016
 
 
-- title: Publication summary
+- title: Publication Summary
   type: map
   contents:
     - name: SCIE Journal
       value: Total 14 (First Author 13, Corresponding Author 5)
-    - name: Journal & Conferences
+    - name: Journal & Conference Proceedings
       value: Total 34 (Peer-review journal 1, Conference 33)
     - name: Patent
       value: Total 6
