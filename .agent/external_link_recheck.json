@@ -1,0 +1,161 @@
+{
+  "checkedAt": "2026-03-05T22:04:19.662Z",
+  "urls": [
+    "https://doi.org/10.1080/00223131.2025.2464742",
+    "https://doi.org/10.1002/er.5100",
+    "https://doi.org/10.1002/er.4080",
+    "https://www.researchgate.net/profile/Geunhyeong-Lee-3/",
+    "https://www.scopus.com/authid/detail.uri?authorId=56779304800"
+  ],
+  "requestDefault": [
+    {
+      "url": "https://doi.org/10.1080/00223131.2025.2464742",
+      "ok": false,
+      "status": 403,
+      "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/00223131.2025.2464742"
+    },
+    {
+      "url": "https://doi.org/10.1002/er.5100",
+      "ok": false,
+      "status": 403,
+      "finalUrl": "https://onlinelibrary.wiley.com/doi/10.1002/er.5100"
+    },
+    {
+      "url": "https://doi.org/10.1002/er.4080",
+      "ok": false,
+      "status": 403,
+      "finalUrl": "https://onlinelibrary.wiley.com/doi/10.1002/er.4080"
+    },
+    {
+      "url": "https://www.researchgate.net/profile/Geunhyeong-Lee-3/",
+      "ok": false,
+      "status": 403,
+      "finalUrl": "https://www.researchgate.net/profile/Geunhyeong-Lee-3/"
+    },
+    {
+      "url": "https://www.scopus.com/authid/detail.uri?authorId=56779304800",
+      "ok": false,
+      "status": 403,
+      "finalUrl": "https://www.scopus.com/authid/detail.uri?authorId=56779304800"
+    }
+  ],
+  "requestBrowserUA": [
+    {
+      "url": "https://doi.org/10.1080/00223131.2025.2464742",
+      "ok": false,
+      "status": 403,
+      "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/00223131.2025.2464742"
+    },
+    {
+      "url": "https://doi.org/10.1002/er.5100",
+      "ok": false,
+      "status": 403,
+      "finalUrl": "https://onlinelibrary.wiley.com/doi/10.1002/er.5100"
+    },
+    {
+      "url": "https://doi.org/10.1002/er.4080",
+      "ok": false,
+      "status": 403,
+      "finalUrl": "https://onlinelibrary.wiley.com/doi/10.1002/er.4080"
+    },
+    {
+      "url": "https://www.researchgate.net/profile/Geunhyeong-Lee-3/",
+      "ok": false,
+      "status": 403,
+      "finalUrl": "https://www.researchgate.net/profile/Geunhyeong-Lee-3/"
+    },
+    {
+      "url": "https://www.scopus.com/authid/detail.uri?authorId=56779304800",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.scopus.com/authid/detail.uri?authorId=56779304800"
+    }
+  ],
+  "navHeadless": [
+    {
+      "url": "https://doi.org/10.1080/00223131.2025.2464742",
+      "status": 403,
+      "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/00223131.2025.2464742",
+      "title": "Just a moment...",
+      "blockedLike": false,
+      "textSnippet": "www.tandfonline.com\nPerforming security verification\n\nThis website uses a security service to protect against malicious bots. This page is displayed while the website verifies you are not a bot.\n\nRay ID: 9d7c6a85ca6da94e\nPerformance and Security by Cloudflare\nPrivacy"
+    },
+    {
+      "url": "https://doi.org/10.1002/er.5100",
+      "status": 403,
+      "finalUrl": "https://onlinelibrary.wiley.com/doi/10.1002/er.5100",
+      "title": "Just a moment...",
+      "blockedLike": false,
+      "textSnippet": "onlinelibrary.wiley.com\nPerforming security verification\n\nThis website uses a security service to protect against malicious bots. This page is displayed while the website verifies you are not a bot.\n\nRay ID: 9d7c6a93793f7a9f\nPerformance and Security by Cloudflare\nPrivacy"
+    },
+    {
+      "url": "https://doi.org/10.1002/er.4080",
+      "status": 403,
+      "finalUrl": "https://onlinelibrary.wiley.com/doi/10.1002/er.4080",
+      "title": "Just a moment...",
+      "blockedLike": false,
+      "textSnippet": "onlinelibrary.wiley.com\nPerforming security verification\n\nThis website uses a security service to protect against malicious bots. This page is displayed while the website verifies you are not a bot.\n\nRay ID: 9d7c6aa0ab55a92d\nPerformance and Security by Cloudflare\nPrivacy"
+    },
+    {
+      "url": "https://www.researchgate.net/profile/Geunhyeong-Lee-3/",
+      "status": 403,
+      "finalUrl": "https://www.researchgate.net/profile/Geunhyeong-Lee-3/",
+      "title": "ResearchGate - Temporarily Unavailable",
+      "blockedLike": true,
+      "textSnippet": "Access denied\n\nYou do not have access to www.researchgate.net.\n\nThe site owner may have set restrictions that prevent you from accessing the site.\n\nRay ID: 9d7c6aad9888f275\nTimestamp: 2026-03-05 22:04:29 UTC\nYour IP address: 35.21.248.153\nRequested URL: www.researchgate.net/profile/Geunhyeong-Lee-3/"
+    },
+    {
+      "url": "https://www.scopus.com/authid/detail.uri?authorId=56779304800",
+      "status": 403,
+      "finalUrl": "https://www.scopus.com/authid/detail.uri?authorId=56779304800",
+      "title": "Attention Required! | Cloudflare",
+      "blockedLike": false,
+      "textSnippet": "Sorry, you have been blocked\nYou are unable to access scopus.com\nWhy have I been blocked?\n\nThis website is using a security service to protect itself from online attacks. The action you just performed triggered the security solution. There are several actions that could trigger this block including "
+    }
+  ],
+  "navHeaded": {
+    "supported": true,
+    "results": [
+      {
+        "url": "https://doi.org/10.1080/00223131.2025.2464742",
+        "status": 200,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/00223131.2025.2464742",
+        "title": "Full article: Deep learning-based anomaly detection in Drift Tube Quadrupole operation for the KOMAC LINAC",
+        "blockedLike": false,
+        "textSnippet": "Skip to Main Content\nJournals \nSearch \nPublish \nAccess provided byMichigan State University\n Login  |  Register\nAdd to Cart\nHome  All Journals  Physical Sciences  Journal of Nuclear Science and Technology  List of Issues  Volume 62, Issue 8  Deep learning-based anomaly detection in ....\n \nSearch in:"
+      },
+      {
+        "url": "https://doi.org/10.1002/er.5100",
+        "status": 200,
+        "finalUrl": "https://onlinelibrary.wiley.com/doi/10.1002/er.5100",
+        "title": "The variable analysis of an MHD generator with electrical output of 10 kW for application to bi‐plant method electricity generation - Lee - 2020 - International Journal of Energy Research - Wiley Online Library",
+        "blockedLike": false,
+        "textSnippet": "This website utilizes technologies such as cookies to enable essential site functionality, as well as for analytics, personalization, and targeted advertising. To learn more, view the following link: Privacy Policy\nSkip to Article Content\nSkip to Article Information\nMichigan State University Librari"
+      },
+      {
+        "url": "https://doi.org/10.1002/er.4080",
+        "status": 403,
+        "finalUrl": "https://onlinelibrary.wiley.com/doi/10.1002/er.4080",
+        "title": "Just a moment...",
+        "blockedLike": false,
+        "textSnippet": "onlinelibrary.wiley.com\nPerforming security verification\n\nThis website uses a security service to protect against malicious bots. This page is displayed while the website verifies you are not a bot.\n\nIncompatible browser extension or network configuration\n\nYour browser extensions or network settings"
+      },
+      {
+        "url": "https://www.researchgate.net/profile/Geunhyeong-Lee-3/",
+        "status": 200,
+        "finalUrl": "https://www.researchgate.net/profile/Geunhyeong-Lee-3",
+        "title": "Geunhyeong LEE | Scientist | Doctor of Philosophy | Michigan State University, East Lansing | MSU | Research profile",
+        "blockedLike": false,
+        "textSnippet": "HomeMichigan State UniversityGeunhyeong Lee\n\t\nGeunhyeong Lee\n\t\nDoctor of PhilosophyScientist at Facility for Rare Isotope Beams\nContact\nAbout\nPublications 18\nNetwork\nAbout\n18\nPublications\n1,409\nReads \n111\nCitations\nIntroduction\nPersonal web: geunhyeong.com\nAdditional affiliations\nAugust 2021 - Decem"
+      },
+      {
+        "url": "https://www.scopus.com/authid/detail.uri?authorId=56779304800",
+        "status": 200,
+        "finalUrl": "https://www.scopus.com/authid/detail.uri?authorId=56779304800",
+        "title": "Lee, Geunhyeong Hyeong - Author details - Scopus",
+        "blockedLike": false,
+        "textSnippet": "Skip to main content\nBrought to you by\nMichigan State University Libraries\nOpens in a new tab\nOpens in a new tab\nElsevier Logo\nScopus Logo\nSearch\nSources\nSciVal\nOpens in a new tab\nHow can we help?\nBrought to you by\nCreate account\nSign in\nAuthor details\nThis author profile is generated by Scopus\nLear"
+      }
+    ]
+  }
+}

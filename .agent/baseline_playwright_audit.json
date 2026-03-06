@@ -1,0 +1,92 @@
+{
+  "baseUrl": "http://127.0.0.1:4124/",
+  "pageStatus": {
+    "home": 200,
+    "publications": 200,
+    "cv": 200
+  },
+  "navChecks": [
+    {
+      "text": "About\n              \n                (current)",
+      "url": "http://127.0.0.1:4124/",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "text": "Publication (SCIE)",
+      "url": "http://127.0.0.1:4124/publications/",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "text": "CV",
+      "url": "http://127.0.0.1:4124/cv/",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "text": "Projects",
+      "url": "http://127.0.0.1:4124/projects/",
+      "status": 200,
+      "ok": true
+    }
+  ],
+  "publications": {
+    "doiLinkCount": 13,
+    "pdfLinkCount": 0,
+    "citeButtonCount": 0,
+    "doiSampleChecks": [
+      {
+        "url": "https://doi.org/10.1016/j.net.2025.103916",
+        "ok": true,
+        "status": 200
+      },
+      {
+        "url": "https://doi.org/10.1080/00223131.2025.2464742",
+        "ok": false,
+        "status": 403
+      },
+      {
+        "url": "https://doi.org/10.1016/j.icheatmasstransfer.2024.107991",
+        "ok": true,
+        "status": 200
+      },
+      {
+        "url": "https://doi.org/10.1016/j.csite.2023.103318",
+        "ok": true,
+        "status": 200
+      },
+      {
+        "url": "https://doi.org/10.1016/j.nucengdes.2023.112481",
+        "ok": true,
+        "status": 200
+      },
+      {
+        "url": "https://doi.org/10.1007/s40042-021-00116-z",
+        "ok": true,
+        "status": 200
+      },
+      {
+        "url": "https://doi.org/10.1002/er.5100",
+        "ok": false,
+        "status": 403
+      },
+      {
+        "url": "https://doi.org/10.1016/j.net.2018.12.008",
+        "ok": true,
+        "status": 200
+      }
+    ],
+    "pdfSampleChecks": [],
+    "citeModalOpened": null
+  },
+  "cv": {
+    "pdfLink": "http://127.0.0.1:4124/assets/pdf/CV_GLee.pdf",
+    "pdfCheck": {
+      "url": "http://127.0.0.1:4124/assets/pdf/CV_GLee.pdf",
+      "ok": true,
+      "status": 200
+    }
+  },
+  "runtimeErrors": []
+}

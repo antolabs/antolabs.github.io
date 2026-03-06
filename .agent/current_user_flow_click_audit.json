@@ -1,0 +1,422 @@
+{
+  "baseUrl": "http://127.0.0.1:4140/",
+  "browser": {
+    "headedRequested": true,
+    "headedUsed": true
+  },
+  "publications": {
+    "doiCount": 13,
+    "pdfCount": 13,
+    "citeCount": 13,
+    "doiChecks": [
+      {
+        "url": "https://doi.org/10.1016/j.net.2025.103916",
+        "status": 200,
+        "finalUrl": "https://www.sciencedirect.com/science/article/pii/S173857332500484X?via%3Dihub",
+        "title": "Just a moment...",
+        "blockedLike": true,
+        "textSnippet": "Are you a robot?\nPlease confirm you are a human by completing the captcha challenge below.\n\nReference number: 9d7c6db29ca9a940\nIP Address: 35.21.248.153\nUser Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\nTimestamp: 2026-03-05 2"
+      },
+      {
+        "url": "https://doi.org/10.1080/00223131.2025.2464742",
+        "status": 200,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/00223131.2025.2464742",
+        "title": "Full article: Deep learning-based anomaly detection in Drift Tube Quadrupole operation for the KOMAC LINAC",
+        "blockedLike": false,
+        "textSnippet": "Skip to Main Content\nJournals \nSearch \nPublish \nAccess provided byMichigan State University\n Login  |  Register\nAdd to Cart\nHome  All Journals  Physical Sciences  Journal of Nuclear Science and Technology  List of Issues  Volume 62, Issue 8  Deep learning-based anomaly detection in ....\n \nSearch in:"
+      },
+      {
+        "url": "https://doi.org/10.1016/j.icheatmasstransfer.2024.107991",
+        "status": 200,
+        "finalUrl": "https://www.sciencedirect.com/science/article/pii/S073519332400753X?via%3Dihub",
+        "title": "Design optimization of heat exchanger using deep reinforcement learning - ScienceDirect",
+        "blockedLike": false,
+        "textSnippet": "Processing math: 100%\nSkip to main content\nSkip to article\nJournals & Books\nHelp\nSearch\nMy account\nView PDF\nDownload full issue\nReading Assistant\nOutline\nAbstract\nKeywords\n1. Introduction\n2. Methods\n3. Results and discussion\n4. Conclusion\nFunding\nAuthor contributions\nCRediT authorship contribution s"
+      },
+      {
+        "url": "https://doi.org/10.1016/j.csite.2023.103318",
+        "status": 200,
+        "finalUrl": "https://www.sciencedirect.com/science/article/pii/S2214157X2300624X?via%3Dihub",
+        "title": "ScienceDirect",
+        "blockedLike": false,
+        "textSnippet": "There was a problem providing the content you requested\n\nPlease contact our support team for more information and provide the details below.\n\nReference number: 9d7c6dddee4da940\nIP Address: 35.21.248.153\nUser Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chro"
+      },
+      {
+        "url": "https://doi.org/10.1016/j.nucengdes.2023.112481",
+        "status": 200,
+        "finalUrl": "https://www.sciencedirect.com/science/article/pii/S0029549323003308?via%3Dihub",
+        "title": "ScienceDirect",
+        "blockedLike": false,
+        "textSnippet": "There was a problem providing the content you requested\n\nPlease contact our support team for more information and provide the details below.\n\nReference number: 9d7c6de898a3a940\nIP Address: 35.21.248.153\nUser Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chro"
+      },
+      {
+        "url": "https://doi.org/10.1007/s40042-021-00116-z",
+        "status": 200,
+        "finalUrl": "https://link.springer.com/article/10.1007/s40042-021-00116-z",
+        "title": "Numerical study of Faraday-type nitrogen plasma magnetohydrodynamic generator | Journal of the Korean Physical Society | Springer Nature Link",
+        "blockedLike": false,
+        "textSnippet": "Your privacy, your choice\n\nWe use essential cookies to make sure the site can function. We also use optional cookies for advertising, personalisation of content, usage analysis, and social media, as well as to allow video information to be shared for both marketing, analytics and editorial purposes."
+      },
+      {
+        "url": "https://doi.org/10.1002/er.5100",
+        "status": 200,
+        "finalUrl": "https://onlinelibrary.wiley.com/doi/10.1002/er.5100",
+        "title": "The variable analysis of an MHD generator with electrical output of 10 kW for application to bi‐plant method electricity generation - Lee - 2020 - International Journal of Energy Research - Wiley Online Library",
+        "blockedLike": false,
+        "textSnippet": "This website utilizes technologies such as cookies to enable essential site functionality, as well as for analytics, personalization, and targeted advertising. To learn more, view the following link: Privacy Policy\nSkip to Article Content\nSkip to Article Information\nMichigan State University Librari"
+      },
+      {
+        "url": "https://doi.org/10.1016/j.net.2018.12.008",
+        "status": 200,
+        "finalUrl": "https://www.sciencedirect.com/science/article/pii/S1738573318306831?via%3Dihub",
+        "title": "ScienceDirect",
+        "blockedLike": false,
+        "textSnippet": "There was a problem providing the content you requested\n\nPlease contact our support team for more information and provide the details below.\n\nReference number: 9d7c6e176adfa940\nIP Address: 35.21.248.153\nUser Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chro"
+      },
+      {
+        "url": "https://doi.org/10.1002/er.4080",
+        "status": 403,
+        "finalUrl": "https://onlinelibrary.wiley.com/doi/10.1002/er.4080",
+        "title": "Just a moment...",
+        "blockedLike": true,
+        "textSnippet": "onlinelibrary.wiley.com\nPerforming security verification\n\nThis website uses a security service to protect against malicious bots. This page is displayed while the website verifies you are not a bot.\n\nRay ID: 9d7c6e21cee6d94d\nPerformance and Security by Cloudflare\nPrivacy"
+      },
+      {
+        "url": "https://doi.org/10.1016/j.net.2018.04.010",
+        "status": 200,
+        "finalUrl": "https://www.sciencedirect.com/science/article/pii/S1738573318301426?via%3Dihub",
+        "title": "ScienceDirect",
+        "blockedLike": false,
+        "textSnippet": "There was a problem providing the content you requested\n\nPlease contact our support team for more information and provide the details below.\n\nReference number: 9d7c6e2d1fbca940\nIP Address: 35.21.248.153\nUser Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chro"
+      },
+      {
+        "url": "https://doi.org/10.1016/j.anucene.2018.01.049",
+        "status": 200,
+        "finalUrl": "https://www.sciencedirect.com/science/article/pii/S0306454918300525?via%3Dihub",
+        "title": "ScienceDirect",
+        "blockedLike": false,
+        "textSnippet": "There was a problem providing the content you requested\n\nPlease contact our support team for more information and provide the details below.\n\nReference number: 9d7c6e37a8e4a940\nIP Address: 35.21.248.153\nUser Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chro"
+      },
+      {
+        "url": "https://doi.org/10.1016/j.anucene.2017.05.054",
+        "status": 200,
+        "finalUrl": "https://www.sciencedirect.com/science/article/pii/S0306454916305229?via%3Dihub",
+        "title": "ScienceDirect",
+        "blockedLike": false,
+        "textSnippet": "There was a problem providing the content you requested\n\nPlease contact our support team for more information and provide the details below.\n\nReference number: 9d7c6e425ac0a940\nIP Address: 35.21.248.153\nUser Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chro"
+      },
+      {
+        "url": "https://doi.org/10.22364/mhd.53.2.23",
+        "status": 200,
+        "finalUrl": "http://mhd.sal.lv/contents/2017/2/MG.53.2.23.R.html",
+        "title": "Magnetohydrodynamics, Numerical investigation and comparison of the rectangular, cylindrical, and helical-type dc electromagnetic pumps",
+        "blockedLike": false,
+        "textSnippet": "\t\n\n\nMain Page\nAbout the Journal\nSubscription information\n\nCurrent Issue\nTables of Contents\nAuthor Index\nSearch\n\nAuthors\nReferees\n\n\nElectronic edition ISSN 1574-0579\n\n\n\t\nNumerical investigation and comparison of the rectangular, cylindrical, and helical-type dc electromagnetic pumps\n\nGeun Hyeong Lee "
+      }
+    ],
+    "pdfChecks": [
+      {
+        "index": 1,
+        "href": "http://127.0.0.1:4140/assets/pdf/publications/Lee13.pdf",
+        "hasDownload": true,
+        "target": "_blank",
+        "status": {
+          "url": "http://127.0.0.1:4140/assets/pdf/publications/Lee13.pdf",
+          "status": 200,
+          "ok": true,
+          "finalUrl": "http://127.0.0.1:4140/assets/pdf/publications/Lee13.pdf"
+        },
+        "clickDownload": {
+          "triggered": true,
+          "failure": null,
+          "suggestedFilename": "Lee13.pdf"
+        }
+      },
+      {
+        "index": 2,
+        "href": "http://127.0.0.1:4140/assets/pdf/publications/Lee12.pdf",
+        "hasDownload": true,
+        "target": "_blank",
+        "status": {
+          "url": "http://127.0.0.1:4140/assets/pdf/publications/Lee12.pdf",
+          "status": 200,
+          "ok": true,
+          "finalUrl": "http://127.0.0.1:4140/assets/pdf/publications/Lee12.pdf"
+        },
+        "clickDownload": {
+          "triggered": true,
+          "failure": null,
+          "suggestedFilename": "Lee12.pdf"
+        }
+      },
+      {
+        "index": 3,
+        "href": "http://127.0.0.1:4140/assets/pdf/publications/Lee11.pdf",
+        "hasDownload": true,
+        "target": "_blank",
+        "status": {
+          "url": "http://127.0.0.1:4140/assets/pdf/publications/Lee11.pdf",
+          "status": 200,
+          "ok": true,
+          "finalUrl": "http://127.0.0.1:4140/assets/pdf/publications/Lee11.pdf"
+        },
+        "clickDownload": {
+          "triggered": true,
+          "failure": null,
+          "suggestedFilename": "Lee11.pdf"
+        }
+      },
+      {
+        "index": 4,
+        "href": "http://127.0.0.1:4140/assets/pdf/publications/Lee10.pdf",
+        "hasDownload": true,
+        "target": "_blank",
+        "status": {
+          "url": "http://127.0.0.1:4140/assets/pdf/publications/Lee10.pdf",
+          "status": 200,
+          "ok": true,
+          "finalUrl": "http://127.0.0.1:4140/assets/pdf/publications/Lee10.pdf"
+        },
+        "clickDownload": {
+          "triggered": true,
+          "failure": null,
+          "suggestedFilename": "Lee10.pdf"
+        }
+      },
+      {
+        "index": 5,
+        "href": "http://127.0.0.1:4140/assets/pdf/publications/Lee9.pdf",
+        "hasDownload": true,
+        "target": "_blank",
+        "status": {
+          "url": "http://127.0.0.1:4140/assets/pdf/publications/Lee9.pdf",
+          "status": 200,
+          "ok": true,
+          "finalUrl": "http://127.0.0.1:4140/assets/pdf/publications/Lee9.pdf"
+        },
+        "clickDownload": {
+          "triggered": true,
+          "failure": null,
+          "suggestedFilename": "Lee9.pdf"
+        }
+      },
+      {
+        "index": 6,
+        "href": "http://127.0.0.1:4140/assets/pdf/publications/Lee8.pdf",
+        "hasDownload": true,
+        "target": "_blank",
+        "status": {
+          "url": "http://127.0.0.1:4140/assets/pdf/publications/Lee8.pdf",
+          "status": 200,
+          "ok": true,
+          "finalUrl": "http://127.0.0.1:4140/assets/pdf/publications/Lee8.pdf"
+        },
+        "clickDownload": {
+          "triggered": true,
+          "failure": null,
+          "suggestedFilename": "Lee8.pdf"
+        }
+      },
+      {
+        "index": 7,
+        "href": "http://127.0.0.1:4140/assets/pdf/publications/Lee7.pdf",
+        "hasDownload": true,
+        "target": "_blank",
+        "status": {
+          "url": "http://127.0.0.1:4140/assets/pdf/publications/Lee7.pdf",
+          "status": 200,
+          "ok": true,
+          "finalUrl": "http://127.0.0.1:4140/assets/pdf/publications/Lee7.pdf"
+        },
+        "clickDownload": {
+          "triggered": true,
+          "failure": null,
+          "suggestedFilename": "Lee7.pdf"
+        }
+      },
+      {
+        "index": 8,
+        "href": "http://127.0.0.1:4140/assets/pdf/publications/Lee6.pdf",
+        "hasDownload": true,
+        "target": "_blank",
+        "status": {
+          "url": "http://127.0.0.1:4140/assets/pdf/publications/Lee6.pdf",
+          "status": 200,
+          "ok": true,
+          "finalUrl": "http://127.0.0.1:4140/assets/pdf/publications/Lee6.pdf"
+        },
+        "clickDownload": {
+          "triggered": true,
+          "failure": null,
+          "suggestedFilename": "Lee6.pdf"
+        }
+      },
+      {
+        "index": 9,
+        "href": "http://127.0.0.1:4140/assets/pdf/publications/Lee5.pdf",
+        "hasDownload": true,
+        "target": "_blank",
+        "status": {
+          "url": "http://127.0.0.1:4140/assets/pdf/publications/Lee5.pdf",
+          "status": 200,
+          "ok": true,
+          "finalUrl": "http://127.0.0.1:4140/assets/pdf/publications/Lee5.pdf"
+        },
+        "clickDownload": {
+          "triggered": true,
+          "failure": null,
+          "suggestedFilename": "Lee5.pdf"
+        }
+      },
+      {
+        "index": 10,
+        "href": "http://127.0.0.1:4140/assets/pdf/publications/Lee4.pdf",
+        "hasDownload": true,
+        "target": "_blank",
+        "status": {
+          "url": "http://127.0.0.1:4140/assets/pdf/publications/Lee4.pdf",
+          "status": 200,
+          "ok": true,
+          "finalUrl": "http://127.0.0.1:4140/assets/pdf/publications/Lee4.pdf"
+        },
+        "clickDownload": {
+          "triggered": true,
+          "failure": null,
+          "suggestedFilename": "Lee4.pdf"
+        }
+      },
+      {
+        "index": 11,
+        "href": "http://127.0.0.1:4140/assets/pdf/publications/Lee3.pdf",
+        "hasDownload": true,
+        "target": "_blank",
+        "status": {
+          "url": "http://127.0.0.1:4140/assets/pdf/publications/Lee3.pdf",
+          "status": 200,
+          "ok": true,
+          "finalUrl": "http://127.0.0.1:4140/assets/pdf/publications/Lee3.pdf"
+        },
+        "clickDownload": {
+          "triggered": true,
+          "failure": null,
+          "suggestedFilename": "Lee3.pdf"
+        }
+      },
+      {
+        "index": 12,
+        "href": "http://127.0.0.1:4140/assets/pdf/publications/Lee2.pdf",
+        "hasDownload": true,
+        "target": "_blank",
+        "status": {
+          "url": "http://127.0.0.1:4140/assets/pdf/publications/Lee2.pdf",
+          "status": 200,
+          "ok": true,
+          "finalUrl": "http://127.0.0.1:4140/assets/pdf/publications/Lee2.pdf"
+        },
+        "clickDownload": {
+          "triggered": true,
+          "failure": null,
+          "suggestedFilename": "Lee2.pdf"
+        }
+      },
+      {
+        "index": 13,
+        "href": "http://127.0.0.1:4140/assets/pdf/publications/Lee1.pdf",
+        "hasDownload": true,
+        "target": "_blank",
+        "status": {
+          "url": "http://127.0.0.1:4140/assets/pdf/publications/Lee1.pdf",
+          "status": 200,
+          "ok": true,
+          "finalUrl": "http://127.0.0.1:4140/assets/pdf/publications/Lee1.pdf"
+        },
+        "clickDownload": {
+          "triggered": true,
+          "failure": null,
+          "suggestedFilename": "Lee1.pdf"
+        }
+      }
+    ],
+    "citeChecks": [
+      {
+        "index": 1,
+        "opened": true,
+        "contentLength": 299
+      },
+      {
+        "index": 2,
+        "opened": true,
+        "contentLength": 360
+      },
+      {
+        "index": 3,
+        "opened": true,
+        "contentLength": 365
+      },
+      {
+        "index": 4,
+        "opened": true,
+        "contentLength": 329
+      },
+      {
+        "index": 5,
+        "opened": true,
+        "contentLength": 373
+      },
+      {
+        "index": 6,
+        "opened": true,
+        "contentLength": 310
+      },
+      {
+        "index": 7,
+        "opened": true,
+        "contentLength": 357
+      },
+      {
+        "index": 8,
+        "opened": true,
+        "contentLength": 311
+      },
+      {
+        "index": 9,
+        "opened": true,
+        "contentLength": 336
+      },
+      {
+        "index": 10,
+        "opened": true,
+        "contentLength": 352
+      },
+      {
+        "index": 11,
+        "opened": true,
+        "contentLength": 327
+      },
+      {
+        "index": 12,
+        "opened": true,
+        "contentLength": 309
+      },
+      {
+        "index": 13,
+        "opened": true,
+        "contentLength": 322
+      }
+    ]
+  },
+  "cv": {
+    "pdfLink": "http://127.0.0.1:4140/assets/pdf/CV_GLee_260227.pdf?v=1772748408",
+    "pdfStatus": {
+      "url": "http://127.0.0.1:4140/assets/pdf/CV_GLee_260227.pdf?v=1772748408",
+      "status": 200,
+      "ok": true,
+      "finalUrl": "http://127.0.0.1:4140/assets/pdf/CV_GLee_260227.pdf?v=1772748408"
+    },
+    "clickDownload": {
+      "triggered": false,
+      "failure": "page.waitForEvent: Timeout 6000ms exceeded while waiting for event \"download\"\n=========================== logs ===========================\nwaiting for event \"download\"\n============================================================"
+    }
+  },
+  "runtimeErrors": []
+}
