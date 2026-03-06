@@ -23,20 +23,20 @@ social: true
 <li>
 <span class="what-i-do-icon">🧠</span>
 <div class="what-i-do-content">
-<strong>Design Optimization</strong><br/>Deep Learning Surrogate Model (Accelerate 3D Sim) &gt; RL Optimization
+<strong>Design Optimization</strong><br/>Deep learning surrogate model (accelerate 3D sim) → RL optimization
 </div>
 </li>
 <li>
 <span class="what-i-do-icon">⚡️</span>
 <div class="what-i-do-content">
-<strong>Multi-Physics Simulation</strong><br/>Heat Exchangers, EM Pumps & Nuclear Thermal Systems
+<strong>Multi-Physics Simulation</strong><br/>Heat exchangers, EM pumps & nuclear thermal systems
 </div>
 </li>
 <li>
 <span class="what-i-do-icon"><img src="/assets/img/icons/3d-printing-icon.png" alt="3D Printing" width="28" height="28" /></span>
 <div class="what-i-do-content">
 <strong>Fabrication & Validation</strong><br/>
-Metal 3D printing of optimized designs with experimental validation
+Metal 3D printing of optimized designs → experimental validation
 </div>
 </li>
 </ul>
