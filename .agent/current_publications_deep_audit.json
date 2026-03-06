@@ -1,0 +1,249 @@
+{
+  "baseUrl": "http://127.0.0.1:4131/",
+  "publications": {
+    "doiChecks": [
+      {
+        "url": "https://doi.org/10.1016/j.net.2025.103916",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "https://doi.org/10.1080/00223131.2025.2464742",
+        "status": 403,
+        "ok": false
+      },
+      {
+        "url": "https://doi.org/10.1016/j.icheatmasstransfer.2024.107991",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "https://doi.org/10.1016/j.csite.2023.103318",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "https://doi.org/10.1016/j.nucengdes.2023.112481",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "https://doi.org/10.1007/s40042-021-00116-z",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "https://doi.org/10.1002/er.5100",
+        "status": 403,
+        "ok": false
+      },
+      {
+        "url": "https://doi.org/10.1016/j.net.2018.12.008",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "https://doi.org/10.1002/er.4080",
+        "status": 403,
+        "ok": false
+      },
+      {
+        "url": "https://doi.org/10.1016/j.net.2018.04.010",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "https://doi.org/10.1016/j.anucene.2018.01.049",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "https://doi.org/10.1016/j.anucene.2017.05.054",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "https://doi.org/10.22364/mhd.53.2.23",
+        "status": 200,
+        "ok": true
+      }
+    ],
+    "pdfChecks": [
+      {
+        "url": "http://127.0.0.1:4131/assets/pdf/publications/Lee13.pdf",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "http://127.0.0.1:4131/assets/pdf/publications/Lee12.pdf",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "http://127.0.0.1:4131/assets/pdf/publications/Lee11.pdf",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "http://127.0.0.1:4131/assets/pdf/publications/Lee10.pdf",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "http://127.0.0.1:4131/assets/pdf/publications/Lee9.pdf",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "http://127.0.0.1:4131/assets/pdf/publications/Lee8.pdf",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "http://127.0.0.1:4131/assets/pdf/publications/Lee7.pdf",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "http://127.0.0.1:4131/assets/pdf/publications/Lee6.pdf",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "http://127.0.0.1:4131/assets/pdf/publications/Lee5.pdf",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "http://127.0.0.1:4131/assets/pdf/publications/Lee4.pdf",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "http://127.0.0.1:4131/assets/pdf/publications/Lee3.pdf",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "http://127.0.0.1:4131/assets/pdf/publications/Lee2.pdf",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "http://127.0.0.1:4131/assets/pdf/publications/Lee1.pdf",
+        "status": 200,
+        "ok": true
+      }
+    ],
+    "citeButtonCount": 13,
+    "citeChecks": [
+      {
+        "index": 1,
+        "opened": true,
+        "contentLength": 299
+      },
+      {
+        "index": 2,
+        "opened": true,
+        "contentLength": 360
+      },
+      {
+        "index": 3,
+        "opened": true,
+        "contentLength": 365
+      },
+      {
+        "index": 4,
+        "opened": true,
+        "contentLength": 329
+      },
+      {
+        "index": 5,
+        "opened": true,
+        "contentLength": 373
+      },
+      {
+        "index": 6,
+        "opened": true,
+        "contentLength": 310
+      },
+      {
+        "index": 7,
+        "opened": true,
+        "contentLength": 357
+      },
+      {
+        "index": 8,
+        "opened": true,
+        "contentLength": 311
+      },
+      {
+        "index": 9,
+        "opened": true,
+        "contentLength": 336
+      },
+      {
+        "index": 10,
+        "opened": true,
+        "contentLength": 352
+      },
+      {
+        "index": 11,
+        "opened": true,
+        "contentLength": 327
+      },
+      {
+        "index": 12,
+        "opened": true,
+        "contentLength": 309
+      },
+      {
+        "index": 13,
+        "opened": true,
+        "contentLength": 322
+      }
+    ]
+  },
+  "home": {
+    "socialChecks": [
+      {
+        "url": "https://frib.msu.edu/",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "https://msu.edu/",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "https://orcid.org/0000-0003-3141-4663",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "https://www.researchgate.net/profile/Geunhyeong-Lee-3/",
+        "status": 403,
+        "ok": false
+      },
+      {
+        "url": "https://scholar.google.com/citations?user=YPq9l98AAAAJ",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "https://www.scopus.com/authid/detail.uri?authorId=56779304800",
+        "status": 403,
+        "ok": false
+      }
+    ]
+  },
+  "cv": {
+    "pdfCheck": {
+      "url": "http://127.0.0.1:4131/assets/pdf/CV_GLee_260227.pdf?v=1772747129",
+      "status": 200,
+      "ok": true
+    }
+  },
+  "runtimeErrors": []
+}

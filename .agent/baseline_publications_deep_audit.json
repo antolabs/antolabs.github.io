@@ -1,0 +1,102 @@
+{
+  "baseUrl": "http://127.0.0.1:4132/",
+  "publications": {
+    "doiChecks": [
+      {
+        "url": "https://doi.org/10.1016/j.net.2025.103916",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "https://doi.org/10.1080/00223131.2025.2464742",
+        "status": 403,
+        "ok": false
+      },
+      {
+        "url": "https://doi.org/10.1016/j.icheatmasstransfer.2024.107991",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "https://doi.org/10.1016/j.csite.2023.103318",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "https://doi.org/10.1016/j.nucengdes.2023.112481",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "https://doi.org/10.1007/s40042-021-00116-z",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "https://doi.org/10.1002/er.5100",
+        "status": 403,
+        "ok": false
+      },
+      {
+        "url": "https://doi.org/10.1016/j.net.2018.12.008",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "https://doi.org/10.1002/er.4080",
+        "status": 403,
+        "ok": false
+      },
+      {
+        "url": "https://doi.org/10.1016/j.net.2018.04.010",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "https://doi.org/10.1016/j.anucene.2018.01.049",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "https://doi.org/10.1016/j.anucene.2017.05.054",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "https://doi.org/10.22364/mhd.53.2.23",
+        "status": 200,
+        "ok": true
+      }
+    ],
+    "pdfChecks": [],
+    "citeButtonCount": 0,
+    "citeChecks": []
+  },
+  "home": {
+    "socialChecks": [
+      {
+        "url": "https://frib.msu.edu/",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "https://www.researchgate.net/profile/Geunhyeong-Lee-3/",
+        "status": 403,
+        "ok": false
+      },
+      {
+        "url": "https://scholar.google.com/citations?user=YPq9l98AAAAJ",
+        "status": 200,
+        "ok": true
+      }
+    ]
+  },
+  "cv": {
+    "pdfCheck": {
+      "url": "http://127.0.0.1:4132/assets/pdf/CV_GLee.pdf",
+      "status": 200,
+      "ok": true
+    }
+  },
+  "runtimeErrors": []
+}
