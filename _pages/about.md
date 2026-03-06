@@ -14,7 +14,8 @@ nav_order: 1
 social: true
 ---
 
-<p class="about-subheadline">AI-Driven Optimization to Realization: Thermal-Fluid Systems</p>
+<p class="about-subheadline"><strong>AI Optimization to Fabrication: Thermal-Fluid Systems</strong></p>
+<p class="about-subheadline-sub">Applied to Nuclear Systems</p>
 
 <div class="what-i-do-section">
 <h4>What I Do</h4>
@@ -22,22 +23,20 @@ social: true
 <li>
 <span class="what-i-do-icon">🧠</span>
 <div class="what-i-do-content">
-<strong>AI-Driven Optimization</strong><br/>
-Deep RL, Genetic Algorithms & Surrogate Modeling for system design.
+<strong>Design Optimization</strong><br/>Deep Learning Surrogate Model (Accelerate 3D Sim) &gt; RL Optimization
 </div>
 </li>
 <li>
 <span class="what-i-do-icon">⚡️</span>
 <div class="what-i-do-content">
-<strong>Multi-Physics Simulation</strong><br/>
-Heat Exchangers, EM Pumps & thermal management engineering.
+<strong>Multi-Physics Simulation</strong><br/>Heat Exchangers, EM Pumps & Nuclear Thermal Systems
 </div>
 </li>
 <li>
 <span class="what-i-do-icon"><img src="/assets/img/icons/3d-printing-icon.png" alt="3D Printing" width="28" height="28" /></span>
 <div class="what-i-do-content">
-<strong>Metal Additive Manufacturing</strong><br/>
-Fabrication & validation of AI-designed components via metal 3D printing.
+<strong>Fabrication & Validation</strong><br/>
+Metal 3D printing of optimized designs with experimental validation
 </div>
 </li>
 </ul>
