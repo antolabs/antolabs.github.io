@@ -11,6 +11,15 @@ h1, h2, h3 {
   text-transform: none !important;
 }
 
+/* Navbar scroll shadow */
+#navbar {
+  transition: box-shadow 0.3s ease;
+}
+
+#navbar.scrolled {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
 /* About page profile image alignment */
 .post article .profile.float-right {
   position: relative;

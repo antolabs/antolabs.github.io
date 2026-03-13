@@ -1,11 +1,17 @@
 <div class="col">
   <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}" style="text-decoration: none;">
-    <div class="card h-100 hoverable" style="border: 1px solid var(--global-divider-color);">
-      <div class="card-body" style="padding: 0.75rem;">
+    <div class="card h-100" style="
+      border: 1px solid var(--global-divider-color);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      overflow: hidden;
+    " onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 24px rgba(38,152,186,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
+      <div class="card-body" style="padding: 1rem;">
         {% if project.year %}
-          <div style="color: #2698BA; font-size: 0.8rem; font-weight: 500; margin-bottom: 0.25rem;">({{ project.year }})</div>
+          <div style="color: #2698BA; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.35rem; letter-spacing: 0.02em;">({{ project.year }})</div>
         {% endif %}
-        <div style="font-size: 0.95rem; font-weight: 500; color: var(--global-text-color);">{{ project.title }}</div>
+        <div style="font-size: 0.95rem; font-weight: 600; color: var(--global-text-color); line-height: 1.4;">{{ project.title }}</div>
       </div>
     </div>
   </a>
