@@ -386,10 +386,12 @@ nav_order: 2
     .pub-card-image {
       width: 100%;
       overflow: hidden;
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      background: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
+      border-right: 1px solid transparent;
+      border-image: linear-gradient(to bottom, transparent, rgba(0,0,0,0.12), transparent) 1;
     }
 
     .pub-card-image img {
