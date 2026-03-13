@@ -17,6 +17,7 @@
 - Journal: Nuclear Science and Techniques (Accepted)
 - Impact: JCR Top 3.7% in Nuclear Science & Technology (IF: 3.8)
 - Keywords: genetic algorithm, reinforcement learning, FRIB, beam dump, optimization, thermal management
+- Abstract: The operational performance of high-power density systems, such as particle accelerators and next-generation nuclear reactors, is critically limited by the challenge of managing extreme thermal loads. To address this, we present a novel hybrid optimization framework combining a Genetic Algorithm (GA) with a Soft Actor-Critic (SAC) deep reinforcement learning agent. This framework was applied to a demanding real-world problem: redesigning the beam dump at the Facility for Rare Isotope Beams (FRIB) for a power upgrade from 20 kW to 50 kW. The resulting design, validated by 3D simulations, eliminates hazardous hot spots and achieves a highly uniform temperature distribution. This provides a robust operational margin, increasing the average power-handling capability by 72% over the current design, showcasing the framework's potential to solve complex thermal management challenges in both accelerator technology and advanced nuclear systems.
 
 ### [13] 3D-Printable DC Electromagnetic Pump (2026)
 - Title: Conceptual Design of a 3D-Printable DC Electromagnetic Pump for Additive Manufacturing
@@ -24,6 +25,7 @@
 - Journal: Nuclear Engineering and Technology, 58(1), 103916
 - DOI: https://doi.org/10.1016/j.net.2025.103916
 - Keywords: electromagnetic pump, 3D printing, additive manufacturing, liquid metal
+- Abstract: Electromagnetic pumps offer advantages in handling high-temperature or corrosive fluids by generating flow through Lorentz forces rather than mechanical impellers. However, direct current electromagnetic pumps typically require large currents, resulting in increased manufacturing costs due to thicker copper wires. This study proposes a novel direct current electromagnetic pump for metal additive manufacturing, potentially suitable for advanced Small Modular Reactors cooled by liquid sodium and liquid-metal charge stripper systems used in accelerators. Permanent magnets arranged in opposing directions generate concentrated magnetic flux around constrained flow paths, thereby producing multiple Lorentz forces and reducing the required input current. Numerical simulations demonstrate that the proposed design achieves a developed pressure of 10.5 bar at a significantly reduced current of 330 A, corresponding to a 52% reduction in current compared to conventional helical-type pumps operating under similar conditions. Additionally, the new pump geometry simplifies fabrication by eliminating brazed joints and enabling a more compact design. These results indicate that 3D-printable electromagnetic pumps provide improvements in performance and ease of fabrication for high-pressure applications.
 
 ### [12] AI Anomaly Detection for Accelerator (2025)
 - Title: Deep learning-based anomaly detection in drift tube quadrupole operation for the KOMAC linac
@@ -31,6 +33,7 @@
 - Journal: Journal of Nuclear Science and Technology, 62(8), 709-714
 - DOI: https://doi.org/10.1080/00223131.2025.2464742
 - Keywords: deep learning, anomaly detection, LSTM, particle accelerator, KOMAC
+- Abstract: The Korea Multi-purpose Accelerator Complex linear accelerator encompasses a Drift Tube LINAC (DTL) structure for high-frequency beam bunches accelerated by a radio frequency quadrupole. The existing anomaly detection system triggers shutdown when anomalies are detected. This study aims to detect anomalies to prevent unnecessary shutdowns through pre-adjustments. A long short-term memory (LSTM) autoencoder model is employed to detect anomalies in DTQ magnets. The LSTM autoencoder offered a more adaptive and proactive detection model than conventional threshold-based methods. The results show that voltage fault events can be detected range from 30.7 to 286.6 minutes before they may cause a breakdown, enhancing device maintenance and performance through proactive prognostication of impending failures.
 
 ### [11] Deep Reinforcement Learning Heat Exchanger Optimization (2024)
 - Title: Design optimization of heat exchanger using deep reinforcement learning
@@ -39,6 +42,7 @@
 - DOI: https://doi.org/10.1016/j.icheatmasstransfer.2024.107991
 - Impact: JCR Top 5.1% in Mechanics (IF: 6.4)
 - Keywords: deep reinforcement learning, topology optimization, heat exchanger, experimental validation
+- Abstract: A micronuclear reactor is currently being developed using 3D printing technology, with a focus on refining the design of its heat exchanger. This paper presents a novel approach for the topology optimization of heat exchangers using initial designs generated via deep reinforcement learning (DRL). A printed circuit heat exchanger (PCHE) served as the target for this optimization. Extensive simulations demonstrated that the DRL-assisted optimization method enhanced the heat exchange efficiency by 14.8% compared with that of conventional topology-optimized PCHEs. The optimized heat exchanger was fabricated using 3D printing, and its feasibility was confirmed by comparison with simulation data.
 
 ### [10] PCHE Dual-Fluid Topology Optimization (2023)
 - Title: Dual-fluid Topology Optimization of Printed-circuit Heat Exchanger with Low-pumping-power Design
@@ -47,6 +51,7 @@
 - DOI: https://doi.org/10.1016/j.csite.2023.103318
 - Impact: JCR Top 5.8% in Thermodynamics (IF: 6.4)
 - Keywords: topology optimization, PCHE, printed-circuit heat exchanger, thermal design
+- Abstract: This study proposes a novel design for a printed-circuit heat exchanger (PCHE) using a dual-fluid topology optimization method. Three distinct physical domains are defined: two design domains with density fields of hot and cold fluids, and a thermal conduction domain placed between both fluid fields. The topology-optimized PCHE showed a 66% higher heat transfer rate compared to the conventional PCHE under identical pumping-power conditions.
 
 ### [9] RAON Lithium Film Electromagnetic Thruster (2023)
 - Title: Experimental characterization of the flowline of a lithium film formed using an electromagnetic thruster for a RAON prototype charge stripper
@@ -54,6 +59,7 @@
 - Journal: Nuclear Engineering and Design, 412, 112481
 - DOI: https://doi.org/10.1016/j.nucengdes.2023.112481
 - Keywords: electromagnetic pump, lithium film, RAON, charge stripper, heavy ion accelerator
+- Abstract: This paper describes the variable optimization of a lithium charge-stripper device and experimental characterization of lithium film formation using a magnetohydrodynamic liquid metal circulation system. The newly-constructed electromagnetic thruster reduced nominal input current by 57% and weight to 6% compared to the existing one. The formation of a liquid lithium thin film with a thickness of 22 µm required to obtain the 79+ charge state of uranium was verified at an input current of 107 A.
 
 ### [8] MHD Generator Numerical Study (2021)
 - Title: Numerical study of Faraday-type nitrogen plasma magnetohydrodynamic generator
@@ -61,6 +67,7 @@
 - Journal: Journal of the Korean Physical Society, 78(7), 600-606
 - DOI: https://doi.org/10.1007/s40042-021-00116-z
 - Keywords: MHD generator, plasma, magnetohydrodynamics, Faraday type
+- Abstract: The variables of a magnetohydrodynamic (MHD) generator were analyzed for the application of a cogeneration system in a coal-fired power station. The electric field, velocity, and magnetic flux density of the MHD generator were analyzed with nitrogen plasma at approximately 3000 K. A de Laval nozzle was adopted to increase the velocity. Power generation was derived through the geometrical size and magnetic flux density of the prototype Faraday-type nitrogen plasma MHD generator.
 
 ### [7] MHD Generator 10kW Design (2020)
 - Title: The variable analysis of an MHD generator with electrical output of 10 kW for application to bi-plant method electricity generation
@@ -69,6 +76,7 @@
 - DOI: https://doi.org/10.1002/er.5100
 - Impact: JCR Top 1.5% in Nuclear Science & Technology (IF: 5.2)
 - Keywords: MHD generator, electricity generation, bi-plant method
+- Abstract: Magnetohydrodynamic (MHD) generators can be used to increase the total efficiencies of fossil power plants by adopting a bi-plant design. An MHD generator with an electric output of 10 kW is numerically analyzed for application to bi-plant method electricity generation. An electrically conductive plasma flue gas with a high temperature of approximately 3000 K was considered. The power was proportional to the square of magnetic flux density, whereas velocity and power density were constant.
 
 ### [6] MHD Circulation Optimization (2019)
 - Title: Mathematical approach for optimization of magnetohydrodynamic circulation system
@@ -76,6 +84,7 @@
 - Journal: Nuclear Engineering and Technology, 51(3), 654-664
 - DOI: https://doi.org/10.1016/j.net.2018.12.008
 - Keywords: MHD optimization, liquid metal circulation, nuclear reactor
+- Abstract: The geometrical and electromagnetic variables of a rectangular-type MHD circulation system are optimized for the active decay heat removal system of a prototype Gen-IV sodium fast reactor. The MHD equations are solved to find the minimum input current satisfying the nominal developed pressure and flow rate. The optimization shows that the system requires a current of 3976 A and a magnetic flux density of 0.037 T.
 
 ### [5] MHD Decay Heat Removal (2018)
 - Title: Magnetohydrodynamics approach for active decay heat removal system in future generation IV reactor
@@ -84,6 +93,7 @@
 - DOI: https://doi.org/10.1002/er.4080
 - Impact: JCR Top 1.5% in Nuclear Science & Technology (IF: 3.3)
 - Keywords: decay heat removal, Generation IV reactor, passive safety, MHD
+- Abstract: In this work, a helical-type magnetohydrodynamics transportation system for the active decay heat removal system of a prototype Gen-IV sodium fast reactor is suggested. The developed pressure and flow rate of the helical-type MHD system are numerically calculated by solving the MHD equations considering the geometrical structure and boundary conditions of the active decay-heat-removal system.
 
 ### [4] Electromagnetic Pump Design Optimization (2018)
 - Title: Numerical analysis of the electromagnetic force for design optimization of a rectangular direct current electromagnetic pump
@@ -91,6 +101,7 @@
 - Journal: Nuclear Engineering and Technology, 50(6), 869-876
 - DOI: https://doi.org/10.1016/j.net.2018.04.010
 - Keywords: electromagnetic pump, DC EMP, liquid sodium, design optimization
+- Abstract: The force of a direct current (DC) electromagnetic pump used to transport liquid sodium is analyzed numerically for the design optimization of the pump. The Lorentz force is generated as a result of the interaction between the distributions of the current and magnetic fields.
 
 ### [3] MHD Channel Analysis for GenIV Reactor (2018)
 - Title: Magnetic-field analysis of an MHD channel in a liquid-metal circulation system of a prototype GenIV sodium fast reactor
@@ -98,6 +109,7 @@
 - Journal: Annals of Nuclear Energy, 115, 343-351
 - DOI: https://doi.org/10.1016/j.anucene.2018.01.049
 - Keywords: MHD channel, sodium fast reactor, Generation IV, liquid metal
+- Abstract: A helical-type direct current (DC) electromagnetic pump with a developed pressure of 2 kPa was designed and optimized for a liquid-metal circulation system of a prototype GenIV sodium fast reactor, considering the mechanical and spatial restrictions.
 
 ### [2] Sodium-CO2 Reaction EMP (2017)
 - Title: Design analysis of DC electromagnetic pump for liquid sodium–CO2 reaction experimental characterization
@@ -105,6 +117,7 @@
 - Journal: Annals of Nuclear Energy, 109, 490-497
 - DOI: https://doi.org/10.1016/j.anucene.2017.05.054
 - Keywords: electromagnetic pump, sodium-CO2 reaction, nuclear safety
+- Abstract: A DC electromagnetic pump with a rectangular channel was optimally designed and analyzed for liquid sodium transport in a sodium-CO2 reaction experimental facility using both the equivalent circuit method and numerical analysis via the Lorentz force.
 
 ### [1] EMP Type Comparison Study (2017)
 - Title: Numerical investigation and comparison of the rectangular, cylindrical, and helical-type DC electromagnetic pumps
@@ -112,6 +125,7 @@
 - Journal: Magnetohydrodynamics, 53(2), 429-438
 - DOI: https://doi.org/10.22364/mhd.53.2.23
 - Keywords: electromagnetic pump comparison, rectangular EMP, cylindrical EMP, helical EMP
+- Abstract: Rectangular-, cylindrical-, and helical-type DC electromagnetic pumps with a low flow rate of 3 L/min for liquid sodium were numerically investigated and compared. The developed pressure and magnetic flux density were analyzed under identical hydrodynamic conditions, despite the more or less complex geometry.
 
 ## Citation Information
 All publications are available with BibTeX, RIS, and plain text citations at https://geunhyeong.com/publications/
