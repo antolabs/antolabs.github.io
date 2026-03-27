@@ -1,29 +1,43 @@
 <style>
-/* About subheadline styling */
-.about-subheadline {
-  font-size: 1.15rem;
-  color: var(--global-text-color);
-  margin-bottom: 0.3rem;
+/* About tagline */
+.about-tagline {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--global-theme-color);
+  margin-bottom: 1.5rem;
   letter-spacing: 0.01em;
-}
-.about-subheadline strong {
-  font-weight: 700;
-  color: inherit;
-}
-.about-subheadline-sub {
-  font-size: 1rem;
-  color: var(--global-text-color);
-  margin-top: -0.12rem;
-  margin-bottom: 0.1rem;
-  letter-spacing: 0.01em;
-  opacity: 0.9;
+  line-height: 1.4;
 }
 
-/* What I Do Section - protected from PurgeCSS */
+/* Vision Section - quote style */
+.vision-section {
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 0 0.5rem 1.25rem;
+  border-left: 3px solid var(--global-theme-color);
+}
+.vision-section h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--global-theme-color);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.vision-section p {
+  margin: 0;
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--global-text-color);
+  opacity: 0.85;
+}
+
+/* What I Do Section */
 .what-i-do-section {
-  margin-top: 2rem;
+  margin-top: 0;
   margin-bottom: 2rem;
-  padding: 1.5rem;
+  padding: 1.25rem 1.5rem;
   background-color: var(--global-code-bg-color);
   border-radius: 12px;
   border-left: 4px solid var(--global-theme-color);
@@ -75,12 +89,37 @@
   font-weight: 600;
 }
 
-/* Profile image alignment - align bottom with What I Do section (desktop only) */
+/* Desktop: profile image alignment */
 @media (min-width: 768px) {
   .profile.float-right {
     position: relative;
     top: -4rem !important;
     margin-bottom: -4rem !important;
+  }
+}
+
+/* Mobile: responsive adjustments */
+@media (max-width: 767px) {
+  .about-tagline {
+    font-size: 1.05rem;
+    text-align: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .vision-section {
+    padding: 0.5rem 0 0.5rem 1rem;
+  }
+
+  .vision-section p {
+    font-size: 0.9rem;
+  }
+
+  .what-i-do-section {
+    padding: 1rem 1.15rem;
+  }
+
+  .what-i-do-content {
+    font-size: 0.9rem;
   }
 }
 </style>

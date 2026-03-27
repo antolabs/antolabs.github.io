@@ -6,15 +6,17 @@ module.exports = {
   // Safelist to preserve classes that might be stripped incorrectly
   safelist: {
     standard: [
-      // What I Do section styles on About page
+      // About page styles
+      "about-tagline",
+      "vision-section",
       "what-i-do-section",
       "what-i-do-list",
       "what-i-do-icon",
       "what-i-do-content",
     ],
     // Deep option matches classes and their children
-    deep: [/what-i-do/],
+    deep: [/what-i-do/, /vision-/],
     // Greedy option to preserve all variations
-    greedy: [/what-i-do/],
+    greedy: [/what-i-do/, /vision-/],
   },
 };
