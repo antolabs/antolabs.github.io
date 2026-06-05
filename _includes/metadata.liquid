@@ -34,6 +34,8 @@
     {% else %}
       {{ page.title }} | {{ title }}
     {% endif %}
+  {% elsif page.url == '/' %}
+    {{ title }} | Scientist at FRIB
   {% else %}
     {{ title }}
   {% endif %}

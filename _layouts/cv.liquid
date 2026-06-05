@@ -7,7 +7,6 @@ layout: default
       <h1 class="post-title">
         {{ page.title }}
         {% if page.cv_pdf %}
-        {% if page.cv_pdf %}
           <a
             {% if page.cv_pdf contains '://' %}
               href="{{ page.cv_pdf }}"
@@ -20,7 +19,6 @@ layout: default
           >
             <i class="fa-solid fa-file-pdf"></i>
           </a>
-        {% endif %}
         {% endif %}
       </h1>
       {% if page.cv_pdf contains 'CV_GLee_' %}

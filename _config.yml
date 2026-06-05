@@ -4,7 +4,7 @@
 
 title: Geunhyeong Lee # the website title (if blank, full name will be used instead)
 first_name: Geunhyeong
-middle_name: 
+middle_name:
 last_name: Lee
 
 social:
@@ -12,9 +12,9 @@ social:
   google_scholar: YPq9l98AAAAJ
   researchgate: Geunhyeong-Lee-3
 
-contact_note: >
-  Contact mail (leeg@frib.msu.edu / ghLee1129@gmail.com)
-description: > # the ">" symbol means to ignore newlines until "footer_text:"
+contact_note: >-
+  Contact mail (leeg@frib.msu.edu / ghlee1129@gmail.com)
+description: >- # folded scalar; the "-" strips the trailing newline so meta/OG tags stay clean
   Personal website of Geunhyeong Lee, a Scientist at FRIB. My research focuses on AI-driven design and additive manufacturing for nuclear engineering applications.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
@@ -22,7 +22,7 @@ keywords: Geunhyeong Lee, AI design optimization, Heat exchanger, Electromagneti
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
-url: "https://geunhyeong.com"  # the base hostname & protocol for your site
+url: "https://geunhyeong.com" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog/. Leave blank for root
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
@@ -69,7 +69,7 @@ max_width: 930px
 # see https://schema.org/docs/faq.html for more information
 serve_og_meta: true # Include Open Graph meta tags in the HTML head
 serve_schema_org: true # Include Schema.org in the HTML head
-og_image: /assets/img/og-image.jpg # The site-wide (default for all links) Open Graph preview image
+og_image: https://geunhyeong.com/assets/img/og-image.jpg # The site-wide (default for all links) Open Graph preview image (absolute URL required by OG/Twitter)
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
@@ -317,7 +317,6 @@ filtered_bibtex_keywords:
     video,
     website,
   ]
-
 
 more_authors_animation_delay: 10 # more authors are revealed on click using animation; smaller delay means faster animation
 
@@ -614,7 +613,6 @@ third_party_libraries:
       css: "https://cdn.jsdelivr.net/npm/venobox@{{version}}/dist/venobox.min.css"
       js: "https://cdn.jsdelivr.net/npm/venobox@{{version}}/dist/venobox.min.js"
     version: "2.1.8"
-
 # -----------------------------------------------------------------------------
 # Get external JSON data
 # -----------------------------------------------------------------------------

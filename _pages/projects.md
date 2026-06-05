@@ -14,8 +14,8 @@ horizontal: false
 {% if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->
   {% for category in page.display_categories %}
-  <a id="{{ category }}" href=".#{{ category }}" style="text-decoration: none;">
-    <h2 style="color: var(--global-text-color); border-bottom: 3px solid #2698BA; padding: 0.5rem 0; margin: 2rem 0 1rem 0; text-align: left; font-weight: 700; font-size: 1.4rem;">{{ category }}</h2>
+  <a id="{{ category }}" href=".#{{ category }}" class="category-anchor">
+    <h2 class="category-heading">{{ category }}</h2>
   </a>
   {% assign categorized_projects = site.projects | where: "category", category %}
   {% assign sorted_projects = categorized_projects | sort: "importance" %}
