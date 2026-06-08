@@ -192,8 +192,16 @@ html[data-theme="dark"] .vision-section p {
 
 .post article .profile.float-right {
   position: relative;
-  top: -3rem;
-  margin-bottom: -3rem;
+}
+
+/* Pull the photo up next to the title only once it floats beside the heading
+   (>=576px). On phones the photo stacks under the header, so applying a
+   negative offset there would overlap the title/subtitle. */
+@media (min-width: 576px) {
+  .post article .profile.float-right {
+    top: -3rem;
+    margin-bottom: -3rem;
+  }
 }
 
 @media (min-width: 768px) {
