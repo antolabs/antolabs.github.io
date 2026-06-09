@@ -227,20 +227,54 @@
 
   <script type="application/ld+json">
     {
-        "author":
+      "@context": "https://schema.org",
+      "@graph": [
         {
-            "@type": "Person",
-            "name": "{{ author_name }}"
+          "@type": "Person",
+          "@id": "{{ site.url }}/#person",
+          "name": "{{ author_name }}",
+          "alternateName": "이근형",
+          "givenName": "{{ site.first_name }}",
+          "familyName": "{{ site.last_name }}",
+          "jobTitle": "Scientist",
+          "url": "{{ site.url }}/",
+          "image": "{{ site.url }}/assets/img/prof_pic.jpg",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Facility for Rare Isotope Beams (FRIB)",
+            "parentOrganization": { "@type": "CollegeOrUniversity", "name": "Michigan State University" }
+          },
+          "alumniOf": { "@type": "CollegeOrUniversity", "name": "Ulsan National Institute of Science and Technology (UNIST)" },
+          "knowsAbout": ["AI-driven design optimization", "topology optimization", "surrogate modeling", "deep reinforcement learning", "Monte Carlo Tree Search", "magnetohydrodynamics", "electromagnetic pumps", "printed-circuit heat exchangers", "additive manufacturing", "small modular reactors", "high-power thermal management", "nuclear engineering"],
+          "identifier": { "@type": "PropertyValue", "propertyID": "ORCID", "value": "0000-0003-3141-4663" }{% if sameaslinks != blank %},
+          "sameAs": {{ sameaslinks | jsonify }}{% endif %}
         },
-        "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
-        "@type": "{% if is_blog_post %}BlogPosting{% else %}WebSite{% endif %}",
-        "description": "{% if page.description %}{{ page.description }}{% else if site.description %}{{ site.description }}{% endif %}",
-        "headline": "{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}",
-        {% if sameaslinks != blank %}
-        "sameAs": {{ sameaslinks | jsonify }},
-        {% endif %}
-        "name": "{{ author_name }}",
-        "@context": "https://schema.org"
+        {
+          "@type": "WebSite",
+          "@id": "{{ site.url }}/#website",
+          "url": "{{ site.url }}/",
+          "name": "{{ site.title }}",
+          "description": {{ site.description | jsonify }},
+          "publisher": { "@id": "{{ site.url }}/#person" },
+          "about": { "@id": "{{ site.url }}/#person" }
+        }{% if page.url == '/' %},
+        {
+          "@type": "ProfilePage",
+          "@id": "{{ site.url }}/#profilepage",
+          "url": "{{ site.url }}/",
+          "name": "{{ author_name }}",
+          "mainEntity": { "@id": "{{ site.url }}/#person" }
+        }{% endif %}{% if is_blog_post %},
+        {
+          "@type": "BlogPosting",
+          "@id": "{{ page.url | prepend: site.baseurl | prepend: site.url }}#article",
+          "headline": {{ page.title | jsonify }},
+          "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
+          "datePublished": "{{ page.date | date_to_xmlschema }}",
+          "author": { "@id": "{{ site.url }}/#person" },
+          "description": {% if page.description %}{{ page.description | jsonify }}{% else %}{{ site.description | jsonify }}{% endif %}
+        }{% endif %}
+      ]
     }
   </script>
 {% endif %}
