@@ -26,3 +26,6 @@ feed.xml
 
 # Never commit PowerPoint decks to this public repo (internal/working material).
 *.pptx
+
+# Local agent/IDE working files (audit artifacts contain the operator's IP/UA).
+.agent/
