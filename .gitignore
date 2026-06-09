@@ -23,3 +23,6 @@ assets/css/main.css.map
 # shadows the plugin and serves a stale sitemap/feed (dead URLs, missing pages).
 sitemap.xml
 feed.xml
+
+# Never commit PowerPoint decks to this public repo (internal/working material).
+*.pptx

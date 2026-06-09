@@ -172,6 +172,9 @@ kramdown:
 include: ["_pages", "_scripts"]
 exclude:
   - bin/
+  - CLAUDE.md
+  - References/Others/TH
+  - requirements.txt
   - CONTRIBUTING.md
   - CUSTOMIZE.md
   - Dockerfile
@@ -220,6 +223,10 @@ defaults:
       path: "assets"
     values:
       sitemap: false
+  - scope:
+      path: "References"
+    values:
+      sitemap: false # private/unlinked reference PDFs — keep out of the sitemap (not indexed)
 
 sass:
   style: compressed
