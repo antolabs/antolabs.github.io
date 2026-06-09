@@ -14,11 +14,11 @@ nav_order: 1
 social: true
 ---
 
-<p class="about-tagline">AI-Driven Design of Extreme Thermal-Fluid Systems</p>
+<p class="about-tagline">AI-Driven Design of Nuclear Thermal-Fluid Systems</p>
 
 <div class="vision-section">
 <h4>Vision</h4>
-<p>Extreme thermal-fluid systems in accelerators and reactors still rely on slow, iterative human-driven simulation. I am working to change this: my research establishes a framework where <strong>AI autonomously designs, optimizes, and validates</strong> these systems end-to-end, from <strong>physics simulation</strong> to <strong>3D-printed hardware</strong>.</p>
+<p>In nuclear reactors and accelerators, extreme heat flux and coupled multiphysics push the best designs <strong>beyond human intuition</strong>. I am developing <strong>BiSTO (Binary Surrogate-based Topology Optimization)</strong>, an AI framework that discovers these designs and proves them in a <strong>closed loop</strong> of simulation, 3D-printed fabrication, and experimental validation.</p>
 </div>
 
 <div class="what-i-do-section">
@@ -27,20 +27,20 @@ social: true
 <li>
 <span class="what-i-do-icon" aria-hidden="true">🧠</span>
 <div class="what-i-do-content">
-<strong>Design Optimization</strong><br/>Deep learning surrogates + autonomous optimization: months → hours
+<strong>Design Optimization</strong><br/>Deep learning surrogates + topology optimization
 </div>
 </li>
 <li>
 <span class="what-i-do-icon" aria-hidden="true">⚡️</span>
 <div class="what-i-do-content">
-<strong>Multi-Physics Simulation</strong><br/>Cross-validated high-fidelity analyses grounding AI in real physics
+<strong>Multi-Physics Simulation</strong><br/>High-fidelity simulation proves the performance of AI designs
 </div>
 </li>
 <li>
 <span class="what-i-do-icon" aria-hidden="true"><img src="/assets/img/icons/3d-printing-icon.png" alt="" width="28" height="28" loading="lazy" /></span>
 <div class="what-i-do-content">
 <strong>Fabrication & Validation</strong><br/>
-3D printing turns AI-optimized geometries into tested hardware
+3D printing turns AI designs into tested hardware
 </div>
 </li>
 </ul>
