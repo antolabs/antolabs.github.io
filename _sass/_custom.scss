@@ -13,6 +13,16 @@ h3 {
   text-transform: none !important;
 }
 
+/* Larger base type on big, low-density displays (typical office monitors).
+   Targets width >=1200px AND device pixel ratio <=1.25, so high-DPI laptop
+   screens (which already render text physically larger) keep the current
+   16px base. The theme is rem-based, so everything scales proportionally. */
+@media (min-width: 1200px) and (max-resolution: 1.25dppx) {
+  html {
+    font-size: 18px;
+  }
+}
+
 /* Navbar scroll shadow */
 #navbar {
   transition: box-shadow 0.3s ease;
