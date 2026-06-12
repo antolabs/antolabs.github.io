@@ -1,9 +1,9 @@
 <div class="col">
   <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}" class="project-card-link">
     <div class="card h-100 project-card">
-      <div class="card-body" style="padding: 1rem;">
+      <div class="card-body">
         {% if project.year %}
-          <div class="project-year">({{ project.year }})</div>
+          <div class="project-year">{{ project.year }}</div>
         {% endif %}
         <div class="project-title">{{ project.title }}</div>
       </div>

@@ -25,19 +25,19 @@ social: true
 <h4>What I Do</h4>
 <ul class="what-i-do-list">
 <li>
-<span class="what-i-do-icon" aria-hidden="true">🧠</span>
+<span class="what-i-do-icon" aria-hidden="true"><i class="fa-solid fa-brain"></i></span>
 <div class="what-i-do-content">
 <strong>Design Optimization</strong><br/>Deep learning surrogates + topology optimization
 </div>
 </li>
 <li>
-<span class="what-i-do-icon" aria-hidden="true">⚡️</span>
+<span class="what-i-do-icon" aria-hidden="true"><i class="fa-solid fa-bolt"></i></span>
 <div class="what-i-do-content">
 <strong>Multi-Physics Simulation</strong><br/>High-fidelity simulation proves the performance of AI designs
 </div>
 </li>
 <li>
-<span class="what-i-do-icon" aria-hidden="true"><img src="/assets/img/icons/3d-printing-icon.png" alt="" width="28" height="28" loading="lazy" /></span>
+<span class="what-i-do-icon" aria-hidden="true"><i class="fa-solid fa-cubes"></i></span>
 <div class="what-i-do-content">
 <strong>Fabrication & Validation</strong><br/>
 3D printing turns AI designs into tested hardware
