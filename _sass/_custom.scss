@@ -158,6 +158,24 @@ html[data-theme="dark"] .vision-section p {
 }
 
 /* ===========================================================================
+   CV page
+   =========================================================================== */
+
+/* Align the description bullets with the title/institution block. The theme
+   gives titles ml-1/ml-md-4 but ul.items only margin-left: 1rem with no
+   padding, so bullet markers hang left of the entry titles (ragged edge). */
+.cv ul.items {
+  margin-left: 0.25rem;
+  padding-left: 1.1rem;
+}
+
+@media (min-width: 768px) {
+  .cv ul.items {
+    margin-left: 1.5rem;
+  }
+}
+
+/* ===========================================================================
    Projects page (cards + category headings)
    =========================================================================== */
 
