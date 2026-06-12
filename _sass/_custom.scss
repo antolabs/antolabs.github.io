@@ -306,6 +306,14 @@ html[data-theme="dark"] .vision-section p {
   }
 }
 
+/* Align the date column with the section title: Bootstrap list-group-items
+   carry 1.25rem side padding, which indents the whole entry (date badge,
+   location, content) relative to the card title. Drop the horizontal inset. */
+.cv .card .list-group-item {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 /* Date badges as quiet cyan-tinted chips (the markup's danger-red class is
    dead — _base.scss already overrides it; this goes one step quieter) */
 .cv .card .list-group-item .badge {
