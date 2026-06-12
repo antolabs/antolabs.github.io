@@ -22,6 +22,13 @@ h3 {
     font-size: 18px;
   }
 
+  /* Scale the content column with the type (930px x 18/16) so the layout
+     keeps the 16px proportions: the profile photo grows with the text and
+     the hero subtitle no longer runs behind the pulled-up photo. */
+  .container {
+    max-width: 1046px;
+  }
+
   /* Keep the CV time-table date badges ("12/2023 - Present") and location
      lines on a single line: pin them to the size they render at the 16px
      base, otherwise they outgrow the fixed 75px column at 18px and collide
