@@ -98,6 +98,13 @@ html[data-theme="dark"] ::selection {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
+/* Navbar brand in the display face to match the hero name. !important counters
+   the theme's font-weight-lighter utility class on the brand markup. */
+.navbar .navbar-brand {
+  font-family: "Roboto Slab", "Roboto", serif;
+  font-weight: 500 !important;
+}
+
 /* Active nav item: weight 500 (no bold width-jump) + brand underline */
 .navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
   font-weight: 500;
@@ -401,7 +408,7 @@ html[data-theme="dark"] .projects .project-card-link:focus-visible .project-card
   border-radius: 10px;
 }
 .projects .project-year {
-  color: var(--global-text-color-light);
+  color: var(--global-theme-color);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.08em;
