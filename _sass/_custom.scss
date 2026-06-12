@@ -22,15 +22,15 @@ h3 {
     font-size: 18px;
   }
 
-  /* At 18px the CV time-table date badges ("12/2023 - Present") and locations
-     no longer fit their fixed 75px column on one line (Bootstrap badges are
-     nowrap by default) and collide with the entry titles. Let them wrap. */
+  /* Keep the CV time-table date badges ("12/2023 - Present") and location
+     lines on a single line: pin them to the size they render at the 16px
+     base, otherwise they outgrow the fixed 75px column at 18px and collide
+     with the entry titles. */
   .cv .table-cv .badge {
-    white-space: normal;
-    line-height: 1.4;
+    font-size: 12px;
   }
   .cv p.location {
-    white-space: normal;
+    font-size: 11.2px;
   }
 }
 
