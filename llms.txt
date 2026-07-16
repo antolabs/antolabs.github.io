@@ -11,10 +11,11 @@
 
 ## Publications (SCIE Journals)
 
-### [14] FRIB Beam Dump Optimization (2026) - Accepted
+### [14] FRIB Beam Dump Optimization (2026)
 - Title: Optimization of the FRIB Beam Dump: A Hybrid Genetic Algorithm and Reinforcement Learning Approach
 - Authors: Geunhyeong Lee, J. Song, R. Quispe-Abad, M. Patil, T. Kanemura
-- Journal: Nuclear Science and Techniques (Accepted)
+- Journal: Nuclear Science and Techniques, 37, 184
+- DOI: https://doi.org/10.1007/s41365-026-02020-2
 - Impact: JCR Top 1.2% in Nuclear Science & Technology (IF: 4.7)
 - Keywords: genetic algorithm, reinforcement learning, FRIB, beam dump, optimization, thermal management
 - Abstract: The operational performance of high-power density systems, such as particle accelerators and next-generation nuclear reactors, is critically limited by the challenge of managing extreme thermal loads. To address this, we present a novel hybrid optimization framework combining a Genetic Algorithm (GA) with a Soft Actor-Critic (SAC) deep reinforcement learning agent. This framework was applied to a demanding real-world problem: redesigning the beam dump at the Facility for Rare Isotope Beams (FRIB) for a power upgrade from 20 kW to 50 kW. The resulting design, validated by 3D simulations, eliminates hazardous hot spots and achieves a highly uniform temperature distribution. This provides a robust operational margin, increasing the average power-handling capability by 72% over the current design, showcasing the framework's potential to solve complex thermal management challenges in both accelerator technology and advanced nuclear systems.
