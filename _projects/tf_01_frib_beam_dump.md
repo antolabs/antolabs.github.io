@@ -59,11 +59,13 @@ The **FRIB** beam dump must be upgraded from **20 kW to 50 kW**. Heavy ion beams
 ## Publications
 
 **SCIE**
-- **G. Lee**, J. Song, R. Quispe-Abad, M. Patil, T. Kanemura, "Optimization of the FRIB Beam Dump: A Hybrid Genetic Algorithm and Reinforcement Learning Approach," *Nuclear Science and Techniques*, 37, 184, 2026. [https://doi.org/10.1007/s41365-026-02020-2](https://doi.org/10.1007/s41365-026-02020-2)
+
+- **G. Lee**, J. Song, R. Quispe-Abad, M. Patil, T. Kanemura, "Optimization of the FRIB Beam Dump: A Hybrid Genetic Algorithm and Reinforcement Learning Approach," _Nuclear Science and Techniques_, 37, 184, 2026. [https://doi.org/10.1007/s41365-026-02020-2](https://doi.org/10.1007/s41365-026-02020-2)
 
 **Conferences**
-- **G. Lee**, J. Song, M. Patil, R. Quispe-Abad, N. Bultman, T. Kanemura, "Design Improvements of a Minichannel Beam Dump Wing through AI-Driven Genetic Algorithms," *16th International Conference on Heavy Ion Accelerator Technology*, 2025.
-- **G. Lee**, J. Song, M. Patil, R. Quispe-Abad, N. Bultman, T. Kanemura, "Design Optimization of the FRIB Beam Dump through Reinforcement Learning with Genetic Algorithm," *2025 American Nuclear Society Annual Conference*, 2025.
+
+- **G. Lee**, J. Song, M. Patil, R. Quispe-Abad, N. Bultman, T. Kanemura, "Design Improvements of a Minichannel Beam Dump Wing through AI-Driven Genetic Algorithms," _16th International Conference on Heavy Ion Accelerator Technology_, 2025.
+- **G. Lee**, J. Song, M. Patil, R. Quispe-Abad, N. Bultman, T. Kanemura, "Design Optimization of the FRIB Beam Dump through Reinforcement Learning with Genetic Algorithm," _2025 American Nuclear Society Annual Conference_, 2025.
 
 ---
 
