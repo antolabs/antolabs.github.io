@@ -476,53 +476,36 @@ nav_order: 2
       margin-top: 1rem;
     }
 
-    .pub-card-content .links .btn {
-      background: var(--global-theme-color);
-      color: white !important;
-      border: none;
-      border-radius: 8px;
-      padding: 0.5rem 1.25rem;
-      font-weight: 500;
-      transition: all 0.3s ease;
+    /* Publication action buttons — quiet hairline chips (DOI / Cite / PDF) */
+    .pub-card-content .links .btn,
+    .publications ol.bibliography li .links a.btn {
+      background: transparent !important;
+      color: var(--global-text-color-light) !important;
+      border: 1px solid var(--global-divider-color) !important;
+      border-radius: 4px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: none !important;
+      transition:
+        color 0.18s ease,
+        border-color 0.18s ease,
+        background-color 0.18s ease;
     }
 
-    .pub-card-content .links .btn:hover {
-      background: var(--global-hover-color);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(181, 9, 172, 0.3);
+    .pub-card-content .links .btn:hover,
+    .publications ol.bibliography li .links a.btn:hover {
+      color: var(--global-theme-color) !important;
+      border-color: var(--global-theme-color) !important;
+      background: var(--brand-tint-bg) !important;
+      transform: none;
+      box-shadow: none !important;
     }
 
-    /* PDF Download Button Styles */
-    .btn-pdf {
-      background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%) !important;
-      color: white !important;
-      font-weight: 600;
-    }
-
-    .btn-pdf:hover {
-      background: linear-gradient(135deg, #219a52 0%, #27ae60 100%) !important;
-      box-shadow: 0 4px 12px rgba(39, 174, 96, 0.4) !important;
-    }
-
-    .btn-pdf::before {
-      content: "📄 ";
-    }
-
-    /* BibTeX Citation Button Styles */
     .btn-cite {
-      background: linear-gradient(135deg, #3498db 0%, #2980b9 100%) !important;
-      color: white !important;
-      font-weight: 600;
       cursor: pointer;
-    }
-
-    .btn-cite:hover {
-      background: linear-gradient(135deg, #2980b9 0%, #1a5276 100%) !important;
-      box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4) !important;
-    }
-
-    .btn-cite::before {
-      content: "📋 ";
     }
 
     /* Citation Modal Styles */
