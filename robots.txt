@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /References/
+
+Sitemap: https://geunhyeong.com/sitemap.xml
+
+# LLM content discovery
+Llms-txt: https://geunhyeong.com/llms.txt
