@@ -45,9 +45,7 @@
   contents:
     - name: SCIE Journal
       value: '<a href="/publications/">Total 14 (First Author 13, Corresponding Author 5)</a>'
-    - name: Under Review & In Preparation
-      value: Total 2
     - name: Journal & Conference Proceedings
-      value: Total 34 (Peer-review journal 1, Conference 33)
+      value: Total 34
     - name: Patent
       value: Total 6
