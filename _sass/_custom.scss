@@ -137,6 +137,27 @@ html[data-theme="dark"] ::selection {
   outline-offset: 2px;
 }
 
+/* Article body headings (project pages, posts) — join the design system.
+   Without this they fall through to MDB's Roboto Light 300 at 2rem, letting
+   section headings outsize the page title on mobile. The About-page eyebrow
+   labels (.vision-section h4 / .what-i-do-section h4) are excluded. */
+.post article h2,
+.post article h3 {
+  font-family: "Roboto Slab", "Roboto", serif;
+  font-weight: 500;
+}
+.post article h2 {
+  font-size: 1.55rem;
+}
+.post article h3 {
+  font-size: 1.25rem;
+}
+.post article h4:not(.vision-section h4, .what-i-do-section h4) {
+  font-family: "Roboto Slab", "Roboto", serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
 /* ===========================================================================
    About page
    =========================================================================== */

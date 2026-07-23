@@ -29,7 +29,7 @@
         - "Achieved 14.8% heat exchanger performance improvement via deep RL topology optimization; validated through metal 3D printing and thermal-fluid loop experiments."
         - "Designed flow channels for Samsung OLED susceptors using RL-based optimization models."
         - "Designed a novel 3D-printable single-body DC electromagnetic pump with 52% reduction in required input current."
-        - "Applied AI anomaly detection to the RAON accelerator for operational stability."
+        - "Applied AI anomaly detection to the KOMAC accelerator for operational stability."
 
 - title: Education
   type: time_table
