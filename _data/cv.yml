@@ -7,9 +7,10 @@
       location: East Lansing, MI, US
       year: 12/2023 - Present
       description:
-        - "Developed BiSTO, an original surrogate-based topology optimization framework for high-heat-flux cooling design."
-        - "Improved beam dump power handling by 72% with a hybrid GA + reinforcement-learning optimizer; CNN-MLP surrogate predicts thermal limits in real time (2.8% error)."
-        - "Led thermal design reviews and multi-physics validation for high-power targetry devices."
+        - "Developed BiSTO, an original binary surrogate-based topology optimization framework for cooling design of high-heat-flux beam intercepting devices."
+        - "Achieved 72% improvement in beam dump power handling through a hybrid GA-Reinforcement Learning optimization framework."
+        - "Developed a CNN-MLP surrogate model for real-time thermal limit prediction of rotating beam dumps (2.8% mean error, millisecond-scale inference)."
+        - "Led thermal design reviews for final device qualification and performed multi-physics thermal-fluid-electromagnetic simulation and validation for high-power targetry devices."
 
     - title: Postdoctoral Researcher
       institution: Korea Atomic Energy Research Institute (KAERI)
@@ -17,8 +18,9 @@
       location: Daejeon, South Korea
       year: 08/2021 - 12/2023
       description:
-        - "Improved heat exchanger performance by 14.8% via deep-RL topology optimization, validated with metal 3D printing and thermal-fluid loop experiments."
-        - "Designed a 3D-printable single-body DC electromagnetic pump (52% lower input current) and RL-optimized flow channels for Samsung OLED susceptors."
+        - "Achieved 14.8% heat exchanger performance improvement via deep RL topology optimization; validated through metal 3D printing and thermal-fluid loop experiments."
+        - "Designed flow channels for Samsung OLED susceptors using RL-based optimization models."
+        - "Designed a novel 3D-printable single-body DC electromagnetic pump with 52% reduction in required input current."
         - "Applied AI anomaly detection to the KOMAC accelerator for operational stability."
 
 - title: Education
@@ -30,9 +32,7 @@
       location: Ulsan, South Korea
       year: 03/2016 - 08/2021
       description:
-        - title: Thesis
-          contents:
-            - "Optimization of Lithium Charge Stripper through MHD Circulator Development"
+        - "Thesis: Optimization of Lithium Charge Stripper through MHD Circulator Development"
 
     - title: B.S. in Nuclear Engineering & Mechanical Engineering
       institution: Ulsan National Institute of Science and Technology (UNIST)
