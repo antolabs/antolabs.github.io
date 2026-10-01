@@ -1,141 +1,60 @@
 ---
 layout: default
 ---
-{% unless site.data.resume %}
-  <div class="post">
-    <header class="post-header">
-      <div class="cv-title-row">
-        <h1 class="post-title">{{ page.title }}</h1>
-        {% if page.cv_pdf %}
-          <a
-            {% if page.cv_pdf contains '://' %}
-              href="{{ page.cv_pdf }}"
-            {% else %}
-              href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url }}?v={{ site.time | date: '%s' }}"
-            {% endif %}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="cv-download-btn"
-          >
-            Download full CV (PDF)
-          </a>
-        {% endif %}
-      </div>
-      {% if page.cv_pdf contains 'CV_GLee_' %}
-        {% assign cv_date_raw = page.cv_pdf | remove: '.pdf' | split: '_' | last %}
-        {% assign cv_yy = cv_date_raw | slice: 0, 2 %}
-        {% assign cv_mm = cv_date_raw | slice: 2, 2 %}
-        {% assign cv_dd = cv_date_raw | slice: 4, 2 %}
-        <p class="cv-updated">Last updated: {{ cv_mm }}/{{ cv_dd }}/20{{ cv_yy }}</p>
-      {% elsif page.description %}
-        <p class="post-description">{{ page.description }}</p>
-      {% endif %}
-    </header>
+{% assign cv = site.data.cv %}
+{% assign cv_date_raw = page.cv_pdf | remove: '.pdf' | split: '_' | last %}
+{% assign cv_yy = cv_date_raw | slice: 0, 2 %}
+{% assign cv_mm = cv_date_raw | slice: 2, 2 %}
+{% assign cv_dd = cv_date_raw | slice: 4, 2 %}
+{% capture cv_date %}20{{ cv_yy }}-{{ cv_mm }}-{{ cv_dd }}{% endcapture %}
+{% assign sections = 'Experience|Education|Research output' | split: '|' %}
+{% assign section_ids = 'appointments|education|publications' | split: '|' %}
 
-    <article>
-      <div class="cv">
-        {% for entry in site.data.cv %}
-          <a class="anchor" id="{{ entry.title }}"></a>
-          <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">{{ entry.title }}</h3>
-            <div>
-              {% if entry.type == 'list' %}
-                {% include cv/list.liquid %}
-              {% elsif entry.type == 'map' %}
-                {% include cv/map.liquid %}
-              {% elsif entry.type == 'nested_list' %}
-                {% include cv/nested_list.liquid %}
-              {% elsif entry.type == 'time_table' %}
-                {% include cv/time_table.liquid %}
-              {% elsif entry.type == 'list_groups' %}
-                {% include cv/list_groups.liquid %}
-              {% elsif entry.type == 'bibliography' %}
-                {% bibliography %}
-              {% else %}
-                {{ entry.contents }}
-              {% endif %}
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-    </article>
-  </div>
-{% else %}
-  <div class="post">
-    <header class="post-header">
-      <div class="cv-title-row">
-        <h1 class="post-title">{{ page.title }}</h1>
-        {% if page.cv_pdf %}
-          <a
-            {% if page.cv_pdf contains '://' %}
-              href="{{ page.cv_pdf }}"
-            {% else %}
-              href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url }}?v={{ site.time | date: '%s' }}"
-            {% endif %}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="cv-download-btn"
-          >
-            Download full CV (PDF)
-          </a>
-        {% endif %}
-      </div>
-      {% if page.cv_pdf contains 'CV_GLee_' %}
-        {% assign cv_date_raw = page.cv_pdf | remove: '.pdf' | split: '_' | last %}
-        {% assign cv_yy = cv_date_raw | slice: 0, 2 %}
-        {% assign cv_mm = cv_date_raw | slice: 2, 2 %}
-        {% assign cv_dd = cv_date_raw | slice: 4, 2 %}
-        <p class="cv-updated">Last updated: {{ cv_mm }}/{{ cv_dd }}/20{{ cv_yy }}</p>
-      {% elsif page.description %}
-        <p class="post-description">{{ page.description }}</p>
-      {% endif %}
-    </header>
+<div class="post cv-page">
+  <header class="cv-header">
+    <div>
+      <p class="cv-kicker">{{ cv.name | escape }}</p>
+      <h1 class="post-title">Curriculum Vitae</h1>
+      <p class="cv-intro">{{ cv.appointments.first.title | escape }} &middot; FRIB, Michigan State University</p>
+    </div>
+    <div class="cv-header-actions">
+      <a class="cv-download-btn" href="{{ page.cv_pdf | prepend: '/assets/pdf/' | relative_url }}" download="{{ page.cv_pdf }}">
+        <svg class="cv-download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M12 3v12m-5-5 5 5 5-5M5 17v4h14v-4"></path>
+        </svg>
+        Download Full CV <span class="cv-file-type">PDF</span>
+      </a>
+      <p class="cv-updated">Updated <time datetime="{{ cv_date }}">{{ cv_date | date: '%B %-d, %Y' }}</time></p>
+    </div>
+  </header>
 
-    <article>
-      <div class="cv">
-        {% for data in site.data.resume %}
-          {% if site.jsonresume and site.jsonresume.size > 0 %}
-            {% unless site.jsonresume contains data[0] %}
-              {% continue %}
-            {% endunless %}
-          {% endif %}
-          {% if data[0] == 'meta' or data[1].size == 0 %} {% continue %} {% endif %}
-          <a class="anchor" id="{{ data[0] }}"></a>
-          <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">{{ data[0] | capitalize }}</h3>
-            <div>
-              {% case data[0] %}
-                {% when 'basics' %}
-                  {% include resume/basics.liquid %}
-                {% when 'education' %}
-                  {% include resume/education.liquid %}
-                {% when 'work' %}
-                  {% include resume/work.liquid %}
-                {% when 'volunteer' %}
-                  {% include resume/volunteer.liquid %}
-                {% when 'projects' %}
-                  {% include resume/projects.liquid %}
-                {% when 'awards' %}
-                  {% include resume/awards.liquid %}
-                {% when 'skills' %}
-                  {% include resume/skills.liquid %}
-                {% when 'publications' %}
-                  {% include resume/publications.liquid %}
-                {% when 'languages' %}
-                  {% include resume/languages.liquid %}
-                {% when 'interests' %}
-                  {% include resume/interests.liquid %}
-                {% when 'certificates' %}
-                  {% include resume/certificates.liquid %}
-                {% when 'references' %}
-                  {% include resume/references.liquid %}
-                {% else %}
-
-              {% endcase %}
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-    </article>
-  </div>
-{% endunless %}
+  <article>
+    {% for section in sections %}
+      {% assign section_id = section_ids[forloop.index0] %}
+      <section class="cv-section" id="{{ section_id }}" aria-labelledby="{{ section_id }}-heading">
+        <div class="cv-section-label">
+          <h2 id="{{ section_id }}-heading">{{ section }}</h2>
+        </div>
+        <div class="cv-section-body">
+          {% case section_id %}
+            {% when 'appointments' %}
+              {% include cv/entries.liquid entries=cv.appointments %}
+            {% when 'education' %}
+              {% include cv/entries.liquid entries=cv.education hide_department=true hide_description=true %}
+            {% when 'publications' %}
+              <div class="cv-publication-summary">
+                <h3>{{ cv.publications.published }} published SCIE journal articles</h3>
+                <p><strong>{{ cv.publications.first_author }}</strong> first/co-first author <span aria-hidden="true">&middot;</span> <strong>{{ cv.publications.corresponding_author }}</strong> corresponding author</p>
+                <a class="cv-text-link" href="{{ '/publications/' | relative_url }}">View publications <span aria-hidden="true">&#8594;</span></a>
+              </div>
+              <dl class="cv-output-summary">
+                <div><dt>Other journal publications</dt><dd>{{ cv.publications.other.size }}</dd></div>
+                <div><dt>Conference contributions</dt><dd>{{ cv.conferences.completed.size }} completed <span>+ {{ cv.conferences.upcoming.size }} upcoming</span></dd></div>
+                <div><dt>Registered patents</dt><dd>{{ cv.patents.size }}</dd></div>
+              </dl>
+          {% endcase %}
+        </div>
+      </section>
+    {% endfor %}
+  </article>
+</div>

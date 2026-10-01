@@ -181,6 +181,7 @@
     <div class="periodical">
       {{ entry.note | strip }}
     </div>
+    {% include journal_metrics.liquid key=entry.key %}
 
     <!-- Links/Buttons -->
     <div class="links">

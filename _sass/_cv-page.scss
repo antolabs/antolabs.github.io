@@ -1,0 +1,340 @@
+/* A short web CV; the downloadable PDF holds the complete record. */
+.cv-site {
+  padding-bottom: 0;
+
+  > footer {
+    position: static;
+    padding: 1.25rem 0 1.5rem;
+    border-top: 1px solid var(--global-divider-color);
+    background: transparent;
+    color: var(--global-text-color-light);
+    font-size: 0.75rem;
+    text-align: center;
+
+    .container,
+    a {
+      color: inherit;
+    }
+  }
+}
+
+.cv-page {
+  --cv-section-width: 9rem;
+  --cv-date-width: 8.4rem;
+  --cv-action-ink: #fff;
+
+  .cv-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.75rem 0 1.8rem;
+    background: radial-gradient(ellipse at top left, var(--brand-tint-bg), transparent 65%);
+  }
+
+  .cv-kicker {
+    margin: 0 0 0.55rem;
+    color: var(--global-hover-color);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .cv-header .post-title {
+    margin: 0 0 0.7rem;
+    font-family: "Roboto Slab", serif;
+    font-size: clamp(2rem, 4vw, 2.7rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.15;
+  }
+
+  .cv-intro {
+    margin: 0;
+    color: var(--global-text-color-light);
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .cv-header-actions {
+    text-align: right;
+  }
+
+  .cv-header .cv-download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    min-height: 3.25rem;
+    padding: 0.8rem 1.25rem;
+    border: 1px solid var(--global-theme-color);
+    border-radius: 3px;
+    background: var(--global-theme-color);
+    color: var(--cv-action-ink) !important;
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
+    text-transform: none;
+
+    > span {
+      color: inherit;
+    }
+
+    &:hover {
+      border-color: var(--global-hover-color);
+      background: var(--global-hover-color);
+    }
+  }
+
+  .cv-download-icon {
+    flex: 0 0 auto;
+    width: 1.15rem;
+    height: 1.15rem;
+  }
+
+  .cv-file-type {
+    padding-left: 0.8rem;
+    border-left: 1px solid currentColor;
+    font-size: 0.7rem;
+  }
+
+  .cv-updated {
+    margin: 0.6rem 0 0;
+    font-size: 0.73rem;
+  }
+
+  .cv-section {
+    display: grid;
+    grid-template-columns: var(--cv-section-width) minmax(0, 1fr);
+    gap: 2rem;
+    padding: 1.6rem 0 1.8rem;
+    border-top: 1px solid var(--global-divider-color);
+    scroll-margin-top: 5rem;
+  }
+
+  .cv-section-label {
+    align-self: start;
+
+    h2 {
+      margin: 0;
+      color: var(--global-hover-color);
+      font-size: 1.12rem;
+      line-height: 1.45;
+    }
+  }
+
+  .cv-section-body {
+    min-width: 0;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+
+    h3 {
+      margin: 0 0 0.45rem;
+      color: var(--global-text-color);
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+  }
+
+  .cv-records {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .cv-entry {
+    display: grid;
+    grid-template-columns: var(--cv-date-width) minmax(0, 1fr);
+    gap: 1rem;
+    margin: 0;
+    padding: 1.15rem 0;
+    border-bottom: 1px solid var(--global-divider-color);
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+
+  .cv-entry-date {
+    margin: 0 0 0.3rem;
+    color: var(--global-hover-color);
+    font-size: 0.76rem;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.6;
+  }
+
+  .cv-entry-location {
+    margin: 0;
+    color: var(--global-text-color-light);
+    font-size: 0.73rem;
+    line-height: 1.5;
+  }
+
+  .cv-institution,
+  .cv-meta,
+  .cv-description {
+    margin: 0 0 0.3rem;
+    font-size: 0.85rem;
+    line-height: 1.65;
+  }
+
+  .cv-meta,
+  .cv-description {
+    color: var(--global-text-color-light);
+  }
+
+  .cv-bullets {
+    margin: 0.7rem 0 0;
+    padding-left: 1.1rem;
+    font-size: 0.85rem;
+    list-style: disc;
+
+    li + li {
+      margin-top: 0.4rem;
+    }
+
+    li::marker {
+      color: var(--global-theme-color);
+    }
+  }
+
+  .cv-publication-summary {
+    padding: 1rem 1.2rem;
+    border-left: 3px solid var(--global-theme-color);
+    background: linear-gradient(110deg, var(--brand-tint-bg), transparent);
+
+    p {
+      margin: 0;
+      color: var(--global-text-color-light);
+      font-size: 0.85rem;
+    }
+  }
+
+  .cv-text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+  }
+
+  .cv-output-summary {
+    margin: 0.8rem 0 0;
+    font-size: 0.83rem;
+
+    > div {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 0.5rem 1rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--global-divider-color);
+
+      &:last-child {
+        border: 0;
+      }
+    }
+
+    dt {
+      color: var(--global-text-color-light);
+      font-weight: 400;
+    }
+
+    dd {
+      margin: 0;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    dd span {
+      color: var(--global-text-color-light);
+      white-space: nowrap;
+    }
+  }
+
+}
+
+html[data-theme="dark"] .cv-page {
+  --cv-action-ink: #10242c;
+}
+
+@media (max-width: 991px) {
+  .cv-page {
+    --cv-section-width: 7rem;
+    --cv-date-width: 7rem;
+
+    .cv-section {
+      gap: 1.3rem;
+    }
+
+    .cv-header {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .cv-header-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.6rem 1rem;
+      text-align: left;
+    }
+
+    .cv-updated {
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .cv-site {
+    > .container.mt-5 {
+      margin-top: 1.5rem !important;
+    }
+
+    > footer .container {
+      padding-right: 5rem;
+    }
+  }
+
+  .cv-page {
+    .cv-header {
+      padding: 0.5rem 0 1.2rem;
+    }
+
+    .cv-header .cv-download-btn {
+      width: 100%;
+    }
+
+    .cv-section {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 1.3rem 0 1.5rem;
+    }
+
+    .cv-entry {
+      grid-template-columns: 1fr;
+      gap: 0.45rem;
+    }
+
+    .cv-entry-aside {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.3rem 1rem;
+    }
+
+    .cv-output-summary dd span {
+      display: block;
+    }
+  }
+}

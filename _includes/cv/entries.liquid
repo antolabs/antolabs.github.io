@@ -1,0 +1,28 @@
+{% assign entry_heading = include.heading | default: 'h3' %}
+<ul class="cv-records">
+  {% for item in include.entries %}
+    {% if include.hide_description %}
+      {% assign entry_description = nil %}
+    {% else %}
+      {% assign entry_description = item.description %}
+    {% endif %}
+    <li class="cv-entry">
+      <div class="cv-entry-aside">
+        <p class="cv-entry-date">{{ item.year | escape }}</p>
+        {% if item.location %}<p class="cv-entry-location">{{ item.location | escape }}</p>{% endif %}
+      </div>
+      <div class="cv-entry-content">
+        <{{ entry_heading }}>{{ item.title | escape }}</{{ entry_heading }}>
+        {% if item.institution %}<p class="cv-institution">{{ item.institution | escape }}</p>{% endif %}
+        {% if item.department and include.hide_department != true %}<p class="cv-meta">{{ item.department | escape }}</p>{% endif %}
+        {% if entry_description.first %}
+          <ul class="cv-bullets">
+            {% for point in entry_description %}<li>{{ point | escape }}</li>{% endfor %}
+          </ul>
+        {% elsif entry_description %}
+          <p class="cv-description">{{ entry_description | escape }}</p>
+        {% endif %}
+      </div>
+    </li>
+  {% endfor %}
+</ul>

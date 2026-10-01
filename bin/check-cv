@@ -1,0 +1,83 @@
+#!/usr/bin/env ruby
+# Run after `bundle exec jekyll build` to catch CV data/rendering drift.
+require 'yaml'
+require 'nokogiri'
+require 'uri'
+
+root = File.expand_path('..', __dir__)
+Dir.chdir(root)
+cv = YAML.load_file('_data/cv.yml')
+front_matter = File.read('_pages/cv.md').split(/^---\s*$/, 3)[1]
+page = YAML.safe_load(front_matter)
+html = Nokogiri::HTML(File.read('_site/cv/index.html'))
+errors = []
+check = ->(condition, message) { errors << message unless condition }
+normalize = ->(text) { text.to_s.gsub(/\s+/, ' ').strip }
+
+check.call(cv['source_pdf'] == page['cv_pdf'], 'CV data and download refer to different snapshots')
+check.call(File.file?("assets/pdf/#{cv['source_pdf']}"), 'CV PDF is missing')
+published = File.read('_bibliography/papers.bib').scan(/^@article\s*\{/i).size
+check.call(cv.dig('publications', 'published') == published, 'Published SCIE count differs from papers.bib')
+%w[first_author corresponding_author].each do |role|
+  count = cv.dig('publications', role)
+  check.call(count.is_a?(Integer) && count.between?(0, published), "Invalid #{role} count")
+end
+%w[registration application].each do |field|
+  values = cv['patents'].map { |patent| patent.fetch(field) }
+  check.call(values.uniq.size == values.size, "Duplicate patent #{field}")
+end
+
+expected = {
+  '#appointments .cv-entry' => cv['appointments'].size,
+  '#education .cv-entry' => cv['education'].size,
+  '.cv-section' => 3,
+  '#appointments .cv-bullets li' => cv['appointments'].sum { |entry| entry.fetch('description').size }
+}
+expected.each { |selector, count| check.call(html.css(selector).size == count, "Missing rendered records: #{selector}") }
+expected_stats = [cv.dig('publications', 'other').size.to_s,
+                  "#{cv.dig('conferences', 'completed').size} completed + #{cv.dig('conferences', 'upcoming').size} upcoming",
+                  cv['patents'].size.to_s]
+check.call(html.css('.cv-output-summary dd').map { |el| normalize.call(el.text) } == expected_stats, 'Research output counts are incorrect')
+check.call(html.at_css('.cv-publication-summary h3')&.text == "#{published} published SCIE journal articles", 'Published article summary is incorrect')
+check.call(html.css('#conferences, #patents, #teaching, #achievements, #service, #projects, .cv-manuscripts, .cv-stats, .cv-jump-links').empty?, 'Detailed CV sections should stay in the PDF, not the web summary')
+check.call(html.at_css('.cv-download-btn')&.[]('download') == page['cv_pdf'], 'Full CV action must download the current PDF')
+check.call(html.css('.cv-page a[download]').size == 1, 'Keep a single prominent CV download in the header')
+check.call(html.css('.cv-endnote').empty?, 'The redundant PDF endnote must remain removed')
+
+rendered = normalize.call(html.at_css('.cv-page')&.text)
+%w[appointments education].each do |section|
+  cv[section].each do |record|
+    fields = section == 'appointments' ? %w[title institution department location description] : %w[title institution location]
+    fields.each do |field|
+      Array(record[field]).each do |value|
+        check.call(rendered.include?(normalize.call(value)), "Missing #{section} #{field}: #{value}")
+      end
+    end
+  end
+end
+
+cv['appointments'].each_with_index do |record, index|
+  actual = html.css('#appointments .cv-entry')[index].css('.cv-bullets li').map { |el| normalize.call(el.text) }
+  check.call(actual == record['description'].map { |text| normalize.call(text) }, 'Experience must match the full CV wording and order')
+end
+education_text = html.at_css('#education').text
+check.call(!education_text.include?('Advisor:') && !education_text.include?('Dual Major'), 'Remove advisor and dual-major labels from the web CV')
+check.call(html.css('#education .cv-meta, #education .cv-bullets, #education .cv-description').empty?, 'Education should remain concise')
+
+ids = html.css('[id]').map { |el| el['id'] }
+check.call(ids.uniq.size == ids.size, 'Duplicate HTML IDs')
+check.call(html.css('h1').size == 1, 'CV needs one page heading')
+html.css('.cv-page a[href]').each do |link|
+  href = link['href']
+  if href.start_with?('#')
+    check.call(ids.include?(href.delete_prefix('#')), "Broken section link: #{href}")
+  elsif href.start_with?('/')
+    path = URI.parse(href).path
+    path += 'index.html' if path.end_with?('/')
+    check.call(File.file?(File.join('_site', path.delete_prefix('/'))), "Missing local link: #{href}")
+  end
+end
+check.call(!rendered.match?(/Liquid (?:Exception|Error)|\{\{|\{%/), 'Unrendered template text')
+
+abort errors.join("\n") unless errors.empty?
+puts "CV OK: 3 concise sections; #{published} published SCIE papers; current PDF download and all local links valid."

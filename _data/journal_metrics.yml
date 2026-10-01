@@ -1,0 +1,88 @@
+# Transcribed from the supplied CV, not a claim about the latest JCR edition.
+# Papers without metrics in the CV are intentionally omitted.
+# Category sources do not independently verify every historical metric value.
+# jcr_year is the data year, not the release/publication year. Omit if unverified.
+source:
+  label: "CV (Oct 2026)"
+  pdf: "/assets/pdf/CV_GLee_261001.pdf"
+
+category_sources:
+  cv_aug_2026:
+    url: "/assets/pdf/CV_GLee_260818.pdf"
+    scope: "Page 2 explicitly names the NST, IJER and CSTE ranking categories. Numerical values still come from the October CV."
+  kns_2020_jcr:
+    url: "https://www.kns.org/webzine/2021/w_7_8/sub_02.php"
+    scope: "Korean Nuclear Society's 2020 JCR Nuclear Science & Technology table lists NET, JNST, NED, IJER and Annals of Nuclear Energy."
+    year_evidence: "IJER: 2020 JIF 5.164 (5.2 rounded), rank 1 of 34, consistent with Top 1.5%. Other entries use this source for category only."
+  ichmt_retrospective:
+    url: "https://doi.org/10.1016/j.icheatmasstransfer.2026.110530"
+    scope: "The journal's bibliometric retrospective explicitly identifies Mechanics as the category for Top 6.1% (93.9 percentile). The ranking year is not explicit."
+
+papers:
+  lee2025optimization:
+    quartile: Q1
+    jcr_top: "1.2"
+    impact_factor: "4.7"
+    category: "Nuclear Science & Technology"
+    category_source: cv_aug_2026
+  lee2026conceptual:
+    quartile: Q1
+    jcr_top: "13.1"
+    impact_factor: "2.9"
+    category: "Nuclear Science & Technology"
+    category_source: kns_2020_jcr
+  kim2025deep:
+    quartile: Q1
+    jcr_top: "17.9"
+    impact_factor: "2.5"
+    category: "Nuclear Science & Technology"
+    category_source: kns_2020_jcr
+  lee2024design:
+    quartile: Q1
+    jcr_top: "6.1"
+    impact_factor: "6.4"
+    category: "Mechanics"
+    category_source: ichmt_retrospective
+  lee2023dual:
+    quartile: Q1
+    jcr_top: "5.8"
+    impact_factor: "6.4"
+    category: "Thermodynamics"
+    category_source: cv_aug_2026
+  kang2023experimental:
+    quartile: Q1
+    jcr_top: "21.2"
+    impact_factor: "1.9"
+    category: "Nuclear Science & Technology"
+    category_source: kns_2020_jcr
+  lee2020variable:
+    quartile: Q1
+    jcr_top: "1.5"
+    impact_factor: "5.2"
+    category: "Nuclear Science & Technology"
+    category_source: kns_2020_jcr
+    jcr_year: 2020
+  lee2019mathematical:
+    quartile: Q1
+    jcr_top: "16.2"
+    impact_factor: "1.8"
+    category: "Nuclear Science & Technology"
+    category_source: kns_2020_jcr
+  lee2018magnetohydrodynamics:
+    quartile: Q1
+    jcr_top: "1.5"
+    impact_factor: "3.3"
+    category: "Nuclear Science & Technology"
+    category_source: cv_aug_2026
+  lee2018numerical:
+    quartile: Q1
+    jcr_top: "19.1"
+    impact_factor: "1.5"
+    category: "Nuclear Science & Technology"
+    category_source: kns_2020_jcr
+  lee2017design:
+    quartile: Q1
+    jcr_top: "13.6"
+    impact_factor: "1.5"
+    category: "Nuclear Science & Technology"
+    category_source: kns_2020_jcr

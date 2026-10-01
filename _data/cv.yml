@@ -1,53 +1,312 @@
-- title: Experience
-  type: time_table
-  contents:
-    - title: Scientist (Staff)
-      institution: Facility for Rare Isotope Beams (FRIB) | Michigan State University (MSU)
-      department: High Power Targetry Team
-      location: East Lansing, MI, US
-      year: 12/2023 - Present
-      description:
-        - "Developed BiSTO (Binary Surrogate-based Topology Optimization), an AI-driven framework combining surrogate-guided topology search, solver verification, and geometric connectivity constraints for turbulent cooling-channel design."
-        - "Optimized the FRIB beam dump using genetic algorithms and reinforcement learning, increasing simulated average power-handling capability by 72% over the existing design."
-        - "Developed a CNN-MLP surrogate for rotating beam-dump thermal limits (2.8% mean error against FEM in cross-validation; millisecond-scale inference)."
-        - "Led thermal design reviews and provided simulation evidence for device qualification; performed thermal-fluid-electromagnetic analysis and validation."
-
-    - title: Postdoctoral Researcher
-      institution: Korea Atomic Energy Research Institute (KAERI)
-      department: Applied Artificial Intelligence Lab
-      location: Daejeon, South Korea
-      year: 08/2021 - 12/2023
-      description:
-        - "Developed DRL optimization with 14.8% higher simulated heat transfer than conventional topology optimization; tested a metal-printed prototype."
-        - "Designed flow channels for Samsung OLED susceptors using reinforcement learning."
-        - "Designed a single-body, 3D-printable DC electromagnetic pump with 52% lower simulated current demand than a helical pump at matched pressure and flow rate."
-        - "Applied AI anomaly detection to the KOMAC accelerator for operational stability."
-
-- title: Education
-  type: time_table
-  contents:
-    - title: Ph.D. in Nuclear Engineering (Combined M.S./Ph.D.)
-      institution: Ulsan National Institute of Science and Technology (UNIST)
-      department: "Advisor: Hee Reyoung Kim"
-      location: Ulsan, South Korea
-      year: 03/2016 - 08/2021
-      description:
-        - "Thesis: Optimization of Lithium Charge Stripper through MHD Circulator Development"
-
-    - title: B.S. in Nuclear Engineering & Mechanical Engineering
-      institution: Ulsan National Institute of Science and Technology (UNIST)
-      department: Dual Major
-      location: Ulsan, South Korea
-      year: 03/2010 - 02/2016
-
-- title: Publication Summary
-  type: map
-  contents:
-    - name: SCIE Journal
-      value: '<a href="/publications/">Published 14 (First/co-first Author 13, Corresponding Author 5)</a>'
-    - name: Other Journal Publications
-      value: Total 1
-    - name: Conference Presentations & Proceedings
-      value: Completed 34 (Upcoming 1)
-    - name: Patent
-      value: Total 6
+# Source: assets/pdf/CV_GLee_261001.pdf (October 1, 2026).
+# Statuses and totals are a CV snapshot, not automatically inferred from today.
+# Keep unpublished manuscripts separate from published SCIE papers.
+# Phone and residency information remain in the downloadable PDF only.
+source_pdf: "CV_GLee_261001.pdf"
+name: "Geunhyeong Lee, Ph.D."
+email: "leeg@frib.msu.edu"
+research:
+  title: "Redefining Thermal-Fluid Design through AI"
+  description: "My vision is to advance thermal-fluid systems beyond the limits of conventional design. Central to this vision is BiSTO, an AI-driven topology optimization framework that I am developing for thermal-fluid systems. My long-term goal is to connect AI-based design discovery with multiphysics modeling, metal additive manufacturing, and experimental validation for advanced nuclear energy and high-power accelerators."
+appointments:
+  - title: "Scientist (Staff)"
+    institution: "Facility for Rare Isotope Beams (FRIB), Michigan State University"
+    department: "High Power Targetry Team"
+    location: "East Lansing, MI, US"
+    year: "Dec 2023 - Present"
+    description:
+      - "Developed BiSTO (Binary Surrogate-based Topology Optimization), an AI-driven framework combining surrogate-guided topology search, solver verification, and geometric connectivity constraints for turbulent cooling-channel design."
+      - "Optimized the FRIB beam dump using genetic algorithms and reinforcement learning, increasing simulated average power-handling capability by 72% over the existing design."
+      - "Developed a CNN\u2013MLP surrogate for rotating beam-dump thermal limits (2.8% mean error against FEM in cross-validation; millisecond-scale inference)."
+      - "Led thermal design reviews and provided simulation evidence for device qualification; performed thermal-fluid-electromagnetic analysis and validation."
+  - title: "Postdoctoral Researcher"
+    institution: "Korea Atomic Energy Research Institute (KAERI)"
+    department: "Applied Artificial Intelligence Lab"
+    location: "Daejeon, Korea"
+    year: "Aug 2021 - Dec 2023"
+    description:
+      - "Developed DRL optimization with 14.8% higher simulated heat transfer than conventional topology optimization; tested a metal-printed prototype."
+      - "Designed flow channels for Samsung OLED susceptors using reinforcement learning."
+      - "Designed a single-body, 3D-printable DC electromagnetic pump with 52% lower simulated current demand than a helical pump at matched pressure and flow rate."
+      - "Applied AI anomaly detection to the KOMAC accelerator for operational stability."
+education:
+  - title: "Ph.D. in Nuclear Engineering (Combined M.S./Ph.D.)"
+    institution: "Ulsan National Institute of Science and Technology (UNIST)"
+    department: "Advisor: Hee Reyoung Kim"
+    location: "Ulsan, South Korea"
+    year: "Mar 2016 - Aug 2021"
+    description:
+      - "Thesis: Optimization of Lithium Charge Stripper through MHD Circulator Development"
+  - title: "B.S. in Nuclear Engineering & Mechanical Engineering"
+    institution: "Ulsan National Institute of Science and Technology (UNIST)"
+    department: "Dual Major"
+    location: "Ulsan, South Korea"
+    year: "Mar 2010 - Feb 2016"
+publications:
+  published: 14
+  first_author: 13
+  corresponding_author: 5
+  manuscripts:
+    - status: "Under review"
+      title: "A hybrid deep learning surrogate for thermal analysis of high-heat-flux devices"
+      authors: "Lee, G\u2020*., & Kanemura, T."
+      journal: "Engineering Applications of Artificial Intelligence"
+      doi: "10.2139/ssrn.7128856"
+    - status: "In preparation"
+      title: "BiSTO: binary surrogate-based topology optimization of solver-verified turbulent cooling channels"
+      authors: "Lee, G\u2020*., & Kanemura, T."
+  other:
+    - year: "2025"
+      title: "Design and Analysis of an OLED Display Susceptor System Using Reinforcement Learning"
+      authors: "Lee, G\u2020*., Kim, T., Kim, Y., & Kim, G."
+      journal: "Journal of Korean Applied Artificial Intelligence, 1(2), 1-6"
+conferences:
+  upcoming:
+    - year: "2026"
+      citation: "Lee, G\u2020*., & Kanemura, T. BiSTO: AI Topology Optimization of Turbulent Beam Intercepting Device Cooling. 2026 ANS Winter Conference & Expo."
+  completed:
+    - year: "2026"
+      citation: "Lee, G\u2020*., & Kanemura, T. BiSTO: AI Topology Optimization of Internal Cooling Channels for the FRIB High-Power Beam Dump toward Additive Manufacturing. Conference on Additive Manufacturing and Advanced Materials in Fusion (AM2F 2026), MIT Plasma Science and Fusion Center."
+    - year: "2025"
+      citation: "Lee, G\u2020*., Bultman, N., Kanemura, T., Patil, M., Quispe-Abad, R., & Song, J. Design Improvement of a Minichannel Beam Dump Wing through AI-Driven Genetic Algorithms. 16th International Conference on Heavy Ion Accelerator Technology."
+    - year: "2025"
+      citation: "Lee, G\u2020*., Song, J., Patil, M., Quispe-Abad, R., Bultman, N., & Kanemura, T. Design Optimization of the FRIB Beam Dump through Reinforcement Learning with Genetic Algorithm. 2025 American Nuclear Society Annual Conference."
+    - year: "2025"
+      citation: "Wei, J\u2020*., et al. (incl. Lee, G.) FRIB Operations: First Three Years. 16th International Conference on Heavy Ion Accelerator Technology."
+    - year: "2025"
+      citation: "Song, J\u2020*., Bultman, N., Cole, D., Jockheck, N., Kanemura, T., Larmann, M., Lee, D., Lee, G., Miller, S., Patil, M., Portillo, M., Quispe-Abad, R., Reaume, M., Simon, J., Steiner, M., & Wei, J. A Single-Slice Rotating Graphite Target at FRIB. 16th International Conference on Heavy Ion Accelerator Technology."
+    - year: "2025"
+      citation: "Kanemura, T\u2020*., Abdelmegied, B., Bultman, N., Fletcher, E., Ginter, T., Iwai, R., Jockheck, N., LaVere, M., Lee, G., Marti, F., Maruta, T., Miller, S., Momozaki, Y., Ostroumov, P., Patil, M., Plastun, A., Quispe-Abad, R., Reaume, M., Simon, D., Song, J., Wakai, E., Wang, X., Wei, J., & Zhao, Q. High Power Targetry Devices at FRIB: Challenges, Status and Plan. 16th International Conference on Heavy Ion Accelerator Technology."
+    - year: "2023"
+      citation: "Lee, G\u2020*., Yu, Y., Kim, H.G., & Kim, T. Application of Deep Learning Reinforcement Learning for Enhancement of Thermal Fluid Topology Optimization Performance. 3rd Applied Artificial Intelligence Conference."
+    - year: "2023"
+      citation: "Lee, G\u2020*., Yu, Y., & Kim, H.G. Design of the Optimal Nuclear Heat Exchanger using Deep Reinforcement Learning. 10th Korea-China Workshop on Nuclear Reactor Thermal-Hydraulics."
+    - year: "2023"
+      citation: "Kim, D.H\u2020*., Lee, G., Cho, S.Y., Lee, S.H., Kim, D.I., Kim, H.S., Kwon, H.J., & Yu, Y. Machine Learning-based Anomaly Detection in Drift Tube Quadrupole Operation for the KOMAC Linac. The 25th International Conference on Accelerators and Beam Utilizations."
+    - year: "2023"
+      citation: "Lee, G\u2020*., Yu, Y., & Kim, H.G. Optimal Design of Nuclear Heat Exchanger Using 3D Printing-Based Deep Learning Reinforcement Learning. 2023 Korean Institute of Metals and Materials Fall Conference."
+    - year: "2023"
+      citation: "Lee, S.U\u2020*., Kim, H.G., Lee, G., Kim, H., Yu, S., Oh, H., & Kim, Y. Development of Nuclear Component Manufacturing and Hybrid Fabrication Technology for Dissimilar Materials. 2023 Korean Institute of Metals and Materials Spring Conference."
+    - year: "2023"
+      citation: "Lee, G\u2020*., & Kim, T. Formation of the LCD susceptor heat exchanger path using the deep reinforcement learning. 2nd Applied Artificial Intelligence Conference."
+    - year: "2022"
+      citation: "Jeon, B\u2020., Ryu, S., Seo, H., Kim, M., Kim, S., Lee, G., Lim, H., & Yu, Y*. Development of Deep Learning-based Operator Support Systems for HANARO. 2022 HANARO Symposium."
+    - year: "2022"
+      citation: "Lee, G\u2020*., Yu, Y., Kim, T., & Kim, S. Formation of a thermofluid temperature equalization flow path using reinforcement learning. 1st Applied Artificial Intelligence Conference."
+    - year: "2022"
+      citation: "Lee, G\u2020*., Yu, Y., & Kim, H.G. Development of 3D Printing AI-Based Component Optimization Design Technology for Small Nuclear Reactor Materials. 2022 Korean Institute of Metals and Materials Spring Conference."
+    - year: "2021"
+      citation: "Lee, G\u2020*., Joo, Y., Kim, H.G., & Yu, Y. The Analysis of Topology Optimized 3D Printing Heat Exchanger for the Small Nuclear Reactor. 2021 Korean Nuclear Society Autumn Meeting."
+    - year: "2020"
+      citation: "Lee, G\u2020*., & Kim, H.R. The Electromagnetic Variable Analysis of 10 kW MHD Generator. 47th IEEE International Conference on Plasma Science."
+    - year: "2020"
+      citation: "Lee, G\u2020*., & Kim, H.R. A Tendency of Electromagnetic Field Change in MHD Plasma Fluid Generator. 2020 Korean Physical Society Spring Meeting."
+    - year: "2019"
+      citation: "Kang, T.U\u2020*., Lee, G., & Kim, H.R. Review Study on Reduction of NOx by Combining Thermal Power and Plasma MHD Power Generation. 2019 Korean Institute of Electrical Engineers Fall Conference."
+    - year: "2019"
+      citation: "Lee, G\u2020*., Kang, T.U., & Kim, H.R. Simulation Analysis of the Characteristics of an Experimental MHD Generator. 2019 Korean Institute of Electrical Engineers Fall Conference."
+    - year: "2019"
+      citation: "Lee, G\u2020., & Kim, H.R*. The Variable Optimization of MHD Generator with Electric Output of 10 kW. 11th PAMIR International Conference."
+    - year: "2019"
+      citation: "Lee, G\u2020*., Kwak, J.S., & Kim, H.R. The Analysis of Experimental Magnetohydrodynamic Generator for Cogeneration Plant. 2019 Korean Institute of Electrical Engineers Spring Conference."
+    - year: "2018"
+      citation: "Lee, G\u2020*., & Kim, H.R. Design Analysis of 10kW Magnetohydrodynamic Generator using Off-gas Plasma. 60th Annual Meeting of the APS Division of Plasma Physics."
+    - year: "2018"
+      citation: "Kang, T.U\u2020*., Lee, G., & Kim, H.R. Analysis and Review of Basic Research on MHD Power Generation Technology. 2018 Korean Institute of Electrical Engineers Fall Conference."
+    - year: "2018"
+      citation: "Lee, G\u2020*., & Kim, H.R. Characteristic Analysis of 10-kW Electric Output Faraday-type MHD Generator. 6th International Conference on Nuclear and Renewable Energy Resources."
+    - year: "2018"
+      citation: "Lee, G\u2020*., & Kim, H.R. Finite Element Method Analysis of Rectangular-type DC Electromagnetic Pump for Active Heat Decay Removal System of Prototype Gen-IV Sodium Fast Reactor. 2018 Korean Physical Society Spring Meeting."
+    - year: "2017"
+      citation: "Lee, G\u2020*., & Kim, H.R. The Comparative Analysis of Rectangular- and Helical-type DC Electromagnetic Pump for ADHRS in PGSFR. 2017 Korean Physical Society Autumn Meeting."
+    - year: "2017"
+      citation: "Lee, G\u2020*., & Kim, H.R. The Optimization of Helical-Type DC Electromagnetic Pump for Active Decay Heat Removal System. Global 2017 International Nuclear Fuel Cycle Conference."
+    - year: "2016"
+      citation: "Lee, G\u2020*., & Kim, H.R. The Pressure and Magnetic Flux Density Analysis of Helical-Type DC Electromagnetic Pump. 2016 Korean Nuclear Society Autumn Meeting."
+    - year: "2016"
+      citation: "Lee, G\u2020*., & Kim, H.R. The Numerical Investigation and Comparison of the Rectangular, Cylindrical and Helical Type DC Electromagnetic Pumps. 10th PAMIR International Conference."
+    - year: "2015"
+      citation: "Lee, G\u2020*., Kwak, J.S., & Kim, H.R. The Fundamental Design Analysis of the Rectangular and Helical Type-DC Conduction Electromagnetic Pump with the Flow Rate of 3 L/min. 23rd International Conference on Nuclear Engineering."
+    - year: "2014"
+      citation: "Lee, G\u2020*., & Kim, H.R. The Design Analysis of the DC Electromagnetic Pump with the Flowrate of 3 L/min. 2014 American Nuclear Society Winter Meeting."
+    - year: "2014"
+      citation: "Lee, G\u2020*., & Kim, H.R. The Optimum Design Analysis of the Small DC Electromagnetic Pump with Loop-Supported Type. 2014 Korean Nuclear Society Autumn Meeting."
+    - year: "2014"
+      citation: "Lee, G\u2020*., & Kim, H.R. Preliminary Study for Radioactivity Evaluation of MSR compared with LWR. 2014 Korean Nuclear Society Spring Meeting."
+patents:
+  - year: "2021"
+    title: "Thermal storage heat exchanger using liquid metal"
+    inventors: "Kim, H.R., Kang, T.U., & Lee, G."
+    registration: "10-2237876"
+    application: "10-2019-0171058"
+  - year: "2019"
+    title: "Conductive material transfer device"
+    inventors: "Kim, H.R., & Lee, G."
+    registration: "10-1971612"
+    application: "10-2017-0075794"
+  - year: "2019"
+    title: "Conductive material transfer device"
+    inventors: "Kim, H.R., & Lee, G."
+    registration: "10-2017117"
+    application: "10-2017-0063580"
+  - year: "2018"
+    title: "Conductive material transfer device"
+    inventors: "Kim, H.R., & Lee, G."
+    registration: "10-1860895"
+    application: "10-2017-0025724"
+  - year: "2018"
+    title: "Conductive material transfer device"
+    inventors: "Kim, H.R., & Lee, G."
+    registration: "10-1860898"
+    application: "10-2017-0015538"
+  - year: "2018"
+    title: "Electromagnetic pump"
+    inventors: "Kim, H.R., & Lee, G."
+    registration: "10-1908115"
+    application: "10-2016-0177052"
+teaching:
+  - title: "Mentoring"
+    items:
+      - year: "2026"
+        title: "Adam Sypitkowski"
+        institution: "Michigan State University"
+        description: "Accelerator Science and Engineering Traineeship (ASET) program at FRIB. Mentored in AI-driven geometry optimization for accelerator simulations."
+      - year: "2026"
+        title: "Undergraduate and graduate students"
+        institution: "Michigan State University"
+        description: "Advised on AI applications in research, including wedge structural optimization, and on experimental methods for measuring target-system thermal conductance."
+  - title: "Teaching experience"
+    items:
+      - year: "2023"
+        title: "Lecturer, Foundation of AI"
+        institution: "International School on Beam Dynamics and Accelerator Technology"
+      - year: "2016"
+        title: "Instructor, Nuclear Comprehensive Design Project"
+        institution: "UNIST"
+  - title: "Teaching assistant"
+    items:
+      - year: "2021"
+        title: "Liquid Metal Magnetohydrodynamics I"
+        institution: "UNIST"
+      - year: "2020"
+        title: "Liquid Metal Magnetohydrodynamics II"
+        institution: "UNIST"
+      - year: "2019"
+        title: "Special Lecture on Nuclear Engineering (MHD electrical power generation)"
+        institution: "UNIST"
+      - year: "2017-2019"
+        title: "Fundamental of Electromagnetics"
+        institution: "UNIST"
+achievements:
+  - title: "Awards"
+    items:
+      - year: "2019"
+        title: "Doosan Heavy Industries & Construction Research Scholarship"
+        institution: "Korean Nuclear Society"
+      - year: "2016"
+        title: "Excellent Poster Award"
+        institution: "Korean Nuclear Society, Korea"
+      - year: "2015"
+        title: "First Award of Excellence for MNE Research Internship"
+        institution: "UNIST"
+  - title: "Invited talks"
+    items:
+      - year: "2026"
+        title: "AI-Driven Design Optimization for FRIB Beam Intercepting Devices"
+        institution: "KAERI"
+      - year: "2023"
+        title: "The Optimal Nuclear Heat Exchanger Design through Reinforcement Learning"
+        institution: "BrainLink X-lab"
+      - year: "2023"
+        title: "Optimal design of 3D printing-based heat exchanger using reinforcement learning"
+        institution: "UNIST"
+      - year: "2023"
+        title: "Optimal design of nuclear power plant heat exchanger using 3D printing-based deep learning reinforcement learning"
+        institution: "2023 Korean Institute of Metals and Materials Fall Meeting"
+      - year: "2022"
+        title: "Optimal design analysis of major reactor parts using AI technology"
+        institution: "UNIST"
+      - year: "2022"
+        title: "Development of Small Nuclear Reactor Main Part, 3D printing AI-based Optimization Design Technology"
+        institution: "2022 Korean Institute of Metals and Materials Spring Meeting"
+  - title: "Software registration"
+    items:
+      - year: "2022"
+        title: "Heat exchanger path generation program through reinforcement learning"
+        institution: "Lee, G., Yu, Y., & Kim, T."
+        description: "Republic of Korea. Registration No. C-2022-049451."
+  - title: "Certification"
+    items:
+      - year: "2021"
+        title: "Certified AI Expert"
+        institution: "Korean Standards Association"
+        description: "No. C-2021-0004668."
+service:
+  reviews:
+    - journal: "Energy"
+      count: 6
+      period: "2024-2026"
+    - journal: "International Communications in Heat and Mass Transfer"
+      count: 8
+      period: "2025-2026"
+    - journal: "Annals of Nuclear Energy"
+      count: 4
+      period: "2025-2026"
+    - journal: "Electronic Research Archive"
+      count: 9
+      period: "2025-2026"
+    - journal: "Journal of Thermal Analysis and Calorimetry"
+      count: 1
+      period: "2026"
+    - journal: "Journal of the Korean Physical Society"
+      count: 1
+      period: "2023"
+    - journal: "Energy Engineering"
+      count: 2
+      period: "2024"
+  leadership: "Student Representative, Department of Nuclear Engineering, UNIST."
+projects:
+  - year: "2023-2026"
+    title: "AIP Mini-channel and Water Beam Dump"
+    institution: "FRIB"
+    description: "Developed the optimization framework, assessed thermal performance through simulation, and contributed to engineering reviews of beam-dump hardware."
+  - year: "2023-2026"
+    title: "AIP Post-target Shielding"
+    institution: "FRIB"
+    description: "Led thermal design reviews and high-power system thermal simulation for operation."
+  - year: "2023-2026"
+    title: "Accelerator Operation Labor"
+    institution: "FRIB"
+    description: "Thermal device simulation, optimization, validation, and operational support."
+  - year: "2022"
+    title: "Technical Support for AI-Based Improvement of Temperature Uniformity in Next-Generation Display Manufacturing Systems"
+    institution: "KAERI"
+    description: "Display susceptor flow channel optimization using artificial intelligence."
+  - year: "2021-2023"
+    title: "Development of Original 3D Printing Technology for Manufacturing Components of Small Nuclear Reactor Materials"
+    institution: "KAERI"
+    description: "Developed DRL models; collaborated on topology-optimization analysis and experimental validation of metal-printed heat exchangers."
+  - year: "2021-2023"
+    title: "Establishment of Intelligent Operation Platform for HANARO and Research Facilities"
+    institution: "KAERI"
+    description: "Anomaly detection in the accelerator system using AI."
+  - year: "2021-2022"
+    title: "Development of Deep Learning Solver for Reducing Iterations in Topology Optimization"
+    institution: "Hyundai"
+    description: "Supporting the topology optimization simulation."
+  - year: "2020-2021"
+    title: "Research on the Development of Prototype Lithium Charge Stripper"
+    institution: "Institute for Basic Science"
+    description: "Design optimization of an electromagnetic pump and liquid lithium film formation system."
+  - year: "2018-2021"
+    title: "Plasma Generation Technology of High Temperature and Electric Production Technology of 10 kW Magnetic Generator"
+    institution: "KEPCO Research Institute"
+    description: "Investigation of MHD generator technology and design analysis."
+  - year: "2016-2018"
+    title: "Design and Performance Evaluation about EM Pump for Test of Coolant Loop of Prototype Gen-IV Sodium-cooled Fast Reactor"
+    institution: "KAERI"
+    description: "Feasibility analysis and performance evaluation of DC electromagnetic pumps for SFR."
+  - year: "2016"
+    title: "Development of Prototype DC Electromagnetic Pump"
+    institution: "Institute for Basic Science"
+    description: "Design optimization of a DC electromagnetic pump."

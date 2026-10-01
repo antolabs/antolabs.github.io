@@ -1,0 +1,19 @@
+{%- assign metrics = site.data.journal_metrics.papers[include.key] -%}
+{%- if metrics -%}
+{%- assign jcr_top = metrics.jcr_top | plus: 0 -%}
+<div class="journal-metrics-group">
+  <div class="journal-metrics" role="group" aria-label="Journal metrics as reported in the CV">
+    <span class="journal-metrics-quartile"><span class="sr-only">Journal quartile: </span>{{ metrics.quartile | escape }}</span>
+    <span class="journal-metrics-rank{% if jcr_top > 0 and jcr_top <= 10 %} journal-metrics-rank--top-ten{% endif %}"><span class="journal-metrics-label">JCR Top</span> <strong>{{ metrics.jcr_top | escape }}%</strong></span>
+    <span class="journal-metrics-if"><abbr class="journal-metrics-label" title="Impact factor">IF</abbr> <strong>{{ metrics.impact_factor | escape }}</strong></span>
+  </div>
+  {%- if metrics.category and metrics.category != empty %}
+  <div class="journal-metrics-context">
+    <span class="journal-metrics-category"><span class="sr-only">JCR category: </span>{{ metrics.category | escape }}</span>
+    {%- if metrics.jcr_year %}
+    <span class="journal-metrics-year"><span class="sr-only">Data year: </span>JCR {{ metrics.jcr_year | escape }}</span>
+    {%- endif %}
+  </div>
+  {%- endif %}
+</div>
+{%- endif -%}

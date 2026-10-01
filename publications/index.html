@@ -417,7 +417,7 @@ nav_order: 2
     media="" id="highlight_theme_light">
   <link rel="shortcut icon"
     href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
-  <link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url | bust_css_cache }}">
   <link rel="canonical" href="https://geunhyeong.com/publications/">
   <script src="/assets/js/theme.js?a81d82887dd692e91686b43de4542f18"></script>
   <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca"
@@ -426,156 +426,6 @@ nav_order: 2
     initTheme();
   </script>
   <style>
-    /* Featured Publication Card Styles */
-    .featured-publication {
-      margin-bottom: 2rem !important;
-      list-style: none !important;
-    }
-
-    .pub-card {
-      display: flex;
-      flex-direction: column;
-      background: var(--global-card-bg-color);
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-      border: 1px solid var(--global-divider-color);
-    }
-
-    .pub-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-    }
-
-    .pub-card-image {
-      width: 100%;
-      overflow: hidden;
-      background: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-right: 1px solid transparent;
-      border-image: linear-gradient(to bottom, transparent, rgba(0,0,0,0.12), transparent) 1;
-    }
-
-    .pub-card-image img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      transition: transform 0.5s ease;
-    }
-
-    .pub-card:hover .pub-card-image img {
-      transform: scale(1.02);
-    }
-
-    .pub-card-content {
-      padding: 1.5rem;
-    }
-
-    .pub-card-content .title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-      line-height: 1.4;
-    }
-
-    .pub-card-content .author {
-      font-size: 0.9rem;
-      color: var(--global-text-color-light);
-      margin-bottom: 0.5rem;
-    }
-
-    .pub-card-content .periodical {
-      font-size: 0.85rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .pub-card-content .highlight-jcr,
-    .publications ol.bibliography li .highlight-jcr {
-      color: #c0392b; /* AA-safe on white (5.4:1); was #e74c3c (3.8:1) */
-      font-weight: bold;
-      background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(231, 76, 60, 0.05) 100%);
-      padding: 0.5rem 0.75rem;
-      border-radius: 8px;
-      display: inline-block;
-      margin: 0.5rem 0;
-    }
-
-    html[data-theme="dark"] .pub-card-content .highlight-jcr,
-    html[data-theme="dark"] .publications ol.bibliography li .highlight-jcr {
-      color: #f0938a; /* AA-safe on the dark card */
-    }
-
-    /* Keyboard focus ring for the DOI / Cite / PDF chips (frameworks kill
-       the default outline and the chip style removes their shadow ring) */
-    .pub-card-content .links .btn:focus-visible,
-    .publications ol.bibliography li .links .btn:focus-visible {
-      outline: 2px solid var(--global-theme-color) !important;
-      outline-offset: 2px;
-    }
-
-    .pub-card-content .abstract {
-      /* Visually hidden but accessible to LLM crawlers and screen readers */
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    .pub-card-content .links {
-      margin-top: 1rem;
-    }
-
-    /* Publication action buttons — quiet hairline chips (DOI / Cite / PDF) */
-    .pub-card-content .links .btn,
-    .publications ol.bibliography li .links .btn {
-      font-family: inherit;
-      background: transparent !important;
-      color: var(--global-text-color-light) !important;
-      border: 1px solid var(--global-divider-color) !important;
-      border-radius: 4px;
-      padding: 0.25rem 0.75rem;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      box-shadow: none !important;
-      transition:
-        color 0.18s ease,
-        border-color 0.18s ease,
-        background-color 0.18s ease;
-    }
-
-    .pub-card-content .links .btn:hover,
-    .publications ol.bibliography li .links .btn:hover {
-      color: var(--global-theme-color) !important;
-      border-color: var(--global-theme-color) !important;
-      background: var(--brand-tint-bg) !important;
-      transform: none;
-      box-shadow: none !important;
-    }
-
-    .btn-cite {
-      cursor: pointer;
-    }
-
-    /* Year group headings — readable slab numerals instead of the theme's
-       13%-opacity divider color, which reads as a watermark, not a year */
-    .publications h2.bibliography {
-      font-family: "Roboto Slab", "Roboto", serif;
-      font-weight: 500;
-      font-size: 1.15rem;
-      color: var(--global-text-color-light);
-      font-variant-numeric: tabular-nums;
-    }
-
     /* Citation Modal Styles */
     .citation-modal {
       display: none;
@@ -585,18 +435,30 @@ nav_order: 2
       top: 0;
       width: 100%;
       height: 100%;
+      padding: 1rem;
+      overflow-y: auto;
+      overscroll-behavior: contain;
       background-color: rgba(0, 0, 0, 0.6);
       backdrop-filter: blur(4px);
     }
 
+    .citation-modal.is-open {
+      display: flex;
+    }
+
     .citation-modal-content {
+      display: flex;
+      flex-direction: column;
       background: var(--global-bg-color);
-      margin: 10% auto;
+      margin: auto;
       padding: 1.75rem;
       border: 1px solid var(--global-divider-color);
       border-radius: 12px;
       max-width: 640px;
-      width: 90%;
+      width: 100%;
+      max-height: calc(100vh - 2rem);
+      max-height: calc(100dvh - 2rem);
+      overflow-y: auto;
       box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
       position: relative;
       animation: modalSlideIn 0.25s ease;
@@ -616,9 +478,18 @@ nav_order: 2
 
     .citation-modal-close {
       position: absolute;
-      top: 1rem;
-      right: 1.5rem;
+      top: 0.75rem;
+      right: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      padding: 0;
+      border: 0;
+      background: transparent;
       font-size: 1.5rem;
+      line-height: 1;
       cursor: pointer;
       color: var(--global-text-color-light);
       transition: color 0.2s;
@@ -628,7 +499,15 @@ nav_order: 2
       color: var(--global-theme-color);
     }
 
+    .citation-modal button:focus-visible,
+    .citation-box:focus-visible {
+      outline: 2px solid var(--global-theme-color);
+      outline-offset: 2px;
+    }
+
     .citation-modal h3 {
+      flex: 0 0 auto;
+      padding-right: 2.75rem;
       font-family: "Roboto Slab", "Roboto", serif;
       font-weight: 500;
       font-size: 1.15rem;
@@ -639,6 +518,10 @@ nav_order: 2
     /* Citation format tabs — quiet segmented control */
     .citation-tabs {
       display: inline-flex;
+      flex: 0 0 auto;
+      flex-wrap: wrap;
+      align-self: flex-start;
+      max-width: 100%;
       gap: 2px;
       padding: 3px;
       margin-bottom: 1rem;
@@ -647,6 +530,7 @@ nav_order: 2
     }
 
     .citation-tab {
+      min-height: 2.75rem;
       padding: 0.35rem 0.9rem;
       border: none;
       background: transparent;
@@ -654,7 +538,7 @@ nav_order: 2
       border-radius: 6px;
       cursor: pointer;
       font-family: inherit;
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -681,6 +565,9 @@ nav_order: 2
     }
 
     .citation-box {
+      flex: 1 1 auto;
+      min-height: 3.5rem;
+      margin: 0;
       background: var(--global-code-bg-color);
       border: 1px solid var(--global-divider-color);
       border-radius: 8px;
@@ -697,6 +584,9 @@ nav_order: 2
     }
 
     .citation-copy-btn {
+      flex: 0 0 auto;
+      align-self: flex-start;
+      min-height: 2.75rem;
       margin-top: 1rem;
       background: transparent;
       color: var(--global-theme-color);
@@ -705,7 +595,7 @@ nav_order: 2
       border-radius: 4px;
       cursor: pointer;
       font-family: inherit;
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -727,6 +617,22 @@ nav_order: 2
       color: #1d8a4e;
     }
 
+    @media (max-width: 575px) {
+      .citation-modal-content {
+        padding: 1.25rem;
+      }
+
+      .citation-tab {
+        padding-inline: 0.6rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .citation-modal-content {
+        animation: none;
+      }
+    }
+
     /* Abstract styling for regular bibliography items - hidden but accessible to LLM crawlers */
     .publications ol.bibliography li .abstract {
       position: absolute;
@@ -740,27 +646,10 @@ nav_order: 2
       border: 0;
     }
 
-    @media (min-width: 768px) {
-      .pub-card {
-        flex-direction: row;
-      }
-
-      .pub-card-image {
-        width: 50%;
-        min-height: 200px;
-      }
-
-      .pub-card-content {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-    }
   </style>
 </head>
 
-<body class="fixed-top-nav ">
+<body class="fixed-top-nav publications-page">
   <header>
     <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation">
       <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Geunhyeong Lee </a> <button
@@ -785,494 +674,494 @@ nav_order: 2
       <div class="progress-container"> <span class="progress-bar"></span> </div>
     </progress>
   </header>
-  <div class="container mt-5" role="main">
+  <div class="container publication-main" role="main">
     <div class="post">
-      <header class="post-header">
-        <h1 class="post-title">Publications (SCIE)</h1>
-        <p class="post-description"></p>
+      <header class="post-header publication-header">
+        <div class="publication-heading">
+          <p class="publication-kicker">SCIE Journals</p>
+          <h1 class="post-title">Publications</h1>
+        </div>
+        <div class="publication-stats" aria-label="Publication counts"></div>
       </header>
       <article>
         <div class="publications">
-          <h2 class="bibliography">2026</h2>
-          <ol class="bibliography">
-            <li class="featured-publication">
-              <div class="pub-card">
-                <div class="pub-card-image">
-                  <img src="/assets/img/publication_preview/frib_beam_dump.svg" alt="Optimization of the FRIB Beam Dump"
-                    loading="lazy">
-                </div>
-                <div class="pub-card-content">
-                  <div id="lee2025optimization">
-                    <div class="title">Optimization of the FRIB Beam Dump: A Hybrid Genetic Algorithm and
-                      Reinforcement Learning Approach</div>
-                    <div class="author"> <em>Geunhyeong Lee<sup>†*</sup></em>, J. Song, R. Quispe-Abad, M. Patil, and T.
-                      Kanemura </div>
-                    <div class="periodical"> <em>Nuclear Science and Techniques</em>, 37, 184 </div>
-                    <div class="periodical highlight-jcr"> 🏆 JCR Top 1.2% in Nuclear Science & Technology (IF: 4.7)
-                    </div>
-                    <div class="abstract">The operational performance of high-power density systems, such as
-                      particle accelerators and next-generation nuclear reactors, is critically limited by the challenge
-                      of managing extreme thermal loads. To address this, we present a novel hybrid optimization
-                      framework combining a Genetic Algorithm (GA) with a Soft Actor-Critic (SAC) deep reinforcement
-                      learning agent. This framework was applied to a demanding real-world problem: redesigning the beam
-                      dump at the Facility for Rare Isotope Beams (FRIB) for a power upgrade from 20 kW to 50 kW. The
-                      resulting design, validated by 3D simulations, eliminates hazardous hot spots and achieves a
-                      highly uniform temperature distribution. This provides a robust operational margin, increasing the
-                      average power-handling capability by 72% over the current design, showcasing the framework's
-                      potential to solve complex thermal management challenges in both accelerator technology and
-                      advanced nuclear systems.</div>
+          <section class="publication-year-group" aria-labelledby="pub-year-2026">
+            <h2 class="bibliography" id="pub-year-2026">2026</h2>
+            <ol class="bibliography">
+              <li class="publication-entry">
+                <div id="lee2025optimization" class="publication-entry-content">
+                  <div class="title">Optimization of the FRIB Beam Dump: A Hybrid Genetic Algorithm and
+                    Reinforcement Learning Approach</div>
+                  <div class="author"> <em>Geunhyeong Lee<sup>†*</sup></em>, J. Song, R. Quispe-Abad, M. Patil, and
+                    T. Kanemura </div>
+                  <div class="periodical"> <em>Nuclear Science and Techniques</em>, 37, 184 </div>
+                  <div class="abstract">The operational performance of high-power density systems, such as particle
+                    accelerators and next-generation nuclear reactors, is critically limited by the challenge of
+                    managing extreme thermal loads. To address this, we present a novel hybrid optimization
+                    framework combining a Genetic Algorithm (GA) with a Soft Actor-Critic (SAC) deep reinforcement
+                    learning agent. This framework was applied to a demanding real-world problem: redesigning the
+                    beam dump at the Facility for Rare Isotope Beams (FRIB) for a power upgrade from 20 kW to 50 kW.
+                    The resulting design, validated by 3D simulations, eliminates hazardous hot spots and achieves a
+                    highly uniform temperature distribution. This provides a robust operational margin, increasing
+                    the average power-handling capability by 72% over the current design, showcasing the framework's
+                    potential to solve complex thermal management challenges in both accelerator technology and
+                    advanced nuclear systems.</div>
+                  <div class="publication-entry-footer">
+                    {% include journal_metrics.liquid key="lee2025optimization" %}
                     <div class="links">
                       <a href="https://doi.org/10.1007/s41365-026-02020-2" class="btn btn-sm z-depth-0" role="button"
                         rel="external nofollow noopener" target="_blank">DOI</a>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
-            <li class="featured-publication">
-              <div class="pub-card">
-                <div class="pub-card-image">
-                  <img src="/assets/img/publication_preview/3d_printable_emp.jpg"
-                    alt="3D-Printable DC Electromagnetic Pump" loading="lazy">
-                </div>
-                <div class="pub-card-content">
-                  <div id="lee2026conceptual">
-                    <div class="title">Conceptual Design of a 3D-Printable DC Electromagnetic Pump for Additive
-                      Manufacturing</div>
-                    <div class="author"> <em>Geunhyeong Lee<sup>†*</sup></em> </div>
-                    <div class="periodical"> <em>Nuclear Engineering and Technology</em>, 58(1), 103916 (JCR Top 15.9%) </div>
-                    <div class="abstract">Electromagnetic pumps offer advantages in handling high-temperature or
-                      corrosive fluids by generating flow through Lorentz forces rather than mechanical impellers.
-                      However, direct current electromagnetic pumps typically require large currents, resulting in
-                      increased manufacturing costs due to thicker copper wires. This study proposes a novel direct
-                      current electromagnetic pump for metal additive manufacturing, potentially suitable for advanced
-                      Small Modular Reactors cooled by liquid sodium and liquid-metal charge stripper systems used in
-                      accelerators. Permanent magnets arranged in opposing directions generate concentrated magnetic
-                      flux around constrained flow paths, thereby producing multiple Lorentz forces and reducing the
-                      required input current. Numerical simulations demonstrate that the proposed design achieves a
-                      developed pressure of 10.5 bar at a significantly reduced current of 330 A, corresponding to a 52%
-                      reduction in current compared to conventional helical-type pumps operating under similar
-                      conditions. Additionally, the new pump geometry simplifies fabrication by eliminating brazed
-                      joints and enabling a more compact design. These results indicate that 3D-printable
-                      electromagnetic pumps provide improvements in performance and ease of fabrication for
-                      high-pressure applications. Keywords: Metal 3D printing, Electromagnetic pump, Direct current,
-                      Multiple Lorentz forces, Design for additive manufacturing (DfAM)</div>
+              </li>
+              <li class="publication-entry">
+                <div id="lee2026conceptual" class="publication-entry-content">
+                  <div class="title">Conceptual Design of a 3D-Printable DC Electromagnetic Pump for Additive
+                    Manufacturing</div>
+                  <div class="author"> <em>Geunhyeong Lee<sup>†*</sup></em> </div>
+                  <div class="periodical"> <em>Nuclear Engineering and Technology</em>, 58(1), 103916 </div>
+                  <div class="abstract">Electromagnetic pumps offer advantages in handling high-temperature or
+                    corrosive fluids by generating flow through Lorentz forces rather than mechanical impellers.
+                    However, direct current electromagnetic pumps typically require large currents, resulting in
+                    increased manufacturing costs due to thicker copper wires. This study proposes a novel direct
+                    current electromagnetic pump for metal additive manufacturing, potentially suitable for advanced
+                    Small Modular Reactors cooled by liquid sodium and liquid-metal charge stripper systems used in
+                    accelerators. Permanent magnets arranged in opposing directions generate concentrated magnetic
+                    flux around constrained flow paths, thereby producing multiple Lorentz forces and reducing the
+                    required input current. Numerical simulations demonstrate that the proposed design achieves a
+                    developed pressure of 10.5 bar at a significantly reduced current of 330 A, corresponding to a
+                    52% reduction in current compared to conventional helical-type pumps operating under similar
+                    conditions. Additionally, the new pump geometry simplifies fabrication by eliminating brazed
+                    joints and enabling a more compact design. These results indicate that 3D-printable
+                    electromagnetic pumps provide improvements in performance and ease of fabrication for
+                    high-pressure applications. Keywords: Metal 3D printing, Electromagnetic pump, Direct current,
+                    Multiple Lorentz forces, Design for additive manufacturing (DfAM)</div>
+                  <div class="publication-entry-footer">
+                    {% include journal_metrics.liquid key="lee2026conceptual" %}
                     <div class="links">
                       <a href="https://doi.org/10.1016/j.net.2025.103916" class="btn btn-sm z-depth-0" role="button"
                         rel="external nofollow noopener" target="_blank">DOI</a>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
-          </ol>
-          <h2 class="bibliography">2025</h2>
-          <ol class="bibliography">
-            <li class="featured-publication">
-              <div class="pub-card">
-                <div class="pub-card-image">
-                  <img src="/assets/img/publication_preview/ai_anomaly_detection.jpg"
-                    alt="AI-based Anomaly Detection for Accelerator" loading="lazy">
-                </div>
-                <div class="pub-card-content">
-                  <div id="kim2025deep">
-                    <div class="title">Deep learning-based anomaly detection in drift tube quadrupole operation for the
-                      KOMAC linac</div>
-                    <div class="author"> D. Kim<sup>†</sup>, H. Kim, H. Kwon, Y. Yu, and <em>Geunhyeong
-                        Lee<sup>*</sup></em> </div>
-                    <div class="periodical"> <em>Journal of Nuclear Science and Technology</em>, 62(8), 709-714 </div>
-                    <div class="abstract">The Korea Multi-purpose Accelerator Complex linear accelerator encompasses a
-                      Drift Tube LINAC (DTL) structure for high-frequency beam bunches accelerated by a radio frequency
-                      quadrupole. The existing anomaly detection system triggers shutdown when anomalies are detected.
-                      This study aims to detect anomalies to prevent unnecessary shutdowns through pre-adjustments.
-                      Drift-tube quadrupoles (DTQs) focus the beam within the DTL tank, but prolonged usage can degrade
-                      performance. To ensure stable beam focusing, the operational status of DTQ power supplies must be
-                      monitored. The EPICS input/output controller monitors these operational parameters and triggers
-                      alarms when thresholds are exceeded. However, this approach fails to consider changes, such as
-                      equipment aging. A machine learning-driven method can assimilate historical data related to the
-                      magnet power supply, enabling deriving adaptive thresholds, facilitating anomaly detection. A long
-                      short-term memory (LSTM) autoencoder model is employed to detect anomalies in DTQ magnets.
-                      Exploratory DTQ magnet operation data analysis was conducted to identify potential failures. The
-                      LSTM autoencoder offered a more adaptive and proactive detection model than conventional
-                      threshold-based methods. The results show that voltage fault events can be detected range from
-                      30.7 to 286.6 minutes before they may cause a breakdown, enhancing device maintenance and
-                      performance through proactive prognostication of impending failures. Keywords: Deep learning,
-                      Anomaly detection, DTQ magnet</div>
+              </li>
+            </ol>
+          </section>
+          <section class="publication-year-group" aria-labelledby="pub-year-2025">
+            <h2 class="bibliography" id="pub-year-2025">2025</h2>
+            <ol class="bibliography">
+              <li class="publication-entry">
+                <div id="kim2025deep" class="publication-entry-content">
+                  <div class="title">Deep learning-based anomaly detection in drift tube quadrupole operation for
+                    the KOMAC linac</div>
+                  <div class="author"> D. Kim<sup>†</sup>, H. Kim, H. Kwon, Y. Yu, and <em>Geunhyeong
+                    Lee<sup>*</sup></em> </div>
+                  <div class="periodical"> <em>Journal of Nuclear Science and Technology</em>, 62(8), 709-714 </div>
+                  <div class="abstract">The Korea Multi-purpose Accelerator Complex linear accelerator encompasses a
+                    Drift Tube LINAC (DTL) structure for high-frequency beam bunches accelerated by a radio
+                    frequency quadrupole. The existing anomaly detection system triggers shutdown when anomalies are
+                    detected. This study aims to detect anomalies to prevent unnecessary shutdowns through
+                    pre-adjustments. Drift-tube quadrupoles (DTQs) focus the beam within the DTL tank, but prolonged
+                    usage can degrade performance. To ensure stable beam focusing, the operational status of DTQ
+                    power supplies must be monitored. The EPICS input/output controller monitors these operational
+                    parameters and triggers alarms when thresholds are exceeded. However, this approach fails to
+                    consider changes, such as equipment aging. A machine learning-driven method can assimilate
+                    historical data related to the magnet power supply, enabling deriving adaptive thresholds,
+                    facilitating anomaly detection. A long short-term memory (LSTM) autoencoder model is employed to
+                    detect anomalies in DTQ magnets. Exploratory DTQ magnet operation data analysis was conducted to
+                    identify potential failures. The LSTM autoencoder offered a more adaptive and proactive
+                    detection model than conventional threshold-based methods. The results show that voltage fault
+                    events can be detected range from 30.7 to 286.6 minutes before they may cause a breakdown,
+                    enhancing device maintenance and performance through proactive prognostication of impending
+                    failures. Keywords: Deep learning, Anomaly detection, DTQ magnet</div>
+                  <div class="publication-entry-footer">
+                    {% include journal_metrics.liquid key="kim2025deep" %}
                     <div class="links">
                       <a href="https://doi.org/10.1080/00223131.2025.2464742" class="btn btn-sm z-depth-0" role="button"
                         rel="external nofollow noopener" target="_blank">DOI</a>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
-          </ol>
-          <h2 class="bibliography">2024</h2>
-          <ol class="bibliography">
-            <li class="featured-publication">
-              <div class="pub-card">
-                <div class="pub-card-image">
-                  <img src="/assets/img/publication_preview/drl_heat_exchanger.jpg"
-                    alt="Deep Reinforcement Learning Heat Exchanger Optimization" loading="lazy">
-                </div>
-                <div class="pub-card-content">
-                  <div id="lee2024design">
-                    <div class="title">Design optimization of heat exchanger using deep reinforcement learning</div>
-                    <div class="author"> <em>Geunhyeong Lee<sup>†*</sup></em>, Y. Joo, S.U. Lee, T. Kim, Y. Yu, and H.G.
-                      Kim </div>
-                    <div class="periodical"> <em>International Communications in Heat and Mass Transfer</em>, 159, 107991 </div>
-                    <div class="periodical highlight-jcr"> 🏆 JCR Top 5.1% in Mechanics (IF: 6.4) </div>
-                    <div class="abstract">A micronuclear reactor is currently being developed using 3D printing
-                      technology, with a focus on refining the design of its heat exchanger. The objective is to
-                      optimize the topology of heat exchangers to improve their performance. The initial thermofluidic
-                      topology design is a crucial factor influencing the efficiency of the final optimized heat
-                      exchanger. This paper presents a novel approach for the topology optimization of heat exchangers
-                      using initial designs generated via deep reinforcement learning (DRL). A printed circuit heat
-                      exchanger (PCHE) served as the target for this optimization. Extensive simulations demonstrated
-                      that the DRL-assisted optimization method enhanced the heat exchange efficiency by 14.8% compared
-                      with that of conventional topology-optimized PCHEs. The optimized heat exchanger was fabricated
-                      using 3D printing, and its feasibility was confirmed by comparison with simulation data. The
-                      integration of DRL into the topology optimization and production processes via 3D printing lays
-                      the groundwork for the development of more efficient thermal systems and demonstrates a viable
-                      method for complex engineering applications. Keywords: Heat exchanger, Topology optimization,
-                      Reinforcement learning, 3D printing, Micro nuclear reactor, PCHE</div>
+              </li>
+            </ol>
+          </section>
+          <section class="publication-year-group" aria-labelledby="pub-year-2024">
+            <h2 class="bibliography" id="pub-year-2024">2024</h2>
+            <ol class="bibliography">
+              <li class="publication-entry">
+                <div id="lee2024design" class="publication-entry-content">
+                  <div class="title">Design optimization of heat exchanger using deep reinforcement learning</div>
+                  <div class="author"> <em>Geunhyeong Lee<sup>†*</sup></em>, Y. Joo, S.U. Lee, T. Kim, Y. Yu, and
+                    H.G. Kim </div>
+                  <div class="periodical"> <em>International Communications in Heat and Mass Transfer</em>, 159,
+                    107991 </div>
+                  <div class="abstract">A micronuclear reactor is currently being developed using 3D printing
+                    technology, with a focus on refining the design of its heat exchanger. The objective is to
+                    optimize the topology of heat exchangers to improve their performance. The initial thermofluidic
+                    topology design is a crucial factor influencing the efficiency of the final optimized heat
+                    exchanger. This paper presents a novel approach for the topology optimization of heat exchangers
+                    using initial designs generated via deep reinforcement learning (DRL). A printed circuit heat
+                    exchanger (PCHE) served as the target for this optimization. Extensive simulations demonstrated
+                    that the DRL-assisted optimization method enhanced the heat exchange efficiency by 14.8%
+                    compared with that of conventional topology-optimized PCHEs. The optimized heat exchanger was
+                    fabricated using 3D printing, and its feasibility was confirmed by comparison with simulation
+                    data. The integration of DRL into the topology optimization and production processes via 3D
+                    printing lays the groundwork for the development of more efficient thermal systems and
+                    demonstrates a viable method for complex engineering applications. Keywords: Heat exchanger,
+                    Topology optimization, Reinforcement learning, 3D printing, Micro nuclear reactor, PCHE</div>
+                  <div class="publication-entry-footer">
+                    {% include journal_metrics.liquid key="lee2024design" %}
                     <div class="links">
-                      <a href="https://doi.org/10.1016/j.icheatmasstransfer.2024.107991" class="btn btn-sm z-depth-0"
-                        role="button" rel="external nofollow noopener" target="_blank">DOI</a>
+                      <a href="https://doi.org/10.1016/j.icheatmasstransfer.2024.107991" class="btn btn-sm z-depth-0" role="button"
+                        rel="external nofollow noopener" target="_blank">DOI</a>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
-          </ol>
-          <h2 class="bibliography">2023</h2>
-          <ol class="bibliography">
-            <li class="featured-publication">
-              <div class="pub-card">
-                <div class="pub-card-image">
-                  <img src="/assets/img/publication_preview/pche_topology_optimization.jpg"
-                    alt="PCHE Topology Optimization" loading="lazy">
-                </div>
-                <div class="pub-card-content">
-                  <div id="lee2023dual">
-                    <div class="title">Dual-fluid Topology Optimization of Printed-circuit Heat Exchanger with
-                      Low-pumping-power Design</div>
-                    <div class="author"> <em>Geunhyeong Lee<sup>†*</sup></em>, Y. Joo<sup>†</sup>, Y. Yu, and H.G. Kim </div>
-                    <div class="periodical"> <em>Case Studies in Thermal Engineering</em>, 49, 103318 </div>
-                    <div class="periodical highlight-jcr"> 🏆 JCR Top 5.8% in Thermodynamics (IF: 6.4) </div>
-                    <div class="abstract">This study proposes a novel design for a printed-circuit heat exchanger (PCHE)
-                      using a dual-fluid topology optimization method. To account for the three-dimensional (3D) heat
-                      transfer phenomena using the two-dimensional (2D) computational domains, three distinct physical
-                      domains are defined: two design domains with density fields of hot and cold fluids, and a thermal
-                      conduction domain placed between both fluid fields. To account for the local heat transfer
-                      variation within a design domain, the local heat transfer coefficient is expressed using the
-                      density fields for the hot- and cold-fluid domains. Here, the design geometry had pillar-shaped
-                      fixed density values considering the metal 3D printing. Each flow region had a constant flow rate
-                      as the boundary condition with the constraint of the maximum pressure drop between the inlet and
-                      outlet. The total amount of the heat transferred between the hot and cold domains was maximized as
-                      an objective function. For the validation, the thermal performance of the topology-optimized PCHE
-                      was compared to that of a conventional PCHE. The topology-optimized PCHE showed a 66% higher heat
-                      transfer rate compared to the conventional PCHE under identical pumping-power conditions.
-                      Keywords: Topology optimization, Printed-circuit heat exchanger, Dual fluid, Heat transfer, 3D
-                      printing</div>
+              </li>
+            </ol>
+          </section>
+          <section class="publication-year-group" aria-labelledby="pub-year-2023">
+            <h2 class="bibliography" id="pub-year-2023">2023</h2>
+            <ol class="bibliography">
+              <li class="publication-entry">
+                <div id="lee2023dual" class="publication-entry-content">
+                  <div class="title">Dual-fluid Topology Optimization of Printed-circuit Heat Exchanger with
+                    Low-pumping-power Design</div>
+                  <div class="author"> <em>Geunhyeong Lee<sup>†*</sup></em>, Y. Joo<sup>†</sup>, Y. Yu, and H.G. Kim
+                    </div>
+                  <div class="periodical"> <em>Case Studies in Thermal Engineering</em>, 49, 103318 </div>
+                  <div class="abstract">This study proposes a novel design for a printed-circuit heat exchanger
+                    (PCHE) using a dual-fluid topology optimization method. To account for the three-dimensional
+                    (3D) heat transfer phenomena using the two-dimensional (2D) computational domains, three
+                    distinct physical domains are defined: two design domains with density fields of hot and cold
+                    fluids, and a thermal conduction domain placed between both fluid fields. To account for the
+                    local heat transfer variation within a design domain, the local heat transfer coefficient is
+                    expressed using the density fields for the hot- and cold-fluid domains. Here, the design
+                    geometry had pillar-shaped fixed density values considering the metal 3D printing. Each flow
+                    region had a constant flow rate as the boundary condition with the constraint of the maximum
+                    pressure drop between the inlet and outlet. The total amount of the heat transferred between the
+                    hot and cold domains was maximized as an objective function. For the validation, the thermal
+                    performance of the topology-optimized PCHE was compared to that of a conventional PCHE. The
+                    topology-optimized PCHE showed a 66% higher heat transfer rate compared to the conventional PCHE
+                    under identical pumping-power conditions. Keywords: Topology optimization, Printed-circuit heat
+                    exchanger, Dual fluid, Heat transfer, 3D printing</div>
+                  <div class="publication-entry-footer">
+                    {% include journal_metrics.liquid key="lee2023dual" %}
                     <div class="links">
                       <a href="https://doi.org/10.1016/j.csite.2023.103318" class="btn btn-sm z-depth-0" role="button"
                         rel="external nofollow noopener" target="_blank">DOI</a>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
-            <li class="featured-publication">
-              <div class="pub-card">
-                <div class="pub-card-image">
-                  <img src="/assets/img/publication_preview/raon_emp.jpg"
-                    alt="RAON Electromagnetic Pump for Lithium Film" loading="lazy">
-                </div>
-                <div class="pub-card-content">
-                  <div id="kang2023experimental">
-                    <div class="title">Experimental characterization of the flowline of a lithium film formed using an
-                      electromagnetic thruster for a RAON prototype charge stripper</div>
-                    <div class="author"> T. Kang<sup>†</sup>, <em>Geunhyeong Lee<sup>†</sup></em>, and H.R.
-                      Kim<sup>*</sup> </div>
-                    <div class="periodical"> <em>Nuclear Engineering and Design</em>, 412, 112481 (JCR Top 21.2%) </div>
-                    <div class="abstract">This paper describes the variable optimization of a lithium charge-stripper
-                      device and experimental characterization of lithium film formation for the charge removal of
-                      uranium using a magnetohydrodynamic liquid metal circulation system. To this end, liquid lithium
-                      thin films were developed using an electromagnetic thruster through collisions between a liquid
-                      lithium jet and a planar deflector. The lithium film flow characteristics were analyzed through
-                      simulation and water-jet experiments in terms of the liquid lithium film thickness. To circulate
-                      liquid lithium, a mechanically safe electromagnetic thruster with precise pressure control was
-                      designed by analyzing its electromagnetic and hydraulic parameters through finite element
-                      simulation. The analysis of the geometric arrangement of the permanent magnet and input current of
-                      the thruster revealed that compared to the existing electromagnetic thruster, the nominal input
-                      current of the newly-constructed one reduced by 57% and its weight reduced to 6%, and it required
-                      minimized input power, while facilitating maintenance. Further, the formation of a liquid lithium
-                      thin film with a thickness of 22 µm required to obtain the 79+ charge state of uranium was
-                      verified at an input current of 107 A. Keywords: Charge stripper, Electromagnetic thruster,
-                      Maintenance improvement, Liquid-lithium film</div>
+              </li>
+              <li class="publication-entry">
+                <div id="kang2023experimental" class="publication-entry-content">
+                  <div class="title">Experimental characterization of the flowline of a lithium film formed using an
+                    electromagnetic thruster for a RAON prototype charge stripper</div>
+                  <div class="author"> T. Kang<sup>†</sup>, <em>Geunhyeong Lee<sup>†</sup></em>, and H.R.
+                    Kim<sup>*</sup> </div>
+                  <div class="periodical"> <em>Nuclear Engineering and Design</em>, 412, 112481 </div>
+                  <div class="abstract">This paper describes the variable optimization of a lithium charge-stripper
+                    device and experimental characterization of lithium film formation for the charge removal of
+                    uranium using a magnetohydrodynamic liquid metal circulation system. To this end, liquid lithium
+                    thin films were developed using an electromagnetic thruster through collisions between a liquid
+                    lithium jet and a planar deflector. The lithium film flow characteristics were analyzed through
+                    simulation and water-jet experiments in terms of the liquid lithium film thickness. To circulate
+                    liquid lithium, a mechanically safe electromagnetic thruster with precise pressure control was
+                    designed by analyzing its electromagnetic and hydraulic parameters through finite element
+                    simulation. The analysis of the geometric arrangement of the permanent magnet and input current
+                    of the thruster revealed that compared to the existing electromagnetic thruster, the nominal
+                    input current of the newly-constructed one reduced by 57% and its weight reduced to 6%, and it
+                    required minimized input power, while facilitating maintenance. Further, the formation of a
+                    liquid lithium thin film with a thickness of 22 µm required to obtain the 79+ charge state of
+                    uranium was verified at an input current of 107 A. Keywords: Charge stripper, Electromagnetic
+                    thruster, Maintenance improvement, Liquid-lithium film</div>
+                  <div class="publication-entry-footer">
+                    {% include journal_metrics.liquid key="kang2023experimental" %}
                     <div class="links">
-                      <a href="https://doi.org/10.1016/j.nucengdes.2023.112481" class="btn btn-sm z-depth-0"
-                        role="button" rel="external nofollow noopener" target="_blank">DOI</a>
+                      <a href="https://doi.org/10.1016/j.nucengdes.2023.112481" class="btn btn-sm z-depth-0" role="button"
+                        rel="external nofollow noopener" target="_blank">DOI</a>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
-          </ol>
-          <h2 class="bibliography">2021</h2>
-          <ol class="bibliography">
-            <li>
-              <div class="row">
-                <div class="col col-sm-2 abbr"> </div>
-                <div id="lee2021numerical" class="col-sm-8">
-                  <div class="title">Numerical study of Faraday-type nitrogen plasma magnetohydrodynamic generator</div>
+              </li>
+            </ol>
+          </section>
+          <section class="publication-year-group" aria-labelledby="pub-year-2021">
+            <h2 class="bibliography" id="pub-year-2021">2021</h2>
+            <ol class="bibliography">
+              <li class="publication-entry">
+                <div id="lee2021numerical" class="publication-entry-content">
+                  <div class="title">Numerical study of Faraday-type nitrogen plasma magnetohydrodynamic
+                    generator</div>
                   <div class="author"> <em>Geunhyeong Lee<sup>†</sup></em> and H.R. Kim<sup>*</sup> </div>
                   <div class="periodical"> <em>Journal of the Korean Physical Society</em>, 78(7), 600-606 </div>
-                  <div class="periodical"> </div>
                   <div class="abstract">The variables of a magnetohydrodynamic (MHD) generator were analyzed for the
-                    application of a cogeneration system in a coal-fired power station. The MHD generator system is more
-                    efficient than other generation systems, owing to its high working temperature. The system is
-                    typically combined with a steam generator because high-temperature conditions result in significant
-                    residual heat. The magnetic and electric fields, which directly affect the electric output, should
-                    be analyzed under this condition. The electric field, velocity, and magnetic flux density of the MHD
-                    generator were analyzed, and nitrogen plasma in the temperature range of 3000 K was employed. The
-                    electric power was affected by velocity, magnetic flux density, and electric conductivity. The
-                    electric power was proportional to the square of the velocity and magnetic flux density and
-                    proportional to the electrical conductivity. A de Laval nozzle was adopted to increase the velocity.
-                    The electric power was optimized according to the angle of the de Laval nozzle. Power generation was
-                    derived through the geometrical size and magnetic flux density of the prototype Faraday-type
-                    nitrogen plasma MHD generator. Keywords: Magnetohydrodynamic generator, de Laval nozzle, Velocity,
-                    Magnetic flux density, Power</div>
-                  <div class="links"> <a href="https://doi.org/10.1007/s40042-021-00116-z" class="btn btn-sm z-depth-0"
-                      role="button" rel="external nofollow noopener" target="_blank">DOI</a> </div>
+                    application of a cogeneration system in a coal-fired power station. The MHD generator system is
+                    more efficient than other generation systems, owing to its high working temperature. The system
+                    is typically combined with a steam generator because high-temperature conditions result in
+                    significant residual heat. The magnetic and electric fields, which directly affect the electric
+                    output, should be analyzed under this condition. The electric field, velocity, and magnetic flux
+                    density of the MHD generator were analyzed, and nitrogen plasma in the temperature range of 3000
+                    K was employed. The electric power was affected by velocity, magnetic flux density, and electric
+                    conductivity. The electric power was proportional to the square of the velocity and magnetic
+                    flux density and proportional to the electrical conductivity. A de Laval nozzle was adopted to
+                    increase the velocity. The electric power was optimized according to the angle of the de Laval
+                    nozzle. Power generation was derived through the geometrical size and magnetic flux density of
+                    the prototype Faraday-type nitrogen plasma MHD generator. Keywords: Magnetohydrodynamic
+                    generator, de Laval nozzle, Velocity, Magnetic flux density, Power</div>
+                  <div class="publication-entry-footer">
+                    <div class="links">
+                      <a href="https://doi.org/10.1007/s40042-021-00116-z" class="btn btn-sm z-depth-0" role="button"
+                        rel="external nofollow noopener" target="_blank">DOI</a>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </li>
-          </ol>
-          <h2 class="bibliography">2020</h2>
-          <ol class="bibliography">
-            <li>
-              <div class="row">
-                <div class="col col-sm-2 abbr"> </div>
-                <div id="lee2020variable" class="col-sm-8">
+              </li>
+            </ol>
+          </section>
+          <section class="publication-year-group" aria-labelledby="pub-year-2020">
+            <h2 class="bibliography" id="pub-year-2020">2020</h2>
+            <ol class="bibliography">
+              <li class="publication-entry">
+                <div id="lee2020variable" class="publication-entry-content">
                   <div class="title">The variable analysis of an MHD generator with electrical output of 10 kW for
                     application to bi-plant method electricity generation</div>
                   <div class="author"> <em>Geunhyeong Lee<sup>†</sup></em> and H.R. Kim<sup>*</sup> </div>
-                  <div class="periodical"> <em>International Journal of Energy Research</em>, 44(10), 8125-8132 </div>
-                  <div class="periodical highlight-jcr"> 🏆 JCR Top 1.5% in Nuclear Science
-                    & Technology </div>
+                  <div class="periodical"> <em>International Journal of Energy Research</em>, 44(10), 8125-8132
+                    </div>
                   <div class="abstract">Magnetohydrodynamic (MHD) generators can be used to increase the total
-                    efficiencies of fossil power plants by adopting a bi-plant design, in which electricity is generated
-                    using both a turbine and the MHD generator. An MHD generator with an electric output of 10 kW is
-                    numerically analyzed herein for application to bi-plant method electricity generation. An
-                    electrically conductive plasma flue gas, with a high temperature of approximately 3000 K from the
-                    power plant, was considered for the generation of electricity from its flow in the magnetic field,
-                    where electricity was produced directly without the turbine facility from the MHD generator.
-                    Velocity profiles were calculated using an ANSYS code simulation. Then, using the magnetic flux
-                    density, the electrical output was calculated to design the MHD generator. The magnetic flux
-                    density, velocity, and geometrical variables affected the power output of the MHD generator. The
-                    power was proportional to the square of magnetic flux density, whereas velocity and power density
-                    were constant. Keywords: Magnetohydrodynamic generator, Magnetic flux density, Velocity, Electrical
-                    output</div>
-                  <div class="links"> <a href="https://doi.org/10.1002/er.5100" class="btn btn-sm z-depth-0"
-                      role="button" rel="external nofollow noopener" target="_blank">DOI</a> </div>
-                </div>
-              </div>
-            </li>
-          </ol>
-          <h2 class="bibliography">2019</h2>
-          <ol class="bibliography">
-            <li>
-              <div class="row">
-                <div class="col col-sm-2 abbr"> </div>
-                <div id="lee2019mathematical" class="col-sm-8">
-                  <div class="title">Mathematical approach for optimization of magnetohydrodynamic circulation system
+                    efficiencies of fossil power plants by adopting a bi-plant design, in which electricity is
+                    generated using both a turbine and the MHD generator. An MHD generator with an electric output
+                    of 10 kW is numerically analyzed herein for application to bi-plant method electricity
+                    generation. An electrically conductive plasma flue gas, with a high temperature of approximately
+                    3000 K from the power plant, was considered for the generation of electricity from its flow in
+                    the magnetic field, where electricity was produced directly without the turbine facility from
+                    the MHD generator. Velocity profiles were calculated using an ANSYS code simulation. Then, using
+                    the magnetic flux density, the electrical output was calculated to design the MHD generator. The
+                    magnetic flux density, velocity, and geometrical variables affected the power output of the MHD
+                    generator. The power was proportional to the square of magnetic flux density, whereas velocity
+                    and power density were constant. Keywords: Magnetohydrodynamic generator, Magnetic flux density,
+                    Velocity, Electrical output</div>
+                  <div class="publication-entry-footer">
+                    {% include journal_metrics.liquid key="lee2020variable" %}
+                    <div class="links">
+                      <a href="https://doi.org/10.1002/er.5100" class="btn btn-sm z-depth-0" role="button"
+                        rel="external nofollow noopener" target="_blank">DOI</a>
+                    </div>
                   </div>
+                </div>
+              </li>
+            </ol>
+          </section>
+          <section class="publication-year-group" aria-labelledby="pub-year-2019">
+            <h2 class="bibliography" id="pub-year-2019">2019</h2>
+            <ol class="bibliography">
+              <li class="publication-entry">
+                <div id="lee2019mathematical" class="publication-entry-content">
+                  <div class="title">Mathematical approach for optimization of magnetohydrodynamic circulation
+                    system </div>
                   <div class="author"> <em>Geunhyeong Lee<sup>†</sup></em> and H.R. Kim<sup>*</sup> </div>
-                  <div class="periodical"> <em>Nuclear Engineering and Technology</em>, 51(3), 654-664 (JCR Top 16.2%) </div>
+                  <div class="periodical"> <em>Nuclear Engineering and Technology</em>, 51(3), 654-664 </div>
                   <div class="abstract">The geometrical and electromagnetic variables of a rectangular-type
                     magnetohydrodynamic (MHD) circulation system are optimized to solve MHD equations for the active
                     decay heat removal system of a prototype Gen-IV sodium fast reactor. Decay heat must be actively
-                    removed from the reactor coolant to prevent the reactor system from exceeding its temperature limit.
-                    A rectangular-type MHD circulation system is adopted to remove this heat via an active system that
-                    produces developed pressure through the Lorentz force of the circulating sodium. Thus, the
-                    rectangular-type MHD circulation system for a circulating loop is modeled with the following
-                    specifications: a developed pressure of 2 kPa and flow rate of 0.02 m³/s at a temperature of 499 K.
-                    The MHD equations, which consist of momentum and Maxwell's equations, are solved to find the minimum
-                    input current satisfying the nominal developed pressure and flow rate according to the change of
-                    variables including the magnetic flux density and geometrical variables. The optimization shows that
-                    the rectangular-type MHD circulation system requires a current of 3976 A and a magnetic flux density
-                    of 0.037 T under the conditions of the active decay heat removal system. Keywords:
-                    Magnetohydrodynamics (MHD), Rectangular-type circulation system, Magnetic flux density, Current
+                    removed from the reactor coolant to prevent the reactor system from exceeding its temperature
+                    limit. A rectangular-type MHD circulation system is adopted to remove this heat via an active
+                    system that produces developed pressure through the Lorentz force of the circulating sodium.
+                    Thus, the rectangular-type MHD circulation system for a circulating loop is modeled with the
+                    following specifications: a developed pressure of 2 kPa and flow rate of 0.02 m³/s at a
+                    temperature of 499 K. The MHD equations, which consist of momentum and Maxwell's equations, are
+                    solved to find the minimum input current satisfying the nominal developed pressure and flow rate
+                    according to the change of variables including the magnetic flux density and geometrical
+                    variables. The optimization shows that the rectangular-type MHD circulation system requires a
+                    current of 3976 A and a magnetic flux density of 0.037 T under the conditions of the active
+                    decay heat removal system. Keywords: Magnetohydrodynamics (MHD), Rectangular-type circulation
+                    system, Magnetic flux density, Current </div>
+                  <div class="publication-entry-footer">
+                    {% include journal_metrics.liquid key="lee2019mathematical" %}
+                    <div class="links">
+                      <a href="https://doi.org/10.1016/j.net.2018.12.008" class="btn btn-sm z-depth-0" role="button"
+                        rel="external nofollow noopener" target="_blank">DOI</a>
+                    </div>
                   </div>
-                  <div class="links"> <a href="https://doi.org/10.1016/j.net.2018.12.008" class="btn btn-sm z-depth-0"
-                      role="button" rel="external nofollow noopener" target="_blank">DOI</a> </div>
                 </div>
-              </div>
-            </li>
-          </ol>
-          <h2 class="bibliography">2018</h2>
-          <ol class="bibliography">
-            <li>
-              <div class="row">
-                <div class="col col-sm-2 abbr"> </div>
-                <div id="lee2018magnetohydrodynamics" class="col-sm-8">
+              </li>
+            </ol>
+          </section>
+          <section class="publication-year-group" aria-labelledby="pub-year-2018">
+            <h2 class="bibliography" id="pub-year-2018">2018</h2>
+            <ol class="bibliography">
+              <li class="publication-entry">
+                <div id="lee2018magnetohydrodynamics" class="publication-entry-content">
                   <div class="title">Magnetohydrodynamics approach for active decay heat removal system in future
                     generation IV reactor</div>
                   <div class="author"> <em>Geunhyeong Lee<sup>†</sup></em> and H.R. Kim<sup>*</sup> </div>
-                  <div class="periodical"> <em>International Journal of Energy Research</em>, 42(10), 3266-3278 </div>
-                  <div class="periodical highlight-jcr"> 🏆 JCR Top 1.5% in Nuclear Science
-                    & Technology </div>
+                  <div class="periodical"> <em>International Journal of Energy Research</em>, 42(10), 3266-3278
+                    </div>
                   <div class="abstract">In this work, a helical-type magnetohydrodynamics transportation system for
                     active decay-heat-removal system in a prototype fourth-generation sodium fast reactor was
-                    numerically analysed considering operational conditions of atmospheric pressure, for liquid sodium
-                    transportation in a loop. The prototype fourth-generation sodium fast reactor is a reactor with high
-                    uranium utilisation and an electric power output of 150 MWe, subjected to a developed pressure of 10
-                    kPa and flowrate of 0.005 m³/s under a temperature condition of 468.75 K for the active
-                    decay-heat-removal system. A helical-type magnetohydrodynamics transportation system was used to
-                    develop pressure in such a loop to reduce the current compared with that in a rectangular-type one;
-                    this could overcome the principal limitation of the requirement of a high current in a
-                    magnetohydrodynamics transportation system. The main parameters of the considered helical-type
-                    magnetohydrodynamics transportation system were: the inner diameter, silver brazing, number of
-                    turns, and radius of pump, which affect the current, magnetic-flux density, and its velocity. The
-                    parameters were analysed in relation to the minimisation of the pump current while maximising the
-                    pressure. The specifications of the optimised helical-type magnetohydrodynamics transportation
-                    system—current of 352 A and magnetic-flux density of 0.466 T—were derived to satisfy the conditions
-                    of the active decay-heat-removal system. Keywords: ADHRS, Helical-type MHD transportation system,
-                    Magnetic-flux density, Current</div>
-                  <div class="links"> <a href="https://doi.org/10.1002/er.4080" class="btn btn-sm z-depth-0"
-                      role="button" rel="external nofollow noopener" target="_blank">DOI</a> </div>
+                    numerically analysed considering operational conditions of atmospheric pressure, for liquid
+                    sodium transportation in a loop. The prototype fourth-generation sodium fast reactor is a
+                    reactor with high uranium utilisation and an electric power output of 150 MWe, subjected to a
+                    developed pressure of 10 kPa and flowrate of 0.005 m³/s under a temperature condition of 468.75
+                    K for the active decay-heat-removal system. A helical-type magnetohydrodynamics transportation
+                    system was used to develop pressure in such a loop to reduce the current compared with that in a
+                    rectangular-type one; this could overcome the principal limitation of the requirement of a high
+                    current in a magnetohydrodynamics transportation system. The main parameters of the considered
+                    helical-type magnetohydrodynamics transportation system were: the inner diameter, silver
+                    brazing, number of turns, and radius of pump, which affect the current, magnetic-flux density,
+                    and its velocity. The parameters were analysed in relation to the minimisation of the pump
+                    current while maximising the pressure. The specifications of the optimised helical-type
+                    magnetohydrodynamics transportation system—current of 352 A and magnetic-flux density of 0.466
+                    T—were derived to satisfy the conditions of the active decay-heat-removal system. Keywords:
+                    ADHRS, Helical-type MHD transportation system, Magnetic-flux density, Current</div>
+                  <div class="publication-entry-footer">
+                    {% include journal_metrics.liquid key="lee2018magnetohydrodynamics" %}
+                    <div class="links">
+                      <a href="https://doi.org/10.1002/er.4080" class="btn btn-sm z-depth-0" role="button"
+                        rel="external nofollow noopener" target="_blank">DOI</a>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li>
-              <div class="row">
-                <div class="col col-sm-2 abbr"> </div>
-                <div id="lee2018numerical" class="col-sm-8">
+              </li>
+              <li class="publication-entry">
+                <div id="lee2018numerical" class="publication-entry-content">
                   <div class="title">Numerical analysis of the electromagnetic force for design optimization of a
                     rectangular direct current electromagnetic pump</div>
                   <div class="author"> <em>Geunhyeong Lee<sup>†</sup></em> and H.R. Kim<sup>*</sup> </div>
-                  <div class="periodical"> <em>Nuclear Engineering and Technology</em>, 50(6), 869-876 (JCR Top 19.1%) </div>
-                  <div class="abstract">The force of a direct current (DC) electromagnetic pump used to transport liquid
-                    lithium was analyzed to optimize its geometrical and electrical parameters by numerical simulation.
-                    In a heavy-ion accelerator, which is being developed in Korea, a liquid lithium film is utilized for
-                    its high charge-stripping efficiency for heavy ions of uranium. A DC electromagnetic pump with a
-                    flow rate of 6 cm³/s and a developed pressure of 1.5 MPa at a temperature of 200°C was required to
-                    circulate the liquid lithium to form liquid lithium films. The current and magnetic flux densities
-                    in the flow gap, where a Sm2Co17 permanent magnet was used to generate a magnetic field, were
-                    analyzed for the electromagnetic force distribution generated in the pump. The pressure developed by
-                    the Lorentz force on the electromagnetic force was calculated by considering the electromotive force
-                    and hydraulic pressure drop in the narrow flow channel. The opposite force at the end part due to
-                    the magnetic flux density in the opposite direction depended on the pump geometrical parameters such
-                    as the pump duct length and width that defines the rectangular channels in the nonhomogeneous
-                    distributions of the current and magnetic fields. Keywords: Current Distribution, Developed
-                    Pressure, Heavy-ion Accelerator, Liquid Lithium Film, Magnetic Flux Density Distribution,
-                    Rectangular DC Electromagnetic Pump</div>
-                  <div class="links"> <a href="https://doi.org/10.1016/j.net.2018.04.010" class="btn btn-sm z-depth-0"
-                      role="button" rel="external nofollow noopener" target="_blank">DOI</a> </div>
+                  <div class="periodical"> <em>Nuclear Engineering and Technology</em>, 50(6), 869-876 </div>
+                  <div class="abstract">The force of a direct current (DC) electromagnetic pump used to transport
+                    liquid lithium was analyzed to optimize its geometrical and electrical parameters by numerical
+                    simulation. In a heavy-ion accelerator, which is being developed in Korea, a liquid lithium film
+                    is utilized for its high charge-stripping efficiency for heavy ions of uranium. A DC
+                    electromagnetic pump with a flow rate of 6 cm³/s and a developed pressure of 1.5 MPa at a
+                    temperature of 200°C was required to circulate the liquid lithium to form liquid lithium films.
+                    The current and magnetic flux densities in the flow gap, where a Sm2Co17 permanent magnet was
+                    used to generate a magnetic field, were analyzed for the electromagnetic force distribution
+                    generated in the pump. The pressure developed by the Lorentz force on the electromagnetic force
+                    was calculated by considering the electromotive force and hydraulic pressure drop in the narrow
+                    flow channel. The opposite force at the end part due to the magnetic flux density in the
+                    opposite direction depended on the pump geometrical parameters such as the pump duct length and
+                    width that defines the rectangular channels in the nonhomogeneous distributions of the current
+                    and magnetic fields. Keywords: Current Distribution, Developed Pressure, Heavy-ion Accelerator,
+                    Liquid Lithium Film, Magnetic Flux Density Distribution, Rectangular DC Electromagnetic
+                    Pump</div>
+                  <div class="publication-entry-footer">
+                    {% include journal_metrics.liquid key="lee2018numerical" %}
+                    <div class="links">
+                      <a href="https://doi.org/10.1016/j.net.2018.04.010" class="btn btn-sm z-depth-0" role="button"
+                        rel="external nofollow noopener" target="_blank">DOI</a>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li>
-              <div class="row">
-                <div class="col col-sm-2 abbr"> </div>
-                <div id="lee2018magnetic" class="col-sm-8">
-                  <div class="title">Magnetic-field analysis of an MHD channel in a liquid-metal circulation system of a
-                    prototype GenIV sodium fast reactor</div>
+              </li>
+              <li class="publication-entry">
+                <div id="lee2018magnetic" class="publication-entry-content">
+                  <div class="title">Magnetic-field analysis of an MHD channel in a liquid-metal circulation system
+                    of a prototype GenIV sodium fast reactor</div>
                   <div class="author"> <em>Geunhyeong Lee<sup>†</sup></em> and H.R. Kim<sup>*</sup> </div>
                   <div class="periodical"> <em>Annals of Nuclear Energy</em>, 115, 343-351 </div>
-                  <div class="periodical"> </div>
                   <div class="abstract">A helical-type direct current (DC) electromagnetic pump with a developed
-                    pressure of 10 kPa and flow rate of 0.005 m³/s was analyzed at a temperature of 226 °C for an active
-                    decay heat-removal system (ADHRS) of a prototype GenIV sodium fast reactor. The rectangular-type DC
-                    electromagnetic pump, which was selected for the ADHRS, requires a very large current (>1000 A). The
-                    helical-type DC electromagnetic pump was considered to provide multiple current to a pump duct to
-                    reduce the input current requirement. The magnetic flux density of a permanent magnet is one of the
-                    important factors that determine the performance of the electromagnetic pump. The magnetic field for
-                    the flow channel of the helical-type DC electromagnetic pump was analyzed in which a Sm2Co17
-                    permanent magnet was used to generate the Lorentz force for the circulation of liquid metal. The
-                    Lorentz force, which directly affected the developed pressure of the electromagnetic pump, was
-                    increased proportional to the magnetic flux density, which led to the increase in the velocity of
-                    the liquid metal in the flow channel. The permanent magnet in the +z and −z directions and the
-                    ferromagnetic material added in the r direction increased the magnitude of the magnetic flux
-                    density, which led the magnetic flux line to the flow channel. The arrangement of the permanent
-                    magnet system showed the optimized geometry of the inner ferromagnetic material with a radius of 110
-                    mm and outer ferromagnetic material with a thickness of 30 mm and height of 70 mm. The average value
-                    of the magnetic flux density in the liquid-metal flow channel was 0.848 T under maximum condition by
-                    considering the mechanical and spatial restrictions. Keywords: Magnetic flux density, Helical-type
-                    DC electromagnetic pump, Permanent magnet, Ferromagnetic material</div>
-                  <div class="links"> <a href="https://doi.org/10.1016/j.anucene.2018.01.049"
-                      class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener"
-                      target="_blank">DOI</a> </div>
+                    pressure of 10 kPa and flow rate of 0.005 m³/s was analyzed at a temperature of 226 °C for an
+                    active decay heat-removal system (ADHRS) of a prototype GenIV sodium fast reactor. The
+                    rectangular-type DC electromagnetic pump, which was selected for the ADHRS, requires a very
+                    large current (>1000 A). The helical-type DC electromagnetic pump was considered to provide
+                    multiple current to a pump duct to reduce the input current requirement. The magnetic flux
+                    density of a permanent magnet is one of the important factors that determine the performance of
+                    the electromagnetic pump. The magnetic field for the flow channel of the helical-type DC
+                    electromagnetic pump was analyzed in which a Sm2Co17 permanent magnet was used to generate the
+                    Lorentz force for the circulation of liquid metal. The Lorentz force, which directly affected
+                    the developed pressure of the electromagnetic pump, was increased proportional to the magnetic
+                    flux density, which led to the increase in the velocity of the liquid metal in the flow channel.
+                    The permanent magnet in the +z and −z directions and the ferromagnetic material added in the r
+                    direction increased the magnitude of the magnetic flux density, which led the magnetic flux line
+                    to the flow channel. The arrangement of the permanent magnet system showed the optimized
+                    geometry of the inner ferromagnetic material with a radius of 110 mm and outer ferromagnetic
+                    material with a thickness of 30 mm and height of 70 mm. The average value of the magnetic flux
+                    density in the liquid-metal flow channel was 0.848 T under maximum condition by considering the
+                    mechanical and spatial restrictions. Keywords: Magnetic flux density, Helical-type DC
+                    electromagnetic pump, Permanent magnet, Ferromagnetic material</div>
+                  <div class="publication-entry-footer">
+                    <div class="links">
+                      <a href="https://doi.org/10.1016/j.anucene.2018.01.049" class="btn btn-sm z-depth-0" role="button"
+                        rel="external nofollow noopener" target="_blank">DOI</a>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </li>
-          </ol>
-          <h2 class="bibliography">2017</h2>
-          <ol class="bibliography">
-            <li>
-              <div class="row">
-                <div class="col col-sm-2 abbr"> </div>
-                <div id="lee2017design" class="col-sm-8">
+              </li>
+            </ol>
+          </section>
+          <section class="publication-year-group" aria-labelledby="pub-year-2017">
+            <h2 class="bibliography" id="pub-year-2017">2017</h2>
+            <ol class="bibliography">
+              <li class="publication-entry">
+                <div id="lee2017design" class="publication-entry-content">
                   <div class="title">Design analysis of DC electromagnetic pump for liquid sodium–CO2 reaction
                     experimental characterization</div>
                   <div class="author"> <em>Geunhyeong Lee<sup>†</sup></em> and H.R. Kim<sup>*</sup> </div>
-                  <div class="periodical"> <em>Annals of Nuclear Energy</em>, 109, 490-497 (JCR Top 13.6%) </div>
-                  <div class="abstract">A DC electromagnetic pump with a rectangular channel was optimally designed and
-                    fabricated for studying the reaction between liquid sodium and carbon dioxide (CO2) gas in a sodium
-                    fast reactor. Heat exchange using CO2 gas has recently been proposed for the secondary sodium loop
-                    of the sodium fast reactor being developed in Korea because of the strong chemical reaction between
-                    liquid sodium and water. A DC conduction-type electromagnetic pump with a rectangular channel was
-                    selected to circulate liquid sodium in the experimental test loop for the sodium–CO2 reaction.
-                    Electromagnetic force, which was generated by the Lorentz force of an electrical equivalent circuit,
-                    was used to drive the liquid sodium. The developed pressure of the pump was investigated using
-                    optimization of the geometrical and electromagnetic variables of the pump considering Lorentz force,
-                    electromotive force, and hydraulic loss in the narrow channel of the pump. The characteristics of
-                    the developed pressure were studied with respect to the flow rate, and the pump was fabricated using
-                    the optimized design specifications. The distributions of current and magnetic flux density in the
-                    narrow channel were calculated for the fabricated DC electromagnetic pump with a flow rate of 3
-                    L/min and developed pressure of 0.05 bar, operated at a temperature of 300℃. A comparative analysis
-                    of the performance of the designed pump was investigated by considering the fringe effects and
-                    Lorentz force using both the equivalent circuit method and numerical analysis. Keywords: Rectangular
-                    DC electromagnetic pump, Fringe effects, Current distribution, Magnetic flux density distribution,
-                    Developed pressure, Sodium–CO2 reaction test loop</div>
-                  <div class="links"> <a href="https://doi.org/10.1016/j.anucene.2017.05.054"
-                      class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener"
-                      target="_blank">DOI</a> </div>
+                  <div class="periodical"> <em>Annals of Nuclear Energy</em>, 109, 490-497 </div>
+                  <div class="abstract">A DC electromagnetic pump with a rectangular channel was optimally designed
+                    and fabricated for studying the reaction between liquid sodium and carbon dioxide (CO2) gas in a
+                    sodium fast reactor. Heat exchange using CO2 gas has recently been proposed for the secondary
+                    sodium loop of the sodium fast reactor being developed in Korea because of the strong chemical
+                    reaction between liquid sodium and water. A DC conduction-type electromagnetic pump with a
+                    rectangular channel was selected to circulate liquid sodium in the experimental test loop for
+                    the sodium–CO2 reaction. Electromagnetic force, which was generated by the Lorentz force of an
+                    electrical equivalent circuit, was used to drive the liquid sodium. The developed pressure of
+                    the pump was investigated using optimization of the geometrical and electromagnetic variables of
+                    the pump considering Lorentz force, electromotive force, and hydraulic loss in the narrow
+                    channel of the pump. The characteristics of the developed pressure were studied with respect to
+                    the flow rate, and the pump was fabricated using the optimized design specifications. The
+                    distributions of current and magnetic flux density in the narrow channel were calculated for the
+                    fabricated DC electromagnetic pump with a flow rate of 3 L/min and developed pressure of 0.05
+                    bar, operated at a temperature of 300℃. A comparative analysis of the performance of the
+                    designed pump was investigated by considering the fringe effects and Lorentz force using both
+                    the equivalent circuit method and numerical analysis. Keywords: Rectangular DC electromagnetic
+                    pump, Fringe effects, Current distribution, Magnetic flux density distribution, Developed
+                    pressure, Sodium–CO2 reaction test loop</div>
+                  <div class="publication-entry-footer">
+                    {% include journal_metrics.liquid key="lee2017design" %}
+                    <div class="links">
+                      <a href="https://doi.org/10.1016/j.anucene.2017.05.054" class="btn btn-sm z-depth-0" role="button"
+                        rel="external nofollow noopener" target="_blank">DOI</a>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li>
-              <div class="row">
-                <div class="col col-sm-2 abbr"> </div>
-                <div id="lee2017numerical" class="col-sm-8">
-                  <div class="title">Numerical investigation and comparison of the rectangular, cylindrical, and helical-type DC electromagnetic pumps</div>
+              </li>
+              <li class="publication-entry">
+                <div id="lee2017numerical" class="publication-entry-content">
+                  <div class="title">Numerical investigation and comparison of the rectangular, cylindrical, and
+                    helical-type DC electromagnetic pumps</div>
                   <div class="author"> <em>Geunhyeong Lee<sup>†</sup></em> and H.R. Kim<sup>*</sup> </div>
                   <div class="periodical"> <em>Magnetohydrodynamics</em>, 53(2), 429-438 </div>
-                  <div class="periodical"> </div>
-                  <div class="abstract">Rectangular-, cylindrical-, and helical-type DC electromagnetic pumps with a low
-                    flowrate of 6 cc/s and a developed pressure of 10 bar were comparatively analyzed for a liquid
-                    lithium transportation system operating at a temperature of 300 °C. The design variables for DC
-                    electromagnetic pumps with different types of geometries were optimized to attain the required
-                    flowrate and developed pressure. The relation between the developed pressure and the input current
-                    was analyzed for an incompressible liquid metal flow in the channels of all three types of DC
-                    electromagnetic pumps. Theoretical calculations showed that the helical-type DC electromagnetic
-                    pump, which had multiple connected ducts with parallel contacts for a reduced input current, needed
-                    12% of the current of the rectangular- and cylindrical-type pumps in order to satisfy the
-                    hydrodynamic conditions, despite the more or less complex geometry. Keywords: DC Electromagnetic
-                    Pumps, Design, Liquid Metal Pumps, Optimization</div>
-                  <div class="links"> <a href="https://doi.org/10.22364/mhd.53.2.23" class="btn btn-sm z-depth-0"
-                      role="button" rel="external nofollow noopener" target="_blank">DOI</a> </div>
+                  <div class="abstract">Rectangular-, cylindrical-, and helical-type DC electromagnetic pumps with a
+                    low flowrate of 6 cc/s and a developed pressure of 10 bar were comparatively analyzed for a
+                    liquid lithium transportation system operating at a temperature of 300 °C. The design variables
+                    for DC electromagnetic pumps with different types of geometries were optimized to attain the
+                    required flowrate and developed pressure. The relation between the developed pressure and the
+                    input current was analyzed for an incompressible liquid metal flow in the channels of all three
+                    types of DC electromagnetic pumps. Theoretical calculations showed that the helical-type DC
+                    electromagnetic pump, which had multiple connected ducts with parallel contacts for a reduced
+                    input current, needed 12% of the current of the rectangular- and cylindrical-type pumps in order
+                    to satisfy the hydrodynamic conditions, despite the more or less complex geometry. Keywords: DC
+                    Electromagnetic Pumps, Design, Liquid Metal Pumps, Optimization</div>
+                  <div class="publication-entry-footer">
+                    <div class="links">
+                      <a href="https://doi.org/10.22364/mhd.53.2.23" class="btn btn-sm z-depth-0" role="button"
+                        rel="external nofollow noopener" target="_blank">DOI</a>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </li>
-          </ol>
+              </li>
+            </ol>
+          </section>
         </div>
       </article>
     </div>
   </div>
-  <footer class="fixed-bottom" role="contentinfo">
+  <footer class="publication-footer" role="contentinfo">
     <div class="container mt-0"> © Copyright {{ site.time | date: '%Y' }} Geunhyeong Lee. Powered by <a href="https://jekyllrb.com/"
         target="_blank" rel="external nofollow noopener">Jekyll</a> with <a
         href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a>
@@ -1390,22 +1279,19 @@ nav_order: 2
         if (titleDiv && !titleDiv.querySelector('.pub-number')) {
           var numSpan = document.createElement('span');
           numSpan.className = 'pub-number';
-          numSpan.style.cssText = 'font-weight: bold; color: var(--global-theme-color); margin-right: 8px;';
-          numSpan.textContent = '[' + currentNum + ']';
+          numSpan.textContent = String(currentNum).padStart(2, '0');
           titleDiv.insertBefore(numSpan, titleDiv.firstChild);
           currentNum--;
         }
       });
 
-      // Update page title with detailed statistics
-      var postTitle = document.querySelector('.post-title');
-      if (postTitle && total > 0) {
-        var statsHTML = '<br><span style="font-size: 0.5em; color: var(--global-text-color-light); font-weight: normal;">';
-        statsHTML += 'Total ' + total + ' | ';
-        statsHTML += 'First Author<sup>†</sup>: ' + firstAuthorCount + ' | ';
-        statsHTML += 'Corresponding Author<sup>*</sup>: ' + correspondingAuthorCount;
-        statsHTML += '</span>';
-        postTitle.innerHTML = 'Publications (SCIE)' + statsHTML;
+      // Counts are derived from the list so new papers update the header automatically.
+      var statsContainer = document.querySelector('.publication-stats');
+      if (statsContainer && total > 0) {
+        var statsHTML = '<span class="publication-stat"><strong>' + total + '</strong><span>Published papers</span></span>';
+        statsHTML += '<span class="publication-stat"><strong>' + firstAuthorCount + '</strong><span>First/co-first author<sup>†</sup></span></span>';
+        statsHTML += '<span class="publication-stat"><strong>' + correspondingAuthorCount + '</strong><span>Corresponding author<sup>*</sup></span></span>';
+        statsContainer.innerHTML = statsHTML;
       }
 
       // PDF Download Button Mapping (by paper number)
@@ -1440,7 +1326,6 @@ nav_order: 2
             pdfBtn.setAttribute('target', '_blank');
             pdfBtn.setAttribute('download', '');
             pdfBtn.textContent = 'PDF';
-            pdfBtn.style.marginLeft = '0.5rem';
 
             // Check if PDF exists (hide if not)
             fetch(pdfUrl, { method: 'HEAD' })
@@ -1812,12 +1697,14 @@ ER  -`,
           var linksDiv = paperDiv.querySelector('.links');
           if (linksDiv) {
             var citeBtn = document.createElement('button');
+            citeBtn.type = 'button';
             citeBtn.className = 'btn btn-sm z-depth-0 btn-cite';
             citeBtn.textContent = 'Cite';
-            citeBtn.style.marginLeft = '0.5rem';
             citeBtn.setAttribute('data-paper-id', paperId);
+            citeBtn.setAttribute('aria-haspopup', 'dialog');
+            citeBtn.setAttribute('aria-controls', 'citation-modal');
             citeBtn.onclick = function () {
-              showCitationModal(paperId);
+              showCitationModal(paperId, this);
             };
             linksDiv.appendChild(citeBtn);
           }
@@ -1825,21 +1712,22 @@ ER  -`,
       });
 
       // Create citation modal dynamically to prevent jekyll-minifier from removing empty elements
-      var modalHTML = '<div id="citation-modal" class="citation-modal">'
+      var modalHTML = '<div id="citation-modal" class="citation-modal" role="dialog" aria-modal="true" aria-labelledby="citation-title">'
         + '<div class="citation-modal-content">'
-        + '<span class="citation-modal-close" id="citation-close-btn">\u00d7</span>'
-        + '<h3>Cite this paper</h3>'
-        + '<div class="citation-tabs">'
-        + '<button class="citation-tab active" data-format="bibtex" id="tab-bibtex">BibTeX</button>'
-        + '<button class="citation-tab" data-format="ris" id="tab-ris">RIS</button>'
-        + '<button class="citation-tab" data-format="plain" id="tab-plain">Plain Text</button>'
+        + '<button type="button" class="citation-modal-close" id="citation-close-btn" aria-label="Close citation dialog">\u00d7</button>'
+        + '<h3 id="citation-title">Cite this paper</h3>'
+        + '<div class="citation-tabs" role="group" aria-label="Citation format">'
+        + '<button type="button" class="citation-tab active" data-format="bibtex" id="tab-bibtex" aria-pressed="true" aria-controls="citation-content">BibTeX</button>'
+        + '<button type="button" class="citation-tab" data-format="ris" id="tab-ris" aria-pressed="false" aria-controls="citation-content">RIS</button>'
+        + '<button type="button" class="citation-tab" data-format="plain" id="tab-plain" aria-pressed="false" aria-controls="citation-content">Plain Text</button>'
         + '</div>'
-        + '<pre class="citation-box" id="citation-content">Loading...</pre>'
-        + '<button class="citation-copy-btn" id="citation-copy-btn">Copy to Clipboard</button>'
+        + '<pre class="citation-box" id="citation-content" role="region" aria-label="Citation text" tabindex="0">Loading...</pre>'
+        + '<button type="button" class="citation-copy-btn" id="citation-copy-btn">Copy to Clipboard</button>'
         + '</div></div>';
       var modalContainer = document.createElement('div');
       modalContainer.innerHTML = modalHTML;
       document.body.appendChild(modalContainer.firstChild);
+      var citationModal = document.getElementById('citation-modal');
 
       // Attach modal event listeners
       document.getElementById('citation-close-btn').onclick = function () { closeCitationModal(); };
@@ -1851,22 +1739,31 @@ ER  -`,
       // Current paper ID for modal
       var currentPaperId = null;
       var currentFormat = 'bibtex';
+      var citationModalOpen = false;
+      var citationReturnFocus = null;
+      var previousBodyOverflow = '';
+      var citationBackground = [];
 
       // Citation Modal Functions
-      function showCitationModal(paperId) {
+      function showCitationModal(paperId, trigger) {
+        if (!citationData[paperId] || citationModalOpen) return;
+        citationReturnFocus = trigger || document.activeElement;
+        previousBodyOverflow = document.body.style.overflow;
         currentPaperId = paperId;
-        currentFormat = 'bibtex';
-        var modal = document.getElementById('citation-modal');
-        updateCitationContent();
-
-        // Reset tabs
-        document.querySelectorAll('.citation-tab').forEach(function (tab) {
-          tab.classList.remove('active');
-        });
-        document.querySelector('.citation-tab[data-format="bibtex"]').classList.add('active');
-
-        modal.style.display = 'block';
+        switchCitationFormat('bibtex');
+        citationModalOpen = true;
+        citationModal.classList.add('is-open');
         document.body.style.overflow = 'hidden';
+        document.getElementById('tab-bibtex').focus({ preventScroll: true });
+
+        // Preserve existing inert states while disabling the background controls.
+        citationBackground = Array.from(document.body.children).filter(function (element) {
+          return element !== citationModal && !['SCRIPT', 'STYLE', 'LINK'].includes(element.tagName);
+        }).map(function (element) {
+          var state = { element: element, inert: element.hasAttribute('inert') };
+          element.setAttribute('inert', '');
+          return state;
+        });
       }
 
       function updateCitationContent() {
@@ -1881,15 +1778,25 @@ ER  -`,
         updateCitationContent();
 
         document.querySelectorAll('.citation-tab').forEach(function (tab) {
-          tab.classList.remove('active');
+          var selected = tab.getAttribute('data-format') === format;
+          tab.classList.toggle('active', selected);
+          tab.setAttribute('aria-pressed', String(selected));
         });
-        document.querySelector('.citation-tab[data-format="' + format + '"]').classList.add('active');
       }
 
       function closeCitationModal() {
-        var modal = document.getElementById('citation-modal');
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
+        if (!citationModalOpen) return;
+        citationModalOpen = false;
+        citationModal.classList.remove('is-open');
+        document.body.style.overflow = previousBodyOverflow;
+        citationBackground.forEach(function (state) {
+          if (!state.inert) state.element.removeAttribute('inert');
+        });
+        citationBackground = [];
+        if (citationReturnFocus && citationReturnFocus.isConnected) {
+          citationReturnFocus.focus({ preventScroll: true });
+        }
+        citationReturnFocus = null;
       }
 
       function copyCitation() {
@@ -1906,17 +1813,38 @@ ER  -`,
       }
 
       // Close modal when clicking outside
-      window.onclick = function (event) {
-        var modal = document.getElementById('citation-modal');
-        if (event.target === modal) {
+      citationModal.addEventListener('click', function (event) {
+        if (event.target === citationModal) {
           closeCitationModal();
         }
-      };
+      });
 
-      // Close modal with Escape key
+      // Keep keyboard navigation in the dialog until it is dismissed.
       document.addEventListener('keydown', function (event) {
+        if (!citationModalOpen) return;
         if (event.key === 'Escape') {
+          event.preventDefault();
+          event.stopPropagation();
           closeCitationModal();
+          return;
+        }
+        if (event.key === 'Tab') {
+          var controls = citationModal.querySelectorAll('button:not([disabled]), [tabindex="0"]');
+          var first = controls[0];
+          var last = controls[controls.length - 1];
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
+        }
+      });
+
+      document.addEventListener('focusin', function (event) {
+        if (citationModalOpen && !citationModal.contains(event.target)) {
+          document.getElementById('tab-bibtex').focus({ preventScroll: true });
         }
       });
     });
