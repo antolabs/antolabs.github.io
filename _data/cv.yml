@@ -7,10 +7,10 @@
       location: East Lansing, MI, US
       year: 12/2023 - Present
       description:
-        - "Developed BiSTO, an original binary surrogate-based topology optimization framework for cooling design of high-heat-flux beam intercepting devices."
-        - "Achieved 72% improvement in beam dump power handling through a hybrid GA-Reinforcement Learning optimization framework."
-        - "Developed a CNN-MLP surrogate model for real-time thermal limit prediction of rotating beam dumps (2.8% mean error, millisecond-scale inference)."
-        - "Led thermal design reviews for final device qualification and performed multi-physics thermal-fluid-electromagnetic simulation and validation for high-power targetry devices."
+        - "Developed BiSTO (Binary Surrogate-based Topology Optimization), an AI-driven framework combining surrogate-guided topology search, solver verification, and geometric connectivity constraints for turbulent cooling-channel design."
+        - "Optimized the FRIB beam dump using genetic algorithms and reinforcement learning, increasing simulated average power-handling capability by 72% over the existing design."
+        - "Developed a CNN-MLP surrogate for rotating beam-dump thermal limits (2.8% mean error against FEM in cross-validation; millisecond-scale inference)."
+        - "Led thermal design reviews and provided simulation evidence for device qualification; performed thermal-fluid-electromagnetic analysis and validation."
 
     - title: Postdoctoral Researcher
       institution: Korea Atomic Energy Research Institute (KAERI)
@@ -18,9 +18,9 @@
       location: Daejeon, South Korea
       year: 08/2021 - 12/2023
       description:
-        - "Achieved 14.8% heat exchanger performance improvement via deep RL topology optimization; validated through metal 3D printing and thermal-fluid loop experiments."
-        - "Designed flow channels for Samsung OLED susceptors using RL-based optimization models."
-        - "Designed a novel 3D-printable single-body DC electromagnetic pump with 52% reduction in required input current."
+        - "Developed DRL optimization with 14.8% higher simulated heat transfer than conventional topology optimization; tested a metal-printed prototype."
+        - "Designed flow channels for Samsung OLED susceptors using reinforcement learning."
+        - "Designed a single-body, 3D-printable DC electromagnetic pump with 52% lower simulated current demand than a helical pump at matched pressure and flow rate."
         - "Applied AI anomaly detection to the KOMAC accelerator for operational stability."
 
 - title: Education
@@ -44,8 +44,10 @@
   type: map
   contents:
     - name: SCIE Journal
-      value: '<a href="/publications/">Total 14 (First Author 13, Corresponding Author 5)</a>'
-    - name: Journal & Conference Proceedings
-      value: Total 34
+      value: '<a href="/publications/">Published 14 (First/co-first Author 13, Corresponding Author 5)</a>'
+    - name: Other Journal Publications
+      value: Total 1
+    - name: Conference Presentations & Proceedings
+      value: Completed 34 (Upcoming 1)
     - name: Patent
       value: Total 6
