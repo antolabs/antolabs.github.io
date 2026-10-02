@@ -4,7 +4,7 @@ title: About
 permalink: /
 subtitle: Scientist at <a href="https://frib.msu.edu/">FRIB</a>, <a href="https://msu.edu/">Michigan State University</a>
 affiliation_detail: Facility for Rare Isotope Beams
-description: AI-driven thermal-fluid design for nuclear energy and high-power accelerators. Explore BiSTO, Geunhyeong Lee's topology optimization research.
+description: Geunhyeong Lee, Scientist at FRIB, Michigan State University. AI-driven thermal-fluid design, multiphysics modeling, and 3D printing for nuclear systems.
 body_class: about-site
 footer_static: true
 

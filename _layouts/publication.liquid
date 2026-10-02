@@ -1,0 +1,37 @@
+---
+layout: default
+---
+{% assign paper = page.publication %}
+<article class="publication-detail">
+  <a class="publication-back" href="{{ '/publications/' | relative_url }}">&larr; All publications</a>
+  <header>
+    <p class="publication-detail-meta">{{ paper.journal | escape }} &middot; {{ paper.year }}</p>
+    <h1>{{ paper.title | escape }}</h1>
+    <p class="publication-detail-authors">{{ paper.authors | join: ', ' | escape }}</p>
+    <p class="publication-detail-meta">
+      {{ paper.journal | escape -}}
+      {%- if paper.volume %}, {{ paper.volume }}{% endif -%}
+      {%- if paper.issue %}({{ paper.issue }}){% endif -%}
+      {%- if paper.first_page %}, {{ paper.first_page }}{% endif -%}
+      {%- if paper.last_page %}&ndash;{{ paper.last_page }}{% endif %} ({{ paper.year }})
+    </p>
+    <nav class="publication-detail-actions" aria-label="Paper and citation downloads">
+      <a href="https://doi.org/{{ paper.doi | escape }}">Published version (DOI)</a>
+      <a href="{{ paper.pdf | relative_url }}">Full text (PDF)</a>
+      <a href="{{ page.url | append: 'citation.bib' | relative_url }}" download>BibTeX</a>
+      <a href="{{ page.url | append: 'citation.ris' | relative_url }}" download>RIS</a>
+    </nav>
+  </header>
+  <section aria-labelledby="abstract-heading">
+    <h2 id="abstract-heading">Abstract</h2>
+    <p class="publication-detail-abstract">{{ paper.abstract | escape }}</p>
+  </section>
+  <section aria-labelledby="cite-heading" id="cite">
+    <h2 id="cite-heading">Cite this paper</h2>
+    <p>{{ paper.citation.plain | escape }}</p>
+    <details>
+      <summary>BibTeX</summary>
+      <pre><code>{{ paper.citation.bibtex | escape }}</code></pre>
+    </details>
+  </section>
+</article>

@@ -1,0 +1,20 @@
+{% assign paper = page.publication %}
+<meta name="citation_title" content="{{ paper.title | escape }}">
+{% for author in paper.citation_authors %}
+  <meta name="citation_author" content="{{ author | escape }}">
+{% endfor %}
+<meta name="citation_publication_date" content="{{ paper.year | escape }}">
+<meta name="citation_journal_title" content="{{ paper.journal | escape }}">
+<meta name="citation_doi" content="{{ paper.doi | escape }}">
+<meta name="citation_pdf_url" content="{{ paper.pdf | absolute_url }}">
+<meta name="citation_abstract_html_url" content="{{ page.url | absolute_url }}">
+<meta name="citation_language" content="en">
+{% if paper.volume %}<meta name="citation_volume" content="{{ paper.volume | escape }}">{% endif %}
+{% if paper.issue %}<meta name="citation_issue" content="{{ paper.issue | escape }}">{% endif %}
+{% if paper.first_page %}<meta name="citation_firstpage" content="{{ paper.first_page | escape }}">{% endif %}
+{% if paper.last_page %}<meta name="citation_lastpage" content="{{ paper.last_page | escape }}">{% endif %}
+<link rel="alternate" type="application/x-bibtex" href="{{ page.url | append: 'citation.bib' | relative_url }}" title="BibTeX citation">
+<link rel="alternate" type="application/x-research-info-systems" href="{{ page.url | append: 'citation.ris' | relative_url }}" title="RIS citation">
+<script type="application/ld+json">
+  {{ paper | publication_schema | discovery_json }}
+</script>

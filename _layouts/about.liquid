@@ -195,4 +195,5 @@ layout: default
     {% endif %}
   </article>
 </div>
-<script defer src="{{ '/assets/js/about-bisto.js' | relative_url | bust_file_cache }}"></script>
+<!-- The player DOM is ready here; do not wait for unrelated footer scripts. -->
+<script async src="{{ '/assets/js/about-bisto.js' | relative_url | bust_file_cache }}"></script>

@@ -9,6 +9,9 @@ on:
       - "assets/**"
       - "_sass/**"
       - "_scripts/**"
+      - "_data/**"
+      - "_plugins/**"
+      - "bin/**"
       - "robots.txt"
       - "llms.txt"
       - "**.bib"
@@ -40,6 +43,9 @@ on:
       - "assets/**"
       - "_sass/**"
       - "_scripts/**"
+      - "_data/**"
+      - "_plugins/**"
+      - "bin/**"
       - "robots.txt"
       - "llms.txt"
       - "**.bib"
@@ -90,6 +96,8 @@ jobs:
           bundle exec ruby bin/check-site-safety
           bundle exec ruby bin/check-projects
           bundle exec ruby bin/check-cv
+          bundle exec ruby bin/check-discovery
+          node bin/check-about-media.cjs
           node bin/check-project-media.cjs
           node bin/check-theme.cjs
       # DISABLED: PurgeCSS was removing what-i-do styles despite safelist

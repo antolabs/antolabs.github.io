@@ -1,0 +1,72 @@
+#!/usr/bin/env ruby
+require 'json'
+require 'nokogiri'
+require 'uri'
+
+Dir.chdir(File.expand_path('..', __dir__))
+errors = []
+check = ->(condition, message) { errors << message unless condition }
+papers = JSON.parse(File.read('_data/publications.json'))
+archive = Nokogiri::HTML(File.read('_site/publications/index.html'))
+sitemap = Nokogiri::XML(File.read('_site/sitemap.xml')).remove_namespaces!
+sitemap_urls = sitemap.css('url > loc').map(&:text)
+llms = File.read('_site/llms.txt')
+check.call(archive.css('meta[name^="citation_"]').empty?, 'Do not combine multiple papers in one Highwire citation record')
+check.call(archive.css('.publication-title-link').size == papers.size, 'Each published paper needs a crawlable detail link')
+check.call(archive.css('.btn-pdf').size == papers.size, 'PDF links must exist before JavaScript executes')
+check.call(archive.css('.btn-cite').size == papers.size, 'Citation links need a no-JavaScript fallback')
+check.call(!llms.match?(/JCR Top|IF:|\{%|\{\{/), 'Discovery index must not contain stale metrics or unrendered Liquid')
+check.call(llms.include?('Under review; not a published journal article.'), 'Keep preprints separate from published articles')
+check.call(File.read('_site/robots.txt').include?('Disallow: /References/'), 'Preserve the reference-directory crawl restriction')
+check.call(!File.read('_site/robots.txt').match?(/^Disallow:\s*\/\s*$/), 'Public research must remain crawlable')
+
+papers.each do |paper|
+  id = paper.fetch('id')
+  { 'title' => 'title', 'journal' => 'journal', 'year' => 'year', 'doi' => 'doi', 'volume' => 'volume' }.each do |field, key|
+    bib_value = paper['citation']['bibtex'][/\b#{field}=\{([^\n]+)\}/, 1]
+    check.call(bib_value == paper[key], "#{id}: BibTeX #{field} differs from paper metadata")
+  end
+  check.call(paper['citation']['ris'][/^TI  - (.+)$/, 1] == paper['title'], "#{id}: RIS title differs from paper metadata")
+  path = "/publications/#{id}/"
+  file = "_site#{path}index.html"
+  check.call(File.file?(file), "#{id}: missing landing page")
+  next unless File.file?(file)
+  html = Nokogiri::HTML(File.read(file))
+  canonical = html.at_css('link[rel="canonical"]')&.[]('href')
+  check.call(canonical&.end_with?(path), "#{id}: missing or incorrect canonical URL")
+  check.call(sitemap_urls.include?(canonical), "#{id}: missing from sitemap")
+  check.call(html.css('meta[name="citation_title"]').map { |m| m['content'] } == [paper['title']], "#{id}: citation title must be unique and exact")
+  check.call(html.css('meta[name="citation_doi"]').map { |m| m['content'] } == [paper['doi']], "#{id}: incorrect citation DOI")
+  check.call(html.css('meta[name="citation_author"]').map { |m| m['content'] } == paper['citation_authors'], "#{id}: incomplete or incorrect authors")
+  check.call(html.at_css('meta[name="citation_publication_date"]')&.[]('content') == paper['year'], "#{id}: incorrect publication year")
+  check.call(html.css('h1').map(&:text) == [paper['title']], "#{id}: visible title differs from citation metadata")
+  check.call(html.at_css('.publication-detail-abstract')&.text == paper['abstract'], "#{id}: abstract must be visible without JavaScript")
+  check.call(html.at_css('.publication-detail-abstract')&.ancestors('details, [hidden]').to_a.empty?, "#{id}: abstract cannot be collapsed or hidden")
+  check.call(paper['abstract'].split.size > 90 && !paper['abstract'].match?(/\/C14|\bNomenclature|\bKeywords:/), "#{id}: abstract extraction has unexpected artifacts")
+  article = html.css('script[type="application/ld+json"]').map { |s| JSON.parse(s.text) }.find { |s| s['@type'] == 'ScholarlyArticle' }
+  check.call(article && article['headline'] == paper['title'] && article['abstract'] == paper['abstract'], "#{id}: structured data differs from visible paper content")
+  check.call(article&.dig('identifier', 'value') == paper['doi'], "#{id}: structured DOI mismatch")
+  check.call(llms.include?(paper['title']) && llms.include?("https://doi.org/#{paper['doi']}"), "#{id}: discovery index missing paper")
+  check.call(archive.at_css("##{id} .publication-title-link")&.[]('href') == path, "#{id}: archive detail link missing")
+  check.call(archive.at_css("##{id} .btn-pdf")&.[]('href') == paper['pdf'], "#{id}: archive PDF mismatch")
+  { 'bib' => 'bibtex', 'ris' => 'ris' }.each do |ext, format|
+    citation_path = "_site#{path}citation.#{ext}"
+    check.call(File.file?(citation_path) && File.read(citation_path).strip == paper['citation'][format].strip, "#{id}: #{ext} download mismatch")
+  end
+  html.css('.publication-detail a[href]').each do |link|
+    next unless link['href'].start_with?('/')
+    target = URI.parse(link['href']).path
+    target += 'index.html' if target.end_with?('/')
+    check.call(File.file?("_site#{target}"), "#{id}: broken local link #{link['href']}")
+  end
+end
+
+%w[index.html cv/index.html projects/index.html publications/index.html].each do |path|
+  html = Nokogiri::HTML(File.read("_site/#{path}"))
+  check.call(html.css('link[rel="canonical"]').size == 1, "#{path}: expected one canonical")
+  check.call(!html.at_css('meta[name="description"]')&.[]('content').to_s.empty?, "#{path}: description missing")
+  html.css('script[type="application/ld+json"]').each { |script| JSON.parse(script.text) }
+end
+check.call(sitemap_urls.none? { |url| url.include?('/References/') || url.include?('/.agent/') }, 'Sitemap exposes working files')
+abort errors.join("\n") unless errors.empty?
+puts "Discovery OK: #{papers.size} article pages, accurate citation metadata, static PDF/citation links, JSON-LD, sitemap, and text index."

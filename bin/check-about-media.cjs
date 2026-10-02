@@ -268,6 +268,10 @@ async function check() {
   const layout = fs.readFileSync(path.join(__dirname, "../_layouts/about.liquid"), "utf8");
   assert.ok(!layout.includes("Open the animation") && !layout.includes("bisto-fallback"));
   assert.ok(layout.includes('preload="auto"'));
+  const playerScript = layout.match(/<script\b[^>]*about-bisto\.js[^>]*>/)?.[0];
+  assert.ok(playerScript?.includes(" async "), "Initialize the player without waiting for unrelated parser-blocking footer scripts");
+  assert.ok(!playerScript.includes(" defer "));
+  assert.ok(layout.indexOf(playerScript) > layout.indexOf('class="bisto-toggle"'), "Async initialization must follow the player DOM");
 
   vm.runInNewContext(source, { document: { getElementById: () => null, querySelector: () => null } });
   console.log(
