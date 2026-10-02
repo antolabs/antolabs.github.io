@@ -154,17 +154,10 @@
     min-width: 0;
   }
   .bisto-fullname {
-    margin: 0 0 0.65rem;
+    margin: 0;
     color: var(--global-text-color-light);
     font-size: var(--about-detail-size);
     line-height: 1.6;
-    text-wrap: balance;
-  }
-  .bisto-method {
-    margin: 0;
-    font-size: var(--about-body-size);
-    font-weight: 500;
-    line-height: 1.5;
     text-wrap: balance;
   }
   #bisto-description {
@@ -173,6 +166,15 @@
     font-size: var(--about-body-size);
     line-height: var(--about-copy-leading);
     text-wrap: balance;
+
+    .bisto-sentence {
+      display: block;
+      color: inherit;
+
+      + .bisto-sentence {
+        margin-top: 0.5rem;
+      }
+    }
   }
   .bisto-workflow {
     display: flex;
@@ -413,6 +415,18 @@
 
     .contact-note {
       line-height: 1.6;
+    }
+  }
+}
+@media (min-width: 992px) {
+  .about-page article .social {
+    .contact-icons {
+      column-gap: 0.9rem;
+      font-size: 2.2rem;
+    }
+
+    .contact-note {
+      font-size: 0.9rem;
     }
   }
 }
