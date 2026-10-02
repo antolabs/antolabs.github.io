@@ -1,0 +1,136 @@
+# Geunhyeong Lee
+
+> Scientist at the Facility for Rare Isotope Beams (FRIB), Michigan State University. Research connects AI-driven thermal-fluid design, multiphysics modeling, 3D printing, and experimental validation for nuclear systems.
+
+This optional discovery index links to the site's public research records. Article pages include author-written abstracts from the linked PDFs, publication metadata, and citation downloads. DOI links identify the published versions.
+
+## Profile and research
+- [About](https://geunhyeong.com/): Research vision and BiSTO demonstration.
+- [CV](https://geunhyeong.com/cv/): Career and education, with a full CV download.
+- [Publications](https://geunhyeong.com/publications/): Published articles and a separate under-review section.
+- [Projects](https://geunhyeong.com/projects/): Research and engineering case studies.
+- [ORCID](https://orcid.org/0000-0003-3141-4663): Researcher identifier.
+
+## Published articles
+
+### Optimization of the FRIB Beam Dump: A Hybrid Genetic Algorithm and Reinforcement Learning Approach (2026)
+- Authors: Geunhyeong Lee, J. Song, R. Quispe-Abad, M. Patil, T. Kanemura
+- Journal: Nuclear Science and Techniques, 37, 184
+- [Abstract and citation](https://geunhyeong.com/publications/lee2025optimization/)
+- [Published version](https://doi.org/10.1007/s41365-026-02020-2)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee14.pdf)
+- [BibTeX](https://geunhyeong.com/publications/lee2025optimization/citation.bib)
+
+### Conceptual Design of a 3D-Printable DC Electromagnetic Pump for Additive Manufacturing (2026)
+- Authors: Geunhyeong Lee
+- Journal: Nuclear Engineering and Technology, 58(1), 103916
+- [Abstract and citation](https://geunhyeong.com/publications/lee2026conceptual/)
+- [Published version](https://doi.org/10.1016/j.net.2025.103916)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee13.pdf)
+- [BibTeX](https://geunhyeong.com/publications/lee2026conceptual/citation.bib)
+
+### Deep learning-based anomaly detection in drift tube quadrupole operation for the KOMAC linac (2025)
+- Authors: D. Kim, H. Kim, H. Kwon, Y. Yu, Geunhyeong Lee
+- Journal: Journal of Nuclear Science and Technology, 62(8), 709-714
+- [Abstract and citation](https://geunhyeong.com/publications/kim2025deep/)
+- [Published version](https://doi.org/10.1080/00223131.2025.2464742)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee12.pdf)
+- [BibTeX](https://geunhyeong.com/publications/kim2025deep/citation.bib)
+
+### Design optimization of heat exchanger using deep reinforcement learning (2024)
+- Authors: Geunhyeong Lee, Y. Joo, S.U. Lee, T. Kim, Y. Yu, H.G. Kim
+- Journal: International Communications in Heat and Mass Transfer, 159, 107991
+- [Abstract and citation](https://geunhyeong.com/publications/lee2024design/)
+- [Published version](https://doi.org/10.1016/j.icheatmasstransfer.2024.107991)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee11.pdf)
+- [BibTeX](https://geunhyeong.com/publications/lee2024design/citation.bib)
+
+### Dual-fluid Topology Optimization of Printed-circuit Heat Exchanger with Low-pumping-power Design (2023)
+- Authors: Geunhyeong Lee, Y. Joo, Y. Yu, H.G. Kim
+- Journal: Case Studies in Thermal Engineering, 49, 103318
+- [Abstract and citation](https://geunhyeong.com/publications/lee2023dual/)
+- [Published version](https://doi.org/10.1016/j.csite.2023.103318)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee10.pdf)
+- [BibTeX](https://geunhyeong.com/publications/lee2023dual/citation.bib)
+
+### Experimental characterization of the flowline of a lithium film formed using an electromagnetic thruster for a RAON prototype charge stripper (2023)
+- Authors: T. Kang, Geunhyeong Lee, H.R. Kim
+- Journal: Nuclear Engineering and Design, 412, 112481
+- [Abstract and citation](https://geunhyeong.com/publications/kang2023experimental/)
+- [Published version](https://doi.org/10.1016/j.nucengdes.2023.112481)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee9.pdf)
+- [BibTeX](https://geunhyeong.com/publications/kang2023experimental/citation.bib)
+
+### Numerical study of Faraday-type nitrogen plasma magnetohydrodynamic generator (2021)
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: Journal of the Korean Physical Society, 78(7), 600-606
+- [Abstract and citation](https://geunhyeong.com/publications/lee2021numerical/)
+- [Published version](https://doi.org/10.1007/s40042-021-00116-z)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee8.pdf)
+- [BibTeX](https://geunhyeong.com/publications/lee2021numerical/citation.bib)
+
+### The variable analysis of an MHD generator with electrical output of 10 kW for application to bi-plant method electricity generation (2020)
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: International Journal of Energy Research, 44(10), 8125-8132
+- [Abstract and citation](https://geunhyeong.com/publications/lee2020variable/)
+- [Published version](https://doi.org/10.1002/er.5100)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee7.pdf)
+- [BibTeX](https://geunhyeong.com/publications/lee2020variable/citation.bib)
+
+### Mathematical approach for optimization of magnetohydrodynamic circulation system (2019)
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: Nuclear Engineering and Technology, 51(3), 654-664
+- [Abstract and citation](https://geunhyeong.com/publications/lee2019mathematical/)
+- [Published version](https://doi.org/10.1016/j.net.2018.12.008)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee6.pdf)
+- [BibTeX](https://geunhyeong.com/publications/lee2019mathematical/citation.bib)
+
+### Magnetohydrodynamics approach for active decay heat removal system in future generation IV reactor (2018)
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: International Journal of Energy Research, 42(10), 3266-3278
+- [Abstract and citation](https://geunhyeong.com/publications/lee2018magnetohydrodynamics/)
+- [Published version](https://doi.org/10.1002/er.4080)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee5.pdf)
+- [BibTeX](https://geunhyeong.com/publications/lee2018magnetohydrodynamics/citation.bib)
+
+### Numerical analysis of the electromagnetic force for design optimization of a rectangular direct current electromagnetic pump (2018)
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: Nuclear Engineering and Technology, 50(6), 869-876
+- [Abstract and citation](https://geunhyeong.com/publications/lee2018numerical/)
+- [Published version](https://doi.org/10.1016/j.net.2018.04.010)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee4.pdf)
+- [BibTeX](https://geunhyeong.com/publications/lee2018numerical/citation.bib)
+
+### Magnetic-field analysis of an MHD channel in a liquid-metal circulation system of a prototype GenIV sodium fast reactor (2018)
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: Annals of Nuclear Energy, 115, 343-351
+- [Abstract and citation](https://geunhyeong.com/publications/lee2018magnetic/)
+- [Published version](https://doi.org/10.1016/j.anucene.2018.01.049)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee3.pdf)
+- [BibTeX](https://geunhyeong.com/publications/lee2018magnetic/citation.bib)
+
+### Design analysis of DC electromagnetic pump for liquid sodium–CO2 reaction experimental characterization (2017)
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: Annals of Nuclear Energy, 109, 490-497
+- [Abstract and citation](https://geunhyeong.com/publications/lee2017design/)
+- [Published version](https://doi.org/10.1016/j.anucene.2017.05.054)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee2.pdf)
+- [BibTeX](https://geunhyeong.com/publications/lee2017design/citation.bib)
+
+### Numerical investigation and comparison of the rectangular, cylindrical, and helical-type DC electromagnetic pumps (2017)
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: Magnetohydrodynamics, 53(2), 429-438
+- [Abstract and citation](https://geunhyeong.com/publications/lee2017numerical/)
+- [Published version](https://doi.org/10.22364/mhd.53.2.23)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee1.pdf)
+- [BibTeX](https://geunhyeong.com/publications/lee2017numerical/citation.bib)
+
+## Under-review manuscripts
+
+
+- A hybrid deep learning surrogate for thermal analysis of high-heat-flux devices. Lee, G†*., & Kanemura, T.. Under review; not a published journal article. [Public preprint](https://doi.org/10.2139/ssrn.7128856)
+
+
+## Ongoing research
+- [BiSTO](https://geunhyeong.com/projects/ai_01_bisto/): Brief public overview; detailed methods will be available after publication.
+- [Deep learning surrogate](https://geunhyeong.com/projects/ai_02_thermal_surrogate/): Brief public overview; detailed methods will be available after publication.
