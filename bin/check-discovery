@@ -2,6 +2,7 @@
 require 'json'
 require 'nokogiri'
 require 'uri'
+require 'digest'
 
 Dir.chdir(File.expand_path('..', __dir__))
 errors = []
@@ -36,6 +37,10 @@ papers.each do |paper|
   canonical = html.at_css('link[rel="canonical"]')&.[]('href')
   check.call(canonical&.end_with?(path), "#{id}: missing or incorrect canonical URL")
   check.call(sitemap_urls.include?(canonical), "#{id}: missing from sitemap")
+  pdf_url = html.at_css('meta[name="citation_pdf_url"]')&.[]('content')
+  check.call(pdf_url == "#{canonical}paper.pdf", "#{id}: full text must share the abstract page's directory")
+  pdf_path = "_site#{path}paper.pdf"
+  check.call(File.file?(pdf_path) && Digest::SHA256.file(pdf_path).hexdigest == Digest::SHA256.file(".#{paper['pdf']}").hexdigest, "#{id}: linked full text differs from original PDF")
   check.call(html.css('meta[name="citation_title"]').map { |m| m['content'] } == [paper['title']], "#{id}: citation title must be unique and exact")
   check.call(html.css('meta[name="citation_doi"]').map { |m| m['content'] } == [paper['doi']], "#{id}: incorrect citation DOI")
   check.call(html.css('meta[name="citation_author"]').map { |m| m['content'] } == paper['citation_authors'], "#{id}: incomplete or incorrect authors")

@@ -24,7 +24,7 @@ module PublicationDiscovery
       'identifier' => { '@type' => 'PropertyValue', 'propertyID' => 'DOI', 'value' => paper['doi'] },
       'sameAs' => "https://doi.org/#{paper['doi']}", 'abstract' => paper['abstract'],
       'keywords' => paper['keywords'], 'inLanguage' => 'en',
-      'encoding' => { '@type' => 'MediaObject', 'contentUrl' => publication_url(paper['pdf']), 'encodingFormat' => 'application/pdf' }
+      'encoding' => { '@type' => 'MediaObject', 'contentUrl' => publication_url("/publications/#{paper['id']}/paper.pdf"), 'encodingFormat' => 'application/pdf' }
     }.compact
   end
 
@@ -55,6 +55,24 @@ end
 Liquid::Template.register_filter(PublicationDiscovery)
 
 module Jekyll
+  # Scholar requires citation_pdf_url to share the abstract page's directory.
+  # Preserve the existing PDF URLs while emitting a byte-identical local copy.
+  class PublicationPdf < StaticFile
+    def initialize(site, paper)
+      source = paper.fetch('pdf').delete_prefix('/')
+      super(site, site.source, File.dirname(source), File.basename(source))
+      @publication_directory = "publications/#{paper.fetch('id')}"
+    end
+
+    def destination(dest)
+      File.join(dest, @publication_directory, 'paper.pdf')
+    end
+
+    def url
+      "/#{@publication_directory}/paper.pdf"
+    end
+  end
+
   class PublicationPages < Generator
     safe true
     priority :low
@@ -67,9 +85,11 @@ module Jekyll
       end
       papers.each do |paper|
         directory = "publications/#{paper['id']}"
+        site.static_files << PublicationPdf.new(site, paper)
         page = PageWithoutAFile.new(site, site.source, directory, 'index.html')
         page.data.merge!(
           'layout' => 'publication', 'title' => paper['title'], 'publication' => paper,
+          'publication_pdf' => "/#{directory}/paper.pdf",
           'description' => paper['abstract'].split(/(?<=\.)\s+/).first,
           'keywords' => paper['keywords'].join(', '),
           'body_class' => 'publication-detail-view', 'footer_static' => true,

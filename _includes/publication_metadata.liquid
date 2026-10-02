@@ -6,7 +6,7 @@
 <meta name="citation_publication_date" content="{{ paper.year | escape }}">
 <meta name="citation_journal_title" content="{{ paper.journal | escape }}">
 <meta name="citation_doi" content="{{ paper.doi | escape }}">
-<meta name="citation_pdf_url" content="{{ paper.pdf | absolute_url }}">
+<meta name="citation_pdf_url" content="{{ page.publication_pdf | absolute_url }}">
 <meta name="citation_abstract_html_url" content="{{ page.url | absolute_url }}">
 <meta name="citation_language" content="en">
 {% if paper.volume %}<meta name="citation_volume" content="{{ paper.volume | escape }}">{% endif %}

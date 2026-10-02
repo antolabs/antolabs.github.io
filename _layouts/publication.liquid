@@ -17,7 +17,7 @@ layout: default
     </p>
     <nav class="publication-detail-actions" aria-label="Paper and citation downloads">
       <a href="https://doi.org/{{ paper.doi | escape }}">Published version (DOI)</a>
-      <a href="{{ paper.pdf | relative_url }}">Full text (PDF)</a>
+      <a href="{{ page.publication_pdf | relative_url }}">Full text (PDF)</a>
       <a href="{{ page.url | append: 'citation.bib' | relative_url }}" download>BibTeX</a>
       <a href="{{ page.url | append: 'citation.ris' | relative_url }}" download>RIS</a>
     </nav>
