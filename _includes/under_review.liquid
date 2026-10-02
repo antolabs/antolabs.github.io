@@ -1,0 +1,32 @@
+{% assign under_review = site.data.cv.publications.manuscripts | where: 'status', 'Under review' %}
+{% if under_review.size > 0 %}
+  <section class="publication-manuscripts" aria-labelledby="under-review-heading">
+    <h2 class="publication-section-heading" id="under-review-heading">Under review</h2>
+    <ul class="manuscript-list">
+      {% for manuscript in under_review %}
+        <li class="publication-entry">
+          <h3 class="title">{{ manuscript.title | escape }}</h3>
+          <div class="author">{{ manuscript.authors | escape }}</div>
+          <div class="periodical">
+            Under review at <em>{{ manuscript.journal | escape }}</em>
+          </div>
+          {% if manuscript.doi %}
+            <div class="publication-entry-footer">
+              <div class="links">
+                <a
+                  href="https://doi.org/{{ manuscript.doi | escape }}"
+                  class="btn btn-sm z-depth-0"
+                  target="_blank"
+                  rel="external nofollow noopener"
+                  aria-label="Read the SSRN preprint: {{ manuscript.title | escape }} (opens in a new tab)"
+                >
+                  Preprint (SSRN)
+                </a>
+              </div>
+            </div>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endif %}
