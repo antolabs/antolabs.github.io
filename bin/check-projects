@@ -1,0 +1,147 @@
+#!/usr/bin/env ruby
+# Run after a Jekyll build to check the archive and its generated case studies.
+require 'yaml'
+require 'nokogiri'
+require 'uri'
+
+Dir.chdir(File.expand_path('..', __dir__))
+errors = []
+check = ->(condition, message) { errors << message unless condition }
+records = Dir['_projects/*.md'].map do |path|
+  data = YAML.safe_load(File.read(path).split(/^---\s*$/, 3)[1])
+  [File.basename(path, '.md'), data]
+end
+archive = Nokogiri::HTML(File.read('_site/projects/index.html'))
+featured = records.select { |_, data| data['featured'] }.sort_by { |_, data| data['featured_order'] }
+expected_links = records.map { |slug, _| "/projects/#{slug}/" }.sort
+actual_links = archive.css('.research-card, .project-list-link').map { |link| link['href'] }.sort
+check.call(actual_links == expected_links, 'Every project must appear exactly once in the archive')
+check.call(archive.css('.research-card').map { |link| link['href'] } == featured.map { |slug, _| "/projects/#{slug}/" }, 'Featured order is incorrect')
+check.call(featured.map(&:first) == %w[tf_01_frib_beam_dump tf_02_smr_heat_exchanger ai_01_bisto ai_02_thermal_surrogate], 'Selected research must put static beam dump and heat exchangers before the publication previews')
+expected_years = {
+  'ai_01_bisto' => '2026 - Current',
+  'ai_02_thermal_surrogate' => '2025 - Current',
+  'tf_01_frib_beam_dump' => '2023 - 2025'
+}
+expected_years.each do |slug, year|
+  check.call(records.assoc(slug).last['year'] == year, "#{slug}: incorrect research period")
+  card = archive.at_css(".research-card[href='/projects/#{slug}/']")
+  check.call(card&.at_css('.research-card-meta')&.text&.include?(year), "#{slug}: research period missing from card")
+end
+check.call(archive.at_css('.project-list-link[href="/projects/em_01_3d_printable_emp/"]'), 'EM pump must remain in additional projects')
+check.call(archive.css('.research-projects img').empty?, 'The project archive should stay image-free')
+additional = archive.at_css('#additional-projects')
+expected_groups = {
+  'Thermal-fluid engineering' => %w[tf_03_oled_display tf_99_other],
+  'Liquid-metal & electromagnetic systems' => %w[em_01_3d_printable_emp em_02_raon_charge_stripper em_99_other],
+  'AI diagnostics' => %w[ot_01_komac_linac]
+}
+check.call(additional.css('.project-group > h3').map(&:text) == expected_groups.keys, 'Additional research group names or order are incorrect')
+additional.css('.project-group').each do |group|
+  expected = expected_groups.fetch(group.at_css('h3').text, []).map { |slug| "/projects/#{slug}/" }
+  check.call(group.css('.project-list-link').map { |link| link['href'] } == expected, 'A project is missing or in the wrong research group')
+end
+check.call(additional.css('.project-list > li').size == records.size - featured.size, 'The grouped lists must retain every additional project')
+additional.css('.project-list-link').each do |link|
+  check.call(link.at_css('div').element_children.map(&:name) == %w[h4 p p], 'Additional projects must show title, summary, then metadata')
+end
+check.call(archive.css('.research-card-type').empty?, 'Selected research must not repeat type labels above its titles')
+archive.css('.research-card').each do |card|
+  slug = card['href'].split('/').last
+  check.call(card.at_css('.research-card-meta').text.strip == records.assoc(slug).last['year'], "#{slug}: selected metadata should show only the research period")
+end
+
+documents = [['_site/projects/index.html', archive]]
+records.each do |slug, data|
+  required_fields = %w[card_title summary institution year project_group]
+  required_fields += data['publication_notice'] ? %w[publication_notice] : %w[contribution outcome evidence]
+  required_fields.each do |field|
+    check.call(!data[field].to_s.strip.empty?, "#{slug}: missing #{field}")
+  end
+  path = "_site/projects/#{slug}/index.html"
+  check.call(File.file?(path), "Missing case study: #{slug}")
+  next unless File.file?(path)
+  html = Nokogiri::HTML(File.read(path))
+  documents << [path, html]
+  if data['publication_notice']
+    card = archive.at_css(".research-card[href='/projects/#{slug}/']")
+    check.call(card&.at_css('.research-card-outcome')&.text&.include?(data['publication_notice']), "#{slug}: card publication notice missing")
+    check.call(card&.at_css('.research-card-action')&.text&.include?('Brief overview'), "#{slug}: preview should not promise a full case study")
+    check.call(html.at_css('.project-publication-notice')&.text == data['publication_notice'], "#{slug}: detail publication notice missing")
+    check.call(html.css('.project-brief').empty?, "#{slug}: preview must not expose performance summaries")
+    overview = html.at_css('.project-preview .project-body')
+    check.call(overview&.element_children&.map(&:name) == %w[h2 p], "#{slug}: preview should contain only a heading and a brief paragraph")
+    check.call(overview&.at_css('h2')&.text == 'Brief overview', "#{slug}: brief overview heading missing")
+    check.call((25..65).cover?(overview&.at_css('p')&.text.to_s.split.size), "#{slug}: overview must stay concise")
+    check.call(!overview&.text.to_s.match?(/\d|%|dataset|architecture|hyperparameter|speedup/i), "#{slug}: keep unpublished technical specifics out of the overview")
+    check.call(overview&.next_element&.[]('class') == 'project-publication-notice', "#{slug}: publication notice should follow the overview")
+  else
+    check.call(html.css('.project-brief dd').size == 2, "#{slug}: contribution/outcome summary missing")
+  end
+  check.call(html.at_css('.project-detail-header h1')&.text == data['card_title'], "#{slug}: title mismatch")
+  check.call(html.at_css('.project-detail-header .projects-kicker')&.text&.include?(data['year'].to_s), "#{slug}: detail research period mismatch")
+  html.css('.project-body img').each do |image|
+    check.call(!image['alt'].to_s.empty? && image.key?('data-zoomable'), "#{slug}: figure needs alt text and zoom")
+    check.call(!image['src'].end_with?('.gif'), "#{slug}: animations need pausable video controls")
+  end
+  previous_level = 1
+  html.css('.project-body h2, .project-body h3, .project-body h4').each do |heading|
+    level = heading.name.delete_prefix('h').to_i
+    check.call(level <= previous_level + 1, "#{slug}: heading levels must not skip")
+    previous_level = level
+  end
+  html.css('video[data-project-animation]').each do |video|
+    check.call(%w[controls muted loop playsinline poster width height aria-label aria-describedby].all? { |attr| video.key?(attr) }, "#{slug}: animation controls or accessible description missing")
+    check.call(!video.key?('autoplay'), "#{slug}: use reduced-motion-aware autoplay")
+    check.call(html.at_css("##{video['aria-describedby']}"), "#{slug}: animation caption missing")
+  end
+end
+
+documents.each do |path, html|
+  ids = html.css('[id]').map { |el| el['id'] }
+  check.call(ids.uniq.size == ids.size, "#{path}: duplicate IDs")
+  check.call(html.css('h1').size == 1, "#{path}: expected one h1")
+  check.call(html.css('footer.fixed-bottom').empty?, "#{path}: footer must not cover content")
+  html.css('[aria-labelledby]').each do |element|
+    check.call(element['aria-labelledby'].split.all? { |id| ids.include?(id) }, "#{path}: broken accessible label")
+  end
+  html.css('main a[href], [role="main"] a[href], .project-body img[src], .project-body source[src], .project-body video[poster]').each do |el|
+    url = el['href'] || el['src'] || el['poster']
+    next unless url.start_with?('/')
+    target = URI.parse(url).path
+    target += 'index.html' if target.end_with?('/')
+    check.call(File.file?(File.join('_site', target.delete_prefix('/'))), "#{path}: missing target #{url}")
+  end
+  check.call(!html.text.match?(/Liquid (?:Exception|Error)|\{\{|\{%/), "#{path}: unrendered Liquid")
+end
+
+beam_dump = documents.assoc('_site/projects/tf_01_frib_beam_dump/index.html')&.last
+check.call(beam_dump&.at_css('h1')&.text == 'Static beam dump AI optimization', 'Static beam dump title must include AI')
+animations = beam_dump.css('video[data-project-animation]')
+check.call(animations.size == 2, 'Static beam dump must show both GA and RL animations')
+animations.each do |video|
+  check.call(%w[controls muted loop playsinline poster width height aria-label aria-describedby].all? { |attr| video.key?(attr) }, 'Project animations need controls, dimensions, a poster, and accessible descriptions')
+  check.call(!video.key?('autoplay'), 'Autoplay must respect reduced-motion preferences through the media script')
+  check.call(beam_dump.at_css("##{video['aria-describedby']}"), 'Animation caption missing')
+end
+check.call(animations.map { |video| video.at_css('source')['src'] } == %w[/assets/video/static-beam-dump-ga.mp4 /assets/video/static-beam-dump-rl.mp4], 'GA and RL media are missing or out of order')
+
+frib = documents.assoc('_site/projects/tf_99_other/index.html').last
+check.call(frib.css('video[data-project-animation]').size == 2, 'FRIB analyses need both controllable animations')
+check.call(frib.css('.project-media-grid .caption').size == 4, 'Each responsive FRIB figure needs its own caption')
+check.call(frib.css('.project-media-grid .caption').none? { |caption| caption.text.match?(/\b(left|right)\b/) }, 'Stacked mobile figures must not use left/right captions')
+oled = documents.assoc('_site/projects/tf_03_oled_display/index.html').last
+check.call(oled.text.include?('C-2022-049451') && !oled.text.include?('C-2022-149451'), 'OLED software registration must match the CV')
+komac = documents.assoc('_site/projects/ot_01_komac_linac/index.html').last
+check.call(komac.text.include?('5 of 10') && komac.text.include?('retrospective'), 'KOMAC results must retain their evaluation scope')
+check.call(!komac.text.include?('Reduced unnecessary shutdowns'), 'Do not imply measured KOMAC downtime reductions')
+heat = documents.assoc('_site/projects/tf_02_smr_heat_exchanger/index.html').last
+check.call(heat.css('h3').map(&:text).include?('Dual-fluid topology optimization (2023)'), 'Separate the 2023 heat exchanger baseline')
+check.call(heat.css('h3').map(&:text).include?('DRL-assisted topology optimization (2024)'), 'Separate the 2024 heat exchanger baseline')
+
+previews = records.select { |_, data| data['publication_notice'] }.map(&:first).sort
+check.call(previews == %w[ai_01_bisto ai_02_thermal_surrogate], 'Only BiSTO and the deep learning surrogate should be publication previews')
+publications = Nokogiri::HTML(File.read('_site/publications/index.html'))
+check.call(publications.at_css('a[href="https://doi.org/10.2139/ssrn.7128856"]'), 'Surrogate preprint must remain available on Publications')
+abort errors.join("\n") unless errors.empty?
+puts "Projects OK: #{featured.size} featured, #{records.size - featured.size} additional; all case studies, labels, assets, and local links valid."

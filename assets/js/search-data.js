@@ -441,12 +441,4 @@ ninja.data = [{
         setThemeSetting("dark");
       },
     },
-    {
-      id: 'system-theme',
-      title: 'Use system default theme',
-      description: 'Change the theme of the site to System Default',
-      section: 'Theme',
-      handler: () => {
-        setThemeSetting("system");
-      },
-    },];
+];

@@ -1,24 +1,33 @@
 ---
-layout: page
-title: Other Designs
+layout: project
+title: "Thermal-structural engineering at FRIB"
 description: Thermal-structural analysis projects including rotating beam dump, post-target shielding, plasma chamber, and target systems at FRIB
 importance: 99
 category: Thermo-fluid devices
-year: 2024-2026
+year: "2024 - 2026"
+body_class: "project-view"
+footer_static: true
+card_title: "Thermal-structural engineering at FRIB"
+institution: "FRIB"
+project_group: "Thermal-fluid engineering"
+summary: "Thermal and structural analysis of beam-intercepting devices, shielding, and target systems."
+contribution: "Performed thermal-fluid and structural analyses to support design reviews, operating limits, and device qualification."
+evidence: "Engineering analysis & validation"
+outcome: "Simulation evidence and experimental comparisons supporting FRIB device design and operation."
 ---
 
 ## Rotating Beam Dump (2024-2026)
 
 <div class="row justify-content-center">
     <div class="col-sm-10">
-        {% include figure.liquid loading="eager" path="assets/img/project/tf_other/rotating_beam_dump.png" title="Rotating Beam Dump Multi-physics Analysis" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/project/tf_other/rotating_beam_dump.png" zoomable=true alt="Rotating Beam Dump Multi-physics Analysis" title="Rotating Beam Dump Multi-physics Analysis" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
     <strong>Fig.</strong> Rotating beam dump multi-physics analysis: magnetic flux density, coolant pressure, and temperature distribution
 </div>
 
-Static beam dumps have limitations for beam powers exceeding 100 kW, driving research into water-cooled rotating designs. Thermal-structural analysis evaluates high heat deposition, while also considering electromotive force effects on the motor from nearby dipole magnets.
+High-power beam interception motivates the study of water-cooled rotating designs. Thermal-structural analysis evaluates heat deposition and stress, alongside electromagnetic effects from nearby dipole magnets.
 
 ---
 
@@ -26,7 +35,7 @@ Static beam dumps have limitations for beam powers exceeding 100 kW, driving res
 
 <div class="row justify-content-center">
     <div class="col-sm-10">
-        {% include figure.liquid loading="eager" path="assets/img/project/tf_other/pts_thermal.png" title="PTS Thermal-Structural Analysis" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="lazy" path="assets/img/project/tf_other/pts_thermal.png" zoomable=true alt="PTS Thermal-Structural Analysis" title="PTS Thermal-Structural Analysis" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -39,34 +48,38 @@ As FRIB ramps up power, the post-target shielding (PTS) requires optimized cooli
 
 ## Plasma Chamber (2025-2026)
 
-<div class="row justify-content-center align-items-center">
-    <div class="col-sm-7">
-        {% include figure.liquid loading="eager" path="assets/img/project/tf_other/plasmachamber.png" title="Plasma Chamber Temperature Comparison" class="img-fluid rounded z-depth-1" %}
+<div class="project-media-grid">
+    <div>
+        {% include figure.liquid loading="lazy" path="assets/img/project/tf_other/plasmachamber.png" zoomable=true alt="Plasma Chamber Temperature Comparison" title="Plasma Chamber Temperature Comparison" class="img-fluid rounded z-depth-1" %}
+        <p class="caption">Plasma-chamber temperature predictions compared between ANSYS and COMSOL.</p>
     </div>
-    <div class="col-sm-4">
-        {% include figure.liquid loading="eager" path="assets/img/project/tf_other/plasmachamber_gif.gif" title="Plasma Chamber Interference Fitting Analysis" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    <strong>Fig.</strong> Temperature comparison between ANSYS and COMSOL (left), and transient analysis for interference fitting (right)
+    <figure class="project-demo">
+        <video data-project-animation controls muted loop playsinline preload="metadata" width="640" height="480" poster="{{ '/assets/img/project/tf_other/plasma-chamber-fitting-poster.webp' | relative_url }}" aria-label="Plasma chamber interference-fitting thermal analysis" aria-describedby="plasma-fitting-caption">
+            <source src="{{ '/assets/video/plasma-chamber-fitting.mp4' | relative_url }}" type="video/mp4">
+            Your browser does not support embedded video.
+        </video>
+        <figcaption class="caption" id="plasma-fitting-caption">Transient temperature during the interference-fitting analysis.</figcaption>
+    </figure>
 </div>
 
-To determine the RF power thermal limit of the plasma chamber, thermal and structural analyses were performed using both ANSYS and COMSOL for cross-validation to ensure reliability. Additionally, transient analysis was conducted for interference fitting to create cooling channels, analyzing the required temperature and assembly time during the fitting process.
+Thermal and structural analyses in ANSYS and COMSOL were compared to assess RF-power thermal limits. This is a cross-code comparison, distinct from experimental validation. Transient analysis also evaluated the temperature and assembly time needed for interference fitting of the cooling-channel components.
 
 ---
 
 ## Low-Power Charge Selector (2025-2026)
 
-<div class="row justify-content-center align-items-center">
-    <div class="col-sm-4">
-        {% include figure.liquid loading="eager" path="assets/img/project/tf_other/LPCS_gif.gif" title="LPCS Drift Tube Transient Temperature" class="img-fluid rounded z-depth-1" %}
+<div class="project-media-grid">
+    <figure class="project-demo">
+        <video data-project-animation controls muted loop playsinline preload="metadata" width="640" height="480" poster="{{ '/assets/img/project/tf_other/lpcs-transient-poster.webp' | relative_url }}" aria-label="Low-power charge selector transient thermal analysis" aria-describedby="lpcs-transient-caption">
+            <source src="{{ '/assets/video/lpcs-transient.mp4' | relative_url }}" type="video/mp4">
+            Your browser does not support embedded video.
+        </video>
+        <figcaption class="caption" id="lpcs-transient-caption">Predicted transient temperature of the LPCS drift tube.</figcaption>
+    </figure>
+    <div>
+        {% include figure.liquid loading="lazy" path="assets/img/project/tf_other/lpcs_temperature.png" zoomable=true alt="LPCS Temperature Comparison" title="LPCS Temperature Comparison" class="img-fluid rounded z-depth-1" %}
+        <p class="caption">Simulated and measured temperatures used to estimate beam energy deposition.</p>
     </div>
-    <div class="col-sm-5">
-        {% include figure.liquid loading="eager" path="assets/img/project/tf_other/lpcs_temperature.png" title="LPCS Temperature Comparison" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    <strong>Fig.</strong> Transient thermal simulation of the LPCS drift tube (left), and simulation-experiment temperature comparison for beam deposit prediction (right)
 </div>
 
 Performed transient and stationary thermal simulations of the Low-Power Charge Selector (LPCS) to determine power limits based on thermal stress. By comparing simulation results with experimental measurements, the beam deposit on the drift tube was predicted.
@@ -77,7 +90,7 @@ Performed transient and stationary thermal simulations of the Low-Power Charge S
 
 <div class="row justify-content-center">
     <div class="col-sm-10">
-        {% include figure.liquid loading="eager" path="assets/img/project/tf_other/target_door.png" title="Target System Temperature Distribution" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="lazy" path="assets/img/project/tf_other/target_door.png" zoomable=true alt="Target System Temperature Distribution" title="Target System Temperature Distribution" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">

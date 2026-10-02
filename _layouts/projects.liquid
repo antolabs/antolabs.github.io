@@ -1,0 +1,52 @@
+---
+layout: default
+---
+{% assign featured_projects = site.projects | where: 'featured', true | sort: 'featured_order' %}
+{% assign additional_projects = site.projects | where_exp: 'project', 'project.featured != true' | sort: 'importance' %}
+<div class="research-projects">
+  <header class="projects-header">
+    <p class="projects-kicker">Research &amp; engineering</p>
+    <h1>Projects</h1>
+    <p class="projects-intro">{{ page.description | escape }}</p>
+  </header>
+  <section class="projects-selected" aria-labelledby="selected-projects-heading">
+    <div class="projects-section-header">
+      <h2 id="selected-projects-heading">Selected research</h2>
+    </div>
+    <div class="research-grid">
+      {% for project in featured_projects %}
+        {% include projects/card.liquid project=project %}
+      {% endfor %}
+    </div>
+  </section>
+  <section class="projects-additional" id="additional-projects" aria-labelledby="additional-projects-heading">
+    <div class="projects-section-header">
+      <h2 id="additional-projects-heading">Additional projects</h2>
+    </div>
+    {% for group in page.project_groups %}
+      {% assign group_projects = additional_projects | where: 'project_group', group %}
+      {% if group_projects.size > 0 %}
+        <section class="project-group" aria-labelledby="group-{{ group | slugify }}">
+          <h3 id="group-{{ group | slugify }}">{{ group | escape }}</h3>
+          <ul class="project-list">
+            {% for project in group_projects %}
+              <li>
+                <a class="project-list-link" href="{{ project.url | relative_url }}" aria-labelledby="list-{{ project.slug }}">
+                  <div>
+                    <h4 id="list-{{ project.slug }}">{{ project.card_title | default: project.title | escape }}</h4>
+                    <p class="project-list-summary">{{ project.summary | escape }}</p>
+                    <p class="project-meta">
+                      {{ project.institution | escape }}
+                      <span aria-hidden="true">&middot;</span> {{ project.year | escape }}
+                    </p>
+                  </div>
+                  <span class="project-list-arrow" aria-hidden="true">&#8594;</span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+      {% endif %}
+    {% endfor %}
+  </section>
+</div>

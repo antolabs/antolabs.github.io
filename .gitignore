@@ -29,3 +29,6 @@ feed.xml
 
 # Local agent/IDE working files (audit artifacts contain the operator's IP/UA).
 .agent/
+.venv/
+.env
+.env.*

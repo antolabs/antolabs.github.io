@@ -85,6 +85,13 @@ jobs:
           sudo apt-get update && sudo apt-get install -y imagemagick
           export JEKYLL_ENV=production
           bundle exec jekyll build
+      - name: Check publication boundaries and project pages
+        run: |
+          bundle exec ruby bin/check-site-safety
+          bundle exec ruby bin/check-projects
+          bundle exec ruby bin/check-cv
+          node bin/check-project-media.cjs
+          node bin/check-theme.cjs
       # DISABLED: PurgeCSS was removing what-i-do styles despite safelist
       # - name: Purge unused CSS 🧹
       #   run: |

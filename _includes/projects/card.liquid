@@ -1,0 +1,23 @@
+{% assign project = include.project %}
+<a class="research-card" href="{{ project.url | relative_url }}" aria-labelledby="card-{{ project.slug }}">
+  <div class="research-card-meta">
+    <span>{{ project.year | escape }}</span>
+  </div>
+  <h3 id="card-{{ project.slug }}">{{ project.card_title | default: project.title | escape }}</h3>
+  <p class="research-card-summary">{{ project.summary | escape }}</p>
+  <div class="research-card-outcome">
+    {% if project.publication_notice %}
+      <p>{{ project.publication_notice | escape }}</p>
+    {% else %}
+      <p class="research-evidence">{{ project.evidence | escape }}</p>
+      <p>{{ project.outcome | escape }}</p>
+    {% endif %}
+  </div>
+  <div class="research-card-footer">
+    <span>{{ project.institution | escape }}</span>
+    <span class="research-card-action">
+      {% if project.publication_notice %}Brief overview{% else %}Explore project{% endif %}
+      <span aria-hidden="true">&#8594;</span>
+    </span>
+  </div>
+</a>

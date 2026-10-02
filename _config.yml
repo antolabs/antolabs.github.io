@@ -171,9 +171,13 @@ kramdown:
 # Includes & excludes
 include: ["_pages", "_scripts"]
 exclude:
+  - .agent/
+  - .venv/
+  - .env
+  - .env.*
   - bin/
   - CLAUDE.md
-  - References/Others/TH
+  - References/ # working reference copies are not website downloads
   - "**/*.pptx" # internal working decks must never reach _site, even from local builds
   - requirements.txt
   - CONTRIBUTING.md
@@ -227,7 +231,7 @@ defaults:
   - scope:
       path: "References"
     values:
-      sitemap: false # private/unlinked reference PDFs — keep out of the sitemap (not indexed)
+      sitemap: false # defense in depth; References is excluded from the build
 
 sass:
   style: compressed

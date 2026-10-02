@@ -1,11 +1,20 @@
 ---
-layout: page
+layout: project
 title: RAON Charge Stripper Development
 description: Lightweight helical EM thruster for liquid lithium film formation in heavy-ion accelerator
 img: assets/img/raon_charge_stripper/fig_lithium_film.png
 importance: 2
 category: Electromagnetic devices
-year: 2020-2021
+year: "2020 - 2021"
+body_class: "project-view"
+footer_static: true
+card_title: "Liquid-lithium charge stripper"
+institution: "UNIST"
+project_group: "Liquid-metal & electromagnetic systems"
+summary: "Electromagnetic thruster development and experimental characterization of liquid-lithium films."
+contribution: "Worked on electromagnetic circulation and charge-stripper design, combining multiphysics analysis with experimental characterization."
+evidence: "Prototype & experimental work"
+outcome: "Characterized liquid-lithium film formation for a prototype heavy-ion charge stripper."
 ---
 
 ## Challenge
@@ -18,7 +27,7 @@ year: 2020-2021
 
 <div class="row justify-content-center">
     <div class="col-sm-10">
-        {% include figure.liquid loading="eager" path="assets/img/raon_charge_stripper/fig_thruster_design.png" title="EM Thruster Design" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/raon_charge_stripper/fig_thruster_design.png" zoomable=true alt="EM Thruster Design" title="EM Thruster Design" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -26,12 +35,14 @@ year: 2020-2021
 </div>
 
 ### Electromagnetic Thruster Optimization
+
 - **Helical-type MHD design** with Sm₂Co₁₇ permanent magnets
 - **Single-direction magnet** arrangement for weight reduction
 - **SUS316 construction** for lithium compatibility
 - **FEM simulation** using COMSOL and ANSYS Maxwell
 
 ### Charge Stripper System
+
 - **Nozzle optimization**: 0.7 mm diameter, 34° angle
 - **Laser thickness measurement** (replacing electron gun method)
 - **Curved deflector** design to minimize lithium droplet contamination
@@ -42,32 +53,33 @@ year: 2020-2021
 
 <div class="row justify-content-center">
     <div class="col-sm-9">
-        {% include figure.liquid loading="eager" path="assets/img/raon_charge_stripper/fig_lithium_film.png" title="Lithium Film" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="lazy" path="assets/img/raon_charge_stripper/fig_lithium_film.png" zoomable=true alt="Lithium Film" title="Lithium Film" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
     <strong>Fig.</strong> Experimental test loop system (left) and successfully formed liquid lithium thin film (right)
 </div>
 
-| Parameter | Conventional | Redesigned |
-|:----------|:------------:|:----------:|
-| Weight | 340 kg | **21 kg (-94%)** |
-| Input Current | 872 A | **500 A (-43%)** |
-| Developed Pressure | 10.5 bar | **14.6 bar (+40%)** |
+| Parameter          | Conventional |     Redesigned      |
+| :----------------- | :----------: | :-----------------: |
+| Weight             |    340 kg    |  **21 kg (-94%)**   |
+| Input Current      |    872 A     |  **500 A (-43%)**   |
+| Developed Pressure |   10.5 bar   | **14.6 bar (+40%)** |
 
 <br>
 
 - Achieved **22 μm lithium film** thickness at 107 A input current
 - **94% weight reduction** enabling easy maintenance
-- **Laser-based measurement** eliminates radiation exposure concerns
-- Successfully demonstrated **79+ charge state** capability
+- **Laser-based thickness measurement** avoids the electron-beam measurement method
+- Verified the film thickness required for a **79+ uranium charge state**; beam charge-state conversion was not measured in this study
 
 ---
 
 ## Publication
 
 **SCIE**
-- T.U. Kang, **G. Lee**, H.R. Kim, "Experimental characterization of the flowline of a lithium film formed using an electromagnetic thruster for a RAON prototype charge stripper," *Nuclear Engineering and Design*, 412, 112481, 2023.
+
+- T.U. Kang, **G. Lee**, H.R. Kim, "Experimental characterization of the flowline of a lithium film formed using an electromagnetic thruster for a RAON prototype charge stripper," _Nuclear Engineering and Design_, 412, 112481, 2023. [DOI](https://doi.org/10.1016/j.nucengdes.2023.112481)
 
 ---
 

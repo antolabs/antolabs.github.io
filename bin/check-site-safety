@@ -1,0 +1,45 @@
+#!/usr/bin/env ruby
+# Lightweight publication-boundary and credential-pattern checks, not a penetration test.
+require 'nokogiri'
+require 'open3'
+
+Dir.chdir(File.expand_path('..', __dir__))
+errors = []
+blocked = %r{(?:\A|/)(?:\.agent|\.git|\.venv|References|node_modules|vendor)(?:/|\z)|(?:\A|/)\.env(?:\.|\z)|\.(?:pptx|pem|pfx|key)\z}i
+Dir.glob('_site/**/*', File::FNM_DOTMATCH).select { |p| File.file?(p) }.each do |path|
+  relative = path.delete_prefix('_site/')
+  errors << "Non-public working file in build: #{relative}" if relative.match?(blocked)
+end
+
+patterns = {
+  'private key' => /-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----/,
+  'GitHub token' => /\b(?:gh[pousr]_[A-Za-z0-9]{36,}|github_pat_[A-Za-z0-9_]{60,})\b/,
+  'OpenAI project key' => /\bsk-proj-[A-Za-z0-9_-]{40,}/,
+  'AWS access key' => /\b(?:AKIA|ASIA)[A-Z0-9]{16}\b/
+}
+files, status = Open3.capture2('git', 'ls-files', '-z', '--cached', '--others', '--exclude-standard')
+abort 'Unable to list repository files' unless status.success?
+files.split("\0").uniq.each do |path|
+  next unless File.file?(path)
+  if path.match?(%r{(?:\A|/)\.env(?:\.|\z)|\.(?:pem|pfx|key|pptx)\z}i)
+    errors << "Unexpected publishable source file: #{path}"
+  end
+  next if File.size(path) > 2_000_000
+  content = File.binread(path)
+  next if content.include?("\0")
+  patterns.each { |label, pattern| errors << "#{label} pattern in #{path}" if content.match?(pattern) }
+end
+
+paths = %w[_site/index.html _site/cv/index.html _site/publications/index.html] + Dir['_site/projects/**/index.html']
+paths.each do |path|
+  html = Nokogiri::HTML(File.read(path))
+  html.css('script[src], link[rel="stylesheet"], img[src], video source[src]').each do |asset|
+    url = asset['src'] || asset['href']
+    errors << "Insecure asset URL in #{path}" if url&.start_with?('http:')
+  end
+  html.css('a[href]').each do |link|
+    errors << "Executable link in #{path}" if link['href'].match?(/\A\s*(?:javascript|vbscript):/i)
+  end
+end
+abort errors.uniq.join("\n") unless errors.empty?
+puts 'Site safety OK: working files excluded, no recognized credential patterns, no insecure assets or executable links on main/project pages.'
