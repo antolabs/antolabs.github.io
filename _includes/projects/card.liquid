@@ -9,7 +9,6 @@
     {% if project.publication_notice %}
       <p>{{ project.publication_notice | escape }}</p>
     {% else %}
-      <p class="research-evidence">{{ project.evidence | escape }}</p>
       <p>{{ project.outcome | escape }}</p>
     {% endif %}
   </div>

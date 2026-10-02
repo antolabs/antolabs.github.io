@@ -24,10 +24,14 @@ function setup({
   initialError = false,
   noSource = false,
   resizeObserver = true,
+  alreadyPlaying = false,
+  missingViewBox = false,
 } = {}) {
   const mediaSource = eventTarget();
   const video = eventTarget({
-    paused: true,
+    paused: !alreadyPlaying,
+    autoplay: true,
+    dataset: {},
     controls: true,
     playCalls: 0,
     loadCalls: 0,
@@ -41,7 +45,7 @@ function setup({
   video.querySelector = () => mediaSource;
   video.play = () => {
     video.playCalls++;
-    if (rejectPlay) return Promise.reject(new Error("Autoplay blocked"));
+    if (rejectPlay) return Promise.reject(Object.assign(new Error("Autoplay blocked"), { name: "NotAllowedError" }));
     video.paused = false;
     video.emit("play");
     return Promise.resolve();
@@ -76,6 +80,7 @@ function setup({
     },
   });
   const leaders = { ...box("svg"), viewBox: { baseVal: { width: 884, height: 620 } } };
+  if (missingViewBox) delete leaders.viewBox;
   const paths = Object.fromEntries(
     [".bisto-solid-initial path", ".bisto-solid-evolved path", ".bisto-fluid-leader path"].map((selector) => [
       selector,
@@ -187,15 +192,21 @@ async function check() {
   assert.equal(normal.button.attributes["aria-label"], "Pause animation");
   assert.equal(normal.button.dataset.playing, "true");
   assert.equal(normal.video.muted, true);
+  assert.equal(normal.video.defaultMuted, true);
+  assert.equal(normal.video.autoplay, true);
+  assert.equal(normal.video.dataset.playbackState, "playing");
   assert.equal(normal.video.controls, false, "Only show the custom play/pause button");
   normal.button.emit("click");
   normal.video.emit("canplay");
+  normal.video.emit("loadeddata");
+  normal.window.emit("pageshow");
   normal.document.hidden = true;
   normal.document.emit("visibilitychange");
   normal.document.hidden = false;
   normal.document.emit("visibilitychange");
   normal.motion.emit("change");
   assert.equal(normal.video.paused, true, "Preserve manual pause after buffering, tab changes, or preference events");
+  assert.equal(normal.video.autoplay, false, "Disable native autoplay after manual pause as well");
   assert.equal(normal.button.attributes["aria-label"], "Play animation");
   assert.equal(normal.button.dataset.playing, "false");
   normal.button.emit("click");
@@ -203,9 +214,22 @@ async function check() {
   normal.document.hidden = true;
   normal.document.emit("visibilitychange");
   assert.equal(normal.video.paused, true, "Pause in a hidden tab");
+  assert.equal(normal.video.autoplay, false);
   normal.document.hidden = false;
   normal.document.emit("visibilitychange");
   assert.equal(normal.video.paused, false);
+  assert.equal(normal.video.autoplay, true);
+
+  normal.video.pause();
+  normal.window.emit("pageshow");
+  assert.equal(normal.video.paused, false, "Recover interrupted playback when restoring a page");
+
+  const native = setup({ alreadyPlaying: true });
+  native.video.emit("loadeddata");
+  native.video.emit("canplay");
+  assert.equal(native.video.playCalls, 0, "Enhance already-playing native autoplay without restarting it");
+  assert.equal(native.button.attributes["aria-label"], "Pause animation");
+  assert.equal(setup({ missingViewBox: true }).video.paused, false, "Optional annotation geometry cannot prevent playback");
 
   const background = setup({ hidden: true });
   assert.equal(background.video.playCalls, 0);
@@ -215,17 +239,24 @@ async function check() {
 
   const reduced = setup({ reduced: true });
   reduced.video.emit("canplay");
-  assert.equal(reduced.video.playCalls, 0, "No autoplay with reduced motion");
+  assert.equal(reduced.video.playCalls, 1, "The research video starts regardless of OS decorative-motion settings");
+  assert.equal(reduced.video.paused, false);
   reduced.button.emit("click");
   reduced.video.emit("canplay");
-  assert.equal(reduced.video.paused, false, "Explicit playback is still available");
+  reduced.video.emit("loadeddata");
   reduced.motion.emit("change");
-  assert.equal(reduced.video.paused, true);
+  reduced.window.emit("pageshow");
+  assert.equal(reduced.video.paused, true, "Manual pause remains authoritative on reduced-motion PCs too");
+  assert.equal(reduced.video.autoplay, false);
+  reduced.button.emit("click");
+  assert.equal(reduced.video.paused, false);
 
   const blocked = setup({ rejectPlay: true });
   await Promise.resolve();
   assert.equal(blocked.button.attributes["aria-label"], "Play animation");
   assert.equal(blocked.button.hidden, false);
+  assert.equal(blocked.video.dataset.playbackError, "NotAllowedError", "Expose browser policy rejection for diagnosis, not silent failure");
+  assert.equal(blocked.video.dataset.playbackState, "paused");
 
   normal.mediaSource.emit("error");
   assert.equal(normal.button.hidden, false);
@@ -268,6 +299,10 @@ async function check() {
   const layout = fs.readFileSync(path.join(__dirname, "../_layouts/about.liquid"), "utf8");
   assert.ok(!layout.includes("Open the animation") && !layout.includes("bisto-fallback"));
   assert.ok(layout.includes('preload="auto"'));
+  const videoTag = layout.match(/<video\b[^>]*id="bisto-video"[^>]*>/)?.[0];
+  for (const attribute of ["autoplay", "muted", "playsinline", "loop", "controls"]) {
+    assert.ok(new RegExp(`\\s${attribute}(?:\\s|>)`).test(videoTag), `Keep native ${attribute} available before JavaScript loads`);
+  }
   const playerScript = layout.match(/<script\b[^>]*about-bisto\.js[^>]*>/)?.[0];
   assert.ok(playerScript?.includes(" async "), "Initialize the player without waiting for unrelated parser-blocking footer scripts");
   assert.ok(!playerScript.includes(" defer "));
@@ -275,7 +310,7 @@ async function check() {
 
   vm.runInNewContext(source, { document: { getElementById: () => null, querySelector: () => null } });
   console.log(
-    "About media OK: responsive label anchors, synchronized annotations, immediate autoplay, play/pause, reduced motion, visibility, autoplay rejection, source recovery, and no fallback link."
+    "About media OK: native muted autoplay, OS-motion-independent research playback, manual pause, page restoration, responsive annotations, policy rejection, and source recovery."
   );
 }
 

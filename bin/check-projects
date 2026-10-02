@@ -49,9 +49,13 @@ additional.css('.project-list-link').each do |link|
   check.call(link.at_css('div').element_children.map(&:name) == %w[h4 p p], 'Additional projects must show title, summary, then metadata')
 end
 check.call(archive.css('.research-card-type').empty?, 'Selected research must not repeat type labels above its titles')
+check.call(archive.css('.research-card .research-evidence').empty?, 'Selected research must not repeat evidence labels above its outcomes')
 archive.css('.research-card').each do |card|
   slug = card['href'].split('/').last
   check.call(card.at_css('.research-card-meta').text.strip == records.assoc(slug).last['year'], "#{slug}: selected metadata should show only the research period")
+  data = records.assoc(slug).last
+  expected_outcome = data['publication_notice'] || data['outcome']
+  check.call(card.at_css('.research-card-outcome').text.strip == expected_outcome, "#{slug}: preserve the outcome or publication notice without an extra label")
 end
 
 documents = [['_site/projects/index.html', archive]]
