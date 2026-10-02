@@ -1,0 +1,513 @@
+.about-site {
+  padding-bottom: 0;
+  > footer {
+    position: static;
+    padding: 1.25rem 0 1.5rem;
+    background: transparent;
+    color: var(--global-text-color-light);
+    font-size: 0.75rem;
+    .container,
+    a {
+      color: inherit;
+    }
+  }
+}
+.about-page {
+  --about-display-font: "Roboto Slab", serif;
+  --about-body-size: 1rem;
+  --about-detail-size: 0.875rem;
+  --about-copy-leading: 1.65;
+
+  .about-intro {
+    display: grid;
+    grid-template-columns: 330px minmax(0, 1fr);
+    align-items: center;
+    gap: 2.4rem;
+    padding: 0 0 2rem;
+    background: radial-gradient(ellipse at 80% 40%, var(--brand-tint-bg), transparent 64%);
+  }
+  .about-intro-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    min-width: 0;
+  }
+  .about-portrait {
+    figure {
+      margin: 0;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 5 / 6;
+      object-fit: cover;
+      object-position: 50% 40%;
+      border-radius: 6px;
+      border: 1px solid var(--global-divider-color);
+    }
+  }
+  .about-identity {
+    h1 {
+      margin: 0 0 0.4rem;
+      font-family: var(--about-display-font);
+      font-size: 1.45rem;
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+    }
+  }
+  .about-affiliation {
+    margin: 0;
+    font-size: var(--about-detail-size);
+    line-height: 1.6;
+  }
+  .about-eyebrow {
+    margin: 0 0 0.6rem;
+    color: var(--global-text-color-light);
+    font-size: 0.67rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .about-vision {
+    min-width: 0;
+    h2 {
+      margin: 0 0 1rem;
+      font-family: var(--about-display-font);
+      font-size: clamp(1.85rem, 3.1vw, 2.3rem);
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+
+      > span {
+        display: block;
+        text-wrap: balance;
+      }
+    }
+  }
+  .about-vision-intro {
+    max-width: 58ch;
+    margin: 0;
+    color: var(--global-text-color-light);
+    font-size: var(--about-body-size);
+    line-height: var(--about-copy-leading);
+    text-wrap: balance;
+  }
+  .about-keep-word {
+    // Override the theme's generic span color without adding emphasis.
+    color: inherit;
+    font-weight: inherit;
+    white-space: nowrap;
+  }
+
+  .about-research-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.25rem;
+    margin-top: 0.75rem;
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      min-height: 44px;
+      font-size: var(--about-detail-size);
+      font-weight: 500;
+      text-decoration: underline;
+      text-decoration-color: var(--global-divider-color);
+      text-underline-offset: 0.2em;
+    }
+  }
+  .about-research {
+    padding: 2rem 0;
+    border-top: 1px solid var(--global-divider-color);
+    background: radial-gradient(ellipse at 8% 50%, var(--brand-tint-bg), transparent 65%);
+  }
+  .bisto-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+    grid-template-areas:
+      "summary visual"
+      "details visual";
+    gap: 0 2.3rem;
+    margin: 0;
+    figcaption {
+      min-width: 0;
+    }
+    h2 {
+      margin: 0 0 0.25rem;
+      font-family: var(--about-display-font);
+      font-size: 1.7rem;
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+    }
+  }
+  .bisto-summary {
+    grid-area: summary;
+    align-self: end;
+    padding-bottom: 1rem;
+  }
+  .bisto-details {
+    grid-area: details;
+    align-self: start;
+    min-width: 0;
+  }
+  .bisto-fullname {
+    margin: 0 0 0.65rem;
+    color: var(--global-text-color-light);
+    font-size: var(--about-detail-size);
+    line-height: 1.6;
+    text-wrap: balance;
+  }
+  .bisto-method {
+    margin: 0;
+    font-size: var(--about-body-size);
+    font-weight: 500;
+    line-height: 1.5;
+    text-wrap: balance;
+  }
+  #bisto-description {
+    margin: 0;
+    color: var(--global-text-color-light);
+    font-size: var(--about-body-size);
+    line-height: var(--about-copy-leading);
+    text-wrap: balance;
+  }
+  .bisto-workflow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 1rem 0 0;
+    padding: 0;
+    color: var(--global-text-color);
+    list-style: none;
+    font-size: var(--about-detail-size);
+    font-weight: 500;
+    line-height: 1.8;
+    li + li::before {
+      content: "\2192";
+      margin-right: 0.45rem;
+      color: var(--global-text-color-light);
+    }
+  }
+  .bisto-visual {
+    grid-area: visual;
+    align-self: center;
+    min-width: 0;
+  }
+  .bisto-media {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 6px;
+    background: #fff;
+    video,
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 884 / 620;
+      object-fit: contain;
+    }
+  }
+  .bisto-annotations,
+  .bisto-leaders {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  .bisto-leaders {
+    path {
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .bisto-leader-halo {
+      stroke: #fff;
+      stroke-width: 6;
+    }
+    .bisto-leader-solid {
+      stroke: #263238;
+      stroke-width: 2.5;
+    }
+    .bisto-leader-fluid {
+      stroke: #16849c;
+      stroke-width: 2.5;
+    }
+    circle {
+      stroke: #fff;
+      stroke-width: 3;
+    }
+    .bisto-target-solid {
+      fill: #263238;
+    }
+    .bisto-target-fluid {
+      fill: #16849c;
+    }
+  }
+  .bisto-solid-evolved {
+    display: none;
+  }
+  [data-solid-phase="evolved"] {
+    .bisto-solid-initial {
+      display: none;
+    }
+    .bisto-solid-evolved {
+      display: inline;
+    }
+  }
+  .bisto-callout {
+    position: absolute;
+    left: 3.4%;
+    min-width: 4rem;
+    padding: 0.3rem 0.55rem;
+    border: 1px solid #dce3e6;
+    border-radius: 4px;
+    background: #fff;
+    color: #263238;
+    font-size: 0.8rem;
+    line-height: 1.35;
+    text-align: center;
+    strong {
+      display: block;
+      color: inherit;
+      font-weight: 600;
+    }
+  }
+  .bisto-callout-solid {
+    top: 4.8%;
+    border-color: #343a40;
+    background: #343a40;
+    color: #fff;
+  }
+  .bisto-callout-fluid {
+    bottom: 4%;
+    border-color: #a4cde8;
+    background: #def0fc;
+    color: #174765;
+  }
+  .bisto-toggle {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    width: 44px;
+    height: 44px;
+    padding: 4px;
+    border: 0;
+    background: transparent;
+    color: #263238;
+    cursor: pointer;
+
+    &[hidden] {
+      display: none;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      padding: 5px;
+      border: 1px solid #c9d4d9;
+      border-radius: 50%;
+      background: #fff;
+      fill: currentColor;
+    }
+
+    &:hover svg {
+      border-color: #16849c;
+      color: #16849c;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #16849c;
+      outline-offset: -3px;
+      border-radius: 4px;
+    }
+
+    .bisto-icon-pause {
+      display: none;
+    }
+
+    &[data-playing="true"] {
+      .bisto-icon-play {
+        display: none;
+      }
+
+      .bisto-icon-pause {
+        display: inline;
+      }
+    }
+  }
+  .bisto-temperature-note {
+    margin: 0.55rem 0 0;
+    color: var(--global-text-color-light);
+    font-size: var(--about-detail-size);
+    line-height: 1.6;
+    text-wrap: balance;
+  }
+  .about-methods {
+    padding-top: 2rem;
+    border-top: 1px solid var(--global-divider-color);
+    > h2 {
+      margin: 0 0 1.25rem;
+      font-family: var(--about-display-font);
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+  }
+  .about-method-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.6rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li + li {
+      padding-left: 1.6rem;
+      border-left: 1px solid var(--global-divider-color);
+    }
+    h3 {
+      margin: 0.45rem 0 0.55rem;
+      font-family: inherit;
+      font-size: var(--about-body-size);
+      font-weight: 500;
+      line-height: 1.45;
+      text-wrap: balance;
+    }
+    p {
+      margin: 0;
+      color: var(--global-text-color-light);
+      font-size: var(--about-body-size);
+      line-height: var(--about-copy-leading);
+      text-wrap: balance;
+    }
+  }
+  .about-method-number {
+    color: var(--global-text-color-light);
+    font-size: 0.7rem;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  article .social {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+
+    .contact-icons {
+      gap: 0.5rem 0.75rem;
+      font-size: 1.8rem;
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 44px;
+        min-height: 44px;
+      }
+    }
+
+    .contact-note {
+      line-height: 1.6;
+    }
+  }
+}
+@media (max-width: 991px) {
+  .about-page {
+    .about-intro {
+      grid-template-columns: 260px minmax(0, 1fr);
+      column-gap: 1.8rem;
+    }
+    .bisto-feature {
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      column-gap: 1.4rem;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .about-site {
+    > .container.mt-5 {
+      margin-top: 1.5rem !important;
+    }
+    > footer .container {
+      padding-right: 15px;
+    }
+    #back-to-top {
+      display: none !important;
+    }
+  }
+  .about-page {
+    .about-intro {
+      grid-template-columns: minmax(0, 1fr) clamp(144px, 42vw, 200px);
+      gap: 1.5rem 1rem;
+      padding-bottom: 1.5rem;
+    }
+    .about-intro-copy {
+      display: contents;
+    }
+    .about-portrait {
+      grid-column: 2;
+      grid-row: 1;
+      align-self: center;
+    }
+    .about-identity {
+      grid-column: 1;
+      grid-row: 1;
+      align-self: center;
+      padding: 0;
+      h1 {
+        font-size: clamp(1.2rem, 5.8vw, 1.5rem);
+      }
+    }
+    .about-affiliation {
+      font-size: var(--about-detail-size);
+    }
+    .about-vision {
+      grid-column: 1 / -1;
+      h2 {
+        font-size: clamp(1.4rem, 7.2vw, 2rem);
+      }
+    }
+    .about-research-links {
+      column-gap: 1rem;
+    }
+    .about-research {
+      padding: 1.5rem 0 1.8rem;
+    }
+    .bisto-feature {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "summary"
+        "visual"
+        "details";
+      gap: 1rem;
+    }
+    .bisto-summary {
+      padding-bottom: 0;
+    }
+    .bisto-workflow {
+      margin-top: 0.85rem;
+    }
+    .bisto-callout {
+      min-width: 3.3rem;
+      padding: 0.2rem 0.4rem;
+      font-size: 0.8rem;
+    }
+    .about-method-list {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      li + li {
+        padding: 1rem 0 0;
+        border-left: 0;
+        border-top: 1px solid var(--global-divider-color);
+      }
+      h3 {
+        margin-top: 0.25rem;
+      }
+    }
+  }
+}
