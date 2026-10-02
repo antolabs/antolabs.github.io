@@ -32,7 +32,7 @@ check.call(archive.at_css('.project-list-link[href="/projects/em_01_3d_printable
 check.call(archive.css('.research-projects img').empty?, 'The project archive should stay image-free')
 additional = archive.at_css('#additional-projects')
 expected_groups = {
-  'Thermal-fluid engineering' => %w[tf_03_oled_display tf_99_other],
+  'Thermal-fluid engineering' => %w[tf_99_other tf_03_oled_display],
   'Liquid-metal & electromagnetic systems' => %w[em_01_3d_printable_emp em_02_raon_charge_stripper em_99_other],
   'AI diagnostics' => %w[ot_01_komac_linac]
 }
@@ -40,6 +40,9 @@ check.call(additional.css('.project-group > h3').map(&:text) == expected_groups.
 additional.css('.project-group').each do |group|
   expected = expected_groups.fetch(group.at_css('h3').text, []).map { |slug| "/projects/#{slug}/" }
   check.call(group.css('.project-list-link').map { |link| link['href'] } == expected, 'A project is missing or in the wrong research group')
+  years = group.css('.project-list-link').map { |link| records.assoc(link['href'].split('/').last).last['year'] }
+  check.call(years.all? { |year| year.is_a?(String) && year.match?(/\A\d{4}(?: - (?:\d{4}|Current))?\z/) }, 'Project periods must be sortable year strings')
+  check.call(years == years.map(&:to_s).sort.reverse, 'Additional projects must be newest first within each research group')
 end
 check.call(additional.css('.project-list > li').size == records.size - featured.size, 'The grouped lists must retain every additional project')
 additional.css('.project-list-link').each do |link|

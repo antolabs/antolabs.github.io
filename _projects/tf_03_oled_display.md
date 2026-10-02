@@ -5,7 +5,7 @@ description: PPO Reinforcement Learning for susceptor heat exchanger design in C
 img: assets/img/oled_display/fig_learning_progress.png
 importance: 3
 category: Thermo-fluid devices
-year: 2022
+year: "2022"
 body_class: "project-view"
 footer_static: true
 card_title: "Flow-channel design for OLED manufacturing"
