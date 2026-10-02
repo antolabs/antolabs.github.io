@@ -242,7 +242,8 @@ sass:
 
 jekyll-minifier:
   compress_javascript: false # set to false since we are using terser as the js minifier
-  exclude: ["robots.txt", "assets/js/search/*.js"]
+  # Citation downloads and the discovery index are plain text, not minifiable HTML.
+  exclude: ["robots.txt", "llms.txt", "publications/*/citation.bib", "publications/*/citation.ris", "assets/js/search/*.js"]
 
 # -----------------------------------------------------------------------------
 # Terser

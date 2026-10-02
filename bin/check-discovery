@@ -16,6 +16,7 @@ check.call(archive.css('.publication-title-link').size == papers.size, 'Each pub
 check.call(archive.css('.btn-pdf').size == papers.size, 'PDF links must exist before JavaScript executes')
 check.call(archive.css('.btn-cite').size == papers.size, 'Citation links need a no-JavaScript fallback')
 check.call(!llms.match?(/JCR Top|IF:|\{%|\{\{/), 'Discovery index must not contain stale metrics or unrendered Liquid')
+check.call(llms.scan(/^### /).size == papers.size, 'Discovery index must preserve Markdown headings and line breaks')
 check.call(llms.include?('Under review; not a published journal article.'), 'Keep preprints separate from published articles')
 check.call(File.read('_site/robots.txt').include?('Disallow: /References/'), 'Preserve the reference-directory crawl restriction')
 check.call(!File.read('_site/robots.txt').match?(/^Disallow:\s*\/\s*$/), 'Public research must remain crawlable')
