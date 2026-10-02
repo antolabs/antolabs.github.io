@@ -41,6 +41,7 @@ papers.each do |paper|
   check.call(pdf_url == "#{canonical}paper.pdf", "#{id}: full text must share the abstract page's directory")
   pdf_path = "_site#{path}paper.pdf"
   check.call(File.file?(pdf_path) && Digest::SHA256.file(pdf_path).hexdigest == Digest::SHA256.file(".#{paper['pdf']}").hexdigest, "#{id}: linked full text differs from original PDF")
+  check.call(File.file?(pdf_path) && File.size(pdf_path) <= 5_000_000, "#{id}: full text exceeds Google Scholar's 5 MB file limit")
   check.call(html.css('meta[name="citation_title"]').map { |m| m['content'] } == [paper['title']], "#{id}: citation title must be unique and exact")
   check.call(html.css('meta[name="citation_doi"]').map { |m| m['content'] } == [paper['doi']], "#{id}: incorrect citation DOI")
   check.call(html.css('meta[name="citation_author"]').map { |m| m['content'] } == paper['citation_authors'], "#{id}: incomplete or incorrect authors")
