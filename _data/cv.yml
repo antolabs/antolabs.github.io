@@ -1,8 +1,8 @@
-# Source: assets/pdf/CV_GLee_261001.pdf (October 1, 2026).
+# Source: assets/pdf/CV_GLee_261012.pdf (October 12, 2026).
 # Statuses and totals are a CV snapshot, not automatically inferred from today.
 # Keep unpublished manuscripts separate from published SCIE papers.
 # Phone and residency information remain in the downloadable PDF only.
-source_pdf: "CV_GLee_261001.pdf"
+source_pdf: "CV_GLee_261012.pdf"
 name: "Geunhyeong Lee, Ph.D."
 email: "leeg@frib.msu.edu"
 research:
@@ -53,7 +53,7 @@ publications:
       journal: "Engineering Applications of Artificial Intelligence"
       doi: "10.2139/ssrn.7128856"
     - status: "In preparation"
-      title: "BiSTO: binary surrogate-based topology optimization of solver-verified turbulent cooling channels"
+      title: "BiSTO: binary surrogate based topology optimization of turbulent cooling channels using deep learning"
       authors: "Lee, G\u2020*., & Kanemura, T."
   other:
     - year: "2025"
@@ -247,7 +247,7 @@ service:
       count: 6
       period: "2024-2026"
     - journal: "International Communications in Heat and Mass Transfer"
-      count: 8
+      count: 9
       period: "2025-2026"
     - journal: "Annals of Nuclear Energy"
       count: 4
