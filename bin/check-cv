@@ -34,8 +34,11 @@ expected = {
   '#appointments .cv-bullets li' => cv['appointments'].sum { |entry| entry.fetch('description').size }
 }
 expected.each { |selector, count| check.call(html.css(selector).size == count, "Missing rendered records: #{selector}") }
+conference_summary = "#{cv.dig('conferences', 'completed').size} completed"
+upcoming_count = cv.dig('conferences', 'upcoming').size
+conference_summary += " + #{upcoming_count} upcoming" if upcoming_count.positive?
 expected_stats = [cv.dig('publications', 'other').size.to_s,
-                  "#{cv.dig('conferences', 'completed').size} completed + #{cv.dig('conferences', 'upcoming').size} upcoming",
+                  conference_summary,
                   cv['patents'].size.to_s]
 check.call(html.css('.cv-output-summary dd').map { |el| normalize.call(el.text) } == expected_stats, 'Research output counts are incorrect')
 check.call(html.at_css('.cv-publication-summary h3')&.text == "#{published} published SCIE journal articles", 'Published article summary is incorrect')

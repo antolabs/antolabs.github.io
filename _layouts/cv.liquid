@@ -49,7 +49,7 @@ layout: default
               </div>
               <dl class="cv-output-summary">
                 <div><dt>Other journal publications</dt><dd>{{ cv.publications.other.size }}</dd></div>
-                <div><dt>Conference contributions</dt><dd>{{ cv.conferences.completed.size }} completed <span>+ {{ cv.conferences.upcoming.size }} upcoming</span></dd></div>
+                <div><dt>Conference contributions</dt><dd>{{ cv.conferences.completed.size }} completed{% if cv.conferences.upcoming.size > 0 %} <span>+ {{ cv.conferences.upcoming.size }} upcoming</span>{% endif %}</dd></div>
                 <div><dt>Registered patents</dt><dd>{{ cv.patents.size }}</dd></div>
               </dl>
           {% endcase %}

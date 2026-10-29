@@ -1,8 +1,8 @@
-# Source: assets/pdf/CV_GLee_261012.pdf (October 12, 2026).
+# Source: assets/pdf/CV_GLee_261029.pdf (October 29, 2026).
 # Statuses and totals are a CV snapshot, not automatically inferred from today.
 # Keep unpublished manuscripts separate from published SCIE papers.
 # Phone and residency information remain in the downloadable PDF only.
-source_pdf: "CV_GLee_261012.pdf"
+source_pdf: "CV_GLee_261029.pdf"
 name: "Geunhyeong Lee, Ph.D."
 email: "leeg@frib.msu.edu"
 research:
@@ -52,7 +52,7 @@ publications:
       authors: "Lee, G\u2020*., & Kanemura, T."
       journal: "Engineering Applications of Artificial Intelligence"
       doi: "10.2139/ssrn.7128856"
-    - status: "In preparation"
+    - status: "Submitted"
       title: "BiSTO: binary surrogate based topology optimization of turbulent cooling channels using deep learning"
       authors: "Lee, G\u2020*., & Kanemura, T."
   other:
@@ -61,9 +61,7 @@ publications:
       authors: "Lee, G\u2020*., Kim, T., Kim, Y., & Kim, G."
       journal: "Journal of Korean Applied Artificial Intelligence, 1(2), 1-6"
 conferences:
-  upcoming:
-    - year: "2026"
-      citation: "Lee, G\u2020*., & Kanemura, T. BiSTO: AI Topology Optimization of Turbulent Beam Intercepting Device Cooling. 2026 ANS Winter Conference & Expo."
+  upcoming: []
   completed:
     - year: "2026"
       citation: "Lee, G\u2020*., & Kanemura, T. BiSTO: AI Topology Optimization of Internal Cooling Channels for the FRIB High-Power Beam Dump toward Additive Manufacturing. Conference on Additive Manufacturing and Advanced Materials in Fusion (AM2F 2026), MIT Plasma Science and Fusion Center."
