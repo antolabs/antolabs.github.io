@@ -14,6 +14,7 @@ cv = YAML.safe_load(File.read('_data/cv.yml'))
 
 check.call(copy.call(about.at_css('#research-vision-title')) == "#{data['hero_lead']} #{data['hero_focus']}", 'Hero title must match the approved research identity')
 check.call(copy.call(about.at_css('.about-vision-intro')) == data['vision_intro'], 'Research vision must render without lost text')
+check.call(about.css('.about-vision-intro .about-keep-word').map(&:text).include?('long-term'), 'Keep long-term together at narrow widths')
 vision = data['vision_intro']
 check.call(vision.split.size <= 50 && vision.split.size < cv.dig('research', 'description').split.size, 'Keep the About vision concise; retain the full research statement in the CV')
 check.call(['physical constraints', 'reusable design methods', 'manufacturing and experimental validation', 'nuclear energy systems'].all? { |topic| vision.include?(topic) }, 'The concise vision must preserve the research question, reusable methods, validation, and nuclear focus')

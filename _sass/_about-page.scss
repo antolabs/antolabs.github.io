@@ -543,3 +543,13 @@
     }
   }
 }
+@media (max-width: 374px) {
+  .about-page .about-research-links {
+    justify-content: space-between;
+    column-gap: 0.5rem;
+
+    a > span[aria-hidden="true"] {
+      display: none;
+    }
+  }
+}
