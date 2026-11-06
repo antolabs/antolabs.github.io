@@ -5,7 +5,7 @@ sitemap: false
 ---
 # Geunhyeong Lee
 
-> Scientist at the Facility for Rare Isotope Beams (FRIB), Michigan State University. Research connects AI-driven thermal-fluid design, multiphysics modeling, 3D printing, and experimental validation for nuclear systems.
+> Scientist at the Facility for Rare Isotope Beams (FRIB), Michigan State University. Research focuses on AI-driven multiphysics design and optimization, supported by thermal-fluid, electromagnetic, and structural analysis, 3D printing, and experimental validation for nuclear systems.
 
 This optional discovery index links to the site's public research records. Article pages include author-written abstracts from the linked PDFs, publication metadata, and citation downloads. DOI links identify the published versions.
 

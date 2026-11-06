@@ -14,7 +14,7 @@ institution: "FRIB"
 featured: true
 featured_order: 1
 project_group: "Thermal-fluid engineering"
-summary: "Genetic algorithms and reinforcement learning for a higher-power static beam dump."
+summary: "Global and local AI search with thermal-model evaluation and 3D verification for static beam-dump design."
 contribution: "Developed a hybrid genetic algorithm and reinforcement learning approach to optimize the static beam-dump geometry."
 evidence: "Simulation result"
 outcome: "72% higher average power-handling capability than the existing design in simulation."
@@ -26,7 +26,7 @@ The FRIB static beam dump absorbs intense heat from a heavy-ion beam. As the bea
 
 ## Two-stage AI optimization
 
-A genetic algorithm (GA) explores the overall geometry, then reinforcement learning (RL) refines the surface. A two-dimensional finite-difference thermal model evaluates candidate designs, followed by three-dimensional finite-element verification in COMSOL.
+A genetic algorithm (GA) explores the overall geometry, then reinforcement learning (RL) refines the surface. A two-dimensional finite-difference thermal model evaluates candidate designs, followed by three-dimensional finite-element verification in COMSOL. The approach connects global exploration, local refinement, and separate higher-fidelity verification for a computationally intensive design problem.
 
 ### 1. Genetic algorithm: global search
 

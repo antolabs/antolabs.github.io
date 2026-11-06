@@ -29,6 +29,8 @@ outcome: "Simulation evidence and experimental comparisons supporting FRIB devic
 
 High-power beam interception motivates the study of water-cooled rotating designs. Thermal-structural analysis evaluates heat deposition and stress, alongside electromagnetic effects from nearby dipole magnets.
 
+I lead the overall fabrication and installation effort for the FRIB Rotating Beam Dump, coordinating specialists in materials, systems engineering, thermomechanics, and radiation, with implementation targeted for 2028. This ongoing engineering effort is distinct from the static beam-dump AI optimization study.
+
 ---
 
 ## Post-Target Shielding (2025-2026)

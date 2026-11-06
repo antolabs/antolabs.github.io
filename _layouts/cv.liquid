@@ -18,7 +18,7 @@ layout: default
       <p class="cv-intro">{{ cv.appointments.first.title | escape }} &middot; FRIB, Michigan State University</p>
     </div>
     <div class="cv-header-actions">
-      <a class="cv-download-btn" href="{{ page.cv_pdf | prepend: '/assets/pdf/' | relative_url }}" download="{{ page.cv_pdf }}">
+      <a class="cv-download-btn" href="{{ page.cv_pdf | prepend: '/assets/pdf/' | relative_url | bust_file_cache }}" download="{{ page.cv_pdf }}">
         <svg class="cv-download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
           <path d="M12 3v12m-5-5 5 5 5-5M5 17v4h14v-4"></path>
         </svg>

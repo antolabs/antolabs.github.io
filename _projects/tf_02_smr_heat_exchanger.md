@@ -14,8 +14,8 @@ institution: "KAERI"
 featured: true
 featured_order: 2
 project_group: "Thermal-fluid engineering"
-summary: "Reinforcement learning and topology optimization, connected to metal 3D printing and testing."
-contribution: "Developed thermal-fluid topology optimization and reinforcement learning methods, with a metal-printed prototype tested experimentally."
+summary: "Reinforcement learning for heat-exchanger design, connected to metal 3D printing and experimental testing."
+contribution: "Developed a deep reinforcement learning approach for heat-exchanger optimization and contributed to topology-optimization analysis and experimental validation of a metal-printed prototype."
 evidence: "Simulation + experimental testing"
 outcome: "14.8% higher simulated heat transfer than conventional topology optimization; metal-printed prototype tested."
 ---
@@ -36,6 +36,8 @@ outcome: "14.8% higher simulated heat transfer than conventional topology optimi
 ---
 
 ## Approach: Topology Optimization + Deep RL
+
+Reinforcement learning generates initial channel layouts for topology optimization to refine. Metal 3D printing and thermal-loop testing connect the computational design study with experimental evaluation of a physical prototype.
 
 <div class="row justify-content-center">
     <div class="col-sm-8">

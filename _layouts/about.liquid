@@ -30,6 +30,7 @@ layout: default
               page.vision_intro
               | escape
               | replace: 'AI-driven', '<span class="about-keep-word">AI-driven</span>'
+              | replace: 'high-performance', '<span class="about-keep-word">high-performance</span>'
               | replace: 'thermal-fluid', '<span class="about-keep-word">thermal-fluid</span>'
             }}
           </p>
@@ -120,11 +121,11 @@ layout: default
         </div>
         <div class="bisto-details">
           <p id="bisto-description">
-            <span class="bisto-sentence">I developed BiSTO, a binary topology optimization framework designed for multiphysics applications.</span>
             <span class="bisto-sentence">
-              It combines <span class="about-keep-word">AI-guided</span> design search with
-              <span class="about-keep-word">physics-based</span> simulation.
+              I developed BiSTO, a binary topology optimization framework combining
+              <span class="about-keep-word">AI-guided</span> design search with <span class="about-keep-word">physics-based</span> verification.
             </span>
+            <span class="bisto-sentence">Current work focuses on turbulent cooling-channel design.</span>
           </p>
           <ol class="bisto-workflow" aria-label="Optimization process">
             <li>AI search</li>
@@ -154,6 +155,9 @@ layout: default
           </li>
         {% endfor %}
       </ol>
+      {% if page.future_direction %}
+        <p class="about-future-direction">{{ page.future_direction | escape }}</p>
+      {% endif %}
     </section>
 
     {{ content }}

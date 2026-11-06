@@ -23,6 +23,9 @@ layout: default
     <div class="projects-section-header">
       <h2 id="additional-projects-heading">Additional projects</h2>
     </div>
+    {% if page.additional_intro %}
+      <p class="projects-intro">{{ page.additional_intro | escape }}</p>
+    {% endif %}
     {% for group in page.project_groups %}
       {% assign group_projects = additional_projects | where: 'project_group', group %}
       {% if group_projects.size > 0 %}

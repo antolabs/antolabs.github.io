@@ -3,6 +3,7 @@
 require 'yaml'
 require 'nokogiri'
 require 'uri'
+require 'digest/md5'
 
 root = File.expand_path('..', __dir__)
 Dir.chdir(root)
@@ -44,6 +45,9 @@ check.call(html.css('.cv-output-summary dd').map { |el| normalize.call(el.text) 
 check.call(html.at_css('.cv-publication-summary h3')&.text == "#{published} published SCIE journal articles", 'Published article summary is incorrect')
 check.call(html.css('#conferences, #patents, #teaching, #achievements, #service, #projects, .cv-manuscripts, .cv-stats, .cv-jump-links').empty?, 'Detailed CV sections should stay in the PDF, not the web summary')
 check.call(html.at_css('.cv-download-btn')&.[]('download') == page['cv_pdf'], 'Full CV action must download the current PDF')
+download_uri = URI.parse(html.at_css('.cv-download-btn')&.[]('href').to_s)
+check.call(download_uri.path == "/assets/pdf/#{page['cv_pdf']}", 'Full CV action must link to the current snapshot')
+check.call(download_uri.query == Digest::MD5.file("assets/pdf/#{page['cv_pdf']}").hexdigest, 'Full CV link must refresh when the same-named PDF changes')
 check.call(html.css('.cv-page a[download]').size == 1, 'Keep a single prominent CV download in the header')
 check.call(html.css('.cv-endnote').empty?, 'The redundant PDF endnote must remain removed')
 

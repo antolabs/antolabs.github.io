@@ -396,6 +396,14 @@
     font-weight: 500;
     font-variant-numeric: tabular-nums;
   }
+  .about-future-direction {
+    max-width: 90ch;
+    margin: 1.5rem 0 0;
+    color: var(--global-text-color-light);
+    font-size: var(--about-detail-size);
+    line-height: var(--about-copy-leading);
+    text-wrap: pretty;
+  }
   article .social {
     margin-top: 2rem;
     padding-top: 1.25rem;
@@ -415,6 +423,16 @@
 
     .contact-note {
       line-height: 1.6;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .about-page .about-method-list {
+    row-gap: 0;
+    > li {
+      display: grid;
+      grid-row: span 3;
+      grid-template-rows: subgrid;
     }
   }
 }

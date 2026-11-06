@@ -3,8 +3,8 @@ layout: project
 title: BiSTO - Binary Surrogate-based Topology Optimization
 card_title: BiSTO
 fullname: Binary Surrogate-based Topology Optimization
-description: An AI-driven framework for binary topology optimization.
-summary: An AI-driven framework for binary topology optimization.
+description: Binary topology optimization through AI-guided search and physics-based verification.
+summary: Binary topology optimization through AI-guided search and physics-based verification.
 body_class: project-view
 footer_static: true
 institution: FRIB
@@ -19,4 +19,4 @@ publication_notice: A detailed overview will be available after publication.
 
 ## Brief overview
 
-I am developing BiSTO to explore binary material layouts through AI-guided search and physics-based simulation. Current work focuses on solid-fluid configurations for thermal management, with broader multiphysics applications as a longer-term direction.
+I developed BiSTO to explore binary solid-fluid layouts through AI-guided search and physics-based verification. Current work focuses on turbulent cooling-channel design. Future directions include incorporating manufacturing requirements and experimental feedback into the design process, and extending the approach to broader multiphysics applications.
