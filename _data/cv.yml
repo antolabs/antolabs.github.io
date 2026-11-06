@@ -1,13 +1,13 @@
-# Source: assets/pdf/CV_GLee_261029.pdf (October 29, 2026).
+# Source: assets/pdf/CV_GLee_261106.pdf (November 6, 2026).
 # Statuses and totals are a CV snapshot, not automatically inferred from today.
 # Keep unpublished manuscripts separate from published SCIE papers.
 # Phone and residency information remain in the downloadable PDF only.
-source_pdf: "CV_GLee_261029.pdf"
+source_pdf: "CV_GLee_261106.pdf"
 name: "Geunhyeong Lee, Ph.D."
 email: "leeg@frib.msu.edu"
 research:
-  title: "Redefining Thermal-Fluid Design through AI"
-  description: "My vision is to advance thermal-fluid systems beyond the limits of conventional design. Central to this vision is BiSTO, an AI-driven topology optimization framework that I am developing for thermal-fluid systems. My long-term goal is to connect AI-based design discovery with multiphysics modeling, metal additive manufacturing, and experimental validation for advanced nuclear energy and high-power accelerators."
+  title: "AI-Driven Multiphysics Design and Optimization"
+  description: "My research focuses on AI-driven design and optimization for multiphysics engineering systems. I study how geometry representation, learning-based search, and physics-based verification can improve design discovery under computational and physical constraints. My background spans thermal-fluid, electromagnetic, and structural analysis; my current work includes BiSTO for turbulent cooling-channel topology optimization. My long-term goal is to develop reusable design methods across physical systems and connect computational optimization with manufacturing and experimental validation, with a focus on nuclear energy systems."
 appointments:
   - title: "Scientist (Staff)"
     institution: "Facility for Rare Isotope Beams (FRIB), Michigan State University"
@@ -16,18 +16,18 @@ appointments:
     year: "Dec 2023 - Present"
     description:
       - "Developed BiSTO (Binary Surrogate-based Topology Optimization), an AI-driven framework combining surrogate-guided topology search, solver verification, and geometric connectivity constraints for turbulent cooling-channel design."
-      - "Optimized the FRIB beam dump using genetic algorithms and reinforcement learning, increasing simulated average power-handling capability by 72% over the existing design."
+      - "Lead the overall fabrication and installation effort for the FRIB Rotating Beam Dump, coordinating specialists in materials, systems engineering, thermomechanics, and radiation, with implementation targeted for 2028."
+      - "Developed a hybrid genetic algorithm\u2013reinforcement learning approach for FRIB beam-dump design optimization, increasing simulated average power-handling capability by 72% over the existing design."
       - "Developed a CNN\u2013MLP surrogate for rotating beam-dump thermal limits (2.8% mean error against FEM in cross-validation; millisecond-scale inference)."
-      - "Led thermal design reviews and provided simulation evidence for device qualification; performed thermal-fluid-electromagnetic analysis and validation."
   - title: "Postdoctoral Researcher"
     institution: "Korea Atomic Energy Research Institute (KAERI)"
     department: "Applied Artificial Intelligence Lab"
     location: "Daejeon, Korea"
     year: "Aug 2021 - Dec 2023"
     description:
-      - "Developed DRL optimization with 14.8% higher simulated heat transfer than conventional topology optimization; tested a metal-printed prototype."
-      - "Designed flow channels for Samsung OLED susceptors using reinforcement learning."
+      - "Developed a deep reinforcement learning approach for heat-exchanger optimization, achieving 14.8% higher simulated heat transfer than conventional topology optimization; tested a metal-printed prototype."
       - "Designed a single-body, 3D-printable DC electromagnetic pump with 52% lower simulated current demand than a helical pump at matched pressure and flow rate."
+      - "Designed flow channels for Samsung OLED susceptors using reinforcement learning."
       - "Applied AI anomaly detection to the KOMAC accelerator for operational stability."
 education:
   - title: "Ph.D. in Nuclear Engineering (Combined M.S./Ph.D.)"
@@ -267,7 +267,7 @@ projects:
   - year: "2023-2026"
     title: "AIP Mini-channel and Water Beam Dump"
     institution: "FRIB"
-    description: "Developed the optimization framework, assessed thermal performance through simulation, and contributed to engineering reviews of beam-dump hardware."
+    description: "Developed a simulation-based optimization framework for beam-dump design, evaluated thermal performance, and contributed to engineering reviews of beam-dump hardware."
   - year: "2023-2026"
     title: "AIP Post-target Shielding"
     institution: "FRIB"
@@ -279,11 +279,11 @@ projects:
   - year: "2022"
     title: "Technical Support for AI-Based Improvement of Temperature Uniformity in Next-Generation Display Manufacturing Systems"
     institution: "KAERI"
-    description: "Display susceptor flow channel optimization using artificial intelligence."
+    description: "Applied reinforcement learning to optimize flow-channel layouts for display susceptors."
   - year: "2021-2023"
     title: "Development of Original 3D Printing Technology for Manufacturing Components of Small Nuclear Reactor Materials"
     institution: "KAERI"
-    description: "Developed DRL models; collaborated on topology-optimization analysis and experimental validation of metal-printed heat exchangers."
+    description: "Developed deep reinforcement learning models for heat-exchanger design; contributed to topology-optimization analysis and experimental validation of a metal-printed prototype."
   - year: "2021-2023"
     title: "Establishment of Intelligent Operation Platform for HANARO and Research Facilities"
     institution: "KAERI"
@@ -291,7 +291,7 @@ projects:
   - year: "2021-2022"
     title: "Development of Deep Learning Solver for Reducing Iterations in Topology Optimization"
     institution: "Hyundai"
-    description: "Supporting the topology optimization simulation."
+    description: "Supported topology-optimization simulations for deep-learning solver development."
   - year: "2020-2021"
     title: "Research on the Development of Prototype Lithium Charge Stripper"
     institution: "Institute for Basic Science"

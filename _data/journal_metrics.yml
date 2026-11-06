@@ -3,13 +3,13 @@
 # Category sources do not independently verify every historical metric value.
 # jcr_year is the data year, not the release/publication year. Omit if unverified.
 source:
-  label: "CV (Oct 2026)"
-  pdf: "/assets/pdf/CV_GLee_261029.pdf"
+  label: "CV (Nov 2026)"
+  pdf: "/assets/pdf/CV_GLee_261106.pdf"
 
 category_sources:
   cv_aug_2026:
     url: "/assets/pdf/CV_GLee_260818.pdf"
-    scope: "Page 2 explicitly names the NST, IJER and CSTE ranking categories. Numerical values still come from the October CV."
+    scope: "Page 2 explicitly names the NST, IJER and CSTE ranking categories. Numerical values come from the current CV linked above."
   kns_2020_jcr:
     url: "https://www.kns.org/webzine/2021/w_7_8/sub_02.php"
     scope: "Korean Nuclear Society's 2020 JCR Nuclear Science & Technology table lists NET, JNST, NED, IJER and Annals of Nuclear Energy."
