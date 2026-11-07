@@ -14,14 +14,26 @@ institution: "KAERI"
 featured: false
 project_group: "Liquid-metal & electromagnetic systems"
 summary: "A single-body DC pump concept designed for liquid-metal circulation and metal 3D printing."
+detail_intro: "I designed a 3D-printable DC electromagnetic pump and analyzed its coupled electromagnetic and fluid performance."
+detail_summary_label: Simulation result
+detail_summary: "52% lower current demand at matched pressure and flow rate."
 contribution: "Designed a 3D-printable DC electromagnetic pump and analyzed its coupled electromagnetic and fluid performance."
 evidence: "Simulation result"
 outcome: "52% lower simulated current demand at matched pressure and flow rate."
 ---
 
-## Challenge
+<div class="project-overview">
+  <section class="project-overview-purpose" aria-labelledby="project-purpose">
+    <h2 id="project-purpose">Purpose</h2>
+    <p>Direct-current (DC) electromagnetic pumps circulate liquid metals without mechanical impellers, including liquid sodium for fast-reactor systems. This study addresses the high input current and multi-part manufacturing requirements of conventional helical pumps.</p>
+  </section>
+  <section class="project-overview-approach" aria-labelledby="project-approach">
+    <h2 id="project-approach">Approach</h2>
+    <p>A single-body concept for metal 3D printing combines opposing magnets and multiple force-generating flow segments. Coupled electromagnetic and flow simulations compare the design with a helical-pump baseline.</p>
+  </section>
+</div>
 
-**Direct-current (DC) electromagnetic pumps** drive liquid metals using Lorentz forces without mechanical impellers, making them ideal for high-temperature and corrosive fluid applications, such as Sodium Fast Reactors (SFR). However, conventional helical-type DC pumps require high input currents and complex manufacturing processes involving multiple brazed segments.
+## Design context
 
 <div class="row justify-content-center">
     <div class="col-sm-6">
@@ -32,9 +44,7 @@ outcome: "52% lower simulated current demand at matched pressure and flow rate."
     <strong>Fig.</strong> Conventional helical-type EM pump requires complex brazing process and specialized coatings
 </div>
 
----
-
-## Approach: Design for Additive Manufacturing
+## Pump design
 
 <div class="row justify-content-center">
     <div class="col-sm-8">
@@ -45,22 +55,20 @@ outcome: "52% lower simulated current demand at matched pressure and flow rate."
     <strong>Fig.</strong> Novel 3D-printable EM pump design with working principle
 </div>
 
-### Multiple Lorentz Force Design
+### Lorentz-force configuration
 
 - **Opposing magnet arrangement**: Concentrated magnetic flux around flow paths
 - **Multiple force segments**: Progressive pressure buildup from inlet to outlet
 - **Optimized current path**: 67% of current concentrated in high-flux region
 
-### Design for Additive Manufacturing (DfAM)
+### Design for additive manufacturing
 
 - **Build volume**: 180 mm × 180 mm constraint for commercial 3D printers
 - **45° ceiling angle**: Eliminates need for support structures
 - **Semi-cylindrical channels**: 5 mm diameter for optimal Lorentz force generation
 - **Monolithic fabrication**: No brazed joints required
 
----
-
-## Results
+## Simulation results
 
 <div class="row justify-content-center">
     <div class="col-sm-8">
@@ -77,8 +85,6 @@ outcome: "52% lower simulated current demand at matched pressure and flow rate."
 | Input Current      |      684 A      |  **330 A (-52%)**   |
 | Size (mm)          | 123 × 195 × 405 | **166 × 195 × 106** |
 
-<br>
-
 - **52% lower simulated current demand** than the helical-type pump at matched pressure and flow rate
 - **Compact concept** designed for monolithic metal 3D printing
 - The numerical model was checked against published **helical-pump experimental data**, with less than 12% difference; the new pump design was evaluated by simulation
@@ -88,7 +94,7 @@ Fabrication and experimental testing of the proposed 3D-printable pump remain fu
 
 ---
 
-## Publication
+## Publications
 
 **SCIE**
 

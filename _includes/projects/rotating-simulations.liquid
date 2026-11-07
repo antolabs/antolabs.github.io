@@ -1,0 +1,40 @@
+{% assign simulation_source = '/assets/img/project/tf_other/rotating_beam_dump.png' | relative_url %}
+{% comment %}Viewports isolate existing panels without modifying the source pixels, units, or color scales.{% endcomment %}
+<div class="project-simulation-gallery">
+  <figure>
+    <div class="project-simulation-view">
+      <svg viewBox="2535 0 1009 1195" width="1009" height="1195" role="img" aria-labelledby="rotating-thermal-title">
+        <title id="rotating-thermal-title">Rotating beam-dump temperature distribution, in degrees Celsius</title>
+        <defs>
+          <clipPath id="rotating-thermal-crop"><rect x="2535" y="0" width="1009" height="1195" /></clipPath>
+        </defs>
+        <image href="{{ simulation_source }}" x="0" y="0" width="3544" height="1195" clip-path="url(#rotating-thermal-crop)" />
+      </svg>
+    </div>
+    <figcaption class="caption">Temperature distribution.</figcaption>
+  </figure>
+  <figure>
+    <div class="project-simulation-view">
+      <svg viewBox="1345 0 1190 1195" width="1190" height="1195" role="img" aria-labelledby="rotating-pressure-title">
+        <title id="rotating-pressure-title">Rotating beam-dump pressure distribution, in bar</title>
+        <defs>
+          <clipPath id="rotating-pressure-crop"><rect x="1345" y="0" width="1190" height="1195" /></clipPath>
+        </defs>
+        <image href="{{ simulation_source }}" x="0" y="0" width="3544" height="1195" clip-path="url(#rotating-pressure-crop)" />
+      </svg>
+    </div>
+    <figcaption class="caption">Pressure distribution.</figcaption>
+  </figure>
+  <figure>
+    <div class="project-simulation-view">
+      <svg viewBox="0 0 1310 1195" width="1310" height="1195" role="img" aria-labelledby="rotating-magnetic-title">
+        <title id="rotating-magnetic-title">Rotating beam-dump magnetic flux density, in tesla</title>
+        <defs>
+          <clipPath id="rotating-magnetic-crop"><rect x="0" y="0" width="1310" height="1195" /></clipPath>
+        </defs>
+        <image href="{{ simulation_source }}" x="0" y="0" width="3544" height="1195" clip-path="url(#rotating-magnetic-crop)" />
+      </svg>
+    </div>
+    <figcaption class="caption">Magnetic flux density.</figcaption>
+  </figure>
+</div>

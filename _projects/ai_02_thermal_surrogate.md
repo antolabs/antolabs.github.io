@@ -9,13 +9,13 @@ footer_static: true
 institution: FRIB
 year: "2025 - Current"
 importance: 1
-featured: true
-featured_order: 4
+project_section: methods
+method_order: 2
 project_type: Surrogate modeling
 project_group: Thermal-fluid engineering
-publication_notice: A detailed overview will be available after publication.
+publication_notice: Detailed methods and application studies will be shared after publication.
 ---
 
 ## Brief overview
 
-This project develops a deep learning surrogate to make repeated thermal assessments of high-heat-flux devices more practical for design studies. A longer-term direction is to connect design-trained models with operational measurements to develop digital twins; this capability is not part of the current results.
+This project develops a deep learning surrogate for rapid thermal assessment of the rotating beam dump, supporting repeated design evaluations. A longer-term direction is to connect design-trained models with operational measurements to develop digital twins; this capability is not part of the current results.

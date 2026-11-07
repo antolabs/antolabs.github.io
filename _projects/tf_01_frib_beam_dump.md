@@ -15,18 +15,26 @@ featured: true
 featured_order: 1
 project_group: "Thermal-fluid engineering"
 summary: "Global and local AI search with thermal-model evaluation and 3D verification for static beam-dump design."
+detail_intro: "I developed a hybrid genetic algorithm and reinforcement learning approach to optimize the static beam-dump geometry."
+detail_summary_label: Simulation result
+detail_summary: "72% higher average power-handling capability than the existing design."
 contribution: "Developed a hybrid genetic algorithm and reinforcement learning approach to optimize the static beam-dump geometry."
 evidence: "Simulation result"
 outcome: "72% higher average power-handling capability than the existing design in simulation."
 ---
 
-## Challenge
+<div class="project-overview">
+  <section class="project-overview-purpose" aria-labelledby="project-purpose">
+    <h2 id="project-purpose">Purpose</h2>
+    <p>The FRIB static beam dump absorbs intense heat from a heavy-ion beam. This study supports the upgrade from <span class="text-nowrap">20 kW</span> to <span class="text-nowrap">50 kW</span> by finding a geometry that limits localized hot spots across different beam sizes.</p>
+  </section>
+  <section class="project-overview-approach" aria-labelledby="project-approach">
+    <h2 id="project-approach">Approach</h2>
+    <p>A genetic algorithm (GA) explores the overall geometry, then reinforcement learning (RL) refines the surface. A two-dimensional finite-difference thermal model evaluates candidate designs, followed by separate three-dimensional finite-element verification in COMSOL.</p>
+  </section>
+</div>
 
-The FRIB static beam dump absorbs intense heat from a heavy-ion beam. As the beam size changes, a fixed geometry can develop localized hot spots. This work targets a **20 kW to 50 kW upgrade** by finding a geometry that stays within thermal limits across different beam sizes.
-
-## Two-stage AI optimization
-
-A genetic algorithm (GA) explores the overall geometry, then reinforcement learning (RL) refines the surface. A two-dimensional finite-difference thermal model evaluates candidate designs, followed by three-dimensional finite-element verification in COMSOL. The approach connects global exploration, local refinement, and separate higher-fidelity verification for a computationally intensive design problem.
+## Optimization workflow
 
 ### 1. Genetic algorithm: global search
 

@@ -12,14 +12,26 @@ card_title: "Flow-channel design for OLED manufacturing"
 institution: "KAERI"
 project_group: "Thermal-fluid engineering"
 summary: "Reinforcement learning for temperature uniformity in display-manufacturing susceptors."
+detail_intro: "I designed susceptor flow channels using reinforcement learning and analyzed the liquid-metal circulation system."
+detail_summary_label: Design study
+detail_summary: "Flow-channel layouts targeting temperature uniformity in a susceptor thermal model."
 contribution: "Designed susceptor flow channels using reinforcement learning and analyzed the liquid-metal circulation system."
 evidence: "Design & simulation"
 outcome: "Generated heat-exchanger flow paths targeting a more uniform susceptor temperature."
 ---
 
-## Challenge
+<div class="project-overview">
+  <section class="project-overview-purpose" aria-labelledby="project-purpose">
+    <h2 id="project-purpose">Purpose</h2>
+    <p>Susceptor heat exchangers in plasma chemical vapor deposition (CVD) manufacturing need to maintain a uniform temperature across large glass substrates. This study investigates flow-channel design as an alternative to repeated manual layout and thermal analysis.</p>
+  </section>
+  <section class="project-overview-approach" aria-labelledby="project-approach">
+    <h2 id="project-approach">Approach</h2>
+    <p>Proximal policy optimization (PPO) generates channel layouts evaluated with a finite-difference thermal model. Coupled electromagnetic and flow simulations assess the pump supplying the Galinstan circulation loop.</p>
+  </section>
+</div>
 
-**OLED display manufacturing** requires precise temperature uniformity during the plasma CVD (Chemical Vapor Deposition) process. The susceptor heat exchanger must maintain uniform temperature across large glass substrates, but traditional design methods rely on engineer experience and repetitive manual analysis.
+## Susceptor system
 
 <div class="row justify-content-center">
     <div class="col-sm-6">
@@ -30,9 +42,7 @@ outcome: "Generated heat-exchanger flow paths targeting a more uniform susceptor
     <strong>Fig.</strong> Susceptor system schematic: Galinstan liquid metal circulation via electromagnetic pump
 </div>
 
----
-
-## Approach: PPO Reinforcement Learning
+## Channel design and liquid-metal circulation
 
 <div class="row justify-content-center">
     <div class="col-sm-6">
@@ -43,24 +53,22 @@ outcome: "Generated heat-exchanger flow paths targeting a more uniform susceptor
     <strong>Fig.</strong> Reinforcement learning environment with General, Record, and FDM spaces
 </div>
 
-### Flow Channel Optimization
+### Flow-channel optimization
 
 - **PPO algorithm** with discrete action space (up/down/left/right)
 - **FDM-based thermal simulation** for fast iteration (100,000+ episodes)
 - **4-way symmetry** exploited to minimize computational domain
 - **Reward function**: Temperature uniformity improvement
 
-### Electromagnetic Pump Design
+### Electromagnetic pump design
 
 - **Helical-type EM pump** for high-pressure Galinstan delivery (10 bar)
 - **FEM simulation** using COMSOL for MHD analysis
 - Sm₂Co₁₇ permanent magnets with magnetic shielding
 
----
+## Simulation results
 
-## Results
-
-### Susceptor Heat Exchanger
+### Susceptor heat exchanger
 
 <div class="row justify-content-center">
     <div class="col-sm-8">
@@ -74,7 +82,7 @@ outcome: "Generated heat-exchanger flow paths targeting a more uniform susceptor
 - Generated flow-channel layouts targeting a more uniform susceptor temperature in the thermal model
 - Investigated reinforcement learning as an alternative to repeated manual channel design
 
-### Electromagnetic Pump
+### Electromagnetic pump
 
 <div class="row justify-content-center">
     <div class="col-sm-7">
@@ -109,6 +117,6 @@ outcome: "Generated heat-exchanger flow paths targeting a more uniform susceptor
 
 ---
 
-## Research Project
+## Research project
 
 **(2022)** Technical support for the application of artificial intelligence to lower module temperature uniformity on next-generation display manufacturing systems, KAERI.

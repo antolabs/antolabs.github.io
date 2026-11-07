@@ -10,13 +10,13 @@ footer_static: true
 institution: FRIB
 year: "2026 - Current"
 importance: 0
-featured: true
-featured_order: 3
+project_section: methods
+method_order: 1
 project_type: Framework development
 project_group: Thermal-fluid engineering
-publication_notice: A detailed overview will be available after publication.
+publication_notice: Detailed methods and application studies will be shared after publication.
 ---
 
 ## Brief overview
 
-I developed BiSTO to explore binary solid-fluid layouts through AI-guided search and physics-based verification. Current work focuses on turbulent cooling-channel design. Future directions include incorporating manufacturing requirements and experimental feedback into the design process, and extending the approach to broader multiphysics applications.
+I developed BiSTO to explore binary solid-fluid layouts through AI-guided search and physics-based verification. Current work focuses on turbulent cooling-channel design using the rotating beam dump as an application. Future directions include manufacturing requirements, experimental feedback, and broader multiphysics applications.

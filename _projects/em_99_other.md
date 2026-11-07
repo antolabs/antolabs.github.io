@@ -11,12 +11,26 @@ card_title: "Electromagnetic pumps & MHD generators"
 institution: "UNIST"
 project_group: "Liquid-metal & electromagnetic systems"
 summary: "Liquid-metal circulation for reactors and accelerators, and magnetohydrodynamic power generation."
+detail_intro: "I designed and analyzed electromagnetic pumps and investigated magnetohydrodynamic generator performance."
+detail_summary_label: Research scope
+detail_summary: "Liquid-metal circulation and magnetohydrodynamic power-generation design studies."
 contribution: "Designed and analyzed electromagnetic pumps and investigated magnetohydrodynamic generator performance."
 evidence: "Modeling & prototype development"
 outcome: "Coupled electromagnetic and flow analysis for liquid-metal transport and power-generation systems."
 ---
 
-## DC Electromagnetic Pumps (2014-2021)
+<div class="project-overview">
+  <section class="project-overview-purpose" aria-labelledby="project-purpose">
+    <h2 id="project-purpose">Purpose</h2>
+    <p>This work investigates liquid-metal circulation for reactor and accelerator systems, together with magnetohydrodynamic (MHD) power generation from conductive flows.</p>
+  </section>
+  <section class="project-overview-approach" aria-labelledby="project-approach">
+    <h2 id="project-approach">Approach</h2>
+    <p>Coupled electromagnetic and flow models compare pump geometries and generator operating conditions. The studies cover sodium and lithium circulation and Faraday-type plasma generators.</p>
+  </section>
+</div>
+
+## DC electromagnetic pumps (2014-2021)
 
 <div class="row justify-content-center">
     <div class="col-sm-12">
@@ -27,17 +41,17 @@ outcome: "Coupled electromagnetic and flow analysis for liquid-metal transport a
     <strong>Fig.</strong> DC electromagnetic pump designs: rectangular type schematic (top left), fabricated pump (top center), helical type schematic (top right), and MHD analysis results (bottom)
 </div>
 
-### Sodium Fast Reactor Applications
+### Sodium fast reactor applications
 
 Designed and analyzed rectangular, cylindrical, and helical-type DC electromagnetic pumps for liquid sodium circulation in GenIV sodium fast reactors. Comparative analysis was performed across various pump geometries, with detailed MHD investigations on magnetic flux density, current distribution, and Lorentz force characteristics.
 
-### Heavy-ion Accelerator Applications
+### Heavy-ion accelerator applications
 
 Optimized a rectangular DC electromagnetic pump for liquid lithium circulation in a heavy-ion accelerator. The pump achieved 1.5 MPa developed pressure at 6 cm³/s flow rate for forming liquid lithium films used in uranium charge stripping.
 
----
+## MHD generators (2018-2021)
 
-## MHD Generators (2018-2021)
+Numerically investigated Faraday-type MHD generators for combined MHD-turbine power generation, including a 10 kW design study and nitrogen-plasma flow analysis. The work examined electromagnetic, flow, and geometric parameters; the 10 kW value is a design target, not a measured electrical output.
 
 <div class="row justify-content-center">
     <div class="col-sm-10">
@@ -47,8 +61,6 @@ Optimized a rectangular DC electromagnetic pump for liquid lithium circulation i
 <div class="caption">
     <strong>Fig.</strong> Faraday-type MHD generator: schematic with De Laval nozzle (left) and power density distribution (right)
 </div>
-
-Numerically investigated Faraday-type MHD generators for combined MHD-turbine power generation, including a 10 kW design study and nitrogen-plasma flow analysis. The work examined electromagnetic, flow, and geometric parameters; the 10 kW value is a design target, not a measured electrical output.
 
 ## Selected publications
 

@@ -1,17 +1,31 @@
 {% assign project = include.project %}
-<a class="research-card" href="{{ project.url | relative_url }}" aria-labelledby="card-{{ project.slug }}">
+<a
+  class="research-card{% if include.variant == 'method' %} research-card-method{% endif %}"
+  href="{{ project.url | relative_url }}"
+  aria-labelledby="card-{{ project.slug }}"
+>
   <div class="research-card-meta">
     <span>{{ project.year | escape }}</span>
   </div>
-  <h3 id="card-{{ project.slug }}">{{ project.card_title | default: project.title | escape }}</h3>
-  <p class="research-card-summary">{{ project.summary | escape }}</p>
-  <div class="research-card-outcome">
-    {% if project.publication_notice %}
-      <p>{{ project.publication_notice | escape }}</p>
-    {% else %}
-      <p>{{ project.outcome | escape }}</p>
-    {% endif %}
+  <div class="research-card-copy">
+    <h3 id="card-{{ project.slug }}">{{ project.card_title | default: project.title | escape }}</h3>
+    <p class="research-card-summary">{{ project.summary | escape }}</p>
   </div>
+  {% unless include.variant == 'method' %}
+    {% assign card_detail = project.scope_note | default: project.outcome %}
+    {% if card_detail %}
+      <div class="research-card-support{% if project.outcome %} research-card-outcome{% endif %}">
+        <p>
+          {{
+            card_detail
+            | escape
+            | replace: '50 kW', '<span class="text-nowrap">50 kW</span>'
+            | replace: '100 kW', '<span class="text-nowrap">100 kW</span>'
+          }}
+        </p>
+      </div>
+    {% endif %}
+  {% endunless %}
   <div class="research-card-footer">
     <span>{{ project.institution | escape }}</span>
     <span class="research-card-action">

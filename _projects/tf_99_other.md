@@ -1,7 +1,7 @@
 ---
 layout: project
 title: "Thermal-structural engineering at FRIB"
-description: Thermal-structural analysis projects including rotating beam dump, post-target shielding, plasma chamber, and target systems at FRIB
+description: Thermal-structural analysis of post-target shielding, plasma chamber, charge-selector, and target systems at FRIB
 importance: 99
 category: Thermo-fluid devices
 year: "2024 - 2026"
@@ -11,29 +11,28 @@ card_title: "Thermal-structural engineering at FRIB"
 institution: "FRIB"
 project_group: "Thermal-fluid engineering"
 summary: "Thermal and structural analysis of beam-intercepting devices, shielding, and target systems."
+detail_intro: "I performed thermal-fluid and structural analyses to support design reviews, operating limits, and device qualification at FRIB."
+detail_summary_label: Engineering studies
+detail_summary: "Simulation studies and experimental comparisons for shielding, plasma-chamber, charge-selector, and target systems."
 contribution: "Performed thermal-fluid and structural analyses to support design reviews, operating limits, and device qualification."
 evidence: "Engineering analysis & validation"
 outcome: "Simulation evidence and experimental comparisons supporting FRIB device design and operation."
 ---
 
-## Rotating Beam Dump (2024-2026)
-
-<div class="row justify-content-center">
-    <div class="col-sm-10">
-        {% include figure.liquid loading="eager" path="assets/img/project/tf_other/rotating_beam_dump.png" zoomable=true alt="Rotating Beam Dump Multi-physics Analysis" title="Rotating Beam Dump Multi-physics Analysis" class="img-fluid rounded z-depth-1" %}
-    </div>
+<div class="project-overview">
+  <section class="project-overview-purpose" aria-labelledby="project-purpose">
+    <h2 id="project-purpose">Purpose</h2>
+    <p>Beam-intercepting devices, shielding, and target systems require thermal management and structural assessment as FRIB increases beam power.</p>
+  </section>
+  <section class="project-overview-approach" aria-labelledby="project-approach">
+    <h2 id="project-approach">Approach</h2>
+    <p>Heat-deposition inputs inform thermal-fluid and stress models. Cross-code comparisons and, where available, measurements help assess operating limits and assembly conditions.</p>
+  </section>
 </div>
-<div class="caption">
-    <strong>Fig.</strong> Rotating beam dump multi-physics analysis: magnetic flux density, coolant pressure, and temperature distribution
-</div>
 
-High-power beam interception motivates the study of water-cooled rotating designs. Thermal-structural analysis evaluates heat deposition and stress, alongside electromagnetic effects from nearby dipole magnets.
+## Post-target shielding (2025-2026)
 
-I lead the overall fabrication and installation effort for the FRIB Rotating Beam Dump, coordinating specialists in materials, systems engineering, thermomechanics, and radiation, with implementation targeted for 2028. This ongoing engineering effort is distinct from the static beam-dump AI optimization study.
-
----
-
-## Post-Target Shielding (2025-2026)
+As FRIB ramps up power, the post-target shielding (PTS) requires optimized cooling channel design and structural stress analysis due to thermal stresses. The heat distribution calculated from PHITS Monte Carlo simulations was coupled with COMSOL to minimize stress and develop a practical design for field implementation.
 
 <div class="row justify-content-center">
     <div class="col-sm-10">
@@ -44,11 +43,9 @@ I lead the overall fabrication and installation effort for the FRIB Rotating Bea
     <strong>Fig.</strong> Post-target shielding analysis: cooling channel geometry, temperature distribution, and von Mises stress
 </div>
 
-As FRIB ramps up power, the post-target shielding (PTS) requires optimized cooling channel design and structural stress analysis due to thermal stresses. The heat distribution calculated from PHITS Monte Carlo simulations was coupled with COMSOL to minimize stress and develop a practical design for field implementation.
+## Plasma chamber (2025-2026)
 
----
-
-## Plasma Chamber (2025-2026)
+Thermal and structural analyses in ANSYS and COMSOL were compared to assess RF-power thermal limits. This is a cross-code comparison, distinct from experimental validation. Transient analysis also evaluated the temperature and assembly time needed for interference fitting of the cooling-channel components.
 
 <div class="project-media-grid">
     <div>
@@ -64,11 +61,9 @@ As FRIB ramps up power, the post-target shielding (PTS) requires optimized cooli
     </figure>
 </div>
 
-Thermal and structural analyses in ANSYS and COMSOL were compared to assess RF-power thermal limits. This is a cross-code comparison, distinct from experimental validation. Transient analysis also evaluated the temperature and assembly time needed for interference fitting of the cooling-channel components.
+## Low-power charge selector (2025-2026)
 
----
-
-## Low-Power Charge Selector (2025-2026)
+Performed transient and stationary thermal simulations of the Low-Power Charge Selector (LPCS) to determine power limits based on thermal stress. By comparing simulation results with experimental measurements, the beam deposit on the drift tube was predicted.
 
 <div class="project-media-grid">
     <figure class="project-demo">
@@ -84,11 +79,9 @@ Thermal and structural analyses in ANSYS and COMSOL were compared to assess RF-p
     </div>
 </div>
 
-Performed transient and stationary thermal simulations of the Low-Power Charge Selector (LPCS) to determine power limits based on thermal stress. By comparing simulation results with experimental measurements, the beam deposit on the drift tube was predicted.
+## Target system (2024-2025)
 
----
-
-## Target System (2024-2025)
+Performed system-level thermal analysis for the graphite-based rotating target, including radiation effects on the target door cooling and flow rate requirements. Simulations and experiments were conducted to evaluate the thermal conductance and operational limits of the bearing system.
 
 <div class="row justify-content-center">
     <div class="col-sm-10">
@@ -98,5 +91,3 @@ Performed transient and stationary thermal simulations of the Low-Power Charge S
 <div class="caption">
     <strong>Fig.</strong> Target system temperature distribution: graphite target (left), target door (middle), and bearing system (right)
 </div>
-
-Performed system-level thermal analysis for the graphite-based rotating target, including radiation effects on the target door cooling and flow rate requirements. Simulations and experiments were conducted to evaluate the thermal conductance and operational limits of the bearing system.

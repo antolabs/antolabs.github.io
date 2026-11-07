@@ -1,0 +1,27 @@
+{% if page.related_projects.size > 0 %}
+  <section class="project-related" aria-labelledby="related-projects-heading">
+    <h2 id="related-projects-heading">{{ page.related_heading | default: 'Related projects' | escape }}</h2>
+    {% if page.related_intro %}
+      <p class="project-related-intro">{{ page.related_intro | escape }}</p>
+    {% endif %}
+    <ul class="project-related-list">
+      {% for relation in page.related_projects %}
+        {% assign related_project = site.projects | where: 'slug', relation.slug | first %}
+        {% if related_project %}
+          <li>
+            <a href="{{ related_project.url | relative_url }}">
+              <span class="project-related-copy">
+                <span class="project-related-title">{{ related_project.card_title | default: related_project.title | escape }}</span>
+                <span class="project-related-description">{{ relation.description | escape }}</span>
+              </span>
+              <span class="project-related-arrow" aria-hidden="true">&#8594;</span>
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    {% if page.related_notice %}
+      <p class="project-related-notice">{{ page.related_notice | escape }}</p>
+    {% endif %}
+  </section>
+{% endif %}

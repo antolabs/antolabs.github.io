@@ -12,18 +12,30 @@ card_title: "Liquid-lithium charge stripper"
 institution: "UNIST"
 project_group: "Liquid-metal & electromagnetic systems"
 summary: "Electromagnetic thruster development and experimental characterization of liquid-lithium films."
+detail_intro: "I worked on electromagnetic circulation and charge-stripper design, combining multiphysics analysis with experimental characterization."
+detail_summary_label: Prototype study
+detail_summary: "Liquid-lithium film formation characterized for a prototype heavy-ion charge stripper."
 contribution: "Worked on electromagnetic circulation and charge-stripper design, combining multiphysics analysis with experimental characterization."
 evidence: "Prototype & experimental work"
 outcome: "Characterized liquid-lithium film formation for a prototype heavy-ion charge stripper."
 ---
 
-## Challenge
+<div class="project-overview">
+  <section class="project-overview-purpose" aria-labelledby="project-purpose">
+    <h2 id="project-purpose">Purpose</h2>
+    <p>RAON's prototype charge stripper requires a thin liquid-lithium film to support the target uranium charge state. This study addresses film formation and the maintenance burden of a heavy electromagnetic thruster.</p>
+  </section>
+  <section class="project-overview-approach" aria-labelledby="project-approach">
+    <h2 id="project-approach">Approach</h2>
+    <p>A lighter helical electromagnetic thruster supplies the lithium loop. Multiphysics analysis, nozzle and deflector design, and laser thickness measurements support experimental characterization of the film.</p>
+  </section>
+</div>
 
-**RAON** (Rare isotope Accelerator complex for ON-line experiments), Korea's first heavy-ion accelerator, requires a charge stripper to increase uranium beam charge state from **34+ to 79+** for achieving 200 MeV/u energy. This requires forming a precise **22 μm thick liquid lithium film**. However, existing electromagnetic thrusters weighing **340 kg** make maintenance extremely difficult.
+## System requirements
 
----
+The RAON design targets a uranium beam charge-state increase from **34+ to 79+** for achieving 200 MeV/u energy, requiring a **22 μm liquid-lithium film**. The conventional electromagnetic thruster weighed **340 kg**, motivating a lighter design for maintenance.
 
-## Approach: Lightweight Helical EM Thruster
+## Thruster and film system
 
 <div class="row justify-content-center">
     <div class="col-sm-10">
@@ -34,20 +46,18 @@ outcome: "Characterized liquid-lithium film formation for a prototype heavy-ion 
     <strong>Fig.</strong> Design evolution: conventional EM thruster (left) vs redesigned lightweight thruster (right)
 </div>
 
-### Electromagnetic Thruster Optimization
+### Electromagnetic thruster optimization
 
 - **Helical-type MHD design** with Sm₂Co₁₇ permanent magnets
 - **Single-direction magnet** arrangement for weight reduction
 - **SUS316 construction** for lithium compatibility
 - **FEM simulation** using COMSOL and ANSYS Maxwell
 
-### Charge Stripper System
+### Charge-stripper system
 
 - **Nozzle optimization**: 0.7 mm diameter, 34° angle
 - **Laser thickness measurement** (replacing electron gun method)
 - **Curved deflector** design to minimize lithium droplet contamination
-
----
 
 ## Results
 
@@ -66,8 +76,6 @@ outcome: "Characterized liquid-lithium film formation for a prototype heavy-ion 
 | Input Current      |    872 A     |  **500 A (-43%)**   |
 | Developed Pressure |   10.5 bar   | **14.6 bar (+40%)** |
 
-<br>
-
 - Achieved **22 μm lithium film** thickness at 107 A input current
 - **94% weight reduction** enabling easy maintenance
 - **Laser-based thickness measurement** avoids the electron-beam measurement method
@@ -75,7 +83,7 @@ outcome: "Characterized liquid-lithium film formation for a prototype heavy-ion 
 
 ---
 
-## Publication
+## Publications
 
 **SCIE**
 
@@ -83,6 +91,6 @@ outcome: "Characterized liquid-lithium film formation for a prototype heavy-ion 
 
 ---
 
-## Research Project
+## Research project
 
 **(2020-2021)** Research on the development of prototype lithium charge stripper, Institute for Basic Science.

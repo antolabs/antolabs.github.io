@@ -13,15 +13,21 @@ records = Dir['_projects/*.md'].map do |path|
 end
 archive = Nokogiri::HTML(File.read('_site/projects/index.html'))
 featured = records.select { |_, data| data['featured'] }.sort_by { |_, data| data['featured_order'] }
+methods = records.select { |_, data| data['project_section'] == 'methods' }.sort_by { |_, data| data['method_order'] }
 expected_links = records.map { |slug, _| "/projects/#{slug}/" }.sort
 actual_links = archive.css('.research-card, .project-list-link').map { |link| link['href'] }.sort
 check.call(actual_links == expected_links, 'Every project must appear exactly once in the archive')
-check.call(archive.css('.research-card').map { |link| link['href'] } == featured.map { |slug, _| "/projects/#{slug}/" }, 'Featured order is incorrect')
-check.call(featured.map(&:first) == %w[tf_01_frib_beam_dump tf_02_smr_heat_exchanger ai_01_bisto ai_02_thermal_surrogate], 'Selected research must put static beam dump and heat exchangers before the publication previews')
+check.call(archive.css('#selected-projects .research-card').map { |link| link['href'] } == featured.map { |slug, _| "/projects/#{slug}/" }, 'Featured order is incorrect')
+check.call(featured.map(&:first) == %w[tf_01_frib_beam_dump tf_04_rotating_beam_dump tf_02_smr_heat_exchanger], 'Keep the static and rotating beam dumps adjacent, followed by heat exchangers')
+check.call(methods.map(&:first) == %w[ai_01_bisto ai_02_thermal_surrogate], 'Keep the two ongoing methods distinct from device engineering')
+check.call(archive.css('#ongoing-methods .research-card').map { |link| link['href'] } == methods.map { |slug, _| "/projects/#{slug}/" }, 'Ongoing methods are missing or out of order')
+check.call(archive.css('.research-projects > section > .projects-section-header h2').map(&:text) == ['Selected projects', 'Ongoing AI methods', 'Additional projects'], 'Preserve the project hierarchy')
+check.call(archive.at_css('.projects-methods-notice')&.text&.include?('after publication'), 'The methods section must retain the publication boundary')
 expected_years = {
   'ai_01_bisto' => '2026 - Current',
   'ai_02_thermal_surrogate' => '2025 - Current',
-  'tf_01_frib_beam_dump' => '2023 - 2025'
+  'tf_01_frib_beam_dump' => '2023 - 2025',
+  'tf_04_rotating_beam_dump' => '2024 - Current'
 }
 expected_years.each do |slug, year|
   check.call(records.assoc(slug).last['year'] == year, "#{slug}: incorrect research period")
@@ -34,7 +40,7 @@ additional = archive.at_css('#additional-projects')
 expected_groups = {
   'Thermal-fluid engineering' => %w[tf_99_other tf_03_oled_display],
   'Liquid-metal & electromagnetic systems' => %w[em_01_3d_printable_emp em_02_raon_charge_stripper em_99_other],
-  'AI diagnostics' => %w[ot_01_komac_linac]
+  'AI fault detection' => %w[ot_01_komac_linac]
 }
 check.call(additional.css('.project-group > h3').map(&:text) == expected_groups.keys, 'Additional research group names or order are incorrect')
 additional.css('.project-group').each do |group|
@@ -44,7 +50,7 @@ additional.css('.project-group').each do |group|
   check.call(years.all? { |year| year.is_a?(String) && year.match?(/\A\d{4}(?: - (?:\d{4}|Current))?\z/) }, 'Project periods must be sortable year strings')
   check.call(years == years.map(&:to_s).sort.reverse, 'Additional projects must be newest first within each research group')
 end
-check.call(additional.css('.project-list > li').size == records.size - featured.size, 'The grouped lists must retain every additional project')
+check.call(additional.css('.project-list > li').size == records.size - featured.size - methods.size, 'The grouped lists must retain every additional project')
 additional.css('.project-list-link').each do |link|
   check.call(link.at_css('div').element_children.map(&:name) == %w[h4 p p], 'Additional projects must show title, summary, then metadata')
 end
@@ -54,14 +60,26 @@ archive.css('.research-card').each do |card|
   slug = card['href'].split('/').last
   check.call(card.at_css('.research-card-meta').text.strip == records.assoc(slug).last['year'], "#{slug}: selected metadata should show only the research period")
   data = records.assoc(slug).last
-  expected_outcome = data['publication_notice'] || data['outcome']
-  check.call(card.at_css('.research-card-outcome').text.strip == expected_outcome, "#{slug}: preserve the outcome or publication notice without an extra label")
+  if data['project_section'] == 'methods'
+    check.call(card.css('.research-card-support').empty?, "#{slug}: use the shared methods notice without repeating it in each card")
+  elsif data['project_kind'] == 'engineering'
+    check.call(card.css('.research-card-outcome').empty?, "#{slug}: do not present ongoing responsibilities as measured results")
+    check.call(card.at_css('.research-card-support')&.text&.strip == data['scope_note'], "#{slug}: preserve the engineering scope")
+  else
+    check.call(card.at_css('.research-card-outcome')&.text&.strip == data['outcome'], "#{slug}: preserve the outcome without an extra label")
+  end
 end
 
 documents = [['_site/projects/index.html', archive]]
 records.each do |slug, data|
   required_fields = %w[card_title summary institution year project_group]
-  required_fields += data['publication_notice'] ? %w[publication_notice] : %w[contribution outcome evidence]
+  required_fields += if data['project_kind'] == 'engineering'
+    %w[detail_intro scope_note detail_summary_label detail_summary]
+  elsif data['publication_notice']
+    %w[publication_notice]
+  else
+    %w[contribution outcome evidence]
+  end
   required_fields.each do |field|
     check.call(!data[field].to_s.strip.empty?, "#{slug}: missing #{field}")
   end
@@ -72,7 +90,7 @@ records.each do |slug, data|
   documents << [path, html]
   if data['publication_notice']
     card = archive.at_css(".research-card[href='/projects/#{slug}/']")
-    check.call(card&.at_css('.research-card-outcome')&.text&.include?(data['publication_notice']), "#{slug}: card publication notice missing")
+    check.call(card&.ancestors('section')&.first&.[]('id') == 'ongoing-methods', "#{slug}: publication preview must belong to the methods section")
     check.call(card&.at_css('.research-card-action')&.text&.include?('Brief overview'), "#{slug}: preview should not promise a full case study")
     check.call(html.at_css('.project-publication-notice')&.text == data['publication_notice'], "#{slug}: detail publication notice missing")
     check.call(html.css('.project-brief').empty?, "#{slug}: preview must not expose performance summaries")
@@ -82,11 +100,27 @@ records.each do |slug, data|
     check.call((25..65).cover?(overview&.at_css('p')&.text.to_s.split.size), "#{slug}: overview must stay concise")
     check.call(!overview&.text.to_s.match?(/\d|%|dataset|architecture|hyperparameter|speedup/i), "#{slug}: keep unpublished technical specifics out of the overview")
     check.call(overview&.next_element&.[]('class') == 'project-publication-notice', "#{slug}: publication notice should follow the overview")
+  elsif data['detail_summary']
+    check.call(html.css('.project-brief').empty?, "#{slug}: do not repeat the role in a separate contribution box")
+    check.call(html.at_css('.project-detail-header .projects-intro')&.text == data['detail_intro'], "#{slug}: lead with the research role")
+    summary = html.at_css('.project-detail-summary')
+    check.call(summary&.text.to_s.split.join(' ') == "#{data['detail_summary_label']}: #{data['detail_summary']}", "#{slug}: distinguish demonstrated results from development targets")
   else
     check.call(html.css('.project-brief dd').size == 2, "#{slug}: contribution/outcome summary missing")
   end
-  check.call(html.at_css('.project-detail-header h1')&.text == data['card_title'], "#{slug}: title mismatch")
+  check.call(html.at_css('.project-detail-header h1')&.text == (data['detail_title'] || data['card_title']), "#{slug}: title mismatch")
+  check.call(html.css('.project-detail-end a').map { |link| link['href'] } == ['/projects/'], "#{slug}: footer navigation should only return to all projects")
   check.call(html.at_css('.project-detail-header .projects-kicker')&.text&.include?(data['year'].to_s), "#{slug}: detail research period mismatch")
+  expected_related = (data['related_projects'] || []).map { |relation| "/projects/#{relation.fetch('slug')}/" }
+  check.call(html.css('.project-related-list a').map { |link| link['href'] } == expected_related, "#{slug}: related-project links are missing or incorrect")
+  if data['project_section'] == 'methods'
+    check.call(html.css('.project-related').empty?, "#{slug}: keep the brief overview free of a related-device section")
+  end
+  if expected_groups.values.flatten.include?(slug)
+    check.call(!data['detail_intro'].to_s.empty? && !data['detail_summary'].to_s.empty?, "#{slug}: additional projects need the shared role and evidence summary")
+    check.call(html.css('.project-overview > section > h2').map(&:text) == %w[Purpose Approach], "#{slug}: use the same purpose/approach overview as the selected beam-dump projects")
+    check.call(html.at_css('.project-body > :first-child')&.[]('class') == 'project-overview', "#{slug}: show the overview before detailed figures or legacy links")
+  end
   html.css('.project-body img').each do |image|
     check.call(!image['alt'].to_s.empty? && image.key?('data-zoomable'), "#{slug}: figure needs alt text and zoom")
     check.call(!image['src'].end_with?('.gif'), "#{slug}: animations need pausable video controls")
@@ -102,6 +136,20 @@ records.each do |slug, data|
     check.call(!video.key?('autoplay'), "#{slug}: use reduced-motion-aware autoplay")
     check.call(html.at_css("##{video['aria-describedby']}"), "#{slug}: animation caption missing")
   end
+end
+
+additional_evidence = {
+  'tf_99_other' => ['Engineering studies', 4, 2],
+  'tf_03_oled_display' => ['Design study', 4, 0],
+  'em_01_3d_printable_emp' => ['Simulation result', 3, 0],
+  'em_02_raon_charge_stripper' => ['Prototype study', 2, 0],
+  'em_99_other' => ['Research scope', 2, 0],
+  'ot_01_komac_linac' => ['Study result', 3, 0]
+}
+additional_evidence.each do |slug, (label, image_count, video_count)|
+  html = documents.assoc("_site/projects/#{slug}/index.html").last
+  check.call(html.at_css('.project-detail-summary-label')&.text == "#{label}:", "#{slug}: retain the evidence type in the summary")
+  check.call(html.css('.project-body img').size == image_count && html.css('.project-body video').size == video_count, "#{slug}: preserve all existing research figures and animations")
 end
 
 documents.each do |path, html|
@@ -134,6 +182,39 @@ end
 check.call(animations.map { |video| video.at_css('source')['src'] } == %w[/assets/video/static-beam-dump-ga.mp4 /assets/video/static-beam-dump-rl.mp4], 'GA and RL media are missing or out of order')
 
 frib = documents.assoc('_site/projects/tf_99_other/index.html').last
+rotating = documents.assoc('_site/projects/tf_04_rotating_beam_dump/index.html').last
+check.call(rotating.at_css('.project-detail-header .projects-intro')&.text&.include?('I lead the FRIB rotating beam-dump effort from manufacturability assessment through fabrication and installation'), 'The rotating project must communicate engineering leadership beyond simulation')
+check.call(rotating.at_css('.project-overview-purpose a')&.[]('href') == '/projects/tf_01_frib_beam_dump/', 'Explain the static-to-rotating upgrade path')
+device_copy = rotating.at_css('.project-overview-purpose')&.text.to_s
+check.call(['above 50 kW', 'around the circumference', 'thin shell', 'energy directly in the cooling water'].all? { |phrase| device_copy.include?(phrase) }, 'Preserve the beam-dump purpose and heat-deposition mechanism')
+check.call(rotating.at_css('.project-detail-summary')&.text.to_s.split.join(' ') == 'Development target: 100 kW primary beam power by 2028.', 'Identify the primary beam power and year as a development target, not achieved performance')
+engineering_copy = rotating.at_css('.project-overview-approach')&.text.to_s
+check.call(%w[integrates thermal-hydraulic radiation sealing manufacturing installation].all? { |topic| engineering_copy.include?(topic) }, 'Describe the integrated engineering requirements without repeating the leadership claim')
+check.call(engineering_copy.include?('I perform thermal-fluid, structural, and electromagnetic simulations.'), 'State the simulation disciplines explicitly')
+check.call(engineering_copy !~ /I coordinate|I lead|my multiphysics/, 'Keep leadership in the project introduction rather than repeating it in the scope')
+simulation_source = '/assets/img/project/tf_other/rotating_beam_dump.png'
+views = rotating.css('.project-simulation-gallery svg')
+check.call(views.map { |view| view['viewbox'] || view['viewBox'] } == ['2535 0 1009 1195', '1345 0 1190 1195', '0 0 1310 1195'], 'Show all three simulation panels without clipping their units or color scales')
+check.call(views.all? { |view| view['role'] == 'img' && view.at_css('title') && view.at_css('image')&.[]('href') == simulation_source }, 'Simulation viewports must reuse the original image and have accessible descriptions')
+check.call(rotating.css('.project-simulation-view').size == 3 && rotating.css('.project-simulation-gallery a').empty?, 'Display every simulation inline without navigation to a separate image')
+check.call(rotating.css('.project-simulation-gallery figcaption').map(&:text) == ['Temperature distribution.', 'Pressure distribution.', 'Magnetic flux density.'], 'Label each simulation with the quantity it shows')
+check.call(!rotating.at_css('.project-simulation-note') && !rotating.text.include?('Select either view'), 'Remove the redundant image-opening instruction')
+check.call(rotating.at_css('.project-simulations h2')&.text == 'Simulation views', 'Introduce the simulation gallery without implying completed device performance')
+beam_dumps = [beam_dump, rotating]
+beam_dumps.each do |page|
+  check.call(page.css('.project-overview > section > h2').map(&:text) == %w[Purpose Approach], 'Both beam-dump pages need the same purpose/approach overview')
+  check.call(page.at_css('.project-body > :first-child')&.[]('class') == 'project-overview', 'Begin both beam-dump bodies with the shared overview')
+end
+check.call(beam_dump.at_css('.project-detail-summary-label')&.text == 'Simulation result:', 'Keep the static numerical result distinct from a development target')
+check.call(beam_dump.css('.project-related').empty?, 'Keep the static case study free of a related-development section')
+check.call(!rotating.to_html.include?('assembly-cad'), 'Do not reuse the misidentified CAD image')
+check.call(rotating.at_css('.project-related-intro')&.text&.include?('current research case'), 'Connect the methods as research studies, not claims of adoption in hardware')
+check.call(rotating.at_css('.project-related-notice')&.text == 'Detailed application studies will be shared after publication.', 'Defer detailed application studies until publication')
+check.call(rotating.at_css('.project-body')&.text !~ /%|dataset|hyperparameter|speedup/i, 'Do not add unpublished method performance claims')
+check.call(rotating.at_css('.project-body')&.text.to_s.scan(/\d+(?:\.\d+)?/).all? { |number| %w[50 100 2028].include?(number) }, 'Only include the user-approved upgrade target numbers in the project description')
+check.call(archive.css('.research-card-wide').empty? && archive.css('.research-selected-grid > .research-card').size == 3, 'Selected projects must use equal cards, without a double-width exception')
+check.call(frib.css('.project-body a[href="/projects/tf_04_rotating_beam_dump/"]').empty? && !frib.text.include?('For rotating beam-dump analysis'), 'Do not show the removed rotating beam-dump relocation notice')
+check.call(frib.css('img').none? { |image| image['src'].include?('rotating_beam_dump') }, 'Do not duplicate the rotating beam-dump case study in additional engineering')
 check.call(frib.css('video[data-project-animation]').size == 2, 'FRIB analyses need both controllable animations')
 check.call(frib.css('.project-media-grid .caption').size == 4, 'Each responsive FRIB figure needs its own caption')
 check.call(frib.css('.project-media-grid .caption').none? { |caption| caption.text.match?(/\b(left|right)\b/) }, 'Stacked mobile figures must not use left/right captions')
@@ -143,6 +224,8 @@ komac = documents.assoc('_site/projects/ot_01_komac_linac/index.html').last
 check.call(komac.text.include?('5 of 10') && komac.text.include?('retrospective'), 'KOMAC results must retain their evaluation scope')
 check.call(!komac.text.include?('Reduced unnecessary shutdowns'), 'Do not imply measured KOMAC downtime reductions')
 heat = documents.assoc('_site/projects/tf_02_smr_heat_exchanger/index.html').last
+check.call(archive.at_css(".research-card[href='/projects/tf_02_smr_heat_exchanger/'] h3")&.text == 'AI-designed nuclear heat exchangers', 'Keep the heat-exchanger card title concise and explicit about the nuclear application')
+check.call(heat.at_css('.project-detail-header h1')&.text == 'AI-designed heat exchangers for small modular reactors', 'Identify the SMR application in the heat-exchanger detail title')
 check.call(heat.css('h3').map(&:text).include?('Dual-fluid topology optimization (2023)'), 'Separate the 2023 heat exchanger baseline')
 check.call(heat.css('h3').map(&:text).include?('DRL-assisted topology optimization (2024)'), 'Separate the 2024 heat exchanger baseline')
 
@@ -151,4 +234,4 @@ check.call(previews == %w[ai_01_bisto ai_02_thermal_surrogate], 'Only BiSTO and 
 publications = Nokogiri::HTML(File.read('_site/publications/index.html'))
 check.call(publications.at_css('a[href="https://doi.org/10.2139/ssrn.7128856"]'), 'Surrogate preprint must remain available on Publications')
 abort errors.join("\n") unless errors.empty?
-puts "Projects OK: #{featured.size} featured, #{records.size - featured.size} additional; all case studies, labels, assets, and local links valid."
+puts "Projects OK: #{featured.size} selected, #{methods.size} ongoing methods, #{records.size - featured.size - methods.size} additional; all case studies, related links, assets, and publication boundaries valid."

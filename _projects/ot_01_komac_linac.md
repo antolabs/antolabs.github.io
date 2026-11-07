@@ -10,16 +10,28 @@ body_class: "project-view"
 footer_static: true
 card_title: "AI anomaly detection for the KOMAC linac"
 institution: "KAERI"
-project_group: "AI diagnostics"
+project_group: "AI fault detection"
 summary: "An LSTM autoencoder for early detection of anomalies in quadrupole-magnet operation."
+detail_intro: "I applied AI anomaly detection to KOMAC accelerator operating data as part of the intelligent-operation research program."
+detail_summary_label: Study result
+detail_summary: "Early anomaly signatures in five of ten historical voltage-fault cases, 30.7-286.6 minutes before recorded fault signal-off."
 contribution: "Applied AI anomaly detection to KOMAC accelerator operating data as part of the intelligent-operation research program."
 evidence: "Operational-data study"
 outcome: "Detected early anomaly signatures in five of ten historical voltage-fault cases, 30.7-286.6 minutes before the recorded fault signal-off."
 ---
 
-## Challenge
+<div class="project-overview">
+  <section class="project-overview-purpose" aria-labelledby="project-purpose">
+    <h2 id="project-purpose">Purpose</h2>
+    <p>KOMAC's 100-MeV proton linac relies on drift-tube quadrupole (DTQ) magnets to focus the beam. This study investigates whether historical operating data contain early signs of degradation before conventional voltage-fault alarms.</p>
+  </section>
+  <section class="project-overview-approach" aria-labelledby="project-approach">
+    <h2 id="project-approach">Approach</h2>
+    <p>An LSTM autoencoder learns normal resistance patterns from voltage and current records. Reconstruction errors flag anomalies for retrospective comparison with recorded voltage faults.</p>
+  </section>
+</div>
 
-**KOMAC** (Korea Multi-purpose Accelerator Complex) operates a 100-MeV proton linear accelerator with Drift Tube LINAC (DTL) structures. The **Drift Tube Quadrupole (DTQ) magnets** focus the beam, but prolonged usage causes enamel wire corrosion and performance degradation. Existing threshold-based alarm systems are reactive, often leading to unnecessary shutdowns.
+## Magnet condition
 
 <div class="row justify-content-center">
     <div class="col-sm-6">
@@ -30,9 +42,7 @@ outcome: "Detected early anomaly signatures in five of ten historical voltage-fa
     <strong>Fig.</strong> DTQ magnet structure (left) and failed DTQ after enamel wire corrosion (right)
 </div>
 
----
-
-## Approach: LSTM Autoencoder
+## Anomaly-detection workflow
 
 <div class="row justify-content-center">
     <div class="col-sm-7">
@@ -43,7 +53,7 @@ outcome: "Detected early anomaly signatures in five of ten historical voltage-fa
     <strong>Fig.</strong> LSTM Autoencoder architecture for DTQ magnet anomaly detection
 </div>
 
-### Deep Learning Model
+### Deep learning model
 
 - **LSTM Autoencoder** for time-series anomaly detection
 - **6.5 years** of historical operational data (2017-2023)
@@ -56,9 +66,7 @@ outcome: "Detected early anomaly signatures in five of ten historical voltage-fa
 - Detect subtle anomalies before threshold-based alarms trigger
 - Investigate potential support for preventive maintenance
 
----
-
-## Results
+## Retrospective evaluation
 
 <div class="row justify-content-center">
     <div class="col-sm-8">
@@ -77,15 +85,13 @@ outcome: "Detected early anomaly signatures in five of ten historical voltage-fa
 | Mean early detection (detected cases)    |    **166.4 min**     |
 | False alarms in normal operating periods |  **2 of 76 (2.6%)**  |
 
-<br>
-
 These results come from a retrospective analysis of historical operating data. Early detection time is measured from the anomaly-score threshold crossing to the recorded voltage-fault signal-off, not to an independently predicted physical breakdown.
 
 The study supports the potential for preventive maintenance; reductions in operational downtime or maintenance costs were not measured.
 
 ---
 
-## Publication
+## Publications
 
 **SCIE**
 
@@ -93,6 +99,6 @@ The study supports the potential for preventive maintenance; reductions in opera
 
 ---
 
-## Research Project
+## Research project
 
 **(2021-2023)** Establishment of Intelligent Operation Platform for HANARO and Research Facilities, KAERI.

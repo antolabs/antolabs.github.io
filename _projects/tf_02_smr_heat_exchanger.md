@@ -1,6 +1,7 @@
 ---
 layout: project
-title: SMR Heat Exchanger AI Topology Optimization
+title: AI-designed heat exchangers for small modular reactors
+detail_title: AI-designed heat exchangers for small modular reactors
 description: Deep RL + Topology optimization for PCHE design with 3D printing validation
 img: assets/img/smr_heat_exchanger/fig_topology_result.png
 importance: 2
@@ -8,11 +9,11 @@ category: Thermo-fluid devices
 year: "2021 - 2023"
 body_class: "project-view"
 footer_static: true
-card_title: "AI-designed heat exchangers"
+card_title: "AI-designed nuclear heat exchangers"
 project_type: "Design to fabrication"
 institution: "KAERI"
 featured: true
-featured_order: 2
+featured_order: 3
 project_group: "Thermal-fluid engineering"
 summary: "Reinforcement learning for heat-exchanger design, connected to metal 3D printing and experimental testing."
 contribution: "Developed a deep reinforcement learning approach for heat-exchanger optimization and contributed to topology-optimization analysis and experimental validation of a metal-printed prototype."
