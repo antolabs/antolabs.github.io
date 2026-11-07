@@ -36,9 +36,9 @@ layout: default
             }}
           </p>
           <div class="about-research-links">
-            <a href="{{ '/publications/' | relative_url }}">View publications <span aria-hidden="true">&#8594;</span></a>
-            <a href="{{ '/cv/' | relative_url }}">View CV <span aria-hidden="true">&#8594;</span></a>
-            <a href="{{ '/projects/' | relative_url }}">View projects <span aria-hidden="true">&#8594;</span></a>
+            <a href="{{ '/publications/' | relative_url }}">Publications <span aria-hidden="true">&#8594;</span></a>
+            <a href="{{ '/cv/' | relative_url }}">CV <span aria-hidden="true">&#8594;</span></a>
+            <a href="{{ '/projects/' | relative_url }}">Projects <span aria-hidden="true">&#8594;</span></a>
           </div>
         </div>
       </div>
@@ -139,10 +139,9 @@ layout: default
 
     <section class="about-methods" aria-labelledby="about-methods-title">
       <h2 id="about-methods-title">Research Approach</h2>
-      <ol class="about-method-list">
+      <ul class="about-method-list" role="list">
         {% for area in page.research_areas %}
           <li>
-            <span class="about-method-number" aria-hidden="true">0{{ forloop.index }}</span>
             <h3>{{ area.title | escape }}</h3>
             <p>
               {{
@@ -155,7 +154,7 @@ layout: default
             </p>
           </li>
         {% endfor %}
-      </ol>
+      </ul>
       {% if page.future_direction %}
         <p class="about-future-direction">{{ page.future_direction | escape }}</p>
       {% endif %}

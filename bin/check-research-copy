@@ -20,6 +20,7 @@ check.call(vision.split.size <= 50 && vision.split.size < cv.dig('research', 'de
 check.call(['physical constraints', 'reusable design methods', 'manufacturing and experimental validation', 'nuclear energy systems'].all? { |topic| vision.include?(topic) }, 'The concise vision must preserve the research question, reusable methods, validation, and nuclear focus')
 check.call(vision.include?('My long-term goal'), 'Keep the long-term research goal distinct from completed results')
 check.call(about.css('.about-method-list h3').map(&:text) == data['research_areas'].map { |area| area['title'] }, 'Preserve the three research approach cards')
+check.call(about.at_css('.about-method-list')&.name == 'ul' && about.css('.about-method-number').empty?, 'Keep the research approach unnumbered')
 check.call(copy.call(about.at_css('.about-method-list')).include?('structural analysis'), 'Include the structural analysis foundation')
 future = about.at_css('.about-future-direction')
 check.call(copy.call(future) == data['future_direction'] && copy.call(future).start_with?('Looking ahead, I aim'), 'Label design-to-operation learning as a future direction')
@@ -27,6 +28,7 @@ check.call(copy.call(future).include?('operational measurements') && copy.call(f
 check.call(future&.previous_element&.[]('class') == 'about-method-list', 'Keep the future direction with the research approach, not a new achievement card')
 check.call(copy.call(about.at_css('#bisto-description')).include?('Current work focuses on turbulent cooling-channel design.'), 'BiSTO must state its current application scope')
 check.call(about.css('.about-research-links a').map { |a| a['href'] } == %w[/publications/ /cv/ /projects/], 'Keep all three profile links')
+check.call(about.css('.about-research-links a').map { |a| a.children.select(&:text?).map(&:text).join.strip } == %w[Publications CV Projects], 'Keep profile link labels concise without repeated View text')
 video = about.at_css('#bisto-video')
 check.call(video && %w[autoplay muted loop playsinline controls].all? { |attr| video.key?(attr) }, 'Preserve startup playback and the no-JavaScript control fallback')
 
