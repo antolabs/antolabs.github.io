@@ -205,6 +205,7 @@ check.call(beam_dump.at_css('.project-detail-summary-label')&.text == 'Simulatio
 check.call(beam_dump.css('.project-related').empty?, 'Keep the static case study free of a related-development section')
 check.call(!rotating.to_html.include?('assembly-cad'), 'Do not reuse the misidentified CAD image')
 check.call(rotating.css('.project-related').empty?, 'Do not link the rotating case study to unpublished method pages')
+check.call(rotating.css('.project-ongoing h3').map(&:text) == ['BiSTO', 'Deep learning surrogate'], 'Introduce the two ongoing AI methods on the rotating case study')
 check.call(rotating.at_css('.project-body')&.text !~ /%|dataset|hyperparameter|speedup/i, 'Do not add unpublished method performance claims')
 check.call(rotating.at_css('.project-body')&.text.to_s.scan(/\d+(?:\.\d+)?/).all? { |number| %w[50 100 2028].include?(number) }, 'Only include the user-approved upgrade target numbers in the project description')
 check.call(archive.css('.research-card-wide').empty? && archive.css('.research-selected-grid > .research-card').size == 3, 'Selected projects must use equal cards, without a double-width exception')
