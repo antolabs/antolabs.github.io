@@ -1,7 +1,7 @@
 ---
 layout: project
-title: RAON Charge Stripper Development
-description: Lightweight helical EM thruster for liquid lithium film formation in heavy-ion accelerator
+title: RAON charge stripper development
+description: Electromagnetic thruster development and experimental characterization of liquid-lithium films.
 img: assets/img/raon_charge_stripper/fig_lithium_film.png
 importance: 2
 category: Electromagnetic devices
@@ -33,7 +33,7 @@ outcome: "Characterized liquid-lithium film formation for a prototype heavy-ion 
 
 ## System requirements
 
-The RAON design targets a uranium beam charge-state increase from **34+ to 79+** for achieving 200 MeV/u energy, requiring a **22 μm liquid-lithium film**. The conventional electromagnetic thruster weighed **340 kg**, motivating a lighter design for maintenance.
+The RAON design targets a uranium beam charge-state increase from **34+ to 79+** to reach 200 MeV/u, which requires a **22 μm liquid-lithium film**. The conventional electromagnetic thruster weighed **340 kg**, so a lighter design was needed for maintenance.
 
 ## Thruster and film system
 
@@ -43,21 +43,21 @@ The RAON design targets a uranium beam charge-state increase from **34+ to 79+**
     </div>
 </div>
 <div class="caption">
-    <strong>Fig.</strong> Design evolution: conventional EM thruster (left) vs redesigned lightweight thruster (right)
+    Conventional EM thruster (left) and redesigned lightweight thruster (right)
 </div>
 
 ### Electromagnetic thruster optimization
 
-- **Helical-type MHD design** with Sm₂Co₁₇ permanent magnets
-- **Single-direction magnet** arrangement for weight reduction
-- **SUS316 construction** for lithium compatibility
-- **FEM simulation** using COMSOL and ANSYS Maxwell
+- Helical-type MHD design with Sm₂Co₁₇ permanent magnets
+- Single-direction magnet arrangement to reduce weight
+- SUS316 body for compatibility with lithium
+- Finite-element simulation in COMSOL and ANSYS Maxwell
 
 ### Charge-stripper system
 
-- **Nozzle optimization**: 0.7 mm diameter, 34° angle
-- **Laser thickness measurement** (replacing electron gun method)
-- **Curved deflector** design to minimize lithium droplet contamination
+- Nozzle with a 0.7 mm diameter and a 34° angle
+- Laser thickness measurement in place of the electron-gun method
+- Curved deflector to limit lithium droplet contamination
 
 ## Results
 
@@ -67,19 +67,19 @@ The RAON design targets a uranium beam charge-state increase from **34+ to 79+**
     </div>
 </div>
 <div class="caption">
-    <strong>Fig.</strong> Experimental test loop system (left) and successfully formed liquid lithium thin film (right)
+    Experimental test loop (left) and the liquid-lithium film formed in the loop (right)
 </div>
 
 | Parameter          | Conventional |     Redesigned      |
 | :----------------- | :----------: | :-----------------: |
 | Weight             |    340 kg    |  **21 kg (-94%)**   |
-| Input Current      |    872 A     |  **500 A (-43%)**   |
-| Developed Pressure |   10.5 bar   | **14.6 bar (+40%)** |
+| Input current      |    872 A     |  **500 A (-43%)**   |
+| Developed pressure |   10.5 bar   | **14.6 bar (+40%)** |
 
-- Achieved **22 μm lithium film** thickness at 107 A input current
-- **94% weight reduction** enabling easy maintenance
-- **Laser-based thickness measurement** avoids the electron-beam measurement method
-- Verified the film thickness required for a **79+ uranium charge state**; beam charge-state conversion was not measured in this study
+- Formed a **22 μm** lithium film at 107 A input current
+- **94%** weight reduction, which makes maintenance easier
+- Laser-based thickness measurement replaces the electron-beam method
+- Reached the film thickness required for a **79+** uranium charge state
 
 ---
 
@@ -87,10 +87,10 @@ The RAON design targets a uranium beam charge-state increase from **34+ to 79+**
 
 **SCIE**
 
-- T.U. Kang, **G. Lee**, H.R. Kim, "Experimental characterization of the flowline of a lithium film formed using an electromagnetic thruster for a RAON prototype charge stripper," _Nuclear Engineering and Design_, 412, 112481, 2023. [DOI](https://doi.org/10.1016/j.nucengdes.2023.112481)
+- T.U. Kang<sup>†</sup>, **G. Lee**<sup>†</sup>, H.R. Kim, "Experimental characterization of the flowline of a lithium film formed using an electromagnetic thruster for a RAON prototype charge stripper," _Nuclear Engineering and Design_, 412, 112481, 2023. [DOI](https://doi.org/10.1016/j.nucengdes.2023.112481) (<sup>†</sup>equal contribution)
 
 ---
 
 ## Research project
 
-**(2020-2021)** Research on the development of prototype lithium charge stripper, Institute for Basic Science.
+**(2020-2021)** Research on the Development of Prototype Lithium Charge Stripper, Institute for Basic Science.

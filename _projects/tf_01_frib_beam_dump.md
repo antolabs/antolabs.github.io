@@ -1,7 +1,7 @@
 ---
 layout: project
-title: FRIB Static Beam Dump AI Optimization
-description: Hybrid GA + Reinforcement Learning optimization of the FRIB static beam dump for a 50 kW power upgrade
+title: FRIB static beam dump AI optimization
+description: Global and local AI search with thermal-model evaluation and 3D verification for static beam-dump design.
 img: assets/img/frib_beam_dump/fig_temperature_comparison.png
 importance: 1
 category: Thermo-fluid devices
@@ -57,12 +57,12 @@ Starting from the GA design, the RL agent adjusts **34 surface design points** u
     <source src="{{ '/assets/video/static-beam-dump-rl.mp4' | relative_url }}" type="video/mp4">
     Your browser does not support embedded video.
   </video>
-  <figcaption class="caption" id="beam-dump-rl-caption">RL refinement: maximum temperature by training episode (left) and the evolving temperature fields (right). The animations show optimization progress, not elapsed physical time.</figcaption>
+  <figcaption class="caption" id="beam-dump-rl-caption">RL refinement: maximum temperature by training episode (left) and the evolving temperature fields (right).</figcaption>
 </figure>
 
 ## Numerical verification and outcome
 
-The optimized design is checked separately with a 3D finite-element model. Across the three representative beam sizes, the highest predicted temperature falls from **688.5 °C to 324.9 °C**, below the **350 °C design limit**. These verification results are distinct from the 2D optimization-model temperatures shown in the animations.
+The optimized design is then checked with a separate 3D finite-element model, so the temperatures differ from the 2D values in the animations. Across the three representative beam sizes, the highest predicted temperature falls from **688.5 °C to 324.9 °C**, below the **350 °C design limit**.
 
 <div class="row justify-content-center">
     <div class="col-12">
@@ -73,7 +73,7 @@ The optimized design is checked separately with a 3D finite-element model. Acros
     3D finite-element verification: original design (left) and optimized design (right) under the same three beam conditions.
 </div>
 
-The study reports **72% higher simulated average power-handling capability** than the existing design, supporting the 50 kW upgrade under the evaluated conditions. These are numerical predictions, not measurements from an operating prototype.
+In simulation, the optimized design has **72% higher average power-handling capability** than the existing design, which supports the 50 kW upgrade.
 
 ---
 
@@ -85,11 +85,11 @@ The study reports **72% higher simulated average power-handling capability** tha
 
 **Conferences**
 
-- **G. Lee**, J. Song, M. Patil, R. Quispe-Abad, N. Bultman, T. Kanemura, "Design Improvements of a Minichannel Beam Dump Wing through AI-Driven Genetic Algorithms," _16th International Conference on Heavy Ion Accelerator Technology_, 2025.
+- **G. Lee**, N. Bultman, T. Kanemura, M. Patil, R. Quispe-Abad, J. Song, "Design Improvement of a Minichannel Beam Dump Wing through AI-Driven Genetic Algorithms," _16th International Conference on Heavy Ion Accelerator Technology_, 2025.
 - **G. Lee**, J. Song, M. Patil, R. Quispe-Abad, N. Bultman, T. Kanemura, "Design Optimization of the FRIB Beam Dump through Reinforcement Learning with Genetic Algorithm," _2025 American Nuclear Society Annual Conference_, 2025.
 
 ---
 
-## Research Project
+## Research project
 
-**(2023-2025)** AIP Mini-channel and Water beam dump, FRIB.
+**(2023-2025)** AIP Mini-channel and Water Beam Dump, FRIB.

@@ -1,7 +1,7 @@
 ---
 layout: project
-title: KOMAC LINAC AI Anomaly Detection
-description: LSTM Autoencoder for proactive fault detection in Drift Tube Quadrupole magnets
+title: KOMAC linac AI anomaly detection
+description: An LSTM autoencoder for early detection of anomalies in quadrupole-magnet operation.
 img: assets/img/komac_linac/fig_lstm_autoencoder.png
 importance: 1
 category: Others
@@ -39,7 +39,7 @@ outcome: "Detected early anomaly signatures in five of ten historical voltage-fa
     </div>
 </div>
 <div class="caption">
-    <strong>Fig.</strong> DTQ magnet structure (left) and failed DTQ after enamel wire corrosion (right)
+    DTQ magnet structure (left) and failed DTQ after enamel wire corrosion (right)
 </div>
 
 ## Anomaly-detection workflow
@@ -50,21 +50,21 @@ outcome: "Detected early anomaly signatures in five of ten historical voltage-fa
     </div>
 </div>
 <div class="caption">
-    <strong>Fig.</strong> LSTM Autoencoder architecture for DTQ magnet anomaly detection
+    LSTM autoencoder architecture for DTQ magnet anomaly detection
 </div>
 
 ### Deep learning model
 
-- **LSTM Autoencoder** for time-series anomaly detection
-- **6.5 years** of historical operational data (2017-2023)
-- **Resistance-based analysis** (voltage/current ratio)
-- **MSE loss threshold** of 0.125 for anomaly classification
+- LSTM autoencoder for time-series anomaly detection
+- 6.5 years of historical operating data (2017-2023)
+- Resistance computed from the voltage-to-current ratio
+- Anomaly threshold at an MSE loss of 0.125
 
 ### Early anomaly detection
 
 - Learn normal operational patterns through reconstruction
-- Detect subtle anomalies before threshold-based alarms trigger
-- Investigate potential support for preventive maintenance
+- Detect anomalies before threshold-based alarms trigger
+- Assess whether early detection can support preventive maintenance
 
 ## Retrospective evaluation
 
@@ -74,7 +74,7 @@ outcome: "Detected early anomaly signatures in five of ten historical voltage-fa
     </div>
 </div>
 <div class="caption">
-    <strong>Fig.</strong> Anomaly score over time: normal cases vs detected anomaly cases
+    Anomaly score over time: normal cases vs detected anomaly cases
 </div>
 
 | Metric                                   |        Value         |
@@ -85,9 +85,7 @@ outcome: "Detected early anomaly signatures in five of ten historical voltage-fa
 | Mean early detection (detected cases)    |    **166.4 min**     |
 | False alarms in normal operating periods |  **2 of 76 (2.6%)**  |
 
-These results come from a retrospective analysis of historical operating data. Early detection time is measured from the anomaly-score threshold crossing to the recorded voltage-fault signal-off, not to an independently predicted physical breakdown.
-
-The study supports the potential for preventive maintenance; reductions in operational downtime or maintenance costs were not measured.
+These results come from a retrospective analysis of historical operating data. Detection time is counted from the anomaly-score threshold crossing to the recorded voltage-fault signal-off.
 
 ---
 

@@ -11,7 +11,7 @@ footer_static: true
 hero_lead: AI-driven multiphysics
 hero_focus: design and optimization
 vision_intro: I investigate how AI can discover high-performance designs that satisfy complex physical constraints. My long-term goal is to develop reusable design methods that connect computational optimization with manufacturing and experimental validation, with a focus on nuclear energy systems.
-future_direction: Looking ahead, I aim to connect design-trained models with operational measurements to develop digital twins.
+future_direction: Next, I plan to connect design-trained models with operational measurements to develop digital twins.
 
 research_areas:
   - title: AI-driven Design

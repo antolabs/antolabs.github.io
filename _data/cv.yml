@@ -50,6 +50,7 @@ publications:
     - status: "Under review"
       title: "A hybrid deep learning surrogate for thermal analysis of high-heat-flux devices"
       authors: "Lee, G\u2020*., & Kanemura, T."
+      authors_html: "<em>Geunhyeong Lee<sup>\u2020*</sup></em> and T. Kanemura"
       journal: "Engineering Applications of Artificial Intelligence"
       doi: "10.2139/ssrn.7128856"
     - status: "Submitted"

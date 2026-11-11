@@ -6,7 +6,13 @@
       {% for manuscript in under_review %}
         <li class="publication-entry">
           <h3 class="title">{{ manuscript.title | escape }}</h3>
-          <div class="author">{{ manuscript.authors | escape }}</div>
+          <div class="author">
+            {% if manuscript.authors_html %}
+              {{ manuscript.authors_html }}
+            {% else %}
+              {{ manuscript.authors | escape }}
+            {% endif %}
+          </div>
           <div class="periodical">
             Under review at <em>{{ manuscript.journal | escape }}</em>
           </div>

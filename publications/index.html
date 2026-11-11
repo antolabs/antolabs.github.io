@@ -17,10 +17,7 @@ nav_order: 2
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Publications (SCIE) | Geunhyeong Lee</title>
     <meta name="author" content="Geunhyeong Lee" />
-    <meta
-      name="description"
-      content="Scientific publications by Dr. Geunhyeong Lee in SCIE journals. Research areas: AI-driven design optimization, heat exchangers, electromagnetic pumps, MHD, nuclear engineering, 3D printing. Download PDFs and cite easily."
-    />
+    <meta name="description" content="Peer-reviewed journal articles by Geunhyeong Lee, with abstracts, PDFs, and citation files." />
     <meta
       name="keywords"
       content="Geunhyeong Lee publications, SCIE papers, AI design optimization, heat exchanger optimization, deep reinforcement learning, topology optimization, electromagnetic pump, MHD generator, nuclear engineering research, 3D printing, additive manufacturing, FRIB, PCHE, thermal engineering"
@@ -28,10 +25,10 @@ nav_order: 2
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Publications (SCIE) | Dr. Geunhyeong Lee" />
+    <meta property="og:title" content="Publications (SCIE) | Geunhyeong Lee" />
     <meta
       property="og:description"
-      content="14 SCIE publications in AI-driven design, heat exchangers, electromagnetic pumps, and nuclear engineering. Download PDFs freely."
+      content="14 SCIE journal articles on AI-driven design, heat exchangers, electromagnetic pumps, and nuclear engineering, with abstracts and PDFs."
     />
     <meta property="og:url" content="https://geunhyeong.com/publications/" />
     <meta property="og:site_name" content="Geunhyeong Lee" />
@@ -176,7 +173,7 @@ nav_order: 2
         color: var(--global-text-color);
       }
 
-      /* Citation format tabs — quiet segmented control */
+      /* Citation format tabs: quiet segmented control */
       .citation-tabs {
         display: inline-flex;
         flex: 0 0 auto;
@@ -445,7 +442,7 @@ nav_order: 2
                       <a class="publication-title-link" href="{{ '/publications/kim2025deep/' | relative_url }}">{{ paper.title | escape }}</a>
                     </div>
                     <div class="author">
-                      D. Kim<sup>†</sup>, H. Kim, H. Kwon, Y. Yu, and <em>Geunhyeong Lee<sup>*</sup></em>
+                      D.H. Kim<sup>†</sup>, H.S. Kim, H.J. Kwon, Y. Yu, and <em>Geunhyeong Lee<sup>*</sup></em>
                     </div>
                     <div class="periodical"><em>Journal of Nuclear Science and Technology</em>, 62(8), 709-714</div>
                     <div class="abstract">{{ paper.abstract | escape }}</div>
@@ -558,7 +555,7 @@ nav_order: 2
                       >
                     </div>
                     <div class="author">
-                      T. Kang<sup>†</sup>, <em>Geunhyeong Lee<sup>†</sup></em
+                      T.U. Kang<sup>†</sup>, <em>Geunhyeong Lee<sup>†</sup></em
                       >, and H.R. Kim<sup>*</sup>
                     </div>
                     <div class="periodical"><em>Nuclear Engineering and Design</em>, 412, 112481</div>
@@ -959,7 +956,7 @@ nav_order: 2
             var authorHTML = authorDiv.innerHTML;
             // Check if Geunhyeong Lee is first author (appears at the start as <em>)
             // First author: name appears first in the author list with <em> tag
-            if (authorHTML.match(/^\s*<em>Geunhyeong Lee/i) || authorHTML.match(/^\s*T\.\s*Kang.*<em>Geunhyeong Lee<sup>†<\/sup><\/em>/i)) {
+            if (authorHTML.match(/^\s*<em>Geunhyeong Lee/i) || authorHTML.match(/^\s*T\.U\.\s*Kang.*<em>Geunhyeong Lee<sup>†<\/sup><\/em>/i)) {
               // Check for co-first author case (†)
               if (authorHTML.includes('†') && authorHTML.match(/<em>Geunhyeong Lee<sup>†<\/sup><\/em>/i)) {
                 firstAuthorCount++; // Co-first author counts as first author

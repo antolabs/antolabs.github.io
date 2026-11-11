@@ -32,7 +32,7 @@ outcome: "Simulation evidence and experimental comparisons supporting FRIB devic
 
 ## Post-target shielding (2025-2026)
 
-As FRIB ramps up power, the post-target shielding (PTS) requires optimized cooling channel design and structural stress analysis due to thermal stresses. The heat distribution calculated from PHITS Monte Carlo simulations was coupled with COMSOL to minimize stress and develop a practical design for field implementation.
+As FRIB increases beam power, the post-target shielding (PTS) needs an optimized cooling-channel design and thermal stress analysis. The heat distribution calculated from PHITS Monte Carlo simulations was coupled with COMSOL to minimize stress and develop a practical design for field implementation.
 
 <div class="row justify-content-center">
     <div class="col-sm-10">
@@ -40,12 +40,12 @@ As FRIB ramps up power, the post-target shielding (PTS) requires optimized cooli
     </div>
 </div>
 <div class="caption">
-    <strong>Fig.</strong> Post-target shielding analysis: cooling channel geometry, temperature distribution, and von Mises stress
+    Post-target shielding analysis: cooling channel geometry, temperature distribution, and von Mises stress
 </div>
 
 ## Plasma chamber (2025-2026)
 
-Thermal and structural analyses in ANSYS and COMSOL were compared to assess RF-power thermal limits. This is a cross-code comparison, distinct from experimental validation. Transient analysis also evaluated the temperature and assembly time needed for interference fitting of the cooling-channel components.
+Thermal and structural analyses in ANSYS and COMSOL were compared to assess RF-power thermal limits. Transient analysis also evaluated the temperature and assembly time needed for interference fitting of the cooling-channel components.
 
 <div class="project-media-grid">
     <div>
@@ -63,7 +63,7 @@ Thermal and structural analyses in ANSYS and COMSOL were compared to assess RF-p
 
 ## Low-power charge selector (2025-2026)
 
-Performed transient and stationary thermal simulations of the Low-Power Charge Selector (LPCS) to determine power limits based on thermal stress. By comparing simulation results with experimental measurements, the beam deposit on the drift tube was predicted.
+I performed transient and stationary thermal simulations of the low-power charge selector (LPCS) to determine power limits based on thermal stress. I compared the simulations with measured temperatures to estimate the beam power deposited on the drift tube.
 
 <div class="project-media-grid">
     <figure class="project-demo">
@@ -81,7 +81,7 @@ Performed transient and stationary thermal simulations of the Low-Power Charge S
 
 ## Target system (2024-2025)
 
-Performed system-level thermal analysis for the graphite-based rotating target, including radiation effects on the target door cooling and flow rate requirements. Simulations and experiments were conducted to evaluate the thermal conductance and operational limits of the bearing system.
+I performed system-level thermal analysis for the graphite-based rotating target, including radiation effects on the target door cooling and flow rate requirements. Simulations and experiments were conducted to evaluate the thermal conductance and operational limits of the bearing system.
 
 <div class="row justify-content-center">
     <div class="col-sm-10">
@@ -89,5 +89,5 @@ Performed system-level thermal analysis for the graphite-based rotating target, 
     </div>
 </div>
 <div class="caption">
-    <strong>Fig.</strong> Target system temperature distribution: graphite target (left), target door (middle), and bearing system (right)
+    Target system temperature distribution: graphite target (left), target door (middle), and bearing system (right)
 </div>

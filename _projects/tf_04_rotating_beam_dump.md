@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "FRIB Rotating Beam Dump: Engineering Development"
+title: "FRIB rotating beam dump: engineering development"
 card_title: Rotating beam dump development
 description: Leading the rotating beam-dump upgrade beyond the static design, targeting 100 kW primary beam power by 2028 through integrated engineering and multiphysics simulation.
 summary: Leading development from manufacturability assessment through fabrication and installation.
@@ -8,7 +8,7 @@ detail_intro: I lead the FRIB rotating beam-dump effort from manufacturability a
 detail_summary_label: Development target
 detail_summary: "100 kW primary beam power by 2028."
 institution: FRIB
-year: "2024 - Current"
+year: "2024 - Present"
 body_class: project-view
 footer_static: true
 featured: true

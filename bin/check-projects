@@ -24,10 +24,10 @@ check.call(archive.css('#ongoing-methods .research-card').map { |link| link['hre
 check.call(archive.css('.research-projects > section > .projects-section-header h2').map(&:text) == ['Selected projects', 'Ongoing AI methods', 'Additional projects'], 'Preserve the project hierarchy')
 check.call(archive.at_css('.projects-methods-notice')&.text&.include?('after publication'), 'The methods section must retain the publication boundary')
 expected_years = {
-  'ai_01_bisto' => '2026 - Current',
-  'ai_02_thermal_surrogate' => '2025 - Current',
+  'ai_01_bisto' => '2026 - Present',
+  'ai_02_thermal_surrogate' => '2025 - Present',
   'tf_01_frib_beam_dump' => '2023 - 2025',
-  'tf_04_rotating_beam_dump' => '2024 - Current'
+  'tf_04_rotating_beam_dump' => '2024 - Present'
 }
 expected_years.each do |slug, year|
   check.call(records.assoc(slug).last['year'] == year, "#{slug}: incorrect research period")
@@ -47,7 +47,7 @@ additional.css('.project-group').each do |group|
   expected = expected_groups.fetch(group.at_css('h3').text, []).map { |slug| "/projects/#{slug}/" }
   check.call(group.css('.project-list-link').map { |link| link['href'] } == expected, 'A project is missing or in the wrong research group')
   years = group.css('.project-list-link').map { |link| records.assoc(link['href'].split('/').last).last['year'] }
-  check.call(years.all? { |year| year.is_a?(String) && year.match?(/\A\d{4}(?: - (?:\d{4}|Current))?\z/) }, 'Project periods must be sortable year strings')
+  check.call(years.all? { |year| year.is_a?(String) && year.match?(/\A\d{4}(?: - (?:\d{4}|Present))?\z/) }, 'Project periods must be sortable year strings')
   check.call(years == years.map(&:to_s).sort.reverse, 'Additional projects must be newest first within each research group')
 end
 check.call(additional.css('.project-list > li').size == records.size - featured.size - methods.size, 'The grouped lists must retain every additional project')

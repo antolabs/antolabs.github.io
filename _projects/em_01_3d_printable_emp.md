@@ -1,7 +1,7 @@
 ---
 layout: project
-title: 3D Printable DC Electromagnetic Pump
-description: Novel DfAM design with multiple Lorentz forces for liquid metal circulation
+title: 3D-printable DC electromagnetic pump
+description: A single-body DC pump concept designed for liquid-metal circulation and metal 3D printing.
 img: assets/img/em_pump_3d/fig_pump_design.png
 importance: 1
 category: Electromagnetic devices
@@ -41,7 +41,7 @@ outcome: "52% lower simulated current demand at matched pressure and flow rate."
     </div>
 </div>
 <div class="caption">
-    <strong>Fig.</strong> Conventional helical-type EM pump requires complex brazing process and specialized coatings
+    A conventional helical-type EM pump requires a brazing process and special coatings
 </div>
 
 ## Pump design
@@ -52,21 +52,21 @@ outcome: "52% lower simulated current demand at matched pressure and flow rate."
     </div>
 </div>
 <div class="caption">
-    <strong>Fig.</strong> Novel 3D-printable EM pump design with working principle
+    3D-printable EM pump design and working principle
 </div>
 
 ### Lorentz-force configuration
 
-- **Opposing magnet arrangement**: Concentrated magnetic flux around flow paths
-- **Multiple force segments**: Progressive pressure buildup from inlet to outlet
-- **Optimized current path**: 67% of current concentrated in high-flux region
+- Opposing magnets concentrate the magnetic flux around the flow paths
+- Several force-generating segments raise the pressure step by step from inlet to outlet
+- 67% of the current passes through the high-flux region
 
 ### Design for additive manufacturing
 
-- **Build volume**: 180 mm × 180 mm constraint for commercial 3D printers
-- **45° ceiling angle**: Eliminates need for support structures
-- **Semi-cylindrical channels**: 5 mm diameter for optimal Lorentz force generation
-- **Monolithic fabrication**: No brazed joints required
+- Sized for the 180 mm × 180 mm build area of commercial 3D printers
+- 45° ceiling angles remove the need for support structures
+- Semi-cylindrical channels with a 5 mm diameter for Lorentz-force generation
+- Single-piece build with no brazed joints
 
 ## Simulation results
 
@@ -76,21 +76,21 @@ outcome: "52% lower simulated current demand at matched pressure and flow rate."
     </div>
 </div>
 <div class="caption">
-    <strong>Fig.</strong> MHD simulation results: magnetic flux density distribution (top) and pressure distribution (bottom)
+    MHD simulation results: magnetic flux density distribution (top) and pressure distribution (bottom)
 </div>
 
-| Parameter          |  Helical-type   |    3D-Printable     |
+| Parameter          |  Helical-type   |    3D-printable     |
 | :----------------- | :-------------: | :-----------------: |
-| Developed Pressure |    10.5 bar     |    **10.5 bar**     |
-| Input Current      |      684 A      |  **330 A (-52%)**   |
+| Developed pressure |    10.5 bar     |    **10.5 bar**     |
+| Input current      |      684 A      |  **330 A (-52%)**   |
 | Size (mm)          | 123 × 195 × 405 | **166 × 195 × 106** |
 
-- **52% lower simulated current demand** than the helical-type pump at matched pressure and flow rate
-- **Compact concept** designed for monolithic metal 3D printing
-- The numerical model was checked against published **helical-pump experimental data**, with less than 12% difference; the new pump design was evaluated by simulation
-- Under the simulated conditions, the maximum temperature near the magnets was **288°C**, below the specified **350°C** magnet limit
+- **52%** lower simulated current demand than the helical-type pump at matched pressure and flow rate
+- Compact single-body concept designed for metal 3D printing
+- The numerical model agrees with published helical-pump experimental data within 12%
+- In the simulation, the maximum temperature near the magnets was **288 °C**, below the **350 °C** magnet limit
 
-Fabrication and experimental testing of the proposed 3D-printable pump remain future work.
+Fabrication and experimental testing of the pump are planned as future work.
 
 ---
 

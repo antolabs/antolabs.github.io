@@ -1,6 +1,6 @@
 ---
 layout: project
-title: BiSTO - Binary Surrogate-based Topology Optimization
+title: "BiSTO: Binary Surrogate-based Topology Optimization"
 card_title: BiSTO
 fullname: Binary Surrogate-based Topology Optimization
 description: Binary topology optimization through AI-guided search and physics-based verification.
@@ -8,7 +8,7 @@ summary: Binary topology optimization through AI-guided search and physics-based
 body_class: project-view
 footer_static: true
 institution: FRIB
-year: "2026 - Current"
+year: "2026 - Present"
 importance: 0
 project_section: methods
 method_order: 1

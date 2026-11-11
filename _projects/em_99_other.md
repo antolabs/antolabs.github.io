@@ -38,20 +38,20 @@ outcome: "Coupled electromagnetic and flow analysis for liquid-metal transport a
     </div>
 </div>
 <div class="caption">
-    <strong>Fig.</strong> DC electromagnetic pump designs: rectangular type schematic (top left), fabricated pump (top center), helical type schematic (top right), and MHD analysis results (bottom)
+    DC electromagnetic pump designs: rectangular type schematic (top left), fabricated pump (top center), helical type schematic (top right), and MHD analysis results (bottom)
 </div>
 
 ### Sodium fast reactor applications
 
-Designed and analyzed rectangular, cylindrical, and helical-type DC electromagnetic pumps for liquid sodium circulation in GenIV sodium fast reactors. Comparative analysis was performed across various pump geometries, with detailed MHD investigations on magnetic flux density, current distribution, and Lorentz force characteristics.
+I designed and analyzed rectangular, cylindrical, and helical-type DC electromagnetic pumps for liquid sodium circulation in GenIV sodium fast reactors. I compared the pump geometries and analyzed their magnetic flux density, current distribution, and Lorentz force.
 
 ### Heavy-ion accelerator applications
 
-Optimized a rectangular DC electromagnetic pump for liquid lithium circulation in a heavy-ion accelerator. The pump achieved 1.5 MPa developed pressure at 6 cm³/s flow rate for forming liquid lithium films used in uranium charge stripping.
+I optimized a rectangular DC electromagnetic pump for liquid lithium circulation in a heavy-ion accelerator. The pump achieved 1.5 MPa developed pressure at 6 cm³/s flow rate for forming liquid lithium films used in uranium charge stripping.
 
 ## MHD generators (2018-2021)
 
-Numerically investigated Faraday-type MHD generators for combined MHD-turbine power generation, including a 10 kW design study and nitrogen-plasma flow analysis. The work examined electromagnetic, flow, and geometric parameters; the 10 kW value is a design target, not a measured electrical output.
+I numerically investigated Faraday-type MHD generators for combined MHD-turbine power generation, including a design study for a 10 kW generator and nitrogen-plasma flow analysis. The work examined electromagnetic, flow, and geometric parameters.
 
 <div class="row justify-content-center">
     <div class="col-sm-10">
@@ -59,7 +59,7 @@ Numerically investigated Faraday-type MHD generators for combined MHD-turbine po
     </div>
 </div>
 <div class="caption">
-    <strong>Fig.</strong> Faraday-type MHD generator: schematic with De Laval nozzle (left) and power density distribution (right)
+    Faraday-type MHD generator: schematic with De Laval nozzle (left) and power density distribution (right)
 </div>
 
 ## Selected publications

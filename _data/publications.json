@@ -40,9 +40,9 @@
   },
   {
     "id": "kim2025deep",
-    "title": "Deep learning-based anomaly detection in drift tube quadrupole operation for the KOMAC linac",
-    "authors": ["D. Kim", "H. Kim", "H. Kwon", "Y. Yu", "Geunhyeong Lee"],
-    "citation_authors": ["Kim, D.", "Kim, H.", "Kwon, H.", "Yu, Y.", "Lee, Geunhyeong"],
+    "title": "Deep learning-based anomaly detection in drift tube quadrupole operation for the KOMAC LINAC",
+    "authors": ["D.H. Kim", "H.S. Kim", "H.J. Kwon", "Y. Yu", "Geunhyeong Lee"],
+    "citation_authors": ["Kim, D.H.", "Kim, H.S.", "Kwon, H.J.", "Yu, Y.", "Lee, Geunhyeong"],
     "year": "2025",
     "journal": "Journal of Nuclear Science and Technology",
     "volume": "62",
@@ -54,9 +54,9 @@
     "keywords": ["deep learning", "anomaly detection", "LSTM", "particle accelerator"],
     "abstract": "The Korea Multi-purpose Accelerator Complex linear accelerator encompasses a Drift Tube LINAC (DTL) structure for high-frequency beam bunches accelerated by a radio frequency quadrupole. The existing anomaly detection system triggers shutdown when anomalies are detected. This study aims to detect anomalies to prevent unnecessary shutdowns through pre-adjustments. Drift-tube quadrupoles (DTQs) focus the beam within the DTL tank, but prolonged usage can degrade performance. To ensure stable beam focusing, the operational status of DTQ power supplies must be monitored. The EPICS input/output controller monitors these operational parameters and triggers alarms when thresholds are exceeded. However, this approach fails to consider changes, such as equipment aging. A machine learning-driven method can assimilate historical data related to the magnet power supply, enabling deriving adaptive thresholds, facilitating anomaly detection. A long short-term memory (LSTM) autoencoder model is employed to detect anomalies in DTQ magnets. Exploratory DTQ magnet operation data analysis was conducted to identify potential failures. The LSTM autoencoder offered a more adaptive and proactive detection model than conventional threshold-based methods. The results show that voltage fault events can be detected range from 30.7 to 286.6 minutes before they may cause a breakdown, enhancing device maintenance and performance through proactive prognostication of impending failures.",
     "citation": {
-      "bibtex": "@article{kim2025deep,\n  title={Deep learning-based anomaly detection in drift tube quadrupole operation for the KOMAC linac},\n  author={Kim, D. and Kim, H. and Kwon, H. and Yu, Y. and Lee, Geunhyeong},\n  journal={Journal of Nuclear Science and Technology},\n  volume={62},\n  number={8},\n  pages={709--714},\n  year={2025},\n  doi={10.1080/00223131.2025.2464742}\n}",
-      "ris": "TY  - JOUR\nTI  - Deep learning-based anomaly detection in drift tube quadrupole operation for the KOMAC linac\nAU  - Kim, D.\nAU  - Kim, H.\nAU  - Kwon, H.\nAU  - Yu, Y.\nAU  - Lee, Geunhyeong\nJO  - Journal of Nuclear Science and Technology\nVL  - 62\nIS  - 8\nSP  - 709\nEP  - 714\nPY  - 2025\nDO  - 10.1080/00223131.2025.2464742\nER  -",
-      "plain": "Kim, D., Kim, H., Kwon, H., Yu, Y., & Lee, G. (2025). Deep learning-based anomaly detection in drift tube quadrupole operation for the KOMAC linac. Journal of Nuclear Science and Technology, 62(8), 709-714. https://doi.org/10.1080/00223131.2025.2464742"
+      "bibtex": "@article{kim2025deep,\n  title={Deep learning-based anomaly detection in drift tube quadrupole operation for the KOMAC LINAC},\n  author={Kim, D.H. and Kim, H.S. and Kwon, H.J. and Yu, Y. and Lee, Geunhyeong},\n  journal={Journal of Nuclear Science and Technology},\n  volume={62},\n  number={8},\n  pages={709--714},\n  year={2025},\n  doi={10.1080/00223131.2025.2464742}\n}",
+      "ris": "TY  - JOUR\nTI  - Deep learning-based anomaly detection in drift tube quadrupole operation for the KOMAC LINAC\nAU  - Kim, D.H.\nAU  - Kim, H.S.\nAU  - Kwon, H.J.\nAU  - Yu, Y.\nAU  - Lee, Geunhyeong\nJO  - Journal of Nuclear Science and Technology\nVL  - 62\nIS  - 8\nSP  - 709\nEP  - 714\nPY  - 2025\nDO  - 10.1080/00223131.2025.2464742\nER  -",
+      "plain": "Kim, D.H., Kim, H.S., Kwon, H.J., Yu, Y., & Lee, G. (2025). Deep learning-based anomaly detection in drift tube quadrupole operation for the KOMAC LINAC. Journal of Nuclear Science and Technology, 62(8), 709-714. https://doi.org/10.1080/00223131.2025.2464742"
     }
   },
   {
@@ -100,8 +100,8 @@
   {
     "id": "kang2023experimental",
     "title": "Experimental characterization of the flowline of a lithium film formed using an electromagnetic thruster for a RAON prototype charge stripper",
-    "authors": ["T. Kang", "Geunhyeong Lee", "H.R. Kim"],
-    "citation_authors": ["Kang, T.", "Lee, Geunhyeong", "Kim, H.R."],
+    "authors": ["T.U. Kang", "Geunhyeong Lee", "H.R. Kim"],
+    "citation_authors": ["Kang, T.U.", "Lee, Geunhyeong", "Kim, H.R."],
     "year": "2023",
     "journal": "Nuclear Engineering and Design",
     "volume": "412",
@@ -111,9 +111,9 @@
     "keywords": ["electromagnetic pump", "lithium film", "RAON", "charge stripper"],
     "abstract": "This paper describes the variable optimization of a lithium charge-stripper device and experimental characterization of lithium film formation for the charge removal of uranium using a magnetohydrodynamic liquid metal circulation system. To this end, liquid lithium thin films were developed using an electromagnetic thruster through collisions between a liquid lithium jet and a planar deflector. The lithium film flow characteristics were analyzed through simulation and waterjet experiments in terms of the liquid lithium film thickness. To circulate liquid lithium, a mechanically safe electromagnetic thruster with precise pressure control was designed by analyzing its electromagnetic and hydraulic parameters through finite element simulation. The analysis of the geometric arrangement of the permanent magnet and input current of the thruster revealed that that compared to the existing electromagnetic thruster, the nominal input current of the newly-constructed one reduce by 57% and its weight reduced to 6%, and it required minimized input power, while facilitating maintenance. Further, the formation of a liquid lithium thin film with a thickness of 22 μm required to obtain the 79+ charge state of uranium was verified at an input current of 107 A.",
     "citation": {
-      "bibtex": "@article{kang2023experimental,\n  title={Experimental characterization of the flowline of a lithium film formed using an electromagnetic thruster for a RAON prototype charge stripper},\n  author={Kang, T. and Lee, Geunhyeong and Kim, H.R.},\n  journal={Nuclear Engineering and Design},\n  volume={412},\n  pages={112481},\n  year={2023},\n  doi={10.1016/j.nucengdes.2023.112481}\n}",
-      "ris": "TY  - JOUR\nTI  - Experimental characterization of the flowline of a lithium film formed using an electromagnetic thruster for a RAON prototype charge stripper\nAU  - Kang, T.\nAU  - Lee, Geunhyeong\nAU  - Kim, H.R.\nJO  - Nuclear Engineering and Design\nVL  - 412\nSP  - 112481\nPY  - 2023\nDO  - 10.1016/j.nucengdes.2023.112481\nER  -",
-      "plain": "Kang, T., Lee, G., & Kim, H.R. (2023). Experimental characterization of the flowline of a lithium film formed using an electromagnetic thruster for a RAON prototype charge stripper. Nuclear Engineering and Design, 412, 112481. https://doi.org/10.1016/j.nucengdes.2023.112481"
+      "bibtex": "@article{kang2023experimental,\n  title={Experimental characterization of the flowline of a lithium film formed using an electromagnetic thruster for a RAON prototype charge stripper},\n  author={Kang, T.U. and Lee, Geunhyeong and Kim, H.R.},\n  journal={Nuclear Engineering and Design},\n  volume={412},\n  pages={112481},\n  year={2023},\n  doi={10.1016/j.nucengdes.2023.112481}\n}",
+      "ris": "TY  - JOUR\nTI  - Experimental characterization of the flowline of a lithium film formed using an electromagnetic thruster for a RAON prototype charge stripper\nAU  - Kang, T.U.\nAU  - Lee, Geunhyeong\nAU  - Kim, H.R.\nJO  - Nuclear Engineering and Design\nVL  - 412\nSP  - 112481\nPY  - 2023\nDO  - 10.1016/j.nucengdes.2023.112481\nER  -",
+      "plain": "Kang, T.U., Lee, G., & Kim, H.R. (2023). Experimental characterization of the flowline of a lithium film formed using an electromagnetic thruster for a RAON prototype charge stripper. Nuclear Engineering and Design, 412, 112481. https://doi.org/10.1016/j.nucengdes.2023.112481"
     }
   },
   {

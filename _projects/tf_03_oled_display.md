@@ -1,7 +1,7 @@
 ---
 layout: project
-title: OLED Display AI Flow Channel Generation
-description: PPO Reinforcement Learning for susceptor heat exchanger design in CVD manufacturing
+title: OLED display AI flow-channel generation
+description: Reinforcement learning for temperature uniformity in display-manufacturing susceptors.
 img: assets/img/oled_display/fig_learning_progress.png
 importance: 3
 category: Thermo-fluid devices
@@ -39,7 +39,7 @@ outcome: "Generated heat-exchanger flow paths targeting a more uniform susceptor
     </div>
 </div>
 <div class="caption">
-    <strong>Fig.</strong> Susceptor system schematic: Galinstan liquid metal circulation via electromagnetic pump
+    Susceptor system schematic: Galinstan liquid metal circulation via electromagnetic pump
 </div>
 
 ## Channel design and liquid-metal circulation
@@ -50,20 +50,20 @@ outcome: "Generated heat-exchanger flow paths targeting a more uniform susceptor
     </div>
 </div>
 <div class="caption">
-    <strong>Fig.</strong> Reinforcement learning environment with General, Record, and FDM spaces
+    Reinforcement learning environment with General, Record, and FDM spaces
 </div>
 
 ### Flow-channel optimization
 
-- **PPO algorithm** with discrete action space (up/down/left/right)
-- **FDM-based thermal simulation** for fast iteration (100,000+ episodes)
-- **4-way symmetry** exploited to minimize computational domain
-- **Reward function**: Temperature uniformity improvement
+- PPO agent with a discrete action space (up, down, left, right)
+- Finite-difference thermal model for fast evaluation (more than 100,000 episodes)
+- Four-way symmetry to reduce the computational domain
+- Reward based on the improvement in temperature uniformity
 
 ### Electromagnetic pump design
 
-- **Helical-type EM pump** for high-pressure Galinstan delivery (10 bar)
-- **FEM simulation** using COMSOL for MHD analysis
+- Helical-type EM pump to deliver Galinstan at 10 bar
+- MHD analysis by finite-element simulation in COMSOL
 - Sm₂Co₁₇ permanent magnets with magnetic shielding
 
 ## Simulation results
@@ -76,7 +76,7 @@ outcome: "Generated heat-exchanger flow paths targeting a more uniform susceptor
     </div>
 </div>
 <div class="caption">
-    <strong>Fig.</strong> Flow path evolution during RL training: paths become more complex as learning progresses
+    Flow path evolution during RL training: paths become more complex as learning progresses
 </div>
 
 - Generated flow-channel layouts targeting a more uniform susceptor temperature in the thermal model
@@ -90,7 +90,7 @@ outcome: "Generated heat-exchanger flow paths targeting a more uniform susceptor
     </div>
 </div>
 <div class="caption">
-    <strong>Fig.</strong> Helical EM pump analysis: magnetic flux density distribution (left) and pressure distribution achieving 10 bar (right)
+    Helical EM pump analysis: magnetic flux density distribution (left) and pressure distribution reaching 10 bar (right)
 </div>
 
 - Predicted **10 bar** discharge pressure at 2 kg/s flow rate through MHD simulation
@@ -113,10 +113,10 @@ outcome: "Generated heat-exchanger flow paths targeting a more uniform susceptor
 
 ## Software registration
 
-- **G. Lee**, Y. Yu, T. Kim, "Heat exchanger path generation program through reinforcement learning," Republic of Korea – Registration No.: C-2022-049451, 2022.
+- **G. Lee**, Y. Yu, T. Kim, "Heat exchanger path generation program through reinforcement learning," Republic of Korea, Registration No. C-2022-049451, 2022.
 
 ---
 
 ## Research project
 
-**(2022)** Technical support for the application of artificial intelligence to lower module temperature uniformity on next-generation display manufacturing systems, KAERI.
+**(2022)** Technical Support for AI-Based Improvement of Temperature Uniformity in Next-Generation Display Manufacturing Systems, KAERI.
