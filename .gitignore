@@ -32,3 +32,9 @@ feed.xml
 .venv/
 .env
 .env.*
+
+# Working copies of published papers (publisher PDFs) stay local only.
+References/
+
+# Local tooling notes.
+CLAUDE.md

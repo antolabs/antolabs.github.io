@@ -8,8 +8,7 @@ source:
 
 category_sources:
   cv_aug_2026:
-    url: "/assets/pdf/CV_GLee_260818.pdf"
-    scope: "Page 2 explicitly names the NST, IJER and CSTE ranking categories. Numerical values come from the current CV linked above."
+    scope: "The August 18, 2026 CV (CV_GLee_260818.pdf, retired from the site and kept in git history) names the NST, IJER and CSTE ranking categories on page 2. Numerical values come from the current CV linked above."
   kns_2020_jcr:
     url: "https://www.kns.org/webzine/2021/w_7_8/sub_02.php"
     scope: "Korean Nuclear Society's 2020 JCR Nuclear Science & Technology table lists NET, JNST, NED, IJER and Annals of Nuclear Energy."
