@@ -14,7 +14,7 @@
       <div class="cv-entry-content">
         <{{ entry_heading }}>{{ item.title | escape }}</{{ entry_heading }}>
         {% if item.institution %}<p class="cv-institution">{{ item.institution | escape }}</p>{% endif %}
-        {% if item.department and include.hide_department != true %}<p class="cv-meta">{{ item.department | escape }}</p>{% endif %}
+        {% if item.department and include.hide_department != true %}<p class="cv-meta">{{ item.department | escape }}{% if item.position_type %} &middot; {{ item.position_type | escape }}{% endif %}</p>{% endif %}
         {% if entry_description.first %}
           <ul class="cv-bullets">
             {% for point in entry_description %}<li>{{ point | escape }}</li>{% endfor %}

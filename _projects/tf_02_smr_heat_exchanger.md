@@ -122,9 +122,9 @@ The DRL-assisted prototype was fabricated and tested in the 2024 study.
 
 **Conferences**
 
-- **G. Lee**, Y. Yu, H.G. Kim, T. Kim, "Application of Deep Learning Reinforcement Learning for Enhancement of Thermal Fluid Topology Optimization Performance," _3rd Applied Artificial Intelligence Conference_, 2023.
+- **G. Lee**, Y. Yu, H.G. Kim, T. Kim, "Application of Deep Reinforcement Learning for Enhancement of Thermal Fluid Topology Optimization Performance," _3rd Applied Artificial Intelligence Conference_, 2023.
 - **G. Lee**, Y. Yu, H.G. Kim, "Design of the Optimal Nuclear Heat Exchanger using Deep Reinforcement Learning," _10th Korea-China Workshop on Nuclear Reactor Thermal-Hydraulics_, 2023.
-- **G. Lee**, Y. Yu, H.G. Kim, "Optimal Design of Nuclear Heat Exchanger Using 3D Printing-Based Deep Learning Reinforcement Learning," _2023 Korean Institute of Metals and Materials Fall Conference_, 2023.
+- **G. Lee**, Y. Yu, H.G. Kim, "Optimal Design of Nuclear Heat Exchanger Using 3D Printing-Based Deep Reinforcement Learning," _2023 Korean Institute of Metals and Materials Fall Conference_, 2023.
 - **G. Lee**, Y. Yu, H.G. Kim, "Development of 3D Printing AI-Based Component Optimization Design Technology for Small Nuclear Reactor Materials," _2022 Korean Institute of Metals and Materials Spring Conference_, 2022.
 - **G. Lee**, Y. Joo, H.G. Kim, Y. Yu, "The Analysis of Topology Optimized 3D Printing Heat Exchanger for the Small Nuclear Reactor," _2021 Korean Nuclear Society Autumn Meeting_, 2021.
 

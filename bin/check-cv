@@ -35,7 +35,7 @@ expected = {
   '#appointments .cv-bullets li' => cv['appointments'].sum { |entry| entry.fetch('description').size }
 }
 expected.each { |selector, count| check.call(html.css(selector).size == count, "Missing rendered records: #{selector}") }
-conference_summary = "#{cv.dig('conferences', 'completed').size} completed"
+conference_summary = cv.dig('conferences', 'completed').size.to_s
 upcoming_count = cv.dig('conferences', 'upcoming').size
 conference_summary += " + #{upcoming_count} upcoming" if upcoming_count.positive?
 expected_stats = [cv.dig('publications', 'other').size.to_s,
@@ -43,6 +43,9 @@ expected_stats = [cv.dig('publications', 'other').size.to_s,
                   cv['patents'].size.to_s]
 check.call(html.css('.cv-output-summary dd').map { |el| normalize.call(el.text) } == expected_stats, 'Research output counts are incorrect')
 check.call(html.at_css('.cv-publication-summary h3')&.text == "#{published} published SCIE journal articles", 'Published article summary is incorrect')
+q1 = YAML.load_file('_data/journal_metrics.yml').fetch('papers').count { |_, paper| paper['quartile'] == 'Q1' }
+check.call(cv.dig('publications', 'jcr_q1') == q1, 'JCR Q1 count differs from the journal metrics')
+check.call(normalize.call(html.at_css('.cv-publication-summary p')&.text).include?("#{q1} in JCR Q1 journals"), 'JCR Q1 count missing from the publication summary')
 check.call(html.css('#conferences, #patents, #teaching, #achievements, #service, #projects, .cv-manuscripts, .cv-stats, .cv-jump-links').empty?, 'Detailed CV sections should stay in the PDF, not the web summary')
 check.call(html.at_css('.cv-download-btn')&.[]('download') == page['cv_pdf'], 'Full CV action must download the current PDF')
 download_uri = URI.parse(html.at_css('.cv-download-btn')&.[]('href').to_s)
@@ -54,7 +57,7 @@ check.call(html.css('.cv-endnote').empty?, 'The redundant PDF endnote must remai
 rendered = normalize.call(html.at_css('.cv-page')&.text)
 %w[appointments education].each do |section|
   cv[section].each do |record|
-    fields = section == 'appointments' ? %w[title institution department location description] : %w[title institution location]
+    fields = section == 'appointments' ? %w[title institution department position_type location description] : %w[title institution location]
     fields.each do |field|
       Array(record[field]).each do |value|
         check.call(rendered.include?(normalize.call(value)), "Missing #{section} #{field}: #{value}")

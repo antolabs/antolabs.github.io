@@ -44,12 +44,12 @@ layout: default
             {% when 'publications' %}
               <div class="cv-publication-summary">
                 <h3>{{ cv.publications.published }} published SCIE journal articles</h3>
-                <p><strong>{{ cv.publications.first_author }}</strong> first/co-first author <span aria-hidden="true">&middot;</span> <strong>{{ cv.publications.corresponding_author }}</strong> corresponding author</p>
+                <p><strong>{{ cv.publications.first_author }}</strong> first/co-first author <span aria-hidden="true">&middot;</span> <strong>{{ cv.publications.corresponding_author }}</strong> corresponding author{% if cv.publications.jcr_q1 %} <span aria-hidden="true">&middot;</span> <strong>{{ cv.publications.jcr_q1 }}</strong> in JCR Q1 journals{% endif %}</p>
                 <a class="cv-text-link" href="{{ '/publications/' | relative_url }}">View publications <span aria-hidden="true">&#8594;</span></a>
               </div>
               <dl class="cv-output-summary">
                 <div><dt>Other journal publications</dt><dd>{{ cv.publications.other.size }}</dd></div>
-                <div><dt>Conference contributions</dt><dd>{{ cv.conferences.completed.size }} completed{% if cv.conferences.upcoming.size > 0 %} <span>+ {{ cv.conferences.upcoming.size }} upcoming</span>{% endif %}</dd></div>
+                <div><dt>Conference presentations</dt><dd>{{ cv.conferences.completed.size }}{% if cv.conferences.upcoming.size > 0 %} <span>+ {{ cv.conferences.upcoming.size }} upcoming</span>{% endif %}</dd></div>
                 <div><dt>Registered patents</dt><dd>{{ cv.patents.size }}</dd></div>
               </dl>
           {% endcase %}

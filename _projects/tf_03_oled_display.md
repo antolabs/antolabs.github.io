@@ -106,7 +106,7 @@ outcome: "Generated heat-exchanger flow paths targeting a more uniform susceptor
 
 **Conferences**
 
-- **G. Lee**, T. Kim, "Formation of the LCD susceptor heat exchanger path using the deep reinforcement learning," _2nd Applied Artificial Intelligence Conference_, 2023.
+- **G. Lee**, T. Kim, "Formation of the LCD susceptor heat exchanger path using deep reinforcement learning," _2nd Applied Artificial Intelligence Conference_, 2023.
 - **G. Lee**, Y. Yu, T. Kim, S. Kim, "Formation of a thermofluid temperature equalization flow path using reinforcement learning," _1st Applied Artificial Intelligence Conference_, 2022.
 
 ---
