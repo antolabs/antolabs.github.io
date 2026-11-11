@@ -40,13 +40,11 @@ scope_note: Upgrade beyond 50 kW, targeting 100 kW primary beam power by 2028.
   <div class="project-ongoing-list">
     <section aria-labelledby="ongoing-bisto">
       <h3 id="ongoing-bisto">BiSTO</h3>
-      <p class="project-ongoing-fullname">Binary Surrogate-based Topology Optimization</p>
-      <p>Binary topology optimization that combines AI-guided design search with physics-based verification. The <a href="{{ '/' | relative_url }}#bisto-title">About page</a> shows an example design; details will be shared after publication.</p>
+      <p>Binary Surrogate-based Topology Optimization uses AI to search solid-fluid layouts for the cooling channels and checks each design with physics-based simulation.</p>
     </section>
     <section aria-labelledby="ongoing-surrogate">
       <h3 id="ongoing-surrogate">Deep learning surrogate</h3>
-      <p class="project-ongoing-fullname">Hybrid CNN–MLP thermal model</p>
-      <p>Fast thermal prediction to support repeated design evaluations. The manuscript is under review, and a <a href="https://doi.org/10.2139/ssrn.7128856">preprint</a> is available.</p>
+      <p>Predicts the thermal response of the rotating beam dump quickly, so many design options can be checked without a full simulation for each one.</p>
     </section>
   </div>
 </section>
