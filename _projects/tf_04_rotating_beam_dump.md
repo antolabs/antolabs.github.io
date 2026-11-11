@@ -47,4 +47,5 @@ scope_note: Upgrade beyond 50 kW, targeting 100 kW primary beam power by 2028.
       <p>Predicts the thermal response of the rotating beam dump quickly, so many design options can be checked without a full simulation for each one.</p>
     </section>
   </div>
+  <p class="project-ongoing-notice">Detailed descriptions will be added after publication.</p>
 </section>
