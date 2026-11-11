@@ -16,14 +16,6 @@ featured_order: 2
 project_kind: engineering
 project_group: Thermal-fluid engineering
 scope_note: Upgrade beyond 50 kW, targeting 100 kW primary beam power by 2028.
-related_heading: Related research
-related_intro: The rotating beam dump provides a current research case for BiSTO and deep learning surrogate modeling.
-related_notice: Detailed application studies will be shared after publication.
-related_projects:
-  - slug: ai_01_bisto
-    description: AI-guided search for cooling-channel topology.
-  - slug: ai_02_thermal_surrogate
-    description: Fast thermal predictions for repeated design evaluations.
 ---
 
 <div class="project-overview">

@@ -2,12 +2,7 @@
 layout: default
 ---
 {% assign featured_projects = site.projects | where: 'featured', true | sort: 'featured_order' %}
-{% assign method_projects = site.projects | where: 'project_section', 'methods' | sort: 'method_order' %}
-{% assign additional_projects = site.projects
-  | where_exp: 'project', 'project.featured != true and project.project_section != "methods"'
-  | sort: 'year'
-  | reverse
-%}
+{% assign additional_projects = site.projects | where_exp: 'project', 'project.featured != true' | sort: 'year' | reverse %}
 <div class="research-projects">
   <header class="projects-header">
     <p class="projects-kicker">Research &amp; engineering</p>
@@ -24,20 +19,6 @@ layout: default
       {% endfor %}
     </div>
   </section>
-  {% if method_projects.size > 0 %}
-    <section class="projects-methods" id="ongoing-methods" aria-labelledby="ongoing-methods-heading">
-      <div class="projects-section-header">
-        <h2 id="ongoing-methods-heading">Ongoing AI methods</h2>
-      </div>
-      <p class="projects-intro">{{ page.methods_intro | escape }}</p>
-      <div class="research-grid research-methods-grid">
-        {% for project in method_projects %}
-          {% include projects/card.liquid project=project variant='method' %}
-        {% endfor %}
-      </div>
-      <p class="projects-methods-notice">{{ page.methods_notice | escape }}</p>
-    </section>
-  {% endif %}
   <section class="projects-additional" id="additional-projects" aria-labelledby="additional-projects-heading">
     <div class="projects-section-header">
       <h2 id="additional-projects-heading">Additional projects</h2>

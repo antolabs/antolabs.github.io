@@ -19,13 +19,9 @@ actual_links = archive.css('.research-card, .project-list-link').map { |link| li
 check.call(actual_links == expected_links, 'Every project must appear exactly once in the archive')
 check.call(archive.css('#selected-projects .research-card').map { |link| link['href'] } == featured.map { |slug, _| "/projects/#{slug}/" }, 'Featured order is incorrect')
 check.call(featured.map(&:first) == %w[tf_01_frib_beam_dump tf_04_rotating_beam_dump tf_02_smr_heat_exchanger], 'Keep the static and rotating beam dumps adjacent, followed by heat exchangers')
-check.call(methods.map(&:first) == %w[ai_01_bisto ai_02_thermal_surrogate], 'Keep the two ongoing methods distinct from device engineering')
-check.call(archive.css('#ongoing-methods .research-card').map { |link| link['href'] } == methods.map { |slug, _| "/projects/#{slug}/" }, 'Ongoing methods are missing or out of order')
-check.call(archive.css('.research-projects > section > .projects-section-header h2').map(&:text) == ['Selected projects', 'Ongoing AI methods', 'Additional projects'], 'Preserve the project hierarchy')
-check.call(archive.at_css('.projects-methods-notice')&.text&.include?('after publication'), 'The methods section must retain the publication boundary')
+check.call(methods.empty?, 'Keep unpublished methods off the archive until they have a full case study')
+check.call(archive.css('.research-projects > section > .projects-section-header h2').map(&:text) == ['Selected projects', 'Additional projects'], 'Preserve the project hierarchy')
 expected_years = {
-  'ai_01_bisto' => '2026 - Present',
-  'ai_02_thermal_surrogate' => '2025 - Present',
   'tf_01_frib_beam_dump' => '2023 - 2025',
   'tf_04_rotating_beam_dump' => '2024 - Present'
 }
@@ -208,8 +204,7 @@ end
 check.call(beam_dump.at_css('.project-detail-summary-label')&.text == 'Simulation result:', 'Keep the static numerical result distinct from a development target')
 check.call(beam_dump.css('.project-related').empty?, 'Keep the static case study free of a related-development section')
 check.call(!rotating.to_html.include?('assembly-cad'), 'Do not reuse the misidentified CAD image')
-check.call(rotating.at_css('.project-related-intro')&.text&.include?('current research case'), 'Connect the methods as research studies, not claims of adoption in hardware')
-check.call(rotating.at_css('.project-related-notice')&.text == 'Detailed application studies will be shared after publication.', 'Defer detailed application studies until publication')
+check.call(rotating.css('.project-related').empty?, 'Do not link the rotating case study to unpublished method pages')
 check.call(rotating.at_css('.project-body')&.text !~ /%|dataset|hyperparameter|speedup/i, 'Do not add unpublished method performance claims')
 check.call(rotating.at_css('.project-body')&.text.to_s.scan(/\d+(?:\.\d+)?/).all? { |number| %w[50 100 2028].include?(number) }, 'Only include the user-approved upgrade target numbers in the project description')
 check.call(archive.css('.research-card-wide').empty? && archive.css('.research-selected-grid > .research-card').size == 3, 'Selected projects must use equal cards, without a double-width exception')
@@ -230,8 +225,8 @@ check.call(heat.css('h3').map(&:text).include?('Dual-fluid topology optimization
 check.call(heat.css('h3').map(&:text).include?('DRL-assisted topology optimization (2024)'), 'Separate the 2024 heat exchanger baseline')
 
 previews = records.select { |_, data| data['publication_notice'] }.map(&:first).sort
-check.call(previews == %w[ai_01_bisto ai_02_thermal_surrogate], 'Only BiSTO and the deep learning surrogate should be publication previews')
+check.call(previews.empty?, 'Do not publish placeholder pages for unpublished work')
 publications = Nokogiri::HTML(File.read('_site/publications/index.html'))
 check.call(publications.at_css('a[href="https://doi.org/10.2139/ssrn.7128856"]'), 'Surrogate preprint must remain available on Publications')
 abort errors.join("\n") unless errors.empty?
-puts "Projects OK: #{featured.size} selected, #{methods.size} ongoing methods, #{records.size - featured.size - methods.size} additional; all case studies, related links, assets, and publication boundaries valid."
+puts "Projects OK: #{featured.size} selected, #{records.size - featured.size} additional; all case studies, links, assets, and publication boundaries valid."

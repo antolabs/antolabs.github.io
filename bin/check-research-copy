@@ -32,16 +32,10 @@ check.call(about.css('.about-research-links a').map { |a| a.children.select(&:te
 video = about.at_css('#bisto-video')
 check.call(video && %w[autoplay muted loop playsinline controls].all? { |attr| video.key?(attr) }, 'Preserve startup playback and the no-JavaScript control fallback')
 
-bisto = Nokogiri::HTML(File.read('_site/projects/ai_01_bisto/index.html'))
-surrogate = Nokogiri::HTML(File.read('_site/projects/ai_02_thermal_surrogate/index.html'))
-check.call(copy.call(bisto.at_css('.project-body')).include?('Future directions include'), 'Manufacturing integration and broader applications must remain future BiSTO directions')
-check.call(copy.call(surrogate.at_css('.project-body')).include?('A longer-term direction is to'), 'Do not imply the thermal surrogate is already an operational digital twin')
-check.call(copy.call(surrogate.at_css('.project-body')).include?('operational measurements'), 'Keep the project digital twin direction consistent with About')
 rotating = Nokogiri::HTML(File.read('_site/projects/tf_04_rotating_beam_dump/index.html'))
 check.call(copy.call(rotating.at_css('.project-detail-header')).include?('I lead the FRIB rotating beam-dump effort from manufacturability assessment through fabrication and installation'), 'Describe the current engineering leadership role, not only simulation work')
 check.call(rotating.css('.project-brief').empty?, 'Do not claim engineering outcomes for the ongoing rotating project')
 check.call(copy.call(rotating.at_css('.project-detail-summary')) == 'Development target: 100 kW primary beam power by 2028.', 'Keep the 100 kW primary-beam target distinct from demonstrated performance or deposited heat')
-check.call(copy.call(rotating.at_css('.project-related-notice')).include?('after publication'), 'Keep detailed applications deferred until publication')
 
 graph = about.css('script[type="application/ld+json"]').flat_map { |s| JSON.parse(s.text).fetch('@graph', []) }
 person = graph.find { |record| record['@type'] == 'Person' }
@@ -49,4 +43,4 @@ check.call(person && %w[multiphysics\ modeling thermal-structural\ analysis].all
 check.call(File.read('_site/llms.txt').include?('AI-driven multiphysics design and optimization'), 'Discovery summary must match the revised profile')
 
 abort errors.join("\n") unless errors.empty?
-puts 'Research copy OK: current methods, future directions, preview limits, media controls, and discovery metadata are consistent.'
+puts 'Research copy OK: research vision, future direction, rotating-dump scope, media controls, and discovery metadata are consistent.'

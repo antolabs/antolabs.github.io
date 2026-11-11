@@ -33,6 +33,4 @@ This optional discovery index links to the site's public research records. Artic
 {% endfor %}
 
 ## Ongoing research
-- [Rotating beam dump development]({{ '/projects/tf_04_rotating_beam_dump/' | absolute_url }}): Leading the upgrade beyond the static beam dump for primary beam power above 50 kW, with a development target of 100 kW primary beam power by 2028. The role covers manufacturability, fabrication, installation, and integration of thermal-hydraulic, radiation, sealing, and electromagnetic requirements. The device is also a research case for BiSTO and thermal surrogate modeling; detailed application studies will be shared after publication.
-- [BiSTO]({{ '/projects/ai_01_bisto/' | absolute_url }}): Brief public overview; detailed methods will be available after publication.
-- [Deep learning surrogate]({{ '/projects/ai_02_thermal_surrogate/' | absolute_url }}): Brief public overview; detailed methods will be available after publication.
+- [Rotating beam dump development]({{ '/projects/tf_04_rotating_beam_dump/' | absolute_url }}): Leading the upgrade beyond the static beam dump for primary beam power above 50 kW, with a development target of 100 kW primary beam power by 2028. The role covers manufacturability, fabrication, installation, and integration of thermal-hydraulic, radiation, sealing, and electromagnetic requirements.
