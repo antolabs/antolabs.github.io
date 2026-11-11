@@ -92,4 +92,4 @@ In simulation, the optimized design has **72% higher average power-handling capa
 
 ## Research project
 
-**(2023-2025)** AIP Mini-channel and Water Beam Dump, FRIB.
+**(2023-2026)** AIP Mini-channel and Water Beam Dump, FRIB.
