@@ -29,7 +29,7 @@ This optional discovery index links to the site's public research records. Artic
 ## Under-review manuscripts
 {% assign manuscripts = site.data.cv.publications.manuscripts | where: 'status', 'Under review' %}
 {% for manuscript in manuscripts %}
-- {{ manuscript.title }}. {{ manuscript.authors }}. Under review; not a published journal article.{% if manuscript.doi %} [Public preprint](https://doi.org/{{ manuscript.doi }}){% endif %}
+- {{ manuscript.title }}. {{ manuscript.authors }} Under review; not a published journal article.{% if manuscript.doi %} [Public preprint](https://doi.org/{{ manuscript.doi }}){% endif %}
 {% endfor %}
 
 ## Ongoing research

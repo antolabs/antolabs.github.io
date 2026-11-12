@@ -74,7 +74,7 @@ The RAON design targets a uranium beam charge-state increase from **34+ to 79+**
 | :----------------- | :----------: | :-----------------: |
 | Weight             |    340 kg    |  **21 kg (-94%)**   |
 | Input current      |    872 A     |  **500 A (-43%)**   |
-| Developed pressure |   10.5 bar   | **14.6 bar (+40%)** |
+| Developed pressure |   10.5 bar   | **14.6 bar (+39%)** |
 
 - Formed a **22 μm** lithium film at 107 A input current
 - **94%** weight reduction, which makes maintenance easier
