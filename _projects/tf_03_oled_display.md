@@ -1,17 +1,17 @@
 ---
 layout: project
-title: OLED display AI flow-channel generation
-description: Reinforcement learning for temperature uniformity in display-manufacturing susceptors.
+title: OLED display AI flow channel generation
+description: Reinforcement learning for temperature uniformity in display manufacturing susceptors.
 img: assets/img/oled_display/fig_learning_progress.png
 importance: 3
 category: Thermo-fluid devices
 year: "2022"
 body_class: "project-view"
 footer_static: true
-card_title: "Flow-channel design for OLED manufacturing"
+card_title: "Flow channel design for OLED manufacturing"
 institution: "KAERI"
-project_group: "Thermal-fluid engineering"
-summary: "Reinforcement learning for temperature uniformity in display-manufacturing susceptors."
+project_group: "Thermal fluid engineering"
+summary: "Reinforcement learning for temperature uniformity in display manufacturing susceptors."
 detail_intro: "I designed susceptor flow channels using reinforcement learning and analyzed the liquid-metal circulation system."
 detail_summary_label: Design study
 detail_summary: "Flow-channel layouts targeting temperature uniformity in a susceptor thermal model."

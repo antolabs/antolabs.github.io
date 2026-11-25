@@ -14,6 +14,7 @@ on:
       - "bin/**"
       - "robots.txt"
       - "llms.txt"
+      - "llms-full.txt"
       - "**.bib"
       - "**.html"
       - "**.js"
@@ -48,6 +49,7 @@ on:
       - "bin/**"
       - "robots.txt"
       - "llms.txt"
+      - "llms-full.txt"
       - "**.bib"
       - "**.html"
       - "**.js"
@@ -98,6 +100,7 @@ jobs:
           bundle exec ruby bin/check-projects
           bundle exec ruby bin/check-cv
           bundle exec ruby bin/check-discovery
+          bundle exec ruby bin/check-research-copy
           node bin/check-about-media.cjs
           node bin/check-project-media.cjs
           node bin/check-theme.cjs

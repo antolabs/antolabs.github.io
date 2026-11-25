@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-# Keep public research claims scoped to current evidence and explicit future goals.
+# Keep public research claims scoped to verified evidence and explicit future goals.
 require 'json'
 require 'nokogiri'
 require 'yaml'
@@ -8,39 +8,38 @@ Dir.chdir(File.expand_path('..', __dir__))
 errors = []
 check = ->(condition, message) { errors << message unless condition }
 copy = ->(node) { node&.text.to_s.gsub(/\s+/, ' ').strip }
+
 about = Nokogiri::HTML(File.read('_site/index.html'))
-data = YAML.safe_load(File.read('_pages/about.md').split(/^---\s*$/, 3)[1])
-cv = YAML.safe_load(File.read('_data/cv.yml'))
+research = Nokogiri::HTML(File.read('_site/research/index.html'))
+cv = Nokogiri::HTML(File.read('_site/cv/index.html'))
 
-check.call(copy.call(about.at_css('#research-vision-title')) == "#{data['hero_lead']} #{data['hero_focus']}", 'Hero title must match the approved research identity')
-check.call(copy.call(about.at_css('.about-vision-intro')) == data['vision_intro'], 'Research vision must render without lost text')
-check.call(about.css('.about-vision-intro .about-keep-word').map(&:text).include?('long-term'), 'Keep long-term together at narrow widths')
-vision = data['vision_intro']
-check.call(vision.split.size <= 50 && vision.split.size < cv.dig('research', 'description').split.size, 'Keep the About vision concise; retain the full research statement in the CV')
-check.call(['physical constraints', 'reusable design methods', 'manufacturing and experimental validation', 'nuclear energy systems'].all? { |topic| vision.include?(topic) }, 'The concise vision must preserve the research question, reusable methods, validation, and nuclear focus')
-check.call(vision.include?('My long-term goal'), 'Keep the long-term research goal distinct from completed results')
-check.call(about.css('.about-method-list h3').map(&:text) == data['research_areas'].map { |area| area['title'] }, 'Preserve the three research approach cards')
-check.call(about.at_css('.about-method-list')&.name == 'ul' && about.css('.about-method-number').empty?, 'Keep the research approach unnumbered')
-check.call(copy.call(about.at_css('.about-method-list')).include?('structural analysis'), 'Include the structural analysis foundation')
-future = about.at_css('.about-future-direction')
-check.call(copy.call(future) == data['future_direction'] && copy.call(future).start_with?('Next, I plan'), 'Label design-to-operation learning as a future direction')
-check.call(copy.call(future).include?('operational measurements') && copy.call(future).include?('digital twins'), 'The future digital twin direction must connect models with operational measurements')
-check.call(future&.previous_element&.[]('class') == 'about-method-list', 'Keep the future direction with the research approach, not a new achievement card')
-check.call(copy.call(about.at_css('#bisto-description')).include?('Current work focuses on turbulent cooling-channel design.'), 'BiSTO must state its current application scope')
-check.call(about.css('.about-research-links a').map { |a| a['href'] } == %w[/publications/ /cv/ /projects/], 'Keep all three profile links')
-check.call(about.css('.about-research-links a').map { |a| a.children.select(&:text?).map(&:text).join.strip } == %w[Publications CV Projects], 'Keep profile link labels concise without repeated View text')
+check.call(copy.call(about.at_css('#about-name')) == 'Geunhyeong Lee', 'About hero must lead with researcher name')
+check.call(about.css('.about-bio p').size == 2, 'About hero should stay focused to 2 concise paragraphs')
+check.call(!copy.call(about.at_css('.about-bio')).match?(/\b(UNIST|KAERI)\b/), 'Keep past affiliation bio details on CV rather than About hero')
+check.call(copy.call(about.at_css('#bisto-description')).include?('BiSTO'), 'About page must explain BiSTO')
+check.call(about.css('.highlight-list, .selected-pub-list, .about-record-line').empty?, 'Keep About page concise without Highlights, Selected Publications, or summary pitch lines')
+check.call(about.css('.navbar-nav .nav-item').size == 4, 'Navbar should have 4 clean top-level tabs')
+check.call(!about.text.match?(/\b51\s?%|5-bar\b/i), 'About page must not publish unpublished BiSTO numbers')
+
+check.call(copy.call(research.at_css('.research-framework-summary')).include?('digital twins'), 'Research page must summarize the closed-loop framework cleanly')
+check.call(research.css('.research-direction-item, .research-pillars-compact').empty?, 'Keep Research Vision concise without duplicating the diagram in thrust cards or pillar bullets')
+check.call(research.at_css('img[src*="research_vision_loop"]'), 'Research page must display the closed-loop diagram')
+check.call(!research.text.match?(/\b51\s?%|5-bar\b/i), 'Research page must not publish unpublished BiSTO numbers')
+
+check.call(cv.at_css('#teaching') && cv.at_css('#teaching').text.include?('MSU Academy for Teaching'), 'CV page must include mentoring, teaching, and pedagogical training')
+check.call(!File.exist?('_site/teaching/index.html'), 'Standalone /teaching/ page should be removed in favor of CV Teaching & Mentoring')
+
+[
+  ['About', about.text],
+  ['Research', research.text],
+  ['CV', cv.text],
+  ['llms.txt', File.read('_site/llms.txt')]
+].each do |label, text|
+  check.call(!text.include?("\u2014"), "#{label} must not contain em dashes")
+end
+
 video = about.at_css('#bisto-video')
-check.call(video && %w[autoplay muted loop playsinline controls].all? { |attr| video.key?(attr) }, 'Preserve startup playback and the no-JavaScript control fallback')
-
-rotating = Nokogiri::HTML(File.read('_site/projects/tf_04_rotating_beam_dump/index.html'))
-check.call(copy.call(rotating.at_css('.project-detail-header')).include?('I lead the FRIB rotating beam-dump effort from manufacturability assessment through fabrication and installation'), 'Describe the current engineering leadership role, not only simulation work')
-check.call(rotating.css('.project-brief').empty?, 'Do not claim engineering outcomes for the ongoing rotating project')
-check.call(copy.call(rotating.at_css('.project-detail-summary')) == 'Development target: 100 kW primary beam power by 2028.', 'Keep the 100 kW primary-beam target distinct from demonstrated performance or deposited heat')
-
-graph = about.css('script[type="application/ld+json"]').flat_map { |s| JSON.parse(s.text).fetch('@graph', []) }
-person = graph.find { |record| record['@type'] == 'Person' }
-check.call(person && %w[multiphysics\ modeling thermal-structural\ analysis].all? { |topic| person['knowsAbout'].include?(topic) }, 'Discovery metadata must reflect the visible multiphysics expertise')
-check.call(File.read('_site/llms.txt').include?('AI-driven multiphysics design and optimization'), 'Discovery summary must match the revised profile')
+check.call(video && %w[autoplay muted loop playsinline controls].all? { |attr| video.key?(attr) }, 'Preserve startup playback and no-JS controls fallback')
 
 abort errors.join("\n") unless errors.empty?
-puts 'Research copy OK: research vision, future direction, rotating-dump scope, media controls, and discovery metadata are consistent.'
+puts 'Research copy OK: 4-tab nav, streamlined Research page, integrated CV Teaching & Mentoring, zero em dashes, and zero unpublished BiSTO metrics.'

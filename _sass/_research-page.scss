@@ -1,0 +1,131 @@
+.research-page {
+  --research-label-width: 10.5rem;
+
+  .research-section {
+    display: grid;
+    grid-template-columns: var(--research-label-width) minmax(0, 1fr);
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+
+  .research-section-label h2 {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--global-theme-color);
+    line-height: 1.35;
+  }
+
+  .research-section-body {
+    min-width: 0;
+
+    p {
+      margin: 0 0 0.9rem;
+      font-size: 0.95rem;
+      line-height: 1.68;
+      color: var(--global-text-color);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .research-vision-figure {
+    margin: 0 0 1.4rem;
+  }
+
+  .research-figure-frame {
+    padding: 0.75rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 6px;
+    background: #ffffff;
+
+    figure {
+      margin: 0;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .research-figure-caption {
+    display: none;
+    margin: 0.55rem 0 0;
+    color: var(--global-text-color-light);
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .research-zoom-hint {
+    display: none;
+  }
+
+  .research-framework-summary {
+    margin: 0;
+    max-width: 74ch;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--global-text-color);
+  }
+
+  .projects-selected,
+  .projects-additional {
+    padding-top: 2.25rem;
+    scroll-margin-top: 5rem;
+  }
+
+  .projects-additional {
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--global-divider-color);
+  }
+}
+
+html[data-theme="dark"] .research-page .research-figure-frame {
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 991px) {
+  .research-page {
+    --research-label-width: 9rem;
+
+    .research-section {
+      gap: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .research-page {
+    .research-section {
+      grid-template-columns: 1fr;
+      gap: 0.85rem;
+      padding: 1.5rem 0;
+    }
+
+    .research-figure-frame {
+      padding: 0.45rem;
+    }
+
+    .research-figure-caption {
+      display: block;
+    }
+
+    .research-zoom-hint {
+      display: inline;
+      font-weight: 500;
+      color: var(--global-theme-color);
+    }
+
+    .projects-selected,
+    .projects-additional {
+      padding-top: 1.6rem;
+    }
+  }
+}

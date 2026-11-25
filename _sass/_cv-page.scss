@@ -1,60 +1,50 @@
-/* A short web CV; the downloadable PDF holds the complete record. */
-.cv-site {
-  padding-bottom: 0;
-
-  > footer {
-    position: static;
-    padding: 1.25rem 0 1.5rem;
-    border-top: 1px solid var(--global-divider-color);
-    background: transparent;
-    color: var(--global-text-color-light);
-    font-size: 0.75rem;
-    text-align: center;
-
-    .container,
-    a {
-      color: inherit;
-    }
-  }
-}
-
+/* Complete, scannable web CV paired with downloadable PDF snapshot. */
 .cv-page {
-  --cv-section-width: 9rem;
-  --cv-date-width: 8.4rem;
-  --cv-action-ink: #fff;
+  --cv-section-width: 10rem;
+  --cv-date-width: 9.75rem;
+  --cv-action-ink: #ffffff;
 
   .cv-header {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
-    align-items: center;
+    align-items: end;
     gap: 1.5rem;
-    padding: 0.75rem 0 1.8rem;
-    background: radial-gradient(ellipse at top left, var(--brand-tint-bg), transparent 65%);
+    padding: 0.5rem 0 1.75rem;
   }
 
   .cv-kicker {
-    margin: 0 0 0.55rem;
-    color: var(--global-hover-color);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
+    margin: 0 0 0.45rem;
+    color: var(--global-theme-color);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
   }
 
   .cv-header .post-title {
-    margin: 0 0 0.7rem;
-    font-family: "Roboto Slab", serif;
-    font-size: clamp(2rem, 4vw, 2.7rem);
-    font-weight: 700;
-    letter-spacing: -0.04em;
+    margin: 0 0 0.55rem;
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.8vw, 2.65rem);
+    font-weight: 500;
+    letter-spacing: -0.025em;
     line-height: 1.15;
   }
 
   .cv-intro {
     margin: 0;
     color: var(--global-text-color-light);
-    font-size: 0.88rem;
-    line-height: 1.6;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .cv-intro-sep {
+    margin: 0 0.25rem;
+  }
+
+  .cv-email-link {
+    font-family: var(--font-mono);
+    font-size: 0.84rem;
+    white-space: nowrap;
   }
 
   .cv-header-actions {
@@ -65,16 +55,17 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.8rem;
-    min-height: 3.25rem;
-    padding: 0.8rem 1.25rem;
+    gap: 0.7rem;
+    min-height: 46px;
+    padding: 0.7rem 1.2rem;
     border: 1px solid var(--global-theme-color);
-    border-radius: 3px;
+    border-radius: 4px;
     background: var(--global-theme-color);
     color: var(--cv-action-ink) !important;
-    font-size: 0.9rem;
-    letter-spacing: 0.01em;
-    text-transform: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.16s ease, border-color 0.16s ease;
 
     > span {
       color: inherit;
@@ -83,31 +74,34 @@
     &:hover {
       border-color: var(--global-hover-color);
       background: var(--global-hover-color);
+      text-decoration: none;
     }
   }
 
   .cv-download-icon {
     flex: 0 0 auto;
-    width: 1.15rem;
-    height: 1.15rem;
+    width: 1.05rem;
+    height: 1.05rem;
   }
 
   .cv-file-type {
-    padding-left: 0.8rem;
+    padding-left: 0.65rem;
     border-left: 1px solid currentColor;
-    font-size: 0.7rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
   }
 
   .cv-updated {
-    margin: 0.6rem 0 0;
-    font-size: 0.73rem;
+    margin: 0.5rem 0 0;
+    color: var(--global-text-color-light);
+    font-size: 0.76rem;
   }
 
   .cv-section {
     display: grid;
     grid-template-columns: var(--cv-section-width) minmax(0, 1fr);
     gap: 2rem;
-    padding: 1.6rem 0 1.8rem;
+    padding: 1.75rem 0;
     border-top: 1px solid var(--global-divider-color);
     scroll-margin-top: 5rem;
   }
@@ -117,25 +111,40 @@
 
     h2 {
       margin: 0;
-      color: var(--global-hover-color);
-      font-size: 1.12rem;
-      line-height: 1.45;
+      font-family: var(--font-serif);
+      color: var(--global-theme-color);
+      font-size: 1.2rem;
+      font-weight: 500;
+      line-height: 1.35;
     }
   }
 
   .cv-section-body {
     min-width: 0;
-    font-size: 0.9rem;
-    line-height: 1.7;
+    font-size: 0.92rem;
+    line-height: 1.68;
     overflow-wrap: anywhere;
 
     h3 {
-      margin: 0 0 0.45rem;
+      margin: 0 0 0.4rem;
       color: var(--global-text-color);
-      font-family: inherit;
-      font-size: 1rem;
+      font-family: var(--font-sans);
+      font-size: 0.98rem;
       font-weight: 600;
-      line-height: 1.5;
+      line-height: 1.45;
+    }
+  }
+
+  .cv-subgroup-heading {
+    margin: 1.35rem 0 0.6rem !important;
+    color: var(--global-text-color-light) !important;
+    font-size: 0.78rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.06em;
+    text-transform: uppercase !important;
+
+    &:first-child {
+      margin-top: 0 !important;
     }
   }
 
@@ -164,27 +173,28 @@
   }
 
   .cv-entry-date {
-    margin: 0 0 0.3rem;
-    color: var(--global-hover-color);
+    margin: 0 0 0.25rem;
+    color: var(--global-theme-color);
+    font-family: var(--font-mono);
     font-size: 0.76rem;
     font-weight: 500;
-    font-variant-numeric: tabular-nums;
-    line-height: 1.6;
+    line-height: 1.5;
+    white-space: nowrap;
   }
 
   .cv-entry-location {
     margin: 0;
     color: var(--global-text-color-light);
-    font-size: 0.73rem;
-    line-height: 1.5;
+    font-size: 0.76rem;
+    line-height: 1.45;
   }
 
   .cv-institution,
   .cv-meta,
   .cv-description {
-    margin: 0 0 0.3rem;
-    font-size: 0.85rem;
-    line-height: 1.65;
+    margin: 0 0 0.28rem;
+    font-size: 0.88rem;
+    line-height: 1.6;
   }
 
   .cv-meta,
@@ -193,9 +203,9 @@
   }
 
   .cv-bullets {
-    margin: 0.7rem 0 0;
-    padding-left: 1.1rem;
-    font-size: 0.85rem;
+    margin: 0.65rem 0 0;
+    padding-left: 1.15rem;
+    font-size: 0.88rem;
     list-style: disc;
 
     li + li {
@@ -207,73 +217,140 @@
     }
   }
 
-  .cv-publication-summary {
-    padding: 1rem 1.2rem;
-    border-left: 3px solid var(--global-theme-color);
-    background: linear-gradient(110deg, var(--brand-tint-bg), transparent);
-
-    p {
-      margin: 0;
-      color: var(--global-text-color-light);
-      font-size: 0.85rem;
-    }
-  }
-
-  .cv-text-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    min-height: 2.75rem;
-    font-size: 0.82rem;
-    font-weight: 500;
-  }
-
   .cv-output-summary {
-    margin: 0.8rem 0 0;
-    font-size: 0.83rem;
+    margin: 0;
+    font-size: 0.9rem;
 
     > div {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
+      align-items: baseline;
       gap: 0.5rem 1rem;
-      padding: 0.6rem 0;
+      padding: 0.55rem 0;
       border-bottom: 1px solid var(--global-divider-color);
 
+      &:first-child {
+        padding-top: 0;
+      }
+
       &:last-child {
+        padding-bottom: 0;
         border: 0;
+      }
+    }
+
+    .cv-output-primary {
+      padding-bottom: 0.75rem;
+
+      dt strong {
+        display: block;
+        color: var(--global-text-color);
+        font-weight: 600;
+      }
+
+      .cv-output-detail {
+        display: block;
+        margin-top: 0.2rem;
+        color: var(--global-text-color-light);
+        font-size: 0.82rem;
+      }
+
+      dd {
+        color: var(--global-text-color);
+        font-weight: 600;
       }
     }
 
     dt {
       color: var(--global-text-color-light);
       font-weight: 400;
+
+      em {
+        color: var(--global-text-color);
+      }
+
+      span {
+        color: var(--global-text-color-light);
+        font-size: 0.8rem;
+      }
     }
 
     dd {
       margin: 0;
       text-align: right;
-      font-variant-numeric: tabular-nums;
-    }
-
-    dd span {
-      color: var(--global-text-color-light);
-      white-space: nowrap;
+      font-family: var(--font-mono);
+      font-size: 0.86rem;
     }
   }
 
+  .cv-compact-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: grid;
+      grid-template-columns: var(--cv-date-width) minmax(0, 1fr);
+      gap: 0.35rem 1rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--global-divider-color);
+      font-size: 0.89rem;
+      line-height: 1.58;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    .cv-compact-year {
+      color: var(--global-text-color-light);
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      padding-top: 0.14rem;
+      white-space: nowrap;
+    }
+
+    .cv-compact-detail {
+      min-width: 0;
+      color: var(--global-text-color);
+    }
+
+    .cv-inline-muted {
+      color: var(--global-text-color-light);
+    }
+
+    .cv-compact-note {
+      margin: 0.25rem 0 0;
+      color: var(--global-text-color-light);
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
+  }
+
+  .cv-pdf-note {
+    margin: 1.1rem 0 0;
+    color: var(--global-text-color-light);
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
 }
 
 html[data-theme="dark"] .cv-page {
-  --cv-action-ink: #10242c;
+  --cv-action-ink: #0f1b20;
 }
 
 @media (max-width: 991px) {
   .cv-page {
-    --cv-section-width: 7rem;
-    --cv-date-width: 7rem;
+    --cv-section-width: 8rem;
+    --cv-date-width: 9.25rem;
 
     .cv-section {
-      gap: 1.3rem;
+      gap: 1.35rem;
+    }
+
+    .cv-entry-date,
+    .cv-compact-year {
+      font-size: 0.73rem;
     }
 
     .cv-header {
@@ -296,19 +373,18 @@ html[data-theme="dark"] .cv-page {
 }
 
 @media (max-width: 767px) {
-  .cv-site {
-    > .container.mt-5 {
-      margin-top: 1.5rem !important;
-    }
-
-    > footer .container {
-      padding-right: 5rem;
-    }
-  }
-
   .cv-page {
     .cv-header {
-      padding: 0.5rem 0 1.2rem;
+      padding: 0.25rem 0 1.25rem;
+    }
+
+    .cv-intro-sep {
+      display: none;
+    }
+
+    .cv-email-link {
+      display: block;
+      margin-top: 0.2rem;
     }
 
     .cv-header .cv-download-btn {
@@ -317,24 +393,25 @@ html[data-theme="dark"] .cv-page {
 
     .cv-section {
       grid-template-columns: 1fr;
-      gap: 1rem;
-      padding: 1.3rem 0 1.5rem;
+      gap: 0.85rem;
+      padding: 1.4rem 0;
     }
 
     .cv-entry {
       grid-template-columns: 1fr;
-      gap: 0.45rem;
+      gap: 0.35rem;
     }
 
     .cv-entry-aside {
       display: flex;
       flex-wrap: wrap;
       align-items: baseline;
-      gap: 0.3rem 1rem;
+      gap: 0.3rem 0.9rem;
     }
 
-    .cv-output-summary dd span {
-      display: block;
+    .cv-compact-list li {
+      grid-template-columns: 1fr;
+      gap: 0.15rem;
     }
   }
 }

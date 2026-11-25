@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="project-detail{% if page.publication_notice %} project-preview{% endif %}">
-  <a class="projects-back-link" href="{{ '/projects/' | relative_url }}"><span aria-hidden="true">&#8592;</span> All projects</a>
+  <a class="projects-back-link" href="{{ '/research/#projects' | relative_url }}"><span aria-hidden="true">&#8592;</span> Research &amp; projects</a>
   <header class="project-detail-header">
     <p class="projects-kicker">
       {{ page.institution | escape }}
@@ -44,7 +44,8 @@ layout: default
   {% endif %}
   {% include projects/related.liquid %}
   <nav class="project-detail-end" aria-label="Project navigation">
-    <a class="projects-text-link" href="{{ '/projects/' | relative_url }}"><span aria-hidden="true">&#8592;</span> All projects</a>
+    <a class="projects-text-link" href="{{ '/research/#projects' | relative_url }}"><span aria-hidden="true">&#8592;</span> Research &amp; projects</a>
+    <a class="projects-text-link" href="{{ '/publications/' | relative_url }}">Publications (SCIE) <span aria-hidden="true">&#8594;</span></a>
   </nav>
 </div>
 <script defer src="{{ '/assets/js/project-gallery.js' | relative_url | bust_file_cache }}"></script>

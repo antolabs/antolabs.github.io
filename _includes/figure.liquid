@@ -18,7 +18,7 @@
         <source
           class="responsive-img-srcset"
           {% if ext == 'gif' or ext == 'jpeg' or ext == 'jpg' or ext == 'png' or ext == 'tiff' %}
-            srcset="{% for i in site.imagemagick.widths %}{{ img_path | relative_url }}-{{ i }}.webp {{ i }}w,{% endfor %}"
+            srcset="{% for i in site.imagemagick.widths %}{{ img_path | relative_url }}-{{ i }}.webp{% if include.cache_bust %}?v={{ site.time | date: '%s' }}{% endif %} {{ i }}w,{% endfor %}"
             type="image/webp"
           {% else %}
             srcset="{{ include.path | relative_url }}"
@@ -76,7 +76,7 @@
       {% elsif site.lazy_loading_images %}
         loading="lazy"
       {% endif %}
-      onerror="this.onerror=null; $('.responsive-img-srcset').remove();"
+      onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function(el){el.remove();});"
     >
   </picture>
 

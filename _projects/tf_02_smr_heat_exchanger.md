@@ -1,27 +1,29 @@
 ---
 layout: project
-title: AI-designed heat exchangers for small modular reactors
-detail_title: AI-designed heat exchangers for small modular reactors
-description: Reinforcement learning for heat-exchanger design, connected to metal 3D printing and experimental testing.
+title: AI designed heat exchangers for small modular reactors
+detail_title: AI designed heat exchangers for small modular reactors
+description: Reinforcement learning for heat exchanger design, connected to metal 3D printing and experimental testing.
 img: assets/img/smr_heat_exchanger/fig_topology_result.png
 importance: 2
 category: Thermo-fluid devices
 year: "2021 - 2023"
 body_class: "project-view"
 footer_static: true
-card_title: "AI-designed nuclear heat exchangers"
+card_title: "AI designed nuclear heat exchangers"
 project_type: "Design to fabrication"
 institution: "KAERI"
 featured: true
 featured_order: 3
-project_group: "Thermal-fluid engineering"
-summary: "Reinforcement learning for heat-exchanger design, connected to metal 3D printing and experimental testing."
-detail_intro: "I developed a deep reinforcement learning approach for heat-exchanger optimization and contributed to topology-optimization analysis and experimental validation of a metal-printed prototype."
+thumb: assets/img/smr_heat_exchanger/thumb_3d_printed.png
+thumb_alt: Metal 3D printed SUS316L heat exchanger prototype on build plate
+project_group: "Thermal fluid engineering"
+summary: "Reinforcement learning for heat exchanger design, connected to metal 3D printing and experimental testing."
+detail_intro: "I developed a deep reinforcement learning approach for heat exchanger optimization and contributed to topology optimization analysis and experimental validation of a metal printed prototype."
 detail_summary_label: Study result
-detail_summary: "14.8% higher simulated heat transfer than conventional topology optimization; metal-printed prototype tested."
-contribution: "Developed a deep reinforcement learning approach for heat-exchanger optimization and contributed to topology-optimization analysis and experimental validation of a metal-printed prototype."
+detail_summary: "14.8% higher simulated heat transfer than conventional topology optimization; metal printed prototype tested."
+contribution: "Developed a deep reinforcement learning approach for heat exchanger optimization and contributed to topology optimization analysis and experimental validation of a metal printed prototype."
 evidence: "Simulation + experimental testing"
-outcome: "14.8% higher simulated heat transfer than conventional topology optimization; metal-printed prototype tested."
+outcome: "14.8% higher simulated heat transfer than conventional topology optimization; metal printed prototype tested."
 ---
 
 <div class="project-overview">

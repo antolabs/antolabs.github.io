@@ -1,0 +1,74 @@
+---
+layout: default
+---
+{% assign featured_projects = site.projects | where: 'featured', true | sort: 'featured_order' %}
+{% assign additional_projects = site.projects | where_exp: 'project', 'project.featured != true' | sort: 'year' | reverse %}
+
+<div class="post research-page research-projects">
+  <header class="editorial-header">
+    <p class="editorial-kicker">Research &amp; Projects</p>
+    <h1 class="post-title">Generalized AI Multiphysics Design</h1>
+    <p class="editorial-lead">
+      My work spans thermal, fluid, structural, and electromagnetic systems, from surrogate guided optimization and coupled simulation to metal
+      additive manufacturing and loop testing.
+    </p>
+  </header>
+
+  <article class="research-article">
+    <section class="research-section research-diagram-section" aria-labelledby="framework-heading">
+      <div class="research-section-label">
+        <h2 id="framework-heading">Research Framework</h2>
+      </div>
+      <div class="research-section-body">
+        <figure class="research-vision-figure">
+          <div class="research-figure-frame">
+            {% include figure.liquid loading="eager" path="assets/img/research_vision_loop.png" zoomable=true cache_bust=true alt="Generalized AI multiphysics design and validation framework connecting the BiSTO core engine to thermal, fluid, structural, and electromagnetic applications, metal additive manufacturing, experimental loops, and uncertainty aware digital twins" title="AI-Driven Multiphysics Design & Validation" class="img-fluid" %}
+          </div>
+          <figcaption class="research-figure-caption">
+            <span class="research-zoom-hint">Tap figure to enlarge.</span>
+          </figcaption>
+        </figure>
+
+        <p class="research-framework-summary">
+          This framework develops a single adjoint free optimization method across physical domains to deliver reliable, manufacturable hardware
+          within fixed space. The surrogate models trained during optimization are then combined with experimental data to build digital twins that
+          monitor real hardware.
+        </p>
+      </div>
+    </section>
+
+    <section class="projects-selected" id="projects" aria-labelledby="selected-projects-heading">
+      <div class="projects-section-header">
+        <h2 id="selected-projects-heading">Selected projects</h2>
+      </div>
+      <div class="research-grid research-selected-grid">
+        {% for project in featured_projects %}
+          {% include projects/card.liquid project=project %}
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="projects-additional" id="additional-projects" aria-labelledby="additional-projects-heading">
+      <div class="projects-section-header">
+        <h2 id="additional-projects-heading">Additional projects</h2>
+      </div>
+      <ul class="project-list">
+        {% for project in additional_projects %}
+          <li>
+            <a class="project-list-link" href="{{ project.url | relative_url }}" aria-labelledby="list-{{ project.slug }}">
+              <div>
+                <h3 id="list-{{ project.slug }}">{{ project.card_title | default: project.title | escape }}</h3>
+                <p class="project-list-summary">{{ project.summary | escape }}</p>
+                <p class="project-meta">
+                  {{ project.institution | escape }}
+                  <span aria-hidden="true">&middot;</span> {{ project.year | escape }}
+                </p>
+              </div>
+              <span class="project-list-arrow" aria-hidden="true">&#8594;</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </article>
+</div>

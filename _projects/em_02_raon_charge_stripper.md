@@ -1,20 +1,20 @@
 ---
 layout: project
 title: RAON charge stripper development
-description: Electromagnetic thruster development and experimental characterization of liquid-lithium films.
+description: Electromagnetic thruster development and experimental characterization of liquid lithium films.
 img: assets/img/raon_charge_stripper/fig_lithium_film.png
 importance: 2
 category: Electromagnetic devices
 year: "2020 - 2021"
 body_class: "project-view"
 footer_static: true
-card_title: "Liquid-lithium charge stripper"
+card_title: "Liquid lithium charge stripper"
 institution: "UNIST"
-project_group: "Liquid-metal & electromagnetic systems"
-summary: "Electromagnetic thruster development and experimental characterization of liquid-lithium films."
-detail_intro: "I worked on electromagnetic circulation and charge-stripper design, combining multiphysics analysis with experimental characterization."
+project_group: "Liquid metal & electromagnetic systems"
+summary: "Electromagnetic thruster development and experimental characterization of liquid lithium films."
+detail_intro: "I worked on electromagnetic circulation and charge stripper design, combining multiphysics analysis with experimental characterization."
 detail_summary_label: Prototype study
-detail_summary: "Liquid-lithium film formation characterized for a prototype heavy-ion charge stripper."
+detail_summary: "Liquid lithium film formation characterized for a prototype heavy ion charge stripper."
 contribution: "Worked on electromagnetic circulation and charge-stripper design, combining multiphysics analysis with experimental characterization."
 evidence: "Prototype & experimental work"
 outcome: "Characterized liquid-lithium film formation for a prototype heavy-ion charge stripper."

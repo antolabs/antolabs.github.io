@@ -2,9 +2,9 @@
 layout: project
 title: "FRIB rotating beam dump: engineering development"
 card_title: Rotating beam dump development
-description: Leading the rotating beam-dump upgrade beyond the static design, targeting 100 kW primary beam power by 2028 through integrated engineering and multiphysics simulation.
-summary: Leading development from manufacturability assessment through fabrication and installation.
-detail_intro: I lead the FRIB rotating beam-dump effort from manufacturability assessment through fabrication and installation.
+description: Leading the rotating beam dump upgrade beyond the static design, targeting 100 kW primary beam power by 2028 through integrated engineering and multiphysics simulation.
+summary: Leading fabrication and installation across materials, systems engineering, thermomechanics, and radiation.
+detail_intro: I lead the FRIB rotating beam dump effort from manufacturability assessment through fabrication and installation.
 detail_summary_label: Development target
 detail_summary: "100 kW primary beam power by 2028."
 institution: FRIB
@@ -13,8 +13,10 @@ body_class: project-view
 footer_static: true
 featured: true
 featured_order: 2
+thumb: assets/img/project/tf_other/rotating_beam_dump.png
+thumb_alt: Coupled magnetic flux density, pressure, and temperature simulation views of the FRIB rotating beam dump
 project_kind: engineering
-project_group: Thermal-fluid engineering
+project_group: Thermal fluid engineering
 scope_note: Upgrade beyond 50 kW, targeting 100 kW primary beam power by 2028.
 ---
 

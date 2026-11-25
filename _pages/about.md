@@ -2,29 +2,17 @@
 layout: about
 title: About
 permalink: /
-subtitle: Scientist at <a href="https://frib.msu.edu/">FRIB</a>, <a href="https://msu.edu/">Michigan State University</a>
-affiliation_detail: Facility for Rare Isotope Beams
-description: Geunhyeong Lee, Scientist at FRIB, Michigan State University. AI-driven multiphysics design and optimization, with physics-based verification and experimental validation for nuclear systems.
+subtitle: Scientist, <a href="https://frib.msu.edu/">Facility for Rare Isotope Beams (FRIB)</a> &middot; <a href="https://msu.edu/">Michigan State University</a>
+description: Geunhyeong Lee, Ph.D., Scientist at FRIB, Michigan State University. Building general AI design methods that push real hardware to its physical limits.
 body_class: about-site
 footer_static: true
 
-hero_lead: AI-driven multiphysics
-hero_focus: design and optimization
-vision_intro: I investigate how AI can discover high-performance designs that satisfy complex physical constraints. My long-term goal is to develop reusable design methods that connect computational optimization with manufacturing and experimental validation, with a focus on nuclear energy systems.
-future_direction: Next, I plan to connect design-trained models with operational measurements to develop digital twins.
-
-research_areas:
-  - title: AI-driven Design
-    description: Geometry representation and learning-guided search for shape and topology optimization
-  - title: Multiphysics Verification
-    description: Thermal-fluid, electromagnetic, and structural analysis for coupled design problems
-  - title: Fabrication & Validation
-    description: Metal 3D printing and experimental testing of optimized designs
+bio_paragraphs:
+  - Engineering devices cannot keep growing larger as power and energy demands rise. My goal is to establish general AI design methods that push real hardware closer to its physical limits inside fixed space.
+  - "I trust an AI model only as far as it is checked. A physics solver verifies every design AI proposes, and metal additive manufacturing and hardware testing verify the solver."
 
 profile:
-  align: right
   image: prof_pic.jpg
-  image_circular: false
 
 nav: false
 nav_order: 1

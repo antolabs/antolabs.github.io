@@ -4,43 +4,59 @@
   if (!video || !button) return;
 
   const annotations = document.querySelector(".bisto-annotations");
-  const leaders = annotations?.querySelector(".bisto-leaders");
-  const solidLabel = annotations?.querySelector(".bisto-callout-solid");
-  const fluidLabel = annotations?.querySelector(".bisto-callout-fluid");
+  const progressTrack = annotations?.querySelector(".bisto-progress-track");
+  const progressFill = annotations?.querySelector(".bisto-progress-fill");
   // This research video starts by default; its dedicated control owns playback.
   let wantsPlayback = true;
   let failed = false;
   const hasMediaFailure = () => Boolean(video.error) || video.networkState === video.NETWORK_NO_SOURCE;
 
-  // Map the rendered label edges into SVG coordinates, including responsive/font changes.
-  const updateLeaderOrigins = () => {
-    if (!leaders || !solidLabel || !fluidLabel) return;
-    const bounds = leaders.getBoundingClientRect();
-    if (!bounds.width || !bounds.height) return;
-    const viewBox = leaders.viewBox?.baseVal;
-    if (!viewBox?.width || !viewBox?.height) return;
-    const point = (x, y) => ({
-      x: Math.round(((x - bounds.left) * viewBox.width * 100) / bounds.width) / 100,
-      y: Math.round(((y - bounds.top) * viewBox.height * 100) / bounds.height) / 100,
-    });
-    const solidBox = solidLabel.getBoundingClientRect();
-    const fluidBox = fluidLabel.getBoundingClientRect();
-    const solid = point(solidBox.right, solidBox.bottom);
-    const fluid = point(fluidBox.right, fluidBox.top + fluidBox.height / 2);
-    const solidStart = `M ${solid.x},${solid.y} L ${Math.max(150, solid.x + 36)},${Math.max(130, solid.y + 44)}`;
-    const paths = {
-      ".bisto-solid-initial path": `${solidStart} L 260,240`,
-      ".bisto-solid-evolved path": `${solidStart} L 320,285`,
-      ".bisto-fluid-leader path": `M ${fluid.x},${fluid.y} L ${Math.max(255, fluid.x + 40)},${fluid.y} L 315,460 L 360,345`,
-    };
-    for (const [selector, d] of Object.entries(paths)) {
-      for (const path of annotations.querySelectorAll(selector)) path.setAttribute("d", d);
+  // Map raw video time into a brisk ~10.5 s visual loop so visitors quickly see the
+  // red-to-cool transition instead of waiting through the slow convergence tail.
+  const computePlaybackRate = (time, duration) => {
+    const endHold = duration > 16 ? Math.max(19.6, duration - 1.6) : duration * 0.9;
+    if (time < 0.85) return 0.85;
+    if (time < 8.5) return 1.5;
+    if (time < endHold) return 4.0;
+    return 0.75;
+  };
+
+  const computeVisualProgress = (time, duration) => {
+    if (!Number.isFinite(duration) || duration <= 0) return 0;
+    const endHold = duration > 16 ? Math.max(19.6, duration - 1.6) : duration * 0.9;
+    const seg1 = 0.85 / 0.85;
+    const seg2 = Math.max(0, Math.min(8.5, duration) - 0.85) / 1.5;
+    const seg3 = Math.max(0, Math.min(endHold, duration) - 8.5) / 4.0;
+    const seg4 = Math.max(0, duration - endHold) / 0.75;
+    const total = seg1 + seg2 + seg3 + seg4;
+    if (total <= 0) return 0;
+    let elapsed = 0;
+    if (time <= 0.85) {
+      elapsed = time / 0.85;
+    } else if (time <= 8.5) {
+      elapsed = seg1 + (time - 0.85) / 1.5;
+    } else if (time <= endHold) {
+      elapsed = seg1 + seg2 + (time - 8.5) / 4.0;
+    } else {
+      elapsed = seg1 + seg2 + seg3 + (time - endHold) / 0.75;
+    }
+    return Math.max(0, Math.min(1, elapsed / total));
+  };
+
+  const updateAnnotations = (time = video.currentTime) => {
+    const duration = video.duration;
+    if (Number.isFinite(duration) && duration > 0) {
+      const targetRate = computePlaybackRate(time, duration);
+      if (Math.abs((video.playbackRate || 1) - targetRate) > 0.05) {
+        video.playbackRate = targetRate;
+      }
+      if (progressFill) {
+        progressFill.style.transform = `scaleX(${computeVisualProgress(time, duration).toFixed(4)})`;
+      }
     }
   };
-  // This cutaway point becomes solid after 1.9 s in the source; point to the shell before then.
-  const updateAnnotations = (time = video.currentTime) => {
-    if (annotations) annotations.dataset.solidPhase = time >= 2.1 ? "evolved" : "initial";
-  };
+  if (progressTrack) progressTrack.hidden = false;
+
   video.addEventListener("timeupdate", () => updateAnnotations());
   video.addEventListener("seeked", () => updateAnnotations());
   if (video.requestVideoFrameCallback) {
@@ -121,8 +137,9 @@
     if (annotations) annotations.hidden = false;
     syncPlayback();
     updateButton();
-    updateLeaderOrigins();
+    updateAnnotations();
   };
+  video.addEventListener("loadedmetadata", () => updateAnnotations());
   video.addEventListener("loadeddata", onReady);
   video.addEventListener("canplay", onReady);
   // A source may have failed before the controller observed its error event.
@@ -131,16 +148,5 @@
   document.addEventListener("visibilitychange", syncPlayback);
   window.addEventListener("pageshow", syncPlayback);
   syncPlayback();
-
-  // Annotation layout must not delay initial playback.
-  updateLeaderOrigins();
-  if (leaders && solidLabel && fluidLabel) {
-    if (window.ResizeObserver) {
-      const observer = new window.ResizeObserver(updateLeaderOrigins);
-      [leaders, solidLabel, fluidLabel].forEach((element) => observer.observe(element));
-    } else {
-      window.addEventListener("resize", updateLeaderOrigins);
-    }
-    document.fonts?.ready.then(updateLeaderOrigins);
-  }
+  updateAnnotations();
 })();

@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+{% assign cv = site.data.cv %}
+{% assign cv_pdf_path = cv.source_pdf | prepend: '/assets/pdf/' | relative_url | bust_file_cache %}
+
 <div class="post about-page">
   <article>
     <section class="about-intro" aria-labelledby="about-name">
@@ -8,49 +11,39 @@ layout: default
         <div class="about-portrait">
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
           {% capture profile_alt %}{{ site.first_name }} {{ site.last_name }}{% endcapture %}
-          {% include figure.liquid path=profile_image_path class="about-portrait-image" sizes="(max-width: 767px) 42vw, (max-width: 991px) 260px, 330px" alt=profile_alt loading="eager" cache_bust=true %}
+          {% include figure.liquid path=profile_image_path class="about-portrait-image" sizes="(max-width: 767px) 128px, (max-width: 991px) 220px, 280px" alt=profile_alt loading="eager" cache_bust=true %}
         </div>
       {% endif %}
+
       <div class="about-intro-copy">
         <header class="about-identity">
-          <h1 id="about-name">
-            {{ site.first_name }}
-            {{ site.middle_name }}
-            {{ site.last_name }}
-          </h1>
+          <h1 id="about-name">{{ site.first_name }} {{ site.last_name }}</h1>
           <p class="about-affiliation">{{ page.subtitle }}</p>
         </header>
-        <div class="about-vision">
-          <h2 id="research-vision-title">
-            <span>{{ page.hero_lead | escape }}</span>
-            <span>{{ page.hero_focus | escape | replace: 'thermal-fluid', '<span class="about-keep-word">thermal-fluid</span>' }}</span>
-          </h2>
-          <p class="about-vision-intro">
-            {{
-              page.vision_intro
-              | escape
-              | replace: 'AI-driven', '<span class="about-keep-word">AI-driven</span>'
-              | replace: 'high-performance', '<span class="about-keep-word">high-performance</span>'
-              | replace: 'long-term', '<span class="about-keep-word">long-term</span>'
-              | replace: 'thermal-fluid', '<span class="about-keep-word">thermal-fluid</span>'
-            }}
-          </p>
-          <div class="about-research-links">
-            <a href="{{ '/publications/' | relative_url }}">Publications <span aria-hidden="true">&#8594;</span></a>
-            <a href="{{ '/cv/' | relative_url }}">CV <span aria-hidden="true">&#8594;</span></a>
-            <a href="{{ '/projects/' | relative_url }}">Projects <span aria-hidden="true">&#8594;</span></a>
-          </div>
+
+        <div class="about-bio">
+          {% for paragraph in page.bio_paragraphs %}
+            <p>{{ paragraph | escape }}</p>
+          {% endfor %}
         </div>
+
+        <nav class="about-profile-links" aria-label="Academic profiles">
+          <a href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}" target="_blank" rel="external noopener">Google Scholar</a>
+          <a href="https://orcid.org/{{ site.data.socials.orcid_id }}" target="_blank" rel="external noopener">ORCID</a>
+          <a href="https://www.scopus.com/authid/detail.uri?authorId={{ site.data.socials.scopus_id }}" target="_blank" rel="external noopener">Scopus</a>
+          <a href="https://www.researchgate.net/profile/{{ site.data.socials.research_gate_profile }}/" target="_blank" rel="external noopener">ResearchGate</a>
+          <a href="https://www.linkedin.com/in/{{ site.data.socials.linkedin_username }}" target="_blank" rel="external noopener">LinkedIn</a>
+          <a class="about-cv-link" href="{{ cv_pdf_path }}" download="{{ cv.source_pdf }}">CV (PDF)</a>
+        </nav>
       </div>
     </section>
 
-    <section class="about-research" aria-labelledby="bisto-title">
+    <section class="about-section about-bisto" aria-labelledby="bisto-title">
+      <div class="about-section-head">
+        <h2 id="bisto-title">Current Focus: BiSTO</h2>
+      </div>
+
       <figure class="bisto-feature">
-        <figcaption class="bisto-summary">
-          <p class="about-eyebrow">Research in focus</p>
-          <h2 id="bisto-title">BiSTO</h2>
-          <p class="bisto-fullname">Binary <span class="about-keep-word">Surrogate-based</span> Topology Optimization</p>
-        </figcaption>
         <div class="bisto-visual">
           <div class="bisto-media">
             <video
@@ -75,26 +68,20 @@ layout: default
                 alt="Cutaway of a rotating beam dump showing shell temperature, black solid regions, and blue fluid regions."
               >
             </video>
-            <div class="bisto-annotations" data-solid-phase="initial" aria-hidden="true">
-              <svg class="bisto-leaders" viewBox="0 0 884 620" focusable="false">
-                <g class="bisto-solid-initial">
-                  <path class="bisto-leader-halo" d="M 112,66 L 150,130 L 260,240" />
-                  <path class="bisto-leader-solid" d="M 112,66 L 150,130 L 260,240" />
-                  <circle class="bisto-target-solid" cx="260" cy="240" r="6" />
-                </g>
-                <g class="bisto-solid-evolved">
-                  <path class="bisto-leader-halo" d="M 112,66 L 150,130 L 320,285" />
-                  <path class="bisto-leader-solid" d="M 112,66 L 150,130 L 320,285" />
-                  <circle class="bisto-target-solid" cx="320" cy="285" r="6" />
-                </g>
-                <g class="bisto-fluid-leader">
-                  <path class="bisto-leader-halo" d="M 100,565 L 255,565 L 315,460 L 360,345" />
-                  <path class="bisto-leader-fluid" d="M 100,565 L 255,565 L 315,460 L 360,345" />
-                  <circle class="bisto-target-fluid" cx="360" cy="345" r="6" />
-                </g>
-              </svg>
-              <span class="bisto-callout bisto-callout-solid"><strong>Solid</strong></span>
-              <span class="bisto-callout bisto-callout-fluid"><strong>Fluid</strong></span>
+            <script>
+              (function () {
+                var v = document.getElementById("bisto-video");
+                if (v) v.controls = false;
+              })();
+            </script>
+            <div class="bisto-annotations" aria-hidden="true">
+              <div class="bisto-legend">
+                <span class="bisto-legend-item"><span class="bisto-swatch bisto-swatch-solid"></span>Solid</span>
+                <span class="bisto-legend-item"><span class="bisto-swatch bisto-swatch-fluid"></span>Fluid</span>
+              </div>
+              <span class="bisto-progress-track" aria-hidden="true" hidden>
+                <span class="bisto-progress-fill"></span>
+              </span>
             </div>
             <button
               class="bisto-toggle"
@@ -112,91 +99,32 @@ layout: default
             </button>
           </div>
           <p class="sr-only" id="bisto-regions">
-            The Solid pointer identifies the outer shell first, then the black solid region as it develops in the cutaway. The Fluid pointer
-            identifies the blue fluid region.
+            Black cells in the cutaway represent solid structure and blue cells represent fluid cooling channels.
           </p>
           <p class="sr-only" id="bisto-sequence-note">The animation shows design iterations, not elapsed physical time.</p>
-          <p class="bisto-temperature-note" id="bisto-temperature-note">Solid-fluid design to minimize temperature (rotating beam dump example).</p>
+          <figcaption class="bisto-temperature-note" id="bisto-temperature-note">
+            Internal solid and fluid cooling channels evolve as the outer shell cools from red to blue green (FRIB rotating beam dump application).
+          </figcaption>
         </div>
+
         <div class="bisto-details">
-          <p id="bisto-description">
-            <span class="bisto-sentence">
-              I developed BiSTO, a binary topology optimization framework combining
-              <span class="about-keep-word">AI-guided</span> design search with <span class="about-keep-word">physics-based</span> verification.
-            </span>
-            <span class="bisto-sentence">Current work focuses on turbulent cooling-channel design.</span>
+          <p class="bisto-fullname">Binary Surrogate-based Topology Optimization</p>
+          <div id="bisto-description">
+            <p>
+              <strong>BiSTO</strong> is the first step toward that goal. Developed at FRIB for turbulent cooling design, it pairs a neural network
+              surrogate with direct physics solver verification to optimize binary, connected layouts without requiring flow or turbulence adjoints.
+            </p>
+            <p>
+              At FRIB, I lead the overall fabrication and installation effort for the rotating beam dump targeted for 2028, planned with a BiSTO
+              cooling layout. In parallel, I am extending BiSTO into a general multiphysics design framework.
+            </p>
+          </div>
+          <p class="bisto-status">
+            Manuscript under review at <em>Applied Thermal Engineering</em>.
           </p>
-          <ol class="bisto-workflow" aria-label="Optimization process">
-            <li>AI search</li>
-            <li>Simulation</li>
-            <li>Design update</li>
-          </ol>
         </div>
       </figure>
     </section>
-
-    <section class="about-methods" aria-labelledby="about-methods-title">
-      <h2 id="about-methods-title">Research Approach</h2>
-      <ul class="about-method-list" role="list">
-        {% for area in page.research_areas %}
-          <li>
-            <h3>{{ area.title | escape }}</h3>
-            <p>
-              {{
-                area.description
-                | escape
-                | replace: 'thermal-fluid', '<span class="about-keep-word">thermal-fluid</span>'
-                | replace: 'Thermal-fluid', '<span class="about-keep-word">Thermal-fluid</span>'
-                | replace: 'liquid-metal', '<span class="about-keep-word">liquid-metal</span>'
-              }}
-            </p>
-          </li>
-        {% endfor %}
-      </ul>
-      {% if page.future_direction %}
-        <p class="about-future-direction">{{ page.future_direction | escape }}</p>
-      {% endif %}
-    </section>
-
-    {{ content }}
-
-    <!-- News -->
-    {% if page.announcements and page.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-      </h2>
-      {% include news.liquid limit=true %}
-    {% endif %}
-
-    <!-- Latest posts -->
-    {% if page.latest_posts and page.latest_posts.enabled %}
-      <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
-      </h2>
-      {% include latest_posts.liquid %}
-    {% endif %}
-
-    <!-- Selected papers -->
-    {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
-      </h2>
-      {% include selected_papers.liquid %}
-    {% endif %}
-
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% include social.liquid %}</div>
-
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
-    {% endif %}
-
-    {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
-      {% include newsletter.liquid center=true %}
-    {% endif %}
   </article>
 </div>
-<!-- The player DOM is ready here; do not wait for unrelated footer scripts. -->
 <script async src="{{ '/assets/js/about-bisto.js' | relative_url | bust_file_cache }}"></script>

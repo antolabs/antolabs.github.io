@@ -1,0 +1,112 @@
+---
+layout: null
+permalink: /llms-full.txt
+sitemap: false
+---
+# Geunhyeong Lee, Ph.D. | Complete Academic Dossier
+
+- Canonical Website: {{ '/' | absolute_url }}
+- Current Role: Scientist (Regular staff position, continuing appointment track), High Power Targetry Department, Facility for Rare Isotope Beams (FRIB), Michigan State University, East Lansing, MI, USA
+- Email: leeg@frib.msu.edu
+- ORCID: https://orcid.org/0000-0003-3141-4663
+- Google Scholar: https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}
+- Scopus: https://www.scopus.com/authid/detail.uri?authorId={{ site.data.socials.scopus_id }}
+- ResearchGate: https://www.researchgate.net/profile/{{ site.data.socials.research_gate_profile }}/
+- LinkedIn: https://www.linkedin.com/in/{{ site.data.socials.linkedin_username }}
+- Full CV PDF: {{ site.data.cv.source_pdf | prepend: '/assets/pdf/' | absolute_url }}
+
+## Research Vision & Philosophy
+
+Engineering devices cannot keep growing larger as power and energy demands rise. My goal is to establish general, physics verified AI design methods that push real hardware closer to its physical limits inside fixed space across thermal, fluid, structural, and electromagnetic domains, verified directly by physics solvers, metal additive manufacturing, experimental testing, and uncertainty aware digital twins.
+
+Validation philosophy: I trust an AI model only as far as it is checked. A physics solver verifies every design AI proposes, and metal additive manufacturing and hardware testing verify the solver.
+
+Framework summary:
+This framework develops a single adjoint free optimization method across physical domains to deliver reliable, manufacturable hardware within fixed space. The surrogate models trained during optimization are then combined with experimental data to build digital twins that monitor real hardware.
+
+Closed loop framework:
+Core Engine (BiSTO 2D binary core to 3D multiphysics) -> Application Domains (Thermal, Fluid & Structural; EM & Liquid Metal MHD) -> Build & Validation (Metal additive manufacturing; thermal fluid and liquid metal loops) -> Digital Twins & Closed Loop Feedback (Uncertainty aware digital twins with unseen regime prediction and sim to real feedback revising BiSTO rules).
+
+Research framework components:
+1. Core Engine (Generalized BiSTO): Extend the adjoint free 2D binary BiSTO core to 3D multiphysics across physics solvers, with planned printability and structural stress limits.
+2. Thermal, Fluid & Structural Systems: Maximize heat removal and efficiency inside fixed envelopes for compact heat exchangers, intense cooling channels, electronics cooling, and nuclear, fusion, and accelerator hardware under pressure drop, thermal stress, and fatigue limits.
+3. EM & Liquid Metal MHD Systems: Apply the same generalized framework to coupled electric current, magnetic fields, and conducting flows to maximize pumping head, improve flow uniformity, and reduce MHD losses in compact electromagnetic pumps and liquid metal transport loops.
+4. Validation & Uncertainty Aware Digital Twins: Fabricate and test metal prototypes in benchtop and liquid metal loops, combining physics solvers, design surrogates, and loop sensor data (temperature, pressure drop, flow, roughness) into uncertainty aware digital twins with unseen regime prediction and anomaly flags that feed back into BiSTO rules.
+5. Open Engineering Impact: Share multiphysics benchmark design problems, equal cost comparison protocols, and (where permitted) code and experimental validation datasets.
+
+## Academic Appointments
+{% for item in site.data.cv.appointments %}
+### {{ item.title }} | {{ item.institution }} ({{ item.year }})
+- Department: {{ item.department }}{% if item.position_type %} ({{ item.position_type }}){% endif %}
+- Location: {{ item.location }}
+{% for point in item.description %}- {{ point }}
+{% endfor %}{% endfor %}
+
+## Education
+{% for item in site.data.cv.education %}
+- {{ item.title }}, {{ item.institution }} ({{ item.year }}, {{ item.location }}){% if item.department %} | {{ item.department }}{% endif %}{% if item.description.first %}. {{ item.description.first }}{% endif %}
+{% endfor %}
+
+## Teaching & Mentoring
+
+Philosophy: Project based learning following the same loop as research (design, simulate, build, and test), training students to verify AI and simulation predictions against physical principles and experimental measurements.
+
+Pedagogical Training: Michigan State University Academy for Teaching (course design, student engagement, generative AI in education).
+{% for group in site.data.cv.teaching %}
+### {{ group.title }}
+{% for item in group.items %}- ({{ item.year }}) {{ item.title }}, {{ item.institution }}{% if item.description %}: {{ item.description }}{% endif %}
+{% endfor %}{% endfor %}
+
+## Projects
+{% for project in site.projects %}
+### {{ project.detail_title | default: project.card_title | default: project.title }} ({{ project.institution }}, {{ project.year }})
+- URL: {{ project.url | absolute_url }}
+- Summary: {{ project.summary }}
+- Scope / Result: {{ project.detail_summary_label }}: {{ project.detail_summary }}
+{% endfor %}
+
+## Under-Review Manuscripts
+{% assign manuscripts = site.data.cv.publications.manuscripts | where: 'status', 'Under review' %}
+{% for manuscript in manuscripts %}
+- {{ manuscript.title }}. {{ manuscript.authors }} Under review at {{ manuscript.journal }}; not a published journal article.{% if manuscript.doi %} Preprint: https://doi.org/{{ manuscript.doi }}{% endif %}
+{% endfor %}
+
+## Published SCIE Journal Articles ({{ site.data.publications.size }} total; {{ site.data.cv.publications.first_author }} first or co-first author; {{ site.data.cv.publications.corresponding_author }} corresponding author)
+{% for paper in site.data.publications %}
+### {{ forloop.index }}. {{ paper.title }} ({{ paper.year }})
+- Authors: {{ paper.authors | join: ', ' }}
+- Journal: {{ paper.journal }}{% if paper.volume %}, {{ paper.volume }}{% endif %}{% if paper.issue %}({{ paper.issue }}){% endif %}{% if paper.first_page %}, {{ paper.first_page }}{% endif %}{% if paper.last_page %}-{{ paper.last_page }}{% endif %}
+- DOI: https://doi.org/{{ paper.doi }}{% if paper.keywords %}
+- Keywords: {{ paper.keywords | join: ', ' }}{% endif %}{% if paper.summary %}
+- Key finding: {{ paper.summary }}{% endif %}
+- Plain citation: {{ paper.citation.plain }}
+- Page: {{ '/publications/' | append: paper.id | append: '/' | absolute_url }}
+- PDF: {{ paper.pdf | absolute_url }}
+- BibTeX: {{ '/publications/' | append: paper.id | append: '/citation.bib' | absolute_url }}
+- Abstract: {{ paper.abstract }}
+{% endfor %}
+
+## Other Peer-Reviewed Journal Publications
+{% for item in site.data.cv.publications.other %}
+- ({{ item.year }}) {{ item.authors }} {{ item.title }}. {{ item.journal }}.
+{% endfor %}
+
+## Invited Talks
+{% for talk in site.data.cv.invited_talks %}
+- ({{ talk.year }}) {{ talk.title }}. {{ talk.institution }}.
+{% endfor %}
+
+## Registered Patents (Republic of Korea)
+{% for patent in site.data.cv.patents %}
+- ({{ patent.year }}) {{ patent.inventors }} {{ patent.title }}. Registration No. {{ patent.registration }} (Application No. {{ patent.application }}).
+{% endfor %}
+
+## Journal Peer Review Service
+{% for review in site.data.cv.service.reviews %}
+- {{ review.journal }}: {{ review.count }} reviews ({{ review.period }})
+{% endfor %}
+
+## Awards, Software & Certification
+{% for group in site.data.cv.achievements %}{% for item in group.items %}
+- [{{ group.title }}] ({{ item.year }}) {{ item.title }} | {{ item.institution }}{% if item.description %}. {{ item.description }}{% endif %}
+{% endfor %}{% endfor %}

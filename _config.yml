@@ -13,14 +13,14 @@ social:
   researchgate: Geunhyeong-Lee-3
 
 contact_note: >-
-  Contact: leeg@frib.msu.edu / ghlee1129@gmail.com
+  leeg@frib.msu.edu · ghlee1129@gmail.com
 description: >- # folded scalar; the "-" strips the trailing newline so meta/OG tags stay clean
-  Personal website of Geunhyeong Lee, a Scientist at FRIB. My research focuses on AI-driven multiphysics design and optimization, with physics-based verification and experimental validation for nuclear systems.
+  Geunhyeong Lee, Ph.D., Scientist at FRIB, Michigan State University. Building general AI design methods that push real hardware to its physical limits.
 footer_text: >
-  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-keywords: Geunhyeong Lee, AI design optimization, Multiphysics design, Topology optimization, Surrogate modeling, Thermal-structural analysis, Heat exchanger, Electromagnetic pump, Magnetohydrodynamics, MHD, Small modular reactor, SMR, 3D printing, Additive Manufacturing, FRIB, Nuclear Engineering # add your own keywords or leave empty
+  Facility for Rare Isotope Beams, Michigan State University.
+keywords: Geunhyeong Lee, AI design optimization, Multiphysics design, Scientific machine learning, Topology optimization, BiSTO, Surrogate modeling, Digital twins, Thermal-structural analysis, Computational fluid dynamics, Heat transfer, Compact heat exchanger, Electromagnetic pump, Magnetohydrodynamics, MHD, Small modular reactor, Fusion cooling, Additive manufacturing, FRIB, Nuclear Engineering, Mechanical Engineering
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: favicon.svg # custom SVG monogram favicon in /assets/img/
 
 url: "https://geunhyeong.com" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog/. Leave blank for root
@@ -84,7 +84,7 @@ openpanel_analytics: # your Openpanel analytics client ID (format: XXXXXXXX-XXXX
 
 # For Google Search Console, see https://support.google.com/webmasters/answer/9008080?hl=en#meta_tag_verification&zippy=%2Chtml-tag
 google_site_verification: eutvNGQH22AqfUGsdqh9VGGha_vA3t1-jok3keFPH3Q # your google-site-verification ID (Google Search Console)
-bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
+bing_site_verification: B48983D413902940C1DD41239D43C7C7 # your bing-site-verification ID (Bing Webmaster)
 
 # -----------------------------------------------------------------------------
 # Blog
@@ -242,8 +242,8 @@ sass:
 
 jekyll-minifier:
   compress_javascript: false # set to false since we are using terser as the js minifier
-  # Citation downloads and the discovery index are plain text, not minifiable HTML.
-  exclude: ["robots.txt", "llms.txt", "publications/*/citation.bib", "publications/*/citation.ris", "assets/js/search/*.js"]
+  # Citation downloads and discovery indexes are plain text, not minifiable HTML.
+  exclude: ["robots.txt", "llms.txt", "llms-full.txt", "publications/*/citation.bib", "publications/*/citation.ris", "assets/js/search/*.js"]
 
 # -----------------------------------------------------------------------------
 # Terser
@@ -387,9 +387,9 @@ enable_cronitor_analytics: false # enables cronitor RUM analytics
 enable_pirsch_analytics: false # enables Pirsch analytics (https://pirsch.io/)
 enable_openpanel_analytics: false # enables Openpanel analytics (https://openpanel.dev/)
 enable_google_verification: true # enables google site verification
-enable_bing_verification: false # enables bing site verification
-enable_masonry: true # enables automatic project cards arrangement
-enable_math: true # enables math typesetting (uses MathJax)
+enable_bing_verification: true # enables bing site verification
+enable_masonry: false # disable unused masonry script for faster page loads
+enable_math: false # enable per-page via math: true when equations are present
 enable_tooltips: false # enables automatic tooltip links generated for each section titles on pages and posts
 enable_darkmode: true # enables switching between light/dark modes
 enable_navbar_social: false # enables displaying social links in the navbar on the about page
@@ -447,7 +447,7 @@ third_party_libraries:
     version: "5.5.0"
   google_fonts:
     url:
-      fonts: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&display=swap"
+      fonts: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap"
   highlightjs:
     integrity:
       css:

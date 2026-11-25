@@ -1,1 +1,35 @@
-function progressBarSetup(){"max"in document.createElement("progress")?(initializeProgressElement(),$(document).on("scroll",(function(){progressBar.attr({value:getCurrentScrollPosition()})})),$(window).on("resize",initializeProgressElement)):(resizeProgressBar(),$(document).on("scroll",resizeProgressBar),$(window).on("resize",resizeProgressBar))}function getCurrentScrollPosition(){return $(window).scrollTop()}function initializeProgressElement(){let e=$("#navbar").outerHeight(!0);$("body").css({"padding-top":e}),$("progress-container").css({"padding-top":e}),progressBar.css({top:e}),progressBar.attr({max:getDistanceToScroll(),value:getCurrentScrollPosition()})}function getDistanceToScroll(){return $(document).height()-$(window).height()}function resizeProgressBar(){progressBar.css({width:getWidthPercentage()+"%"})}function getWidthPercentage(){return getCurrentScrollPosition()/getDistanceToScroll()*100}const progressBar=$("#progress");window.onload=function(){setTimeout(progressBarSetup,50)};
+(function () {
+  function initProgressBar() {
+    var progressBar = document.getElementById("progress");
+    var navbar = document.getElementById("navbar");
+    if (!progressBar || !navbar) return;
+
+    function getMaxScroll() {
+      return Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+    }
+
+    function updatePosition() {
+      var navHeight = navbar.offsetHeight || 56;
+      document.body.style.paddingTop = navHeight + "px";
+      progressBar.style.top = navHeight + "px";
+      progressBar.setAttribute("max", String(getMaxScroll()));
+      progressBar.setAttribute("value", String(window.scrollY || 0));
+    }
+
+    function onScroll() {
+      progressBar.setAttribute("value", String(window.scrollY || 0));
+    }
+
+    updatePosition();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", updatePosition, { passive: true });
+  }
+
+  if (document.readyState === "complete") {
+    initProgressBar();
+  } else {
+    window.addEventListener("load", function () {
+      window.setTimeout(initProgressBar, 50);
+    });
+  }
+})();

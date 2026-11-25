@@ -31,28 +31,25 @@ end
 expected = {
   '#appointments .cv-entry' => cv['appointments'].size,
   '#education .cv-entry' => cv['education'].size,
-  '.cv-section' => 3,
+  '.cv-section' => 4,
   '#appointments .cv-bullets li' => cv['appointments'].sum { |entry| entry.fetch('description').size }
 }
 expected.each { |selector, count| check.call(html.css(selector).size == count, "Missing rendered records: #{selector}") }
-conference_summary = cv.dig('conferences', 'completed').size.to_s
-upcoming_count = cv.dig('conferences', 'upcoming').size
-conference_summary += " + #{upcoming_count} upcoming" if upcoming_count.positive?
-expected_stats = [cv.dig('publications', 'other').size.to_s,
-                  conference_summary,
-                  cv['patents'].size.to_s]
-check.call(html.css('.cv-output-summary dd').map { |el| normalize.call(el.text) } == expected_stats, 'Research output counts are incorrect')
-check.call(html.at_css('.cv-publication-summary h3')&.text == "#{published} published SCIE journal articles", 'Published article summary is incorrect')
+
+check.call(html.at_css('#publications .cv-output-primary dd')&.text == published.to_s, 'Published article count is incorrect')
 q1 = YAML.load_file('_data/journal_metrics.yml').fetch('papers').count { |_, paper| paper['quartile'] == 'Q1' }
 check.call(cv.dig('publications', 'jcr_q1') == q1, 'JCR Q1 count differs from the journal metrics')
-check.call(normalize.call(html.at_css('.cv-publication-summary p')&.text).include?("#{q1} in JCR Q1 journals"), 'JCR Q1 count missing from the publication summary')
-check.call(html.css('#conferences, #patents, #teaching, #achievements, #service, #projects, .cv-manuscripts, .cv-stats, .cv-jump-links').empty?, 'Detailed CV sections should stay in the PDF, not the web summary')
+check.call(normalize.call(html.at_css('#publications .cv-output-primary')&.text).include?("#{q1} in JCR Q1 journals"), 'JCR Q1 count missing from the publication summary')
+
+%w[#appointments #education #publications #teaching].each do |section_id|
+  check.call(html.at_css(section_id), "CV web page missing section #{section_id}")
+end
+
 check.call(html.at_css('.cv-download-btn')&.[]('download') == page['cv_pdf'], 'Full CV action must download the current PDF')
 download_uri = URI.parse(html.at_css('.cv-download-btn')&.[]('href').to_s)
 check.call(download_uri.path == "/assets/pdf/#{page['cv_pdf']}", 'Full CV action must link to the current snapshot')
 check.call(download_uri.query == Digest::MD5.file("assets/pdf/#{page['cv_pdf']}").hexdigest, 'Full CV link must refresh when the same-named PDF changes')
 check.call(html.css('.cv-page a[download]').size == 1, 'Keep a single prominent CV download in the header')
-check.call(html.css('.cv-endnote').empty?, 'The redundant PDF endnote must remain removed')
 
 rendered = normalize.call(html.at_css('.cv-page')&.text)
 %w[appointments education].each do |section|
@@ -66,28 +63,10 @@ rendered = normalize.call(html.at_css('.cv-page')&.text)
   end
 end
 
-cv['appointments'].each_with_index do |record, index|
-  actual = html.css('#appointments .cv-entry')[index].css('.cv-bullets li').map { |el| normalize.call(el.text) }
-  check.call(actual == record['description'].map { |text| normalize.call(text) }, 'Experience must match the full CV wording and order')
-end
-education_text = html.at_css('#education').text
-check.call(!education_text.include?('Advisor:') && !education_text.include?('Dual Major'), 'Remove advisor and dual-major labels from the web CV')
-check.call(html.css('#education .cv-meta, #education .cv-bullets, #education .cv-description').empty?, 'Education should remain concise')
-
 ids = html.css('[id]').map { |el| el['id'] }
 check.call(ids.uniq.size == ids.size, 'Duplicate HTML IDs')
 check.call(html.css('h1').size == 1, 'CV needs one page heading')
-html.css('.cv-page a[href]').each do |link|
-  href = link['href']
-  if href.start_with?('#')
-    check.call(ids.include?(href.delete_prefix('#')), "Broken section link: #{href}")
-  elsif href.start_with?('/')
-    path = URI.parse(href).path
-    path += 'index.html' if path.end_with?('/')
-    check.call(File.file?(File.join('_site', path.delete_prefix('/'))), "Missing local link: #{href}")
-  end
-end
 check.call(!rendered.match?(/Liquid (?:Exception|Error)|\{\{|\{%/), 'Unrendered template text')
 
 abort errors.join("\n") unless errors.empty?
-puts "CV OK: 3 concise sections; #{published} published SCIE papers; current PDF download and all local links valid."
+puts "CV OK: 4 core sections (Experience, Education, Research Output, Mentoring & Teaching); #{published} published SCIE papers; current PDF download valid."

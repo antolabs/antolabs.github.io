@@ -1,210 +1,187 @@
-.about-site {
-  padding-bottom: 0;
-  > footer {
-    position: static;
-    padding: 1.25rem 0 1.5rem;
-    background: transparent;
-    color: var(--global-text-color-light);
-    font-size: 0.75rem;
-    .container,
-    a {
-      color: inherit;
-    }
-  }
-}
 .about-page {
-  --about-display-font: "Roboto Slab", serif;
-  --about-body-size: 1rem;
-  --about-detail-size: 0.875rem;
-  --about-copy-leading: 1.65;
+  --about-body-size: 0.98rem;
+  --about-detail-size: 0.88rem;
+  --about-copy-leading: 1.7;
 
   .about-intro {
     display: grid;
-    grid-template-columns: 330px minmax(0, 1fr);
-    align-items: center;
-    gap: 2.4rem;
-    padding: 0 0 2rem;
-    background: radial-gradient(ellipse at 80% 40%, var(--brand-tint-bg), transparent 64%);
+    grid-template-columns: 268px minmax(0, 1fr);
+    align-items: start;
+    gap: 2.35rem;
+    padding: 0.4rem 0 2.5rem;
   }
-  .about-intro-copy {
-    display: flex;
-    flex-direction: column;
-    gap: 1.4rem;
-    min-width: 0;
-  }
+
   .about-portrait {
-    figure {
+    overflow: hidden;
+    border-radius: 6px;
+    border: 1px solid var(--global-divider-color);
+    background: var(--global-surface-subtle);
+
+    figure,
+    picture {
+      display: block;
       margin: 0;
     }
+
     img {
       display: block;
       width: 100%;
       height: auto;
-      aspect-ratio: 5 / 6;
+      aspect-ratio: 4 / 5;
       object-fit: cover;
-      object-position: 50% 40%;
-      border-radius: 6px;
-      border: 1px solid var(--global-divider-color);
+      object-position: 36% 18%;
+      transform: scale(1.16);
+      transform-origin: 42% 24%;
     }
   }
+
+  .about-intro-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 1.05rem;
+    min-width: 0;
+  }
+
   .about-identity {
     h1 {
-      margin: 0 0 0.4rem;
-      font-family: var(--about-display-font);
-      font-size: 1.45rem;
+      margin: 0 0 0.35rem;
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.4vw, 2.55rem);
       font-weight: 500;
       letter-spacing: -0.025em;
-      line-height: 1.25;
+      line-height: 1.12;
+      color: var(--global-text-color);
     }
   }
+
   .about-affiliation {
     margin: 0;
-    font-size: var(--about-detail-size);
-    line-height: 1.6;
-  }
-  .about-eyebrow {
-    margin: 0 0 0.6rem;
     color: var(--global-text-color-light);
-    font-size: 0.67rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-  .about-vision {
-    min-width: 0;
-    h2 {
-      margin: 0 0 1rem;
-      font-family: var(--about-display-font);
-      font-size: clamp(1.85rem, 3.1vw, 2.3rem);
-      font-weight: 500;
-      letter-spacing: -0.025em;
-      line-height: 1.2;
+    font-size: 0.94rem;
+    line-height: 1.55;
 
-      > span {
-        display: block;
-        text-wrap: balance;
+    a {
+      color: var(--global-theme-color);
+    }
+  }
+
+  .about-bio {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    max-width: 62ch;
+
+    p {
+      margin: 0;
+      color: var(--global-text-color);
+      font-size: var(--about-body-size);
+      line-height: var(--about-copy-leading);
+    }
+  }
+
+  .about-profile-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 1.05rem;
+    margin-top: 0.25rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--global-divider-color);
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      font-size: 0.86rem;
+      font-weight: 500;
+      color: var(--global-theme-color);
+      text-decoration: none;
+
+      &:hover {
+        color: var(--global-hover-color);
+        text-decoration: underline;
+      }
+    }
+
+    .about-cv-link {
+      padding: 0.2rem 0.65rem;
+      border: 1px solid var(--global-theme-color);
+      border-radius: 4px;
+      font-weight: 600;
+
+      &:hover {
+        background: var(--brand-tint-bg);
+        text-decoration: none;
       }
     }
   }
-  .about-vision-intro {
-    max-width: 58ch;
-    margin: 0;
-    color: var(--global-text-color-light);
-    font-size: var(--about-body-size);
-    line-height: var(--about-copy-leading);
-    text-wrap: balance;
-  }
+
   .about-keep-word {
-    // Override the theme's generic span color without adding emphasis.
     color: inherit;
     font-weight: inherit;
     white-space: nowrap;
   }
 
-  .about-research-links {
+  /* Shared Home Sections */
+  .about-section {
+    padding: 2.25rem 0;
+    border-top: 1px solid var(--global-divider-color);
+  }
+
+  .about-section-head {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.25rem 1.25rem;
-    margin-top: 0.75rem;
-    a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      min-height: 44px;
-      font-size: var(--about-detail-size);
-      font-weight: 500;
-      text-decoration: underline;
-      text-decoration-color: var(--global-divider-color);
-      text-underline-offset: 0.2em;
-    }
-  }
-  .about-research {
-    padding: 2rem 0;
-    border-top: 1px solid var(--global-divider-color);
-    background: radial-gradient(ellipse at 8% 50%, var(--brand-tint-bg), transparent 65%);
-  }
-  .bisto-feature {
-    display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
-    grid-template-areas:
-      "summary visual"
-      "details visual";
-    gap: 0 2.3rem;
-    margin: 0;
-    figcaption {
-      min-width: 0;
-    }
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+    margin-bottom: 1.35rem;
+
     h2 {
-      margin: 0 0 0.25rem;
-      font-family: var(--about-display-font);
-      font-size: 1.7rem;
+      margin: 0;
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
       font-weight: 500;
-      letter-spacing: -0.025em;
+      letter-spacing: -0.02em;
       line-height: 1.25;
     }
   }
-  .bisto-summary {
-    grid-area: summary;
-    align-self: end;
-    padding-bottom: 1rem;
-  }
-  .bisto-details {
-    grid-area: details;
-    align-self: start;
-    min-width: 0;
-  }
-  .bisto-fullname {
-    margin: 0;
-    color: var(--global-text-color-light);
-    font-size: var(--about-detail-size);
-    line-height: 1.6;
-    text-wrap: balance;
-  }
-  #bisto-description {
-    margin: 0;
-    color: var(--global-text-color-light);
-    font-size: var(--about-body-size);
-    line-height: var(--about-copy-leading);
-    text-wrap: balance;
 
-    .bisto-sentence {
-      display: block;
-      color: inherit;
-
-      + .bisto-sentence {
-        margin-top: 0.5rem;
-      }
-    }
-  }
-  .bisto-workflow {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.45rem;
-    margin: 1rem 0 0;
-    padding: 0;
-    color: var(--global-text-color);
-    list-style: none;
-    font-size: var(--about-detail-size);
+  .section-more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.86rem;
     font-weight: 500;
-    line-height: 1.8;
-    li + li::before {
-      content: "\2192";
-      margin-right: 0.45rem;
-      color: var(--global-text-color-light);
+    color: var(--global-theme-color);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--global-hover-color);
+      text-decoration: underline;
     }
   }
+
+  /* BiSTO Feature */
+  .bisto-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 1.38fr) minmax(0, 0.9fr);
+    align-items: start;
+    gap: 2.15rem;
+    margin: 0;
+  }
+
   .bisto-visual {
-    grid-area: visual;
-    align-self: center;
     min-width: 0;
   }
+
   .bisto-media {
     position: relative;
     overflow: hidden;
     isolation: isolate;
     border: 1px solid var(--global-divider-color);
     border-radius: 6px;
-    background: #fff;
+    background: #ffffff;
+
     video,
     img {
       display: block;
@@ -214,94 +191,88 @@
       object-fit: contain;
     }
   }
-  .bisto-annotations,
-  .bisto-leaders {
+
+  .bisto-annotations {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     pointer-events: none;
   }
-  .bisto-leaders {
-    path {
-      fill: none;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .bisto-leader-halo {
-      stroke: #fff;
-      stroke-width: 6;
-    }
-    .bisto-leader-solid {
-      stroke: #263238;
-      stroke-width: 2.5;
-    }
-    .bisto-leader-fluid {
-      stroke: #16849c;
-      stroke-width: 2.5;
-    }
-    circle {
-      stroke: #fff;
-      stroke-width: 3;
-    }
-    .bisto-target-solid {
-      fill: #263238;
-    }
-    .bisto-target-fluid {
-      fill: #16849c;
-    }
-  }
-  .bisto-solid-evolved {
-    display: none;
-  }
-  [data-solid-phase="evolved"] {
-    .bisto-solid-initial {
-      display: none;
-    }
-    .bisto-solid-evolved {
-      display: inline;
-    }
-  }
-  .bisto-callout {
+
+  .bisto-legend {
     position: absolute;
-    left: 3.4%;
-    min-width: 4rem;
-    padding: 0.3rem 0.55rem;
-    border: 1px solid #dce3e6;
+    top: 10px;
+    left: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.72rem;
+    padding: 0.24rem 0.6rem;
+    border: 1px solid #d5dfe4;
     border-radius: 4px;
-    background: #fff;
-    color: #263238;
-    font-size: 0.8rem;
-    line-height: 1.35;
-    text-align: center;
-    strong {
-      display: block;
-      color: inherit;
-      font-weight: 600;
-    }
+    background: rgba(255, 255, 255, 0.94);
+    color: #1e293b;
+    font-size: 0.72rem;
+    font-weight: 500;
+    line-height: 1.3;
   }
-  .bisto-callout-solid {
-    top: 4.8%;
-    border-color: #343a40;
-    background: #343a40;
-    color: #fff;
+
+  .bisto-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.34rem;
   }
-  .bisto-callout-fluid {
-    bottom: 4%;
-    border-color: #a4cde8;
-    background: #def0fc;
-    color: #174765;
+
+  .bisto-swatch {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
   }
-  .bisto-toggle {
+
+  .bisto-swatch-solid {
+    background: #0b0e14;
+    border: 1px solid #0b0e14;
+  }
+
+  .bisto-swatch-fluid {
+    background: #3b4cc0;
+    border: 1px solid #2a3794;
+  }
+
+  .bisto-progress-track {
     position: absolute;
+    left: 0;
     right: 0;
     bottom: 0;
+    height: 2.5px;
+    background: rgba(21, 94, 117, 0.12);
+    overflow: hidden;
+
+    &[hidden] {
+      display: none;
+    }
+
+    .bisto-progress-fill {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: #155e75;
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+  }
+
+  .bisto-toggle {
+    position: absolute;
+    left: 2px;
+    bottom: 2px;
     display: flex;
     align-items: end;
-    justify-content: end;
+    justify-content: start;
     width: 44px;
     height: 44px;
-    padding: 4px;
+    padding: 6px;
     border: 0;
     background: transparent;
     color: #263238;
@@ -312,8 +283,8 @@
     }
 
     svg {
-      width: 24px;
-      height: 24px;
+      width: 26px;
+      height: 26px;
       padding: 5px;
       border: 1px solid #c9d4d9;
       border-radius: 50%;
@@ -322,14 +293,8 @@
     }
 
     &:hover svg {
-      border-color: #16849c;
-      color: #16849c;
-    }
-
-    &:focus-visible {
-      outline: 2px solid #16849c;
-      outline-offset: -3px;
-      border-radius: 4px;
+      border-color: #155e75;
+      color: #155e75;
     }
 
     .bisto-icon-pause {
@@ -340,207 +305,148 @@
       .bisto-icon-play {
         display: none;
       }
-
       .bisto-icon-pause {
         display: inline;
       }
     }
   }
+
   .bisto-temperature-note {
     margin: 0.55rem 0 0;
     color: var(--global-text-color-light);
-    font-size: var(--about-detail-size);
-    line-height: 1.6;
-    text-wrap: balance;
+    font-size: 0.82rem;
+    line-height: 1.55;
   }
-  .about-methods {
-    padding-top: 2rem;
-    border-top: 1px solid var(--global-divider-color);
-    > h2 {
-      margin: 0 0 1.25rem;
-      font-family: var(--about-display-font);
-      font-size: 1.25rem;
-      font-weight: 500;
-    }
+
+  .bisto-details {
+    min-width: 0;
   }
-  .about-method-list {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.6rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    li + li {
-      padding-left: 1.6rem;
-      border-left: 1px solid var(--global-divider-color);
-    }
-    h3 {
-      margin: 0 0 0.65rem;
-      font-family: var(--about-display-font);
-      font-size: 1.1rem;
-      font-weight: 500;
-      line-height: 1.45;
-      text-wrap: balance;
-    }
+
+  .bisto-fullname {
+    margin: 0 0 0.75rem;
+    color: var(--global-theme-color);
+    font-size: 0.86rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  #bisto-description {
     p {
-      margin: 0;
-      color: var(--global-text-color-light);
-      font-size: var(--about-body-size);
-      line-height: var(--about-copy-leading);
-      text-wrap: balance;
-    }
-  }
-  .about-future-direction {
-    max-width: 90ch;
-    margin: 1.5rem 0 0;
-    color: var(--global-text-color-light);
-    font-size: var(--about-detail-size);
-    line-height: var(--about-copy-leading);
-    text-wrap: pretty;
-  }
-  article .social {
-    margin-top: 2rem;
-    padding-top: 1.25rem;
+      margin: 0 0 0.8rem;
+      color: var(--global-text-color);
+      font-size: 0.94rem;
+      line-height: 1.68;
 
-    .contact-icons {
-      gap: 0.5rem 0.75rem;
-      font-size: 1.8rem;
-
-      a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 44px;
-        min-height: 44px;
+      &:last-child {
+        margin-bottom: 0;
       }
     }
+  }
 
-    .contact-note {
-      line-height: 1.6;
-    }
+  .bisto-status {
+    margin: 0.95rem 0 0;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--global-divider-color);
+    color: var(--global-text-color-light);
+    font-size: 0.84rem;
+    line-height: 1.55;
   }
-}
-@media (min-width: 768px) {
-  .about-page .about-method-list {
-    row-gap: 0;
-    > li {
-      display: grid;
-      grid-row: span 2;
-      grid-template-rows: subgrid;
-    }
-  }
-}
-@media (min-width: 992px) {
-  .about-page article .social {
-    .contact-icons {
-      column-gap: 0.9rem;
-      font-size: 2.2rem;
-    }
 
-    .contact-note {
-      font-size: 0.9rem;
+  .bisto-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1.25rem;
+    margin-top: 0.85rem;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      min-height: 36px;
+      font-size: 0.86rem;
+      font-weight: 500;
     }
   }
 }
+
+/* Dark mode: intentionally mount white scientific visual on a subtle tray */
+html[data-theme="dark"] .about-page .bisto-media {
+  padding: 0.4rem;
+  background: #ffffff;
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.38);
+}
+
 @media (max-width: 991px) {
   .about-page {
     .about-intro {
-      grid-template-columns: 260px minmax(0, 1fr);
-      column-gap: 1.8rem;
+      grid-template-columns: 212px minmax(0, 1fr);
+      gap: 1.75rem;
     }
+
     .bisto-feature {
-      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-      column-gap: 1.4rem;
+      grid-template-columns: 1fr;
+      gap: 1.35rem;
     }
   }
 }
+
 @media (max-width: 767px) {
-  .about-site {
-    > .container.mt-5 {
-      margin-top: 1.5rem !important;
-    }
-    > footer .container {
-      padding-right: 15px;
-    }
-    #back-to-top {
-      display: none !important;
-    }
-  }
   .about-page {
     .about-intro {
-      grid-template-columns: minmax(0, 1fr) clamp(144px, 42vw, 200px);
-      gap: 1.5rem 1rem;
-      padding-bottom: 1.5rem;
+      grid-template-columns: 108px minmax(0, 1fr);
+      gap: 1rem 1rem;
+      padding: 0.25rem 0 1.75rem;
     }
+
     .about-intro-copy {
       display: contents;
     }
+
     .about-portrait {
-      grid-column: 2;
-      grid-row: 1;
-      align-self: center;
-    }
-    .about-identity {
       grid-column: 1;
       grid-row: 1;
       align-self: center;
-      padding: 0;
-      h1 {
-        font-size: clamp(1.2rem, 5.8vw, 1.5rem);
-      }
     }
-    .about-affiliation {
-      font-size: var(--about-detail-size);
-    }
-    .about-vision {
-      grid-column: 1 / -1;
-      h2 {
-        font-size: clamp(1.4rem, 7.2vw, 2rem);
-      }
-    }
-    .about-research-links {
-      column-gap: 1rem;
-    }
-    .about-research {
-      padding: 1.5rem 0 1.8rem;
-    }
-    .bisto-feature {
-      grid-template-columns: 1fr;
-      grid-template-areas:
-        "summary"
-        "visual"
-        "details";
-      gap: 1rem;
-    }
-    .bisto-summary {
-      padding-bottom: 0;
-    }
-    .bisto-workflow {
-      margin-top: 0.85rem;
-    }
-    .bisto-callout {
-      min-width: 3.3rem;
-      padding: 0.2rem 0.4rem;
-      font-size: 0.8rem;
-    }
-    .about-method-list {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      li + li {
-        padding: 1rem 0 0;
-        border-left: 0;
-        border-top: 1px solid var(--global-divider-color);
-      }
-    }
-  }
-}
-@media (max-width: 374px) {
-  .about-page .about-research-links {
-    justify-content: space-between;
-    column-gap: 0.5rem;
 
-    a > span[aria-hidden="true"] {
-      display: none;
+    .about-identity {
+      grid-column: 2;
+      grid-row: 1;
+      align-self: center;
+
+      h1 {
+        font-size: clamp(1.5rem, 6.2vw, 1.9rem);
+      }
+    }
+
+    .about-bio,
+    .about-profile-links {
+      grid-column: 1 / -1;
+    }
+
+    .about-profile-links {
+      gap: 0.25rem 0.85rem;
+
+      a {
+        min-height: 40px;
+      }
+    }
+
+    .about-section {
+      padding: 1.75rem 0;
+    }
+
+    .bisto-legend {
+      top: 6px;
+      left: 8px;
+      gap: 0.5rem;
+      padding: 0.16rem 0.45rem;
+      font-size: 0.66rem;
+    }
+
+    .bisto-swatch {
+      width: 8px;
+      height: 8px;
     }
   }
 }

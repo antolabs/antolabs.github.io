@@ -25,6 +25,9 @@ layout: default
   <section aria-labelledby="abstract-heading">
     <h2 id="abstract-heading">Abstract</h2>
     <p class="publication-detail-abstract">{{ paper.abstract | escape }}</p>
+    {% if paper.keywords and paper.keywords.size > 0 %}
+      <p class="publication-detail-keywords"><strong>Keywords:</strong> {{ paper.keywords | join: ', ' | escape }}</p>
+    {% endif %}
   </section>
   <section aria-labelledby="cite-heading" id="cite">
     <h2 id="cite-heading">Cite this paper</h2>

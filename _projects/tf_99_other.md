@@ -1,16 +1,16 @@
 ---
 layout: project
-title: "Thermal-structural engineering at FRIB"
-description: Thermal-structural analysis of post-target shielding, plasma chamber, charge-selector, and target systems at FRIB
+title: "Thermal and structural engineering at FRIB"
+description: Thermal and structural analysis of post target shielding, plasma chamber, charge selector, and target systems at FRIB
 importance: 99
 category: Thermo-fluid devices
 year: "2024 - 2026"
 body_class: "project-view"
 footer_static: true
-card_title: "Thermal-structural engineering at FRIB"
+card_title: "Thermal and structural engineering at FRIB"
 institution: "FRIB"
-project_group: "Thermal-fluid engineering"
-summary: "Thermal and structural analysis of beam-intercepting devices, shielding, and target systems."
+project_group: "Thermal fluid engineering"
+summary: "Thermal and structural analysis of beam intercepting devices, shielding, and target systems."
 detail_intro: "I performed thermal-fluid and structural analyses to support design reviews, operating limits, and device qualification at FRIB."
 detail_summary_label: Engineering studies
 detail_summary: "Simulation studies and experimental comparisons for shielding, plasma-chamber, charge-selector, and target systems."

@@ -2,6 +2,9 @@
 <meta name="citation_title" content="{{ paper.title | escape }}">
 {% for author in paper.citation_authors %}
   <meta name="citation_author" content="{{ author | escape }}">
+  {% if author == 'Lee, Geunhyeong' and site.data.socials.orcid_id %}
+    <meta name="citation_author_orcid" content="{{ site.data.socials.orcid_id | escape }}">
+  {% endif %}
 {% endfor %}
 <meta name="citation_publication_date" content="{{ paper.year | escape }}">
 <meta name="citation_journal_title" content="{{ paper.journal | escape }}">
@@ -9,6 +12,7 @@
 <meta name="citation_pdf_url" content="{{ page.publication_pdf | absolute_url }}">
 <meta name="citation_abstract_html_url" content="{{ page.url | absolute_url }}">
 <meta name="citation_language" content="en">
+{% if paper.keywords %}<meta name="citation_keywords" content="{{ paper.keywords | join: '; ' | escape }}">{% endif %}
 {% if paper.volume %}<meta name="citation_volume" content="{{ paper.volume | escape }}">{% endif %}
 {% if paper.issue %}<meta name="citation_issue" content="{{ paper.issue | escape }}">{% endif %}
 {% if paper.first_page %}<meta name="citation_firstpage" content="{{ paper.first_page | escape }}">{% endif %}

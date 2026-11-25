@@ -7,15 +7,23 @@ layout: default
 {% assign cv_mm = cv_date_raw | slice: 2, 2 %}
 {% assign cv_dd = cv_date_raw | slice: 4, 2 %}
 {% capture cv_date %}20{{ cv_yy }}-{{ cv_mm }}-{{ cv_dd }}{% endcapture %}
-{% assign sections = 'Experience|Education|Research output' | split: '|' %}
-{% assign section_ids = 'appointments|education|publications' | split: '|' %}
+{% assign total_reviews = 0 %}
+{% for r in cv.service.reviews %}
+  {% assign total_reviews = total_reviews | plus: r.count %}
+{% endfor %}
 
 <div class="post cv-page">
   <header class="cv-header">
     <div>
       <p class="cv-kicker">{{ cv.name | escape }}</p>
       <h1 class="post-title">Curriculum Vitae</h1>
-      <p class="cv-intro">{{ cv.appointments.first.title | escape }} &middot; FRIB, Michigan State University</p>
+      <p class="cv-intro">
+        {{ cv.appointments.first.title | escape }} &middot; FRIB, Michigan State University
+        {% if cv.email %}
+          <span class="cv-intro-sep" aria-hidden="true">&middot;</span>
+          <a class="cv-email-link" href="mailto:{{ cv.email | escape }}">{{ cv.email | escape }}</a>
+        {% endif %}
+      </p>
     </div>
     <div class="cv-header-actions">
       <a class="cv-download-btn" href="{{ page.cv_pdf | prepend: '/assets/pdf/' | relative_url | bust_file_cache }}" download="{{ page.cv_pdf }}">
@@ -29,32 +37,92 @@ layout: default
   </header>
 
   <article>
-    {% for section in sections %}
-      {% assign section_id = section_ids[forloop.index0] %}
-      <section class="cv-section" id="{{ section_id }}" aria-labelledby="{{ section_id }}-heading">
-        <div class="cv-section-label">
-          <h2 id="{{ section_id }}-heading">{{ section }}</h2>
-        </div>
-        <div class="cv-section-body">
-          {% case section_id %}
-            {% when 'appointments' %}
-              {% include cv/entries.liquid entries=cv.appointments %}
-            {% when 'education' %}
-              {% include cv/entries.liquid entries=cv.education hide_department=true hide_description=true %}
-            {% when 'publications' %}
-              <div class="cv-publication-summary">
-                <h3>{{ cv.publications.published }} published SCIE journal articles</h3>
-                <p><strong>{{ cv.publications.first_author }}</strong> first/co-first author <span aria-hidden="true">&middot;</span> <strong>{{ cv.publications.corresponding_author }}</strong> corresponding author{% if cv.publications.jcr_q1 %} <span aria-hidden="true">&middot;</span> <strong>{{ cv.publications.jcr_q1 }}</strong> in JCR Q1 journals{% endif %}</p>
-                <a class="cv-text-link" href="{{ '/publications/' | relative_url }}">View publications <span aria-hidden="true">&#8594;</span></a>
-              </div>
-              <dl class="cv-output-summary">
-                <div><dt>Other journal publications</dt><dd>{{ cv.publications.other.size }}</dd></div>
-                <div><dt>Conference presentations</dt><dd>{{ cv.conferences.completed.size }}{% if cv.conferences.upcoming.size > 0 %} <span>+ {{ cv.conferences.upcoming.size }} upcoming</span>{% endif %}</dd></div>
-                <div><dt>Registered patents</dt><dd>{{ cv.patents.size }}</dd></div>
-              </dl>
-          {% endcase %}
-        </div>
-      </section>
-    {% endfor %}
+    <section class="cv-section" id="appointments" aria-labelledby="appointments-heading">
+      <div class="cv-section-label">
+        <h2 id="appointments-heading">Experience</h2>
+      </div>
+      <div class="cv-section-body">
+        {% include cv/entries.liquid entries=cv.appointments %}
+      </div>
+    </section>
+
+    <section class="cv-section" id="education" aria-labelledby="education-heading">
+      <div class="cv-section-label">
+        <h2 id="education-heading">Education</h2>
+      </div>
+      <div class="cv-section-body">
+        {% include cv/entries.liquid entries=cv.education %}
+      </div>
+    </section>
+
+    <section class="cv-section" id="publications" aria-labelledby="publications-heading">
+      <div class="cv-section-label">
+        <h2 id="publications-heading">Research Output</h2>
+      </div>
+      <div class="cv-section-body">
+        <dl class="cv-output-summary">
+          <div class="cv-output-primary">
+            <dt>
+              <strong>Published SCIE journal articles</strong>
+              <span class="cv-output-detail">
+                {{ cv.publications.first_author }} first/co-first
+                <span aria-hidden="true">&middot;</span>
+                {{ cv.publications.corresponding_author }} corresponding
+                {% if cv.publications.jcr_q1 %}
+                  <span aria-hidden="true">&middot;</span>
+                  {{ cv.publications.jcr_q1 }} in JCR Q1 journals
+                {% endif %}
+              </span>
+            </dt>
+            <dd>{{ cv.publications.published }}</dd>
+          </div>
+          <div><dt>Manuscripts under review</dt><dd>{{ cv.publications.manuscripts.size }}</dd></div>
+          <div><dt>Conference presentations &amp; proceedings</dt><dd>{{ cv.conferences.completed.size }}</dd></div>
+          <div><dt>Invited talks</dt><dd>{{ cv.invited_talks.size }}</dd></div>
+          <div><dt>Registered patents</dt><dd>{{ cv.patents.size }}</dd></div>
+          <div><dt>Journal peer reviews</dt><dd>{{ total_reviews }}</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="cv-section" id="teaching" aria-labelledby="teaching-heading">
+      <div class="cv-section-label">
+        <h2 id="teaching-heading">Mentoring &amp; Teaching</h2>
+      </div>
+      <div class="cv-section-body">
+        <ul class="cv-compact-list">
+          <li>
+            <span class="cv-compact-year">2026 - Present</span>
+            <div class="cv-compact-detail">
+              <strong>Research Mentoring</strong> <span class="cv-inline-muted">&middot; FRIB, Michigan State University</span>
+              <p class="cv-compact-note">Mentoring 3 MSU students (2 undergraduates, 1 graduate student) on induction heating validation and AI geometry optimization.</p>
+            </div>
+          </li>
+          <li>
+            <span class="cv-compact-year">2023</span>
+            <div class="cv-compact-detail">
+              <strong>Lecturer, Foundation of AI</strong> <span class="cv-inline-muted">&middot; International School on Beam Dynamics and Accelerator Technology</span>
+            </div>
+          </li>
+          <li>
+            <span class="cv-compact-year">2016 - 2021</span>
+            <div class="cv-compact-detail">
+              <strong>Instructor &amp; Teaching Assistant</strong> <span class="cv-inline-muted">&middot; UNIST</span>
+              <p class="cv-compact-note">Nuclear Comprehensive Design Project, Fundamental of Electromagnetics, and Liquid Metal Magnetohydrodynamics.</p>
+            </div>
+          </li>
+          <li>
+            <span class="cv-compact-year">Training</span>
+            <div class="cv-compact-detail">
+              <strong>MSU Academy for Teaching</strong> <span class="cv-inline-muted">&middot; Michigan State University</span>
+              <p class="cv-compact-note">Course design, student engagement, and generative AI in education.</p>
+            </div>
+          </li>
+        </ul>
+        <p class="cv-pdf-note">
+          Complete lists of invited talks, patents, awards, conference proceedings, and journal peer reviews are included in the downloadable PDF CV above.
+        </p>
+      </div>
+    </section>
   </article>
 </div>

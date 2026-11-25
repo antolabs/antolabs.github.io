@@ -1,0 +1,67 @@
+---
+layout: default
+---
+{% assign cv = site.data.cv %}
+{% assign papers = site.data.publications %}
+{% assign total_papers = papers.size %}
+
+<div class="post publications-shell">
+  <header class="post-header publication-header">
+    <div class="publication-heading">
+      <p class="publication-kicker">SCIE Journals</p>
+      <h1 class="post-title">Publications</h1>
+    </div>
+    <div class="publication-stats" aria-label="Publication counts">
+      <span class="publication-stat"><strong>{{ cv.publications.published }}</strong><span>Published SCIE</span></span>
+      <span class="publication-stat"><strong>{{ cv.publications.first_author }}</strong><span>First / co-first<sup>&dagger;</sup></span></span>
+      <span class="publication-stat"><strong>{{ cv.publications.corresponding_author }}</strong><span>Corresponding<sup>*</sup></span></span>
+      <span class="publication-stat"><strong>{{ cv.publications.jcr_q1 }}</strong><span>JCR Q1</span></span>
+    </div>
+  </header>
+
+  <article>
+    <div class="publications">
+      {% include under_review.liquid %}
+
+      <section class="publication-published" aria-labelledby="published-scie-heading">
+        <h2 class="publication-section-heading" id="published-scie-heading">Published SCIE articles</h2>
+        <p class="publication-metrics-note">
+          All {{ total_papers }} articles below are SCIE indexed. Journal metrics reflect Q1 values reported in the CV.
+        </p>
+
+        <ol class="bibliography">
+          {% assign pub_num = total_papers %}
+          {% for paper in papers %}
+            <li class="publication-entry">
+              <div id="{{ paper.id }}" class="publication-entry-content">
+                <div class="title">
+                  <span class="pub-number">{% if pub_num < 10 %}0{% endif %}{{ pub_num }}</span>
+                  <a class="publication-title-link" href="{{ '/publications/' | append: paper.id | append: '/' | relative_url }}">{{ paper.title | escape }}</a>
+                </div>
+                <div class="author">{{ paper.authors_html }}</div>
+                <div class="periodical">
+                  <em>{{ paper.journal | escape }}</em>{% if paper.volume %}, {{ paper.volume }}{% endif %}{% if paper.issue %}({{ paper.issue }}){% endif %}{% if paper.first_page %}, {{ paper.first_page }}{% endif %}{% if paper.last_page %}-{{ paper.last_page }}{% endif %} ({{ paper.year }})
+                </div>
+                <div class="publication-entry-footer">
+                  {% include journal_metrics.liquid key=paper.id %}
+                  <div class="links">
+                    <a
+                      href="https://doi.org/{{ paper.doi | escape }}"
+                      class="pub-action-link pub-link-doi"
+                      rel="external noopener"
+                      target="_blank"
+                      >DOI</a
+                    >
+                    <span class="pub-action-sep" aria-hidden="true">&middot;</span>
+                    <a href="{{ paper.pdf | relative_url }}" class="pub-action-link btn-pdf" target="_blank" rel="noopener" download>PDF</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            {% assign pub_num = pub_num | minus: 1 %}
+          {% endfor %}
+        </ol>
+      </section>
+    </div>
+  </article>
+</div>

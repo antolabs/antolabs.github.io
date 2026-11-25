@@ -30,7 +30,7 @@ files.split("\0").uniq.each do |path|
   patterns.each { |label, pattern| errors << "#{label} pattern in #{path}" if content.match?(pattern) }
 end
 
-paths = %w[_site/index.html _site/cv/index.html _site/publications/index.html] + Dir['_site/projects/**/index.html']
+paths = %w[_site/index.html _site/research/index.html _site/cv/index.html _site/publications/index.html] + Dir['_site/projects/*/index.html']
 paths.each do |path|
   html = Nokogiri::HTML(File.read(path))
   html.css('script[src], link[rel="stylesheet"], img[src], video source[src]').each do |asset|

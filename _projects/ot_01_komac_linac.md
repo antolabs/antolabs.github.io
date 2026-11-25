@@ -1,7 +1,7 @@
 ---
 layout: project
 title: KOMAC linac AI anomaly detection
-description: An LSTM autoencoder for early detection of anomalies in quadrupole-magnet operation.
+description: An LSTM autoencoder for early detection of anomalies in quadrupole magnet operation.
 img: assets/img/komac_linac/fig_lstm_autoencoder.png
 importance: 1
 category: Others
@@ -11,7 +11,7 @@ footer_static: true
 card_title: "AI anomaly detection for the KOMAC linac"
 institution: "KAERI"
 project_group: "AI fault detection"
-summary: "An LSTM autoencoder for early detection of anomalies in quadrupole-magnet operation."
+summary: "An LSTM autoencoder for early detection of anomalies in quadrupole magnet operation."
 detail_intro: "I applied AI anomaly detection to KOMAC accelerator operating data as part of the intelligent-operation research program."
 detail_summary_label: Study result
 detail_summary: "Early anomaly signatures in five of ten historical voltage-fault cases, 30.7-286.6 minutes before recorded fault signal-off."

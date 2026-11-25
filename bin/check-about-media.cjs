@@ -23,9 +23,8 @@ function setup({
   frameCallback = false,
   initialError = false,
   noSource = false,
-  resizeObserver = true,
   alreadyPlaying = false,
-  missingViewBox = false,
+  duration = 22.1,
 } = {}) {
   const mediaSource = eventTarget();
   const video = eventTarget({
@@ -36,6 +35,8 @@ function setup({
     playCalls: 0,
     loadCalls: 0,
     currentTime: 0,
+    duration,
+    playbackRate: 1,
     error: initialError,
     NETWORK_NO_SOURCE: 3,
     networkState: noSource ? 3 : 1,
@@ -68,35 +69,15 @@ function setup({
       this.attributes[name] = value;
     },
   });
-  const geometry = {
-    svg: { left: 0, top: 0, width: 884, height: 620 },
-    solid: { left: 30, top: 30, width: 100, height: 42 },
-    fluid: { left: 30, top: 555, width: 100, height: 40 },
-  };
-  const box = (name) => ({
-    getBoundingClientRect() {
-      const rect = geometry[name];
-      return { ...rect, right: rect.left + rect.width, bottom: rect.top + rect.height };
-    },
-  });
-  const leaders = { ...box("svg"), viewBox: { baseVal: { width: 884, height: 620 } } };
-  if (missingViewBox) delete leaders.viewBox;
-  const paths = Object.fromEntries(
-    [".bisto-solid-initial path", ".bisto-solid-evolved path", ".bisto-fluid-leader path"].map((selector) => [
-      selector,
-      Array.from({ length: 2 }, () => ({
-        attributes: {},
-        setAttribute(name, value) {
-          this.attributes[name] = value;
-        },
-      })),
-    ])
-  );
+  const progressTrack = { hidden: true };
+  const progressFill = { style: { transform: "" } };
   const annotations = {
-    dataset: { solidPhase: "initial" },
+    hidden: false,
     querySelector: (selector) =>
-      ({ ".bisto-leaders": leaders, ".bisto-callout-solid": box("solid"), ".bisto-callout-fluid": box("fluid") })[selector],
-    querySelectorAll: (selector) => paths[selector] || [],
+      ({
+        ".bisto-progress-track": progressTrack,
+        ".bisto-progress-fill": progressFill,
+      })[selector],
   };
   const motion = eventTarget({ matches: reduced });
   const document = eventTarget({
@@ -104,89 +85,51 @@ function setup({
     getElementById: () => video,
     querySelector: (selector) => ({ ".bisto-toggle": button, ".bisto-annotations": annotations })[selector],
   });
-  const resizeCallbacks = [];
-  const observed = [];
   const window = eventTarget({ matchMedia: () => motion });
-  if (resizeObserver) {
-    window.ResizeObserver = class {
-      constructor(callback) {
-        resizeCallbacks.push(callback);
-      }
-      observe(element) {
-        observed.push(element);
-      }
-    };
-  }
   const context = { document, window };
   vm.runInNewContext(source, context);
   return {
     video,
     button,
     annotations,
+    progressTrack,
+    progressFill,
     motion,
     document,
     mediaSource,
-    geometry,
-    paths,
-    observed,
     window,
-    resize: () => resizeCallbacks.forEach((callback) => callback()),
     frame: (time) => frame(0, { mediaTime: time }),
   };
 }
 
 async function check() {
   const normal = setup();
-  const coordinates = (state, selector) => state.paths[selector][0].attributes.d.match(/-?\d+(?:\.\d+)?/g).map(Number);
-  assert.deepEqual(coordinates(normal, ".bisto-solid-initial path").slice(0, 2), [130, 72], "Solid starts at its label's bottom-right corner");
-  assert.deepEqual(coordinates(normal, ".bisto-solid-evolved path").slice(0, 2), [130, 72], "Both solid phases use the same label anchor");
-  assert.deepEqual(
-    coordinates(normal, ".bisto-fluid-leader path").slice(0, 4),
-    [130, 575, 255, 575],
-    "Fluid exits horizontally from the right-edge midpoint"
-  );
-  assert.equal(normal.observed.length, 3, "Observe the SVG and both labels so viewport/font changes remain attached");
-  normal.geometry.svg = { left: 20, top: 15, width: 442, height: 310 };
-  normal.geometry.solid = { left: 35, top: 30, width: 64, height: 30 };
-  normal.geometry.fluid = { left: 35, top: 280, width: 64, height: 26 };
-  normal.resize();
-  assert.deepEqual(coordinates(normal, ".bisto-solid-initial path").slice(0, 2), [158, 90], "Recalculate the corner in SVG coordinates after resize");
-  assert.deepEqual(coordinates(normal, ".bisto-fluid-leader path").slice(0, 4), [158, 556, 255, 556]);
-  for (const group of Object.values(normal.paths))
-    assert.equal(group[0].attributes.d, group[1].attributes.d, "Keep the halo and visible leader aligned");
-  assert.deepEqual(coordinates(normal, ".bisto-solid-initial path").slice(-2), [260, 240]);
-  assert.deepEqual(coordinates(normal, ".bisto-solid-evolved path").slice(-2), [320, 285]);
-  assert.deepEqual(coordinates(normal, ".bisto-fluid-leader path").slice(-2), [360, 345], "Preserve the scientific target positions");
-  normal.geometry.solid.width = 100;
-  normal.geometry.fluid.width = 130;
-  normal.resize();
-  assert.ok(
-    coordinates(normal, ".bisto-solid-initial path")[2] > coordinates(normal, ".bisto-solid-initial path")[0],
-    "Solid's first segment must exit to the right even with a wide mobile label"
-  );
-  assert.ok(coordinates(normal, ".bisto-fluid-leader path")[2] > coordinates(normal, ".bisto-fluid-leader path")[0]);
-  normal.geometry.svg.width = 0;
-  normal.resize();
-  assert.ok(!normal.paths[".bisto-fluid-leader path"][0].attributes.d.includes("Infinity"), "Ignore hidden or zero-size SVGs");
-  const resizeFallback = setup({ resizeObserver: false });
-  resizeFallback.geometry.solid.width = 120;
-  resizeFallback.window.emit("resize");
-  assert.equal(coordinates(resizeFallback, ".bisto-solid-initial path")[0], 150, "Support resize without ResizeObserver");
-  assert.equal(normal.annotations.dataset.solidPhase, "initial", "The initial frame points to the solid shell, not fluid");
-  normal.video.currentTime = 2;
+  assert.equal(normal.progressTrack.hidden, false, "Reveal the progress track when JS initializes");
+  assert.equal(normal.video.playbackRate, 0.85, "Hold the baseline frame briefly before search");
+
+  normal.video.currentTime = 4.0;
   normal.video.emit("timeupdate");
-  assert.equal(normal.annotations.dataset.solidPhase, "initial");
-  normal.video.currentTime = 2.1;
+  assert.equal(normal.video.playbackRate, 1.5, "Play the active evolution smoothly");
+  assert.ok(normal.progressFill.style.transform.startsWith("scaleX("), "Update visual progress bar");
+
+  normal.video.currentTime = 14.0;
   normal.video.emit("timeupdate");
-  assert.equal(normal.annotations.dataset.solidPhase, "evolved", "Point to the black cutaway only once solid has formed");
+  assert.equal(normal.video.playbackRate, 4.0, "Accelerate through the slow convergence tail");
+
+  normal.video.currentTime = 21.0;
+  normal.video.emit("timeupdate");
+  assert.equal(normal.video.playbackRate, 0.75, "Hold the converged state before looping");
+
   normal.video.currentTime = 0;
   normal.video.emit("seeked");
-  assert.equal(normal.annotations.dataset.solidPhase, "initial", "Reset the pointer after seeking or looping");
+  assert.equal(normal.video.playbackRate, 0.85, "Reset pacing after looping");
+
   const synced = setup({ frameCallback: true });
-  synced.frame(10);
-  assert.equal(synced.annotations.dataset.solidPhase, "evolved");
+  synced.frame(14);
+  assert.equal(synced.video.playbackRate, 4.0);
   synced.frame(0);
-  assert.equal(synced.annotations.dataset.solidPhase, "initial", "Synchronize the pointer with the displayed frame at loop boundaries");
+  assert.equal(synced.video.playbackRate, 0.85, "Synchronize pacing with frame callback at loop boundaries");
+
   assert.equal(normal.video.playCalls, 1, "Start immediately without waiting for a viewport observer");
   assert.equal(normal.video.paused, false);
   assert.equal(normal.button.attributes["aria-label"], "Pause animation");
@@ -196,6 +139,7 @@ async function check() {
   assert.equal(normal.video.autoplay, true);
   assert.equal(normal.video.dataset.playbackState, "playing");
   assert.equal(normal.video.controls, false, "Only show the custom play/pause button");
+
   normal.button.emit("click");
   normal.video.emit("canplay");
   normal.video.emit("loadeddata");
@@ -229,7 +173,7 @@ async function check() {
   native.video.emit("canplay");
   assert.equal(native.video.playCalls, 0, "Enhance already-playing native autoplay without restarting it");
   assert.equal(native.button.attributes["aria-label"], "Pause animation");
-  assert.equal(setup({ missingViewBox: true }).video.paused, false, "Optional annotation geometry cannot prevent playback");
+  assert.equal(setup({ duration: Number.NaN }).video.paused, false, "Missing duration metadata cannot prevent playback");
 
   const background = setup({ hidden: true });
   assert.equal(background.video.playCalls, 0);
@@ -261,7 +205,7 @@ async function check() {
   normal.mediaSource.emit("error");
   assert.equal(normal.button.hidden, false);
   assert.equal(normal.button.attributes["aria-label"], "Retry animation");
-  assert.equal(normal.annotations.hidden, true, "Hide pointers if the video cannot be displayed");
+  assert.equal(normal.annotations.hidden, true, "Hide overlays if the video cannot be displayed");
   assert.equal(normal.video.controls, false, "Never replace the button with native controls or a separate link");
   normal.button.emit("click");
   assert.equal(normal.video.loadCalls, 1, "Retry loading within the same player");
@@ -272,6 +216,7 @@ async function check() {
   normal.video.emit("error");
   normal.video.emit("canplay");
   assert.equal(normal.video.paused, false, "A recovered media load must not permanently disable autoplay");
+
   const initialFailure = setup({ initialError: true });
   assert.equal(initialFailure.button.attributes["aria-label"], "Retry animation");
   assert.equal(initialFailure.video.playCalls, 0);
@@ -296,8 +241,10 @@ async function check() {
   lateSourceError.video.networkState = 3;
   lateSourceError.button.emit("click");
   assert.equal(lateSourceError.video.loadCalls, 1, "Recheck the source state when the button is activated");
+
   const layout = fs.readFileSync(path.join(__dirname, "../_layouts/about.liquid"), "utf8");
   assert.ok(!layout.includes("Open the animation") && !layout.includes("bisto-fallback"));
+  assert.ok(layout.includes("bisto-legend") && !layout.includes("bisto-leaders"), "Use clean legend overlay without moving leader arrows");
   assert.ok(layout.includes('preload="auto"'));
   const videoTag = layout.match(/<video\b[^>]*id="bisto-video"[^>]*>/)?.[0];
   for (const attribute of ["autoplay", "muted", "playsinline", "loop", "controls"]) {
@@ -310,7 +257,7 @@ async function check() {
 
   vm.runInNewContext(source, { document: { getElementById: () => null, querySelector: () => null } });
   console.log(
-    "About media OK: native muted autoplay, OS-motion-independent research playback, manual pause, page restoration, responsive annotations, policy rejection, and source recovery."
+    "About media OK: clean legend, dynamic pacing, stage/progress sync, native muted autoplay, manual pause, page restoration, policy rejection, and source recovery."
   );
 }
 

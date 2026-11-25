@@ -3,34 +3,70 @@ layout: null
 permalink: /llms.txt
 sitemap: false
 ---
-# Geunhyeong Lee
+# Geunhyeong Lee, Ph.D.
 
-> Scientist at the Facility for Rare Isotope Beams (FRIB), Michigan State University. Research focuses on AI-driven multiphysics design and optimization, supported by thermal-fluid, electromagnetic, and structural analysis, 3D printing, and experimental validation for nuclear systems.
+> Scientist at the Facility for Rare Isotope Beams (FRIB), Michigan State University. Engineering devices cannot keep growing larger as power and energy demands rise; Geunhyeong Lee establishes general, physics verified AI design methods (including BiSTO) that push real hardware closer to its physical limits inside fixed space across thermal, fluid, structural, and electromagnetic systems, verified by physics solvers, metal additive manufacturing, experimental validation, and uncertainty aware digital twins.
 
-This optional discovery index links to the site's public research records. Article pages include author-written abstracts from the linked PDFs, publication metadata, and citation downloads. DOI links identify the published versions.
+This discovery index links to public research, teaching, project, and publication records for Geunhyeong Lee (ORCID: 0000-0003-3141-4663). For the complete plain text academic dossier including full abstracts and career records, see [llms-full.txt]({{ '/llms-full.txt' | absolute_url }}).
 
-## Profile and research
-- [About]({{ '/' | absolute_url }}): Research vision and BiSTO demonstration.
-- [CV]({{ '/cv/' | absolute_url }}): Career and education, with a full CV download.
-- [Publications]({{ '/publications/' | absolute_url }}): Published articles and a separate under-review section.
-- [Projects]({{ '/projects/' | absolute_url }}): Research and engineering case studies.
-- [ORCID](https://orcid.org/0000-0003-3141-4663): Researcher identifier.
+## Core pages
+- [About]({{ '/' | absolute_url }}): Biography, current BiSTO focus, and researcher links.
+- [Research & Projects]({{ '/research/' | absolute_url }}): Generalized AI multiphysics design framework, closed loop architecture, and selected engineering case studies.
+- [Publications (SCIE)]({{ '/publications/' | absolute_url }}): 14 published SCIE journal articles (13 first or co-first author, 5 corresponding author), 2 under review manuscripts, abstracts, PDFs, and BibTeX/RIS citations.
+- [Curriculum Vitae]({{ '/cv/' | absolute_url }}): Full career timeline, education, mentoring, teaching, invited talks, patents, peer review service, and PDF CV download.
+- [ORCID](https://orcid.org/0000-0003-3141-4663): Canonical researcher identifier.
+- [Google Scholar](https://scholar.google.com/citations?user=YPq9l98AAAAJ): Citation profile.
 
-## Published articles
+## Research philosophy & framework
+- Broad vision: Modern engineering hardware across thermal, energy, electronics, aerospace, nuclear, and fusion domains must achieve higher performance inside fixed physical envelopes. Rather than hand crafting separate device specific heuristics, this research builds generalized, adjoint free AI design methods (anchored by BiSTO) verified by physics solvers, metal additive manufacturing, experimental loops, and digital twins.
+- Validation philosophy: Trust an AI model only as far as it is checked. A physics solver checks each design proposed by AI, and metal additive manufacturing and hardware testing check the solver.
+- Framework direction: Develops a single adjoint free optimization method across physical domains to deliver reliable, manufacturable hardware within fixed space, and combines the surrogate models trained during optimization with experimental data to build digital twins that monitor real hardware.
+- Closed loop architecture: Core Engine (BiSTO 2D binary core to 3D multiphysics, adjoint free across physics solvers, with planned printability and stress limits) -> Application Domains (Thermal, Fluid & Structural systems; Electromagnetic & Liquid Metal MHD systems) -> Build & Validation (Metal additive manufacturing, thermal fluid and liquid metal loops) -> Digital Twins & Closed Loop Feedback (Uncertainty aware digital twins with unseen regime prediction, anomaly flags, and sim to real feedback refining BiSTO rules).
+
+## Research areas & verified highlights
+- BiSTO (Binary Surrogate-based Topology Optimization): Neural network surrogate ranks binary solid and fluid updates while connected candidate layouts are verified directly by a turbulent heat transfer solver without flow or turbulence adjoints. Manuscript under review at Applied Thermal Engineering; presented at AM2F 2026 (MIT Plasma Science and Fusion Center).
+- FRIB Rotating Beam Dump (2024 to Present): Leading the overall fabrication and installation effort across materials, systems engineering, thermomechanics, and radiation for the upgrade beyond 50 kW, targeting 100 kW primary beam power and implementation by 2028 (planned with a BiSTO cooling layout).
+- FRIB Static Beam Dump AI Optimization (Nuclear Science and Techniques, 2026): Hybrid genetic algorithm and reinforcement learning approach increasing simulated average power handling capability by 72% over the baseline design.
+- AI Designed Nuclear Heat Exchangers (International Communications in Heat and Mass Transfer, 2024; Case Studies in Thermal Engineering, 2023): DRL assisted topology optimization achieving 14.8% higher simulated heat transfer than conventional topology optimization, fabricated via metal 3D printing (SUS316L) and tested in a thermal loop.
+- 3D Printable DC Electromagnetic Pump (Nuclear Engineering and Technology, 2026; solo author): Single body additive manufacturing concept requiring 52% less simulated input current than a helical pump at matched pressure (10.5 bar) and flow rate.
+- Liquid Lithium Charge Stripper & MHD Circulator (Nuclear Engineering and Design, 2023): Reduced electromagnetic thruster weight by 94% (340 kg to 21 kg) and experimentally formed a 22 micrometer liquid lithium film at 200 C.
+- Deep Learning Anomaly Detection for KOMAC Linac (Journal of Nuclear Science and Technology, 2025): LSTM autoencoder detecting early fault signatures 30.7 to 286.6 minutes before recorded voltage faults in retrospective operating data.
+
+## Teaching, mentoring & service summary
+- Mentoring at FRIB, Michigan State University: Primary or research mentor for 3 students (2 undergraduates, 1 graduate student) on induction heating validation and AI geometry optimization.
+- Teaching experience: Lecturer, Foundation of AI (International School on Beam Dynamics and Accelerator Technology, 2023); Instructor, Nuclear Comprehensive Design Project (UNIST, 2016); Teaching Assistant in Electromagnetics, Liquid Metal MHD, and Nuclear Engineering (UNIST, 2017 to 2021); MSU Academy for Teaching participant.
+- Credentials & service: Ph.D. in Nuclear Engineering and B.S. in Nuclear Engineering & Mechanical Engineering (UNIST); 35 conference presentations; 6 invited talks; 6 registered Korean patents; 1 registered software program; 32 journal peer reviews across Energy, International Communications in Heat and Mass Transfer, Annals of Nuclear Energy, Electronic Research Archive, and related journals.
+
+## Projects
+{% assign ordered_projects = site.projects | sort: 'featured_order' %}
+{% for project in ordered_projects %}
+- [{{ project.card_title | default: project.title }}]({{ project.url | absolute_url }}) ({{ project.institution }}, {{ project.year }}): {{ project.summary }}
+{% endfor %}
+
+## Citation guidance
+- Cite published SCIE articles using their DOI and canonical citation string (or BibTeX/RIS links below).
+- Do not cite under-review manuscripts as published journal articles; cite public preprints only with their explicit preprint DOI and status.
+
+## Under-review manuscripts
+{% assign manuscripts = site.data.cv.publications.manuscripts | where: 'status', 'Under review' %}
+{% for manuscript in manuscripts %}
+- {{ manuscript.title }}. {{ manuscript.authors }} Under review at {{ manuscript.journal }}; not a published journal article.{% if manuscript.doi %} [Public preprint](https://doi.org/{{ manuscript.doi }}){% endif %}
+{% endfor %}
+
+## Published articles (SCIE)
 {% for paper in site.data.publications %}
 ### {{ paper.title }} ({{ paper.year }})
 - Authors: {{ paper.authors | join: ', ' }}
-- Journal: {{ paper.journal }}{% if paper.volume %}, {{ paper.volume }}{% endif %}{% if paper.issue %}({{ paper.issue }}){% endif %}{% if paper.first_page %}, {{ paper.first_page }}{% endif %}{% if paper.last_page %}-{{ paper.last_page }}{% endif %}
+- Journal: {{ paper.journal }}{% if paper.volume %}, {{ paper.volume }}{% endif %}{% if paper.issue %}({{ paper.issue }}){% endif %}{% if paper.first_page %}, {{ paper.first_page }}{% endif %}{% if paper.last_page %}-{{ paper.last_page }}{% endif %}{% if paper.keywords %}
+- Keywords: {{ paper.keywords | join: ', ' }}{% endif %}{% if paper.summary %}
+- Key finding: {{ paper.summary }}{% endif %}
+- Citation: {{ paper.citation.plain }}
 - [Abstract and citation]({{ '/publications/' | append: paper.id | append: '/' | absolute_url }})
 - [Published version](https://doi.org/{{ paper.doi }})
 - [PDF]({{ paper.pdf | absolute_url }})
 - [BibTeX]({{ '/publications/' | append: paper.id | append: '/citation.bib' | absolute_url }})
 {% endfor %}
-## Under-review manuscripts
-{% assign manuscripts = site.data.cv.publications.manuscripts | where: 'status', 'Under review' %}
-{% for manuscript in manuscripts %}
-- {{ manuscript.title }}. {{ manuscript.authors }} Under review; not a published journal article.{% if manuscript.doi %} [Public preprint](https://doi.org/{{ manuscript.doi }}){% endif %}
+## Other peer-reviewed journal publication
+{% for item in site.data.cv.publications.other %}
+- {{ item.title }} ({{ item.year }}). {{ item.authors }} {{ item.journal }}.
 {% endfor %}
-
-## Ongoing research
-- [Rotating beam dump development]({{ '/projects/tf_04_rotating_beam_dump/' | absolute_url }}): Leading the upgrade beyond the static beam dump for primary beam power above 50 kW, with a development target of 100 kW primary beam power by 2028. The role covers manufacturability, fabrication, installation, and integration of thermal-hydraulic, radiation, sealing, and electromagnetic requirements. The device is also the current application for two AI methods in development, BiSTO and a deep learning surrogate.

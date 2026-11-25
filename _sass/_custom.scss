@@ -1,478 +1,437 @@
-/* Override lowercase transformation for navigation */
-.navbar-nav .nav-item .nav-link {
+/* ===========================================================================
+   Editorial Academic Design System
+   Warm archival paper + deep slate ink + disciplined steel-teal accent.
+   Zero decorative gradient washes; opaque mobile chrome; clean light/dark parity.
+   =========================================================================== */
+
+:root {
+  --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --global-bg-color: #fbfbf9;
+  --global-card-bg-color: #ffffff;
+  --global-surface-subtle: #f2f4f3;
+  --global-code-bg-color: #f2f4f3;
+  --global-text-color: #182026;
+  --global-text-color-light: #526068;
+  --global-theme-color: #155e75;
+  --global-hover-color: #0e4456;
+  --global-hover-text-color: #fbfbf9;
+  --global-divider-color: rgba(24, 32, 38, 0.12);
+  --brand-tint-bg: rgba(21, 94, 117, 0.06);
+  --brand-badge-bg: rgba(21, 94, 117, 0.11);
+}
+
+html[data-theme="dark"] {
+  --global-bg-color: #121619;
+  --global-card-bg-color: #191f24;
+  --global-surface-subtle: #1e252b;
+  --global-code-bg-color: #1b2228;
+  --global-text-color: #e6ebee;
+  --global-text-color-light: #9aa8b1;
+  --global-theme-color: #5bc0de;
+  --global-hover-color: #8cd6ec;
+  --global-hover-text-color: #0f1b20;
+  --global-divider-color: rgba(230, 235, 238, 0.14);
+  --brand-tint-bg: rgba(91, 192, 222, 0.08);
+  --brand-badge-bg: rgba(91, 192, 222, 0.15);
+}
+
+/* ===========================================================================
+   Typography & Base Polish
+   =========================================================================== */
+
+html {
+  background-color: var(--global-bg-color);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  background-color: var(--global-bg-color);
+  color: var(--global-text-color);
+  padding-bottom: 3.5rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.navbar-nav .nav-item .nav-link,
+h1,
+h2,
+h3,
+h4 {
   text-transform: none !important;
 }
 
 h1,
-h2,
-h3 {
-  text-transform: none !important;
+h2 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.02em;
 }
 
-/* ===========================================================================
-   Brand palette — disciplined cyan ramp around #2698ba
-   (overrides _themes.scss; _custom.scss is the last import in main.scss)
-   =========================================================================== */
-:root {
-  --global-theme-color: #20809d; /* text-safe brand: 4.5:1 on white (was #2698ba, 3.35:1) */
-  --global-hover-color: #186279; /* one step darker for :hover (was identical to theme) */
-  --global-text-color: #212a2e; /* slate ink (was pure #000) */
-  --global-text-color-light: #5c6e76; /* AA-safe muted (was #828282) */
-  --global-divider-color: rgba(33, 42, 46, 0.13); /* slate-tinted hairline */
-  --brand-tint-bg: rgba(38, 152, 186, 0.07); /* card wash */
-  --brand-badge-bg: rgba(38, 152, 186, 0.14); /* chips */
-}
-html[data-theme="dark"] {
-  --global-theme-color: #4fb3d1;
-  --global-hover-color: #7ecbe2; /* one step LIGHTER in dark */
-  --global-text-color: #e4e9eb;
-  --global-text-color-light: #9fb0b7;
-  --global-divider-color: #3a4347;
-  --brand-tint-bg: rgba(79, 179, 209, 0.08);
-  --brand-badge-bg: rgba(79, 179, 209, 0.15);
-}
-
-/* ===========================================================================
-   Type foundation
-   =========================================================================== */
-body {
-  font-weight: 400; /* override MDB Roboto Light 300 */
-}
 a,
 table.table a {
-  text-underline-offset: 0.15em;
+  color: var(--global-theme-color);
+  text-underline-offset: 0.18em;
   text-decoration-thickness: 1px;
 }
+
 a:hover,
 table.table a:hover {
   color: var(--global-hover-color);
 }
+
 :is(a, button, summary):focus-visible {
   outline: 2px solid var(--global-theme-color);
   outline-offset: 2px;
-  border-radius: 2px;
-}
-::selection {
-  background: rgba(38, 152, 186, 0.22);
-}
-html[data-theme="dark"] ::selection {
-  background: rgba(79, 179, 209, 0.35);
+  border-radius: 3px;
 }
 
-/* Larger base type on big, low-density displays (typical office monitors).
-   Targets width >=1200px AND device pixel ratio <=1.25, so high-DPI laptop
-   screens (which already render text physically larger) keep the current
-   16px base. The theme is rem-based, so everything scales proportionally. */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 1rem;
+  z-index: 10000;
+  padding: 0.55rem 0.9rem;
+  border-radius: 4px;
+  background: var(--global-theme-color);
+  color: var(--global-hover-text-color) !important;
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.15s ease;
+
+  &:focus {
+    top: 0.75rem;
+  }
+}
+
+.z-depth-0 {
+  box-shadow: none !important;
+}
+
+.z-depth-1 {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.medium-zoom-overlay {
+  z-index: 2000 !important;
+}
+
+.medium-zoom-image--opened {
+  z-index: 2001 !important;
+}
+
+::selection {
+  background: rgba(21, 94, 117, 0.18);
+}
+
+html[data-theme="dark"] ::selection {
+  background: rgba(91, 192, 222, 0.3);
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 988px;
+  }
+}
+
 @media (min-width: 1200px) and (max-resolution: 1.25dppx) {
   html {
-    font-size: 18px;
-  }
-
-  /* Scale the content column with the type (930px x 18/16) so the layout
-     keeps the 16px proportions: the profile photo grows with the text and
-     the hero subtitle no longer runs behind the pulled-up photo. */
-  .container {
-    max-width: 1046px;
-  }
-
-  /* Keep the CV time-table date badges ("12/2023 - Present") and location
-     lines on a single line: pin them to the size they render at the 16px
-     base, otherwise they outgrow the fixed 75px column at 18px and collide
-     with the entry titles. */
-  .cv .table-cv .badge {
-    font-size: 12px;
-  }
-  .cv p.location {
-    font-size: 11.2px;
+    font-size: 17px;
   }
 }
 
 /* ===========================================================================
-   Chrome: navbar + back-to-top
+   Navbar: Fully opaque (no mobile/scroll bleed-through), 44px touch targets
    =========================================================================== */
+
 #navbar {
-  transition: box-shadow 0.3s ease;
+  background-color: var(--global-bg-color) !important;
+  opacity: 1 !important;
+  border-bottom: 1px solid var(--global-divider-color);
+  box-shadow: none;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 #navbar.scrolled {
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
-/* Navbar brand in the display face to match the hero name. !important counters
-   the theme's font-weight-lighter utility class on the brand markup. */
+html[data-theme="dark"] #navbar.scrolled {
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+}
+
 .navbar .navbar-brand {
-  font-family: "Roboto Slab", "Roboto", serif;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
   font-weight: 500 !important;
+  letter-spacing: -0.015em;
+  color: var(--global-text-color) !important;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
-/* Active nav item: weight 500 (no bold width-jump) + brand underline */
+.navbar .navbar-brand-home {
+  opacity: 0.92;
+}
+
+.navbar.navbar-light .navbar-nav .nav-item .nav-link {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--global-text-color-light);
+  padding: 0.5rem 0.65rem;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: var(--global-text-color);
+  }
+}
+
 .navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
-  font-weight: 500;
+  font-weight: 600;
+  color: var(--global-text-color);
   position: relative;
 }
-@media (min-width: 576px) {
+
+@media (min-width: 768px) {
   .navbar.navbar-light .navbar-nav .nav-item.active > .nav-link::after {
     content: "";
     position: absolute;
-    left: 0.8rem;
-    right: 0.8rem;
-    bottom: 0.35rem;
+    left: 0.65rem;
+    right: 0.65rem;
+    bottom: 0.15rem;
     height: 2px;
     border-radius: 1px;
     background-color: var(--global-theme-color);
   }
 }
+
+/* Inline SVG Theme Toggle: Moon shown in light mode, Sun shown in dark mode */
+.navbar-mobile-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: auto;
+}
+
+.toggle-container {
+  align-items: center;
+  margin-left: 0.35rem;
+}
+
+.theme-toggle-btn,
+#light-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--global-text-color-light);
+  cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease;
+
+  &:hover {
+    color: var(--global-theme-color);
+    background-color: var(--brand-tint-bg);
+  }
+}
+
+.theme-icon {
+  width: 18px;
+  height: 18px;
+  display: none;
+  flex-shrink: 0;
+}
+
+/* Override legacy _themes.scss #light-toggle-light/#light-toggle-dark rules */
+:root .theme-icon-moon,
+html[data-theme-setting="light"] .theme-icon-moon,
+:root #light-toggle-light,
+html[data-theme-setting="light"] #light-toggle-light {
+  display: block;
+  padding: 0;
+}
+
+:root .theme-icon-sun,
+html[data-theme-setting="light"] .theme-icon-sun,
+:root #light-toggle-dark,
+html[data-theme-setting="light"] #light-toggle-dark {
+  display: none;
+  padding: 0;
+}
+
+html[data-theme="dark"] .theme-icon-moon,
+html[data-theme-setting="dark"] .theme-icon-moon,
+html[data-theme="dark"] #light-toggle-light,
+html[data-theme-setting="dark"] #light-toggle-light {
+  display: none;
+  padding: 0;
+}
+
+html[data-theme="dark"] .theme-icon-sun,
+html[data-theme-setting="dark"] .theme-icon-sun,
+html[data-theme="dark"] #light-toggle-dark,
+html[data-theme-setting="dark"] #light-toggle-dark {
+  display: block;
+  padding: 0;
+}
+
+.navbar-toggler {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.5rem;
+  border: 0;
+  background: transparent;
+
+  .icon-bar {
+    margin-bottom: 4px;
+  }
+
+  .icon-bar:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  #navbar .navbar-collapse {
+    background-color: var(--global-bg-color);
+    border-top: 1px solid var(--global-divider-color);
+    margin-top: 0.5rem;
+    padding: 0.5rem 0 0.75rem;
+  }
+
+  #navbar .navbar-nav {
+    text-align: left;
+  }
+
+  #navbar .navbar-nav .nav-item .nav-link {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.55rem 0.25rem;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+
+  #navbar .navbar-nav .nav-item:last-of-type .nav-link {
+    border-bottom: 0;
+  }
+
+  #back-to-top {
+    display: none !important;
+  }
+}
+
+/* Back to top (desktop only) */
 #back-to-top {
   border-radius: 50%;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
-}
-#back-to-top:hover {
-  background: var(--global-theme-color);
-  color: var(--global-hover-text-color);
-}
-#back-to-top:focus-visible {
-  outline: 2px solid var(--global-theme-color);
-  outline-offset: 2px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background: var(--global-theme-color);
+    color: var(--global-hover-text-color);
+  }
 }
 
-/* Article body headings (project pages, posts) — join the design system.
-   Without this they fall through to MDB's Roboto Light 300 at 2rem, letting
-   section headings outsize the page title on mobile. The About-page eyebrow
-   labels (.vision-section h4 / .what-i-do-section h4) are excluded. */
+/* ===========================================================================
+   Shared Editorial Headers & Footer
+   =========================================================================== */
+
+.editorial-header {
+  padding: 0.5rem 0 1.75rem;
+  border-bottom: 1px solid var(--global-divider-color);
+
+  .post-title {
+    margin: 0 0 0.75rem;
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.8vw, 2.65rem);
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+  }
+}
+
+.editorial-kicker {
+  margin: 0 0 0.5rem;
+  color: var(--global-theme-color);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.editorial-lead {
+  max-width: 64ch;
+  margin: 0;
+  color: var(--global-text-color-light);
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+/* Article body headings */
 .post article h2,
 .post article h3 {
-  font-family: "Roboto Slab", "Roboto", serif;
+  font-family: var(--font-serif);
   font-weight: 500;
-}
-.post article h2 {
-  font-size: 1.55rem;
-}
-.post article h3 {
-  font-size: 1.25rem;
-}
-.post article h4:not(.vision-section h4, .what-i-do-section h4) {
-  font-family: "Roboto Slab", "Roboto", serif;
-  font-weight: 500;
-  font-size: 1.1rem;
 }
 
 /* ===========================================================================
-   About page
+   Journal Metrics (SCIE / JCR Q1 / Top % / IF — pure editorial typography)
    =========================================================================== */
-
-/* Hero: name in Roboto Slab (already in the Google Fonts payload) */
-.post .post-header .post-title {
-  text-transform: none !important;
-  font-family: "Roboto Slab", "Roboto", serif;
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  margin-bottom: 0.5rem;
-}
-@media (max-width: 575px) {
-  .post .post-header .post-title {
-    font-size: 1.9rem;
-  }
-}
-.post .post-header .desc {
-  line-height: 1.65;
-  color: var(--global-text-color-light);
-  margin-bottom: 1.25rem;
-}
-
-/* Hero subtitle affiliation links — brand cyan, theme-aware (light + dark).
-   Also target the inner <strong> because the theme's base rule
-   `strong { color: var(--global-text-color) }` would otherwise force it black. */
-.desc .affil-link,
-.desc .affil-link strong {
-  color: var(--global-theme-color);
-}
-
-/* About tagline */
-.about-tagline {
-  font-size: 1.15rem;
-  font-weight: 500;
-  color: var(--global-theme-color);
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.015em;
-  line-height: 1.4;
-}
-
-/* Vision Section - quote style */
-.vision-section {
-  margin-bottom: 1.5rem;
-  padding: 0.5rem 0 0.5rem 1.5rem;
-  border-left: 3px solid var(--global-theme-color);
-}
-.vision-section h4 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--global-theme-color);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-.vision-section p {
-  margin: 0;
-  font-size: 1rem;
-  font-style: italic;
-  line-height: 1.7;
-  color: var(--global-text-color);
-  opacity: 0.85;
-}
-
-/* What I Do Section */
-.what-i-do-section {
-  margin-top: 0;
-  margin-bottom: 2rem;
-  padding: 1.25rem 1.5rem;
-  background-color: var(--brand-tint-bg);
-  border-radius: 10px;
-  border-left: 3px solid var(--global-theme-color);
-}
-.what-i-do-section h4 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 0.8rem; /* same eyebrow voice as the Vision label */
-  font-weight: 700;
-  color: var(--global-theme-color);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-.what-i-do-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.what-i-do-list li {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 1rem;
-}
-.what-i-do-list li:last-child {
-  margin-bottom: 0;
-}
-.what-i-do-icon {
-  font-size: 1.15rem;
-  margin-right: 1rem;
-  flex-shrink: 0;
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--brand-badge-bg);
-  border-radius: 0.5rem;
-}
-.what-i-do-icon i {
-  color: var(--global-theme-color);
-}
-.what-i-do-content {
-  flex: 1;
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-.what-i-do-content strong {
-  color: var(--global-text-color);
-  font-weight: 600;
-}
-
-/* Dark mode: lift the What-I-Do card off the page bg and restore Vision contrast */
-html[data-theme="dark"] .what-i-do-section {
-  background-color: var(--global-card-bg-color);
-  border: 1px solid var(--global-divider-color);
-  border-left: 3px solid var(--global-theme-color);
-}
-html[data-theme="dark"] .vision-section p {
-  opacity: 1;
-}
-
-/* Social row: right-sized icons, even gaps, hairline page closer */
-.post article .social {
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--global-divider-color);
-}
-.social .contact-icons {
-  font-size: 3rem; /* was 4rem */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem 1.25rem;
-}
-.social .contact-icons a {
-  line-height: 1;
-  transition: transform 0.18s ease;
-}
-.social .contact-icons a:hover {
-  transform: translateY(-2px);
-}
-.social .contact-note {
-  margin-top: 0.75rem;
-  color: var(--global-text-color-light);
-}
-
-/* ===========================================================================
-   CV page
-   =========================================================================== */
-
-/* CV header: title with a prominent download button beside it, and a small
-   muted last-updated line underneath */
-.cv-title-row {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.25rem;
-}
-.cv-title-row .post-title {
-  margin-bottom: 0;
-}
-.cv-download-btn {
-  display: inline-block;
-  background: var(--global-theme-color);
-  color: #fff !important;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0.5rem 1.1rem;
-  border-radius: 6px;
-  text-decoration: none !important;
-  transition: background-color 0.18s ease;
-}
-.cv-download-btn:hover {
-  background: var(--global-hover-color);
-}
-html[data-theme="dark"] .cv-download-btn {
-  color: #10242c !important; /* dark ink on the light dark-mode cyan */
-}
-.cv-updated {
-  font-size: 0.8rem;
-  color: var(--global-text-color-light);
-  margin: 0.5rem 0 1.75rem;
-}
-
-/* Align the description bullets with the title/institution block. The theme
-   gives titles ml-1/ml-md-4 but ul.items only margin-left: 1rem with no
-   padding, so bullet markers hang left of the entry titles (ragged edge). */
-.cv ul.items {
-  margin-left: 0.25rem;
-  padding-left: 1.1rem;
-}
-
-@media (min-width: 768px) {
-  .cv ul.items {
-    margin-left: 1.5rem;
-  }
-}
-
-/* Align the date column with the section title: Bootstrap list-group-items
-   carry 1.25rem side padding, which indents the whole entry (date badge,
-   location, content) relative to the card title. Drop the horizontal inset. */
-.cv .card .list-group-item {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-/* Date badges as quiet cyan-tinted chips (the markup's danger-red class is
-   dead — _base.scss already overrides it; this goes one step quieter) */
-.cv .card .list-group-item .badge {
-  background-color: var(--brand-badge-bg) !important;
-  color: var(--global-hover-color) !important;
-  box-shadow: none !important;
-  border-radius: 4px;
-  letter-spacing: 0.03em;
-  font-variant-numeric: tabular-nums;
-  padding: 0.3em 0.5em;
-}
-
-/* Shared section-title voice (CV card titles + Projects category headings) */
-.projects .category-heading,
-.cv .card-title {
-  font-family: "Roboto Slab", "Roboto", serif;
-  font-weight: 500;
-  font-size: 1.35rem;
-}
-.cv .card-title {
-  padding-bottom: 0.5rem;
-  margin-bottom: 0.75rem;
-  border-bottom: 1px solid var(--global-divider-color);
-}
-.cv p.location {
-  color: var(--global-text-color-light);
-}
-span.badge-toc {
-  color: var(--global-hover-color);
-  background-color: var(--brand-badge-bg);
-  border-radius: 4px;
-}
-ul.timeline li::before {
-  background: var(--global-divider-color);
-}
-
-/* Journal metrics share one layout across the archive and bibliography embeds. */
-.journal-metrics-group {
-  min-width: 0;
-  max-width: 100%;
-  margin: 0.55rem 0 0.7rem;
-}
 
 .journal-metrics {
   display: inline-flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 0.45rem 0.7rem;
+  align-items: baseline;
+  gap: 0.1rem 0.42rem;
+  min-width: 0;
   max-width: 100%;
   margin: 0;
-  padding: 0.45rem 0.7rem;
-  border: 1px solid var(--global-divider-color);
-  border-left: 3px solid var(--global-theme-color);
-  border-radius: 4px;
-  background: linear-gradient(110deg, var(--brand-tint-bg), transparent);
-  color: var(--global-text-color);
+  color: var(--global-text-color-light);
   font-size: 0.8rem;
-  line-height: 1.45;
+  line-height: 1.5;
   font-variant-numeric: tabular-nums;
 
-  > span {
-    white-space: nowrap;
-  }
-
   strong {
-    font-weight: 700;
+    font-weight: 600;
+    color: var(--global-text-color);
   }
 
   .journal-metrics-quartile {
-    color: var(--global-hover-color);
-    font-size: 0.75rem;
+    color: var(--global-theme-color);
     font-weight: 700;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.02em;
   }
 
-  .journal-metrics-rank strong {
-    color: var(--global-hover-color);
+  .journal-metrics-rank--top-ten strong {
+    color: var(--global-theme-color);
+  }
+
+  .journal-metrics-sep {
+    opacity: 0.55;
   }
 
   .journal-metrics-label {
     color: var(--global-text-color-light);
     font-weight: 400;
-    margin-right: 0.15rem;
   }
 
-  .journal-metrics-rank--top-ten {
-    padding: 0.1rem 0.4rem;
-    margin: -0.1rem -0.15rem;
-    border-radius: 3px;
-    background: var(--brand-badge-bg);
-
-    .journal-metrics-label {
-      color: var(--global-hover-color);
-      font-weight: 700;
-    }
+  .journal-metrics-category {
+    color: var(--global-text-color-light);
+    font-size: 0.78rem;
   }
 
   abbr[title] {
@@ -480,157 +439,110 @@ ul.timeline li::before {
     border: 0;
     cursor: help;
   }
-
-  .journal-metrics-if {
-    border-left: 1px solid var(--global-divider-color);
-    padding-left: 0.7rem;
-  }
 }
 
-.journal-metrics-context {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.15rem 0.5rem;
-  margin-top: 0.35rem;
-  color: var(--global-text-color-light);
-  font-size: 0.78rem;
-  font-weight: 400;
-  line-height: 1.5;
-  overflow-wrap: anywhere;
+/* ===========================================================================
+   Publications Page
+   =========================================================================== */
 
-  span {
-    color: inherit;
-  }
-
-  .journal-metrics-year {
-    white-space: nowrap;
-
-    &::before {
-      content: "\00b7";
-      margin-right: 0.5rem;
-    }
-  }
-}
-
-.publication-stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
-  margin: 0;
-  color: var(--global-text-color-light);
-  font-size: 0.73rem;
-  line-height: 1.4;
-
-  .publication-stat {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding-left: 1rem;
-    border-left: 1px solid var(--global-divider-color);
-  }
-
-  strong {
-    color: var(--global-text-color);
-    font-family: "Roboto Slab", serif;
-    font-size: 2rem;
-    font-weight: 400;
-    line-height: 1;
-    font-variant-numeric: tabular-nums;
-  }
-}
-
-/* A text-first research archive: year gutter, numbered entries, quiet actions. */
 .publications-page {
-  padding-bottom: 0;
-
-  .publication-main {
-    margin-top: 3rem;
-  }
-
-  .publication-footer {
-    margin-top: 1.5rem;
-    padding: 1.25rem 0 1.5rem;
-    border-top: 1px solid var(--global-divider-color);
-    color: var(--global-text-color-light);
-    font-size: 0.75rem;
-    line-height: 1.6;
-    text-align: center;
-
-    .container,
-    a {
-      color: inherit;
-    }
-
-    a {
-      text-decoration: underline;
-      text-underline-offset: 0.15em;
-
-      &:hover {
-        color: var(--global-hover-color);
-      }
-
-      &:focus-visible {
-        outline: 2px solid var(--global-theme-color);
-        outline-offset: 3px;
-      }
-    }
-  }
-
   .publication-header {
     display: grid;
-    grid-template-columns: 1fr 1.05fr;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.15fr);
     align-items: end;
-    gap: 2rem;
-    margin-bottom: 2.75rem;
-    padding: 0.75rem 0 2rem;
+    gap: 1.5rem 2rem;
+    margin-bottom: 2.25rem;
+    padding: 0.5rem 0 1.75rem;
     border-bottom: 1px solid var(--global-divider-color);
-    background: radial-gradient(ellipse at top left, var(--brand-tint-bg), transparent 65%);
   }
 
   .publication-kicker {
-    margin: 0 0 0.55rem;
-    color: var(--global-hover-color);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.16em;
+    margin: 0 0 0.45rem;
+    color: var(--global-theme-color);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
   }
 
   .publication-heading .post-title {
     margin: 0;
-    font-size: clamp(2rem, 4vw, 2.7rem);
-    letter-spacing: -0.04em;
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.8vw, 2.65rem);
+    font-weight: 500;
+    letter-spacing: -0.025em;
     line-height: 1.15;
   }
 
-  .publication-year-group {
+  .publication-stats {
     display: grid;
-    grid-template-columns: 5.5rem minmax(0, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 2.2rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.85rem;
+    margin: 0;
+    color: var(--global-text-color-light);
+    font-size: 0.74rem;
+    line-height: 1.35;
+
+    .publication-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      padding-left: 0.85rem;
+      border-left: 1px solid var(--global-divider-color);
+    }
+
+    strong {
+      color: var(--global-text-color);
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      font-weight: 500;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
   }
 
-  .publications h2.bibliography {
-    position: sticky;
-    top: 5.5rem;
-    align-self: start;
-    margin: 0;
-    padding: 1.4rem 0 0;
-    border: 0;
-    color: var(--global-hover-color);
-    font-family: "Roboto Slab", serif;
-    font-size: 1.2rem;
+  .publication-section-heading {
+    margin: 0 0 0.45rem;
+    color: var(--global-text-color);
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
     font-weight: 500;
-    font-variant-numeric: tabular-nums;
-    text-align: left;
+  }
 
-    &::after {
-      content: "";
-      display: block;
-      width: 1.5rem;
-      height: 2px;
-      margin-top: 0.75rem;
-      background: var(--global-theme-color);
+  .publication-metrics-note {
+    margin: 0 0 1.15rem;
+    color: var(--global-text-color-light);
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .publication-manuscripts {
+    margin-bottom: 2.5rem;
+
+    .publication-section-heading {
+      margin-bottom: 0.9rem;
+    }
+
+    .manuscript-list {
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--global-divider-color);
+
+      li.publication-entry {
+        padding: 1.15rem 0.25rem;
+      }
+
+      .title {
+        font-family: var(--font-sans);
+        font-size: 1.01rem;
+        font-weight: 600;
+        line-height: 1.45;
+        margin: 0 0 0.35rem;
+      }
+
+      .links {
+        margin-left: 0;
+      }
     }
   }
 
@@ -638,14 +550,16 @@ ul.timeline li::before {
   .publications .manuscript-list {
     min-width: 0;
     margin: 0;
+    padding: 0;
+    list-style: none;
     border-top: 1px solid var(--global-divider-color);
 
     li.publication-entry {
       position: relative;
       margin: 0;
-      padding: 1.4rem 1rem 1.4rem 3.4rem;
+      padding: 1.15rem 0.4rem 1.15rem 2.75rem;
       border-bottom: 1px solid var(--global-divider-color);
-      transition: background-color 180ms ease;
+      transition: background-color 160ms ease;
 
       &:hover,
       &:focus-within {
@@ -653,37 +567,36 @@ ul.timeline li::before {
       }
 
       .title {
-        margin-bottom: 0.6rem;
-        font-size: 1.05rem;
+        margin-bottom: 0.35rem;
+        font-size: 1.02rem;
         font-weight: 600;
-        line-height: 1.5;
+        line-height: 1.46;
       }
 
       .pub-number {
         position: absolute;
-        top: 1.65rem;
-        left: 0.9rem;
+        top: 1.35rem;
+        left: 0.35rem;
         color: var(--global-text-color-light);
-        font-size: 0.72rem;
+        font-family: var(--font-mono);
+        font-size: 0.74rem;
         font-weight: 400;
-        font-variant-numeric: tabular-nums;
-        letter-spacing: 0.06em;
       }
 
       .author,
       .periodical {
-        font-size: 0.85rem;
-        line-height: 1.65;
+        font-size: 0.87rem;
+        line-height: 1.58;
       }
 
       .author {
-        margin-bottom: 0.3rem;
+        margin-bottom: 0.2rem;
         color: var(--global-text-color-light);
 
         > em {
           color: var(--global-text-color);
           font-style: normal;
-          font-weight: 500;
+          font-weight: 600;
           border-bottom: 0;
         }
       }
@@ -691,291 +604,99 @@ ul.timeline li::before {
       .publication-entry-footer {
         display: flex;
         flex-wrap: wrap;
-        align-items: flex-start;
-        gap: 0.7rem 1rem;
-        margin-top: 0.9rem;
-      }
-
-      .journal-metrics-group {
-        margin: 0;
+        align-items: baseline;
+        gap: 0.4rem 1.25rem;
+        margin-top: 0.55rem;
       }
 
       .links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
+        display: inline-flex;
+        align-items: baseline;
         gap: 0.45rem;
         margin-left: auto;
+        white-space: nowrap;
       }
 
-      .links .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 2.1rem;
-        margin: 0;
-        padding: 0.3rem 0.7rem;
-        border: 1px solid var(--global-divider-color);
-        border-radius: 3px;
-        background: transparent;
-        color: var(--global-text-color-light);
-        box-shadow: none;
-        font-family: inherit;
-        font-size: 0.75rem;
-        font-weight: 700;
-        line-height: 1.2;
-        letter-spacing: 0.07em;
-        text-transform: uppercase;
-        cursor: pointer;
+      .pub-action-link {
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: var(--global-theme-color);
+        text-decoration: none;
 
         &:hover {
-          border-color: var(--global-theme-color);
           color: var(--global-hover-color);
-          background: var(--brand-tint-bg);
-        }
-
-        &:focus-visible {
-          outline: 2px solid var(--global-theme-color);
-          outline-offset: 3px;
+          text-decoration: underline;
         }
       }
-    }
-  }
-  .publication-section-heading {
-    margin: 0 0 1rem;
-    color: var(--global-text-color);
-    font-family: "Roboto Slab", serif;
-    font-size: 1.3rem;
-    font-weight: 500;
-  }
 
-  .publication-manuscripts {
-    margin-bottom: 2.75rem;
-
-    .manuscript-list {
-      padding: 0;
-      list-style: none;
-
-      li.publication-entry {
-        padding-left: 1rem;
-      }
-
-      .title {
-        font-family: inherit;
+      .pub-action-sep {
+        color: var(--global-text-color-light);
+        opacity: 0.55;
       }
     }
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .publications-page {
-    .publication-main {
-      margin-top: 1.5rem;
-    }
-
-    .publication-footer .container {
-      // Keep the floating back-to-top control clear of the footer text.
-      padding-right: 5rem;
-    }
-
     .publication-header {
       grid-template-columns: 1fr;
-      gap: 1rem;
-      margin-bottom: 1.25rem;
-      padding: 0.5rem 0 1rem;
+      gap: 1.25rem;
     }
+  }
+}
 
+@media (max-width: 767px) {
+  body > .container.mt-5 {
+    margin-top: 1.5rem !important;
+  }
+
+  .publications-page {
     .publication-stats {
-      gap: 0.5rem;
-      font-size: 0.75rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem 0.75rem;
     }
 
-    .publication-stats .publication-stat {
-      gap: 0.375rem;
-      padding-left: 0.5rem;
-    }
-
-    .publication-stats strong {
-      font-size: 1.75rem;
-    }
-
-    .publication-year-group {
-      grid-template-columns: 1fr;
-      gap: 0.5rem;
-      margin-bottom: 1.75rem;
-    }
-
-    .publications h2.bibliography {
-      position: static;
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      padding: 0;
-      font-size: 1.1rem;
-
-      &::after {
-        width: 1.1rem;
-        margin: 0;
-      }
-    }
-
-    .publications ol.bibliography li.publication-entry,
-    .publications .manuscript-list li.publication-entry {
-      padding: 1.2rem 0 1.2rem 2rem;
+    .publications ol.bibliography li.publication-entry {
+      padding: 1.1rem 0 1.1rem 2rem;
 
       .pub-number {
-        top: 1.45rem;
+        top: 1.28rem;
         left: 0;
       }
 
-      .title {
-        font-size: 1rem;
-      }
-
-      .journal-metrics-group {
+      .journal-metrics {
         flex-basis: 100%;
       }
 
-      .links .btn {
-        min-height: 2.75rem;
-        min-width: 3rem;
+      .journal-metrics-sep-category {
+        display: none;
+      }
+
+      .journal-metrics-category {
+        flex-basis: 100%;
+      }
+
+      .links {
+        margin-left: 0;
+      }
+
+      .pub-action-link {
+        display: inline-flex;
+        align-items: center;
+        min-height: 36px;
       }
     }
 
-    .publication-manuscripts {
-      margin-bottom: 2rem;
-
-      .manuscript-list li.publication-entry {
-        padding-left: 0;
-      }
+    .publication-manuscripts .manuscript-list li.publication-entry {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .publications-page .publications ol.bibliography li.publication-entry,
-  .publications-page .publications .manuscript-list li.publication-entry {
-    transition: none;
-  }
-}
-
-/* ===========================================================================
-   Projects page (cards + category headings)
-   =========================================================================== */
-
-.projects .category-anchor {
-  text-decoration: none;
-}
-.projects .category-heading {
-  color: var(--global-text-color);
-  border-bottom: 2px solid var(--global-theme-color);
-  padding: 0 0 0.5rem;
-  margin: 2.5rem 0 1.25rem;
-  text-align: left;
-}
-
-.projects .project-card-link {
-  display: block;
-  text-decoration: none;
-}
-.projects .project-card {
-  background-color: var(--global-card-bg-color);
-  border: 1px solid var(--global-divider-color);
-  border-radius: 10px;
-  box-shadow: none;
-  transition:
-    transform 0.18s ease,
-    box-shadow 0.18s ease,
-    border-color 0.18s ease;
-  overflow: hidden;
-}
-.projects .project-card .card-body {
-  padding: 1.1rem 1.25rem;
-}
-/* Hover AND keyboard focus get the same lift affordance */
-.projects .project-card-link:hover .project-card,
-.projects .project-card-link:focus-visible .project-card {
-  transform: translateY(-2px);
-  border-color: rgba(38, 152, 186, 0.45);
-  box-shadow: 0 6px 16px rgba(38, 152, 186, 0.12);
-}
-html[data-theme="dark"] .projects .project-card-link:hover .project-card,
-html[data-theme="dark"] .projects .project-card-link:focus-visible .project-card {
-  border-color: var(--global-theme-color);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-}
-.projects .project-card-link:focus-visible {
-  outline: 2px solid var(--global-theme-color);
-  outline-offset: 3px;
-  border-radius: 10px;
-}
-.projects .project-year {
-  color: var(--global-theme-color);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-variant-numeric: tabular-nums;
-  margin-bottom: 0.4rem;
-}
-.projects .project-title {
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--global-text-color);
-  line-height: 1.4;
-  transition: color 0.18s ease;
-}
-.projects .project-card-link:hover .project-title,
-.projects .project-card-link:focus-visible .project-title {
-  color: var(--global-theme-color);
-}
-
-/* ===========================================================================
-   About page profile image alignment (single responsive source of truth)
-   =========================================================================== */
-
-.post article .profile.float-right {
-  position: relative;
-}
-
-/* Pull the photo up next to the title only once it floats beside the heading
-   (>=576px). On phones the photo stacks under the header, so applying a
-   negative offset there would overlap the title/subtitle. */
-@media (min-width: 576px) {
-  .post article .profile.float-right {
-    top: -3rem;
-    margin-bottom: -3rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .post article .profile.float-right {
-    top: -4rem;
-    margin-bottom: -4rem;
-  }
-}
-
-@media (max-width: 767px) {
-  .about-tagline {
-    font-size: 1.05rem;
-    text-align: center;
-    margin-bottom: 1.25rem;
-  }
-  .vision-section {
-    padding: 0.5rem 0 0.5rem 1rem;
-  }
-  .vision-section p {
-    font-size: 0.9rem;
-  }
-  .what-i-do-section {
-    padding: 1rem 1.15rem;
-  }
-  .what-i-do-content {
-    font-size: 0.9rem;
-  }
-  .what-i-do-icon {
-    width: 2.25rem;
-    height: 2.25rem;
-    font-size: 1rem;
+  * {
+    scroll-behavior: auto !important;
   }
 }

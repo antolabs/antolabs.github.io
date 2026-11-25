@@ -1,7 +1,7 @@
 ---
 layout: project
 title: FRIB static beam dump AI optimization
-description: Global and local AI search with thermal-model evaluation and 3D verification for static beam-dump design.
+description: Global and local AI search with thermal model evaluation and 3D verification for static beam dump design.
 img: assets/img/frib_beam_dump/fig_temperature_comparison.png
 importance: 1
 category: Thermo-fluid devices
@@ -9,18 +9,20 @@ year: "2023 - 2025"
 body_class: "project-view"
 footer_static: true
 card_title: "Static beam dump AI optimization"
-project_type: "AI-driven optimization"
+project_type: "AI optimization"
 institution: "FRIB"
 featured: true
 featured_order: 1
-project_group: "Thermal-fluid engineering"
-summary: "Global and local AI search with thermal-model evaluation and 3D verification for static beam-dump design."
-detail_intro: "I developed a hybrid genetic algorithm and reinforcement learning approach to optimize the static beam-dump geometry."
+thumb: assets/img/frib_beam_dump/fig_temperature_comparison.png
+thumb_alt: 3D finite element temperature comparison of original and AI optimized static beam dump
+project_group: "Thermal fluid engineering"
+summary: "Global and local AI search with thermal model evaluation and 3D verification for static beam dump design."
+detail_intro: "I developed a hybrid genetic algorithm and reinforcement learning approach to optimize the static beam dump geometry."
 detail_summary_label: Simulation result
-detail_summary: "72% higher average power-handling capability than the existing design."
-contribution: "Developed a hybrid genetic algorithm and reinforcement learning approach to optimize the static beam-dump geometry."
+detail_summary: "72% higher average power handling capability than the existing design."
+contribution: "Developed a hybrid genetic algorithm and reinforcement learning approach to optimize the static beam dump geometry."
 evidence: "Simulation result"
-outcome: "72% higher average power-handling capability than the existing design in simulation."
+outcome: "72% higher average power handling capability than the existing design in simulation."
 ---
 
 <div class="project-overview">

@@ -16,7 +16,10 @@ module PublicationDiscovery
       'url' => url, 'mainEntityOfPage' => url, 'headline' => paper['title'], 'name' => paper['title'],
       'author' => paper['authors'].map do |name|
         person = { '@type' => 'Person', 'name' => name }
-        person['@id'] = publication_url('/#person') if name == 'Geunhyeong Lee'
+        if name == 'Geunhyeong Lee'
+          person['@id'] = publication_url('/#person')
+          person['identifier'] = 'https://orcid.org/0000-0003-3141-4663'
+        end
         person
       end,
       'datePublished' => paper['year'], 'isPartOf' => journal,
@@ -24,6 +27,8 @@ module PublicationDiscovery
       'identifier' => { '@type' => 'PropertyValue', 'propertyID' => 'DOI', 'value' => paper['doi'] },
       'sameAs' => "https://doi.org/#{paper['doi']}", 'abstract' => paper['abstract'],
       'keywords' => paper['keywords'], 'inLanguage' => 'en',
+      'isAccessibleForFree' => true,
+      'citation' => paper.dig('citation', 'plain'),
       'encoding' => { '@type' => 'MediaObject', 'contentUrl' => publication_url("/publications/#{paper['id']}/paper.pdf"), 'encodingFormat' => 'application/pdf' }
     }.compact
   end

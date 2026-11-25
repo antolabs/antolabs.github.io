@@ -1,20 +1,23 @@
 ---
 layout: project
-title: 3D-printable DC electromagnetic pump
-description: A single-body DC pump concept designed for liquid-metal circulation and metal 3D printing.
+title: 3D printable DC electromagnetic pump
+description: A single body DC pump concept designed for liquid metal circulation and metal 3D printing.
 img: assets/img/em_pump_3d/fig_pump_design.png
 importance: 1
 category: Electromagnetic devices
 year: "2023 - 2024"
 body_class: "project-view"
 footer_static: true
-card_title: "3D-printable electromagnetic pump"
-project_type: "Liquid-metal systems"
+card_title: "3D printable electromagnetic pump"
+project_type: "Liquid metal systems"
 institution: "KAERI"
-featured: false
-project_group: "Liquid-metal & electromagnetic systems"
-summary: "A single-body DC pump concept designed for liquid-metal circulation and metal 3D printing."
-detail_intro: "I designed a 3D-printable DC electromagnetic pump and analyzed its coupled electromagnetic and fluid performance."
+featured: true
+featured_order: 4
+thumb: assets/img/em_pump_3d/thumb_pump_cad.png
+thumb_alt: 3D printable DC electromagnetic pump CAD showing fluid channels, current flow, and permanent magnets
+project_group: "Liquid metal & electromagnetic systems"
+summary: "A single body DC pump concept designed for liquid metal circulation and metal 3D printing."
+detail_intro: "I designed a 3D printable DC electromagnetic pump and analyzed its coupled electromagnetic and fluid performance."
 detail_summary_label: Simulation result
 detail_summary: "52% lower current demand at matched pressure and flow rate."
 contribution: "Designed a 3D-printable DC electromagnetic pump and analyzed its coupled electromagnetic and fluid performance."
