@@ -54,18 +54,6 @@
     }
   }
 
-  .research-figure-caption {
-    display: none;
-    margin: 0.55rem 0 0;
-    color: var(--global-text-color-light);
-    font-size: 0.82rem;
-    line-height: 1.5;
-  }
-
-  .research-zoom-hint {
-    display: none;
-  }
-
   .research-framework-summary {
     margin: 0;
     max-width: 74ch;
@@ -111,16 +99,6 @@ html[data-theme="dark"] .research-page .research-figure-frame {
 
     .research-figure-frame {
       padding: 0.45rem;
-    }
-
-    .research-figure-caption {
-      display: block;
-    }
-
-    .research-zoom-hint {
-      display: inline;
-      font-weight: 500;
-      color: var(--global-theme-color);
     }
 
     .projects-selected,
