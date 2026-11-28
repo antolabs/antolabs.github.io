@@ -14,7 +14,7 @@ research = Nokogiri::HTML(File.read('_site/research/index.html'))
 cv = Nokogiri::HTML(File.read('_site/cv/index.html'))
 
 check.call(copy.call(about.at_css('#about-name')) == 'Geunhyeong Lee', 'About hero must lead with researcher name')
-check.call(about.css('.about-bio p').size == 2, 'About hero should stay focused to 2 concise paragraphs')
+check.call(about.css('.about-bio p').size == 1, 'About hero should stay focused to 1 concise paragraph')
 check.call(!copy.call(about.at_css('.about-bio')).match?(/\b(UNIST|KAERI)\b/), 'Keep past affiliation bio details on CV rather than About hero')
 check.call(copy.call(about.at_css('#bisto-description')).include?('BiSTO'), 'About page must explain BiSTO')
 check.call(about.css('.highlight-list, .selected-pub-list, .about-record-line').empty?, 'Keep About page concise without Highlights, Selected Publications, or summary pitch lines')
