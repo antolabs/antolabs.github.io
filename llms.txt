@@ -1,0 +1,228 @@
+# Geunhyeong Lee, Ph.D.
+
+> Scientist at the Facility for Rare Isotope Beams (FRIB), Michigan State University. Engineering devices cannot keep growing as power and energy demands rise, so more performance must come from better design. Geunhyeong Lee's goal is an AI design method, starting from BiSTO, that needs only standard simulations and still works when the physics changes, so that engineers can design, print, and test their own devices and monitor them in operation with digital twins. A physics solver checks each design the AI proposes, and hardware tests check the solver. Background: thermal, fluid, structural, electromagnetic, and magnetohydrodynamic (MHD) systems. Generalizing BiSTO to 3D is in progress; digital twins are planned.
+
+This discovery index links to public research, teaching, project, and publication records for Geunhyeong Lee (ORCID: 0000-0003-3141-4663). For the complete plain text academic dossier including full abstracts and career records, see [llms-full.txt](https://geunhyeong.com/llms-full.txt).
+
+## Core pages
+- [About](https://geunhyeong.com/): Biography, current BiSTO focus, and researcher links.
+- [Research & Projects](https://geunhyeong.com/research/): Generalizable AI methods for multiphysics design, research framework, and selected engineering case studies.
+- [Publications (SCIE)](https://geunhyeong.com/publications/): 14 published SCIE journal articles (13 first or co-first author, 5 corresponding author), 2 under review manuscripts, abstracts, PDFs, and BibTeX/RIS citations.
+- [Curriculum Vitae](https://geunhyeong.com/cv/): Full career timeline, education, mentoring, teaching, invited talks, patents, peer review service, and PDF CV download.
+- [ORCID](https://orcid.org/0000-0003-3141-4663): Canonical researcher identifier.
+- [Google Scholar](https://scholar.google.com/citations?user=YPq9l98AAAAJ): Citation profile.
+
+## Research philosophy & framework
+- Broad vision: Engineering hardware must deliver more performance within a fixed space. Rather than writing separate rules by hand for each device, this research aims at one AI design method, starting from BiSTO, that needs no adjoints and still works when the physics changes.
+- Validation philosophy: Trust an AI model only as far as it is checked. A physics solver checks each design proposed by AI, and hardware tests check the solver.
+- Framework direction: BiSTO is the core engine: an AI model ranks changes to a layout, and a physics solver checks the best ones, so the method needs only standard simulations. Generalizing it to 3D is in progress. Planned steps: test printed designs in a benchtop loop, apply the same method to electromagnetic pumps and liquid metal MHD, and then use test data to correct the models and build digital twins that detect abnormal behavior.
+- Research plan (figure on the Research page): a cycle linking BiSTO design, metal printing, loop tests, and digital twins. Core engine: BiSTO, where an AI model ranks changes and a physics solver checks them. Planned thrusts: thermal, fluid, and structural design in 3D (printable compact heat exchangers and cooling channels); electromagnetic pumps and liquid metal MHD (the same method on new physics); digital twins and anomaly detection (test data corrects the models and the design search). The images in the figure show earlier work; 3D BiSTO, BiSTO hardware tests, and digital twins are planned.
+
+## Research areas & verified highlights
+- BiSTO (Binary Surrogate-based Topology Optimization): Neural network surrogate ranks binary solid and fluid updates while connected candidate layouts are verified directly by a turbulent heat transfer solver without flow or turbulence adjoints. Manuscript under review at Applied Thermal Engineering; presented at AM2F 2026 (MIT Plasma Science and Fusion Center).
+- FRIB Rotating Beam Dump (2024 to Present): Leading the overall fabrication and installation effort across materials, systems engineering, thermomechanics, and radiation for the upgrade beyond 50 kW, targeting 100 kW primary beam power and implementation by 2028 (planned with a BiSTO cooling layout).
+- FRIB Static Beam Dump AI Optimization (Nuclear Science and Techniques, 2026): Hybrid genetic algorithm and reinforcement learning approach increasing simulated average power handling capability by 72% over the baseline design.
+- AI Designed Nuclear Heat Exchangers (International Communications in Heat and Mass Transfer, 2024; Case Studies in Thermal Engineering, 2023): DRL assisted topology optimization achieving 14.8% higher simulated heat transfer than conventional topology optimization, fabricated via metal 3D printing (SUS316L) and tested in a thermal loop.
+- 3D Printable DC Electromagnetic Pump (Nuclear Engineering and Technology, 2026; solo author): Single body additive manufacturing concept requiring 52% less simulated input current than a helical pump at matched pressure (10.5 bar) and flow rate.
+- Liquid Lithium Charge Stripper & MHD Circulator (Nuclear Engineering and Design, 2023): Reduced MHD circulator weight by 94% (340 kg to 21 kg) and experimentally formed a 22 micrometer liquid lithium film at 200 C.
+- Deep Learning Anomaly Detection for KOMAC Linac (Journal of Nuclear Science and Technology, 2025): LSTM autoencoder detecting early fault signatures 30.7 to 286.6 minutes before recorded voltage faults in retrospective operating data.
+
+## Teaching, mentoring & service summary
+- Mentoring at FRIB, Michigan State University: Primary or research mentor for 3 students (2 undergraduates, 1 graduate student) on induction heating validation and AI geometry optimization.
+- Teaching experience: Lecturer, Foundation of AI (International School on Beam Dynamics and Accelerator Technology, 2023); Instructor, Nuclear Comprehensive Design Project (UNIST, 2016); Teaching Assistant in Electromagnetics, Liquid Metal MHD, and Nuclear Engineering (UNIST, 2017 to 2021); MSU Academy for Teaching participant.
+- Credentials & service: Ph.D. in Nuclear Engineering and B.S. in Nuclear Engineering & Mechanical Engineering (UNIST); 35 conference presentations; 6 invited talks; 6 registered Korean patents; 1 registered software program; 32 journal peer reviews across Energy, International Communications in Heat and Mass Transfer, Annals of Nuclear Energy, Electronic Research Archive, and related journals.
+
+## Projects
+
+
+- [Liquid lithium charge stripper](https://geunhyeong.com/projects/em_02_raon_charge_stripper/) (UNIST, 2020 - 2021): MHD circulator development and experimental characterization of liquid lithium films.
+
+- [Electromagnetic pumps & MHD generators](https://geunhyeong.com/projects/em_99_other/) (UNIST, 2014 - 2021): Liquid metal circulation for reactors and accelerators, and magnetohydrodynamic power generation.
+
+- [AI anomaly detection for the KOMAC linac](https://geunhyeong.com/projects/ot_01_komac_linac/) (KAERI, 2022 - 2023): An LSTM autoencoder for early detection of anomalies in quadrupole magnet operation.
+
+- [Flow channel design for OLED manufacturing](https://geunhyeong.com/projects/tf_03_oled_display/) (KAERI, 2022): Reinforcement learning for temperature uniformity in display manufacturing susceptors.
+
+- [Thermal and structural engineering at FRIB](https://geunhyeong.com/projects/tf_99_other/) (FRIB, 2024 - 2026): Thermal and structural analysis of beam intercepting devices, shielding, and target systems.
+
+- [Static beam dump AI optimization](https://geunhyeong.com/projects/tf_01_frib_beam_dump/) (FRIB, 2023 - 2026): Global and local AI search with thermal model evaluation and 3D verification for static beam dump design.
+
+- [Rotating beam dump development](https://geunhyeong.com/projects/tf_04_rotating_beam_dump/) (FRIB, 2024 - Present): Leading fabrication and installation across materials, systems engineering, thermomechanics, and radiation.
+
+- [AI designed nuclear heat exchangers](https://geunhyeong.com/projects/tf_02_smr_heat_exchanger/) (KAERI, 2021 - 2023): Reinforcement learning for heat exchanger design, connected to metal 3D printing and experimental testing.
+
+- [3D printable electromagnetic pump](https://geunhyeong.com/projects/em_01_3d_printable_emp/) (KAERI, 2023 - 2024): A single body DC pump concept designed for liquid metal circulation and metal 3D printing.
+
+
+## Citation guidance
+- Cite published SCIE articles using their DOI and canonical citation string (or BibTeX/RIS links below).
+- Do not cite under-review manuscripts as published journal articles; cite public preprints only with their explicit preprint DOI and status.
+
+## Under-review manuscripts
+
+
+- A hybrid deep learning surrogate for thermal analysis of high-heat-flux devices. Lee, G.†*, & Kanemura, T. Under review at Engineering Applications of Artificial Intelligence; not a published journal article. [Public preprint](https://doi.org/10.2139/ssrn.7128856)
+
+- BiSTO: binary surrogate based topology optimization of turbulent cooling channels using deep learning. Lee, G.†*, & Kanemura, T. Under review at Applied Thermal Engineering; not a published journal article.
+
+
+## Published articles (SCIE)
+
+### Optimization of the FRIB Beam Dump: A Hybrid Genetic Algorithm and Reinforcement Learning Approach (2026)
+- Authors: Geunhyeong Lee, J. Song, R. Quispe-Abad, M. Patil, T. Kanemura
+- Journal: Nuclear Science and Techniques, 37, 184
+- Keywords: genetic algorithm, reinforcement learning, FRIB, beam dump, optimization
+- Key finding: Hybrid genetic algorithm and soft actor-critic (SAC) deep reinforcement learning redesign of the FRIB static beam dump for 20 kW to 50 kW operation, increasing simulated average power-handling capability by 72%.
+- Citation: Lee, G., Song, J., Quispe-Abad, R., Patil, M., & Kanemura, T. (2026). Optimization of the FRIB Beam Dump: A Hybrid Genetic Algorithm and Reinforcement Learning Approach. Nuclear Science and Techniques, 37, 184. https://doi.org/10.1007/s41365-026-02020-2
+- [Abstract and citation](https://geunhyeong.com/publications/lee2025optimization/)
+- [Published version](https://doi.org/10.1007/s41365-026-02020-2)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee14.pdf)
+- [BibTeX](https://geunhyeong.com/publications/lee2025optimization/citation.bib)
+
+### Conceptual Design of a 3D-Printable DC Electromagnetic Pump for Additive Manufacturing (2026)
+- Authors: Geunhyeong Lee
+- Journal: Nuclear Engineering and Technology, 58(1), 103916
+- Keywords: electromagnetic pump, 3D printing, additive manufacturing, liquid metal
+- Key finding: Solo-authored conceptual design of a 3D-printable DC electromagnetic pump using opposing permanent magnets, achieving 10.5 bar simulated developed pressure at 330 A (52% less input current than a helical pump).
+- Citation: Lee, G. (2026). Conceptual Design of a 3D-Printable DC Electromagnetic Pump for Additive Manufacturing. Nuclear Engineering and Technology, 58(1), 103916. https://doi.org/10.1016/j.net.2025.103916
+- [Abstract and citation](https://geunhyeong.com/publications/lee2026conceptual/)
+- [Published version](https://doi.org/10.1016/j.net.2025.103916)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee13.pdf)
+- [BibTeX](https://geunhyeong.com/publications/lee2026conceptual/citation.bib)
+
+### Deep learning-based anomaly detection in drift tube quadrupole operation for the KOMAC LINAC (2025)
+- Authors: D.H. Kim, H.S. Kim, H.J. Kwon, Y. Yu, Geunhyeong Lee
+- Journal: Journal of Nuclear Science and Technology, 62(8), 709-714
+- Keywords: deep learning, anomaly detection, LSTM, particle accelerator
+- Key finding: LSTM autoencoder anomaly detection for KOMAC LINAC drift-tube quadrupole power supplies, detecting early anomaly signatures in five of ten historical voltage-fault cases, 30.7 to 286.6 minutes before the recorded voltage fault.
+- Citation: Kim, D.H., Kim, H.S., Kwon, H.J., Yu, Y., & Lee, G. (2025). Deep learning-based anomaly detection in drift tube quadrupole operation for the KOMAC LINAC. Journal of Nuclear Science and Technology, 62(8), 709-714. https://doi.org/10.1080/00223131.2025.2464742
+- [Abstract and citation](https://geunhyeong.com/publications/kim2025deep/)
+- [Published version](https://doi.org/10.1080/00223131.2025.2464742)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee12.pdf)
+- [BibTeX](https://geunhyeong.com/publications/kim2025deep/citation.bib)
+
+### Design optimization of heat exchanger using deep reinforcement learning (2024)
+- Authors: Geunhyeong Lee, Y. Joo, S.U. Lee, T. Kim, Y. Yu, H.G. Kim
+- Journal: International Communications in Heat and Mass Transfer, 159, 107991
+- Keywords: deep reinforcement learning, topology optimization, heat exchanger, experimental validation
+- Key finding: Deep reinforcement learning initialization for printed-circuit heat exchanger (PCHE) topology optimization, improving simulated heat transfer by 14.8% over conventional topology optimization and validated with metal 3D printing.
+- Citation: Lee, G., Joo, Y., Lee, S.U., Kim, T., Yu, Y., & Kim, H.G. (2024). Design optimization of heat exchanger using deep reinforcement learning. International Communications in Heat and Mass Transfer, 159, 107991. https://doi.org/10.1016/j.icheatmasstransfer.2024.107991
+- [Abstract and citation](https://geunhyeong.com/publications/lee2024design/)
+- [Published version](https://doi.org/10.1016/j.icheatmasstransfer.2024.107991)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee11.pdf)
+- [BibTeX](https://geunhyeong.com/publications/lee2024design/citation.bib)
+
+### Dual-fluid Topology Optimization of Printed-circuit Heat Exchanger with Low-pumping-power Design (2023)
+- Authors: Geunhyeong Lee, Y. Joo, Y. Yu, H.G. Kim
+- Journal: Case Studies in Thermal Engineering, 49, 103318
+- Keywords: topology optimization, PCHE, printed-circuit heat exchanger
+- Key finding: Dual-fluid topology optimization for a 3D-printable printed-circuit heat exchanger (PCHE), achieving up to 66% higher simulated heat transfer rate than a conventional PCHE at identical pumping power.
+- Citation: Lee, G., Joo, Y., Yu, Y., & Kim, H.G. (2023). Dual-fluid Topology Optimization of Printed-circuit Heat Exchanger with Low-pumping-power Design. Case Studies in Thermal Engineering, 49, 103318. https://doi.org/10.1016/j.csite.2023.103318
+- [Abstract and citation](https://geunhyeong.com/publications/lee2023dual/)
+- [Published version](https://doi.org/10.1016/j.csite.2023.103318)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee10.pdf)
+- [BibTeX](https://geunhyeong.com/publications/lee2023dual/citation.bib)
+
+### Experimental characterization of the flowline of a lithium film formed using an electromagnetic thruster for a RAON prototype charge stripper (2023)
+- Authors: T.U. Kang, Geunhyeong Lee, H.R. Kim
+- Journal: Nuclear Engineering and Design, 412, 112481
+- Keywords: electromagnetic pump, lithium film, RAON, charge stripper
+- Key finding: Optimization and experimental validation of a liquid lithium MHD charge stripper for RAON, reducing MHD circulator input current to 57% and weight to 6% while forming a 22 micrometer lithium film at 107 A.
+- Citation: Kang, T.U., Lee, G., & Kim, H.R. (2023). Experimental characterization of the flowline of a lithium film formed using an electromagnetic thruster for a RAON prototype charge stripper. Nuclear Engineering and Design, 412, 112481. https://doi.org/10.1016/j.nucengdes.2023.112481
+- [Abstract and citation](https://geunhyeong.com/publications/kang2023experimental/)
+- [Published version](https://doi.org/10.1016/j.nucengdes.2023.112481)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee9.pdf)
+- [BibTeX](https://geunhyeong.com/publications/kang2023experimental/citation.bib)
+
+### Numerical study of Faraday-type nitrogen plasma magnetohydrodynamic generator (2021)
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: Journal of the Korean Physical Society, 78(7), 600-606
+- Keywords: MHD generator, plasma, magnetohydrodynamics
+- Key finding: Numerical analysis of a 3000 K Faraday-type nitrogen plasma MHD generator with a de Laval nozzle for cogeneration, quantifying electrical output scaling with velocity, magnetic flux density, and geometry.
+- Citation: Lee, G., & Kim, H.R. (2021). Numerical study of Faraday-type nitrogen plasma magnetohydrodynamic generator. Journal of the Korean Physical Society, 78(7), 600-606. https://doi.org/10.1007/s40042-021-00116-z
+- [Abstract and citation](https://geunhyeong.com/publications/lee2021numerical/)
+- [Published version](https://doi.org/10.1007/s40042-021-00116-z)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee8.pdf)
+- [BibTeX](https://geunhyeong.com/publications/lee2021numerical/citation.bib)
+
+### The variable analysis of an MHD generator with electrical output of 10 kW for application to bi-plant method electricity generation (2020)
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: International Journal of Energy Research, 44(10), 8125-8132
+- Keywords: MHD generator, electricity generation, bi-plant method
+- Key finding: Parametric ANSYS MHD analysis of a 10 kW plasma flue-gas generator (3000 K) for fossil power plant bi-plant cogeneration, establishing design scaling with magnetic flux density, velocity, and geometry.
+- Citation: Lee, G., & Kim, H.R. (2020). The variable analysis of an MHD generator with electrical output of 10 kW for application to bi-plant method electricity generation. International Journal of Energy Research, 44(10), 8125-8132. https://doi.org/10.1002/er.5100
+- [Abstract and citation](https://geunhyeong.com/publications/lee2020variable/)
+- [Published version](https://doi.org/10.1002/er.5100)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee7.pdf)
+- [BibTeX](https://geunhyeong.com/publications/lee2020variable/citation.bib)
+
+### Mathematical approach for optimization of magnetohydrodynamic circulation system (2019)
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: Nuclear Engineering and Technology, 51(3), 654-664
+- Keywords: MHD optimization, liquid metal circulation
+- Key finding: Analytical and numerical MHD optimization of a rectangular liquid-sodium circulation system (2 kPa, 0.02 m3/s at 499 K) for a Gen-IV SFR active decay heat removal system, finding minimum current of 3976 A at 0.037 T.
+- Citation: Lee, G., & Kim, H.R. (2019). Mathematical approach for optimization of magnetohydrodynamic circulation system. Nuclear Engineering and Technology, 51(3), 654-664. https://doi.org/10.1016/j.net.2018.12.008
+- [Abstract and citation](https://geunhyeong.com/publications/lee2019mathematical/)
+- [Published version](https://doi.org/10.1016/j.net.2018.12.008)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee6.pdf)
+- [BibTeX](https://geunhyeong.com/publications/lee2019mathematical/citation.bib)
+
+### Magnetohydrodynamics approach for active decay heat removal system in future generation IV reactor (2018)
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: International Journal of Energy Research, 42(10), 3266-3278
+- Keywords: decay heat removal, Generation IV reactor, MHD
+- Key finding: Numerical design optimization of a helical MHD liquid-sodium pump (10 kPa, 0.005 m3/s at 468.75 K) for a 150 MWe Gen-IV SFR decay heat removal loop, reducing required current to 352 A at 0.466 T.
+- Citation: Lee, G., & Kim, H.R. (2018). Magnetohydrodynamics approach for active decay heat removal system in future generation IV reactor. International Journal of Energy Research, 42(10), 3266-3278. https://doi.org/10.1002/er.4080
+- [Abstract and citation](https://geunhyeong.com/publications/lee2018magnetohydrodynamics/)
+- [Published version](https://doi.org/10.1002/er.4080)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee5.pdf)
+- [BibTeX](https://geunhyeong.com/publications/lee2018magnetohydrodynamics/citation.bib)
+
+### Numerical analysis of the electromagnetic force for design optimization of a rectangular direct current electromagnetic pump (2018)
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: Nuclear Engineering and Technology, 50(6), 869-876
+- Keywords: electromagnetic pump, DC EMP, design optimization
+- Key finding: Numerical electromagnetic force and end-effect analysis of a rectangular DC electromagnetic pump using Sm2Co17 magnets for a 200 C liquid lithium loop (6 cm3/s, 1.5 MPa) in a heavy-ion accelerator.
+- Citation: Lee, G., & Kim, H.R. (2018). Numerical analysis of the electromagnetic force for design optimization of a rectangular direct current electromagnetic pump. Nuclear Engineering and Technology, 50(6), 869-876. https://doi.org/10.1016/j.net.2018.04.010
+- [Abstract and citation](https://geunhyeong.com/publications/lee2018numerical/)
+- [Published version](https://doi.org/10.1016/j.net.2018.04.010)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee4.pdf)
+- [BibTeX](https://geunhyeong.com/publications/lee2018numerical/citation.bib)
+
+### Magnetic-field analysis of an MHD channel in a liquid-metal circulation system of a prototype GenIV sodium fast reactor (2018)
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: Annals of Nuclear Energy, 115, 343-351
+- Keywords: MHD channel, sodium fast reactor, Generation IV
+- Key finding: Magnetic-field optimization of a Sm2Co17 permanent-magnet and ferromagnetic yoke system for a helical DC electromagnetic pump (10 kPa, 0.005 m3/s at 226 C) in a Gen-IV SFR loop, achieving 0.848 T average channel flux density.
+- Citation: Lee, G., & Kim, H.R. (2018). Magnetic-field analysis of an MHD channel in a liquid-metal circulation system of a prototype GenIV sodium fast reactor. Annals of Nuclear Energy, 115, 343-351. https://doi.org/10.1016/j.anucene.2018.01.049
+- [Abstract and citation](https://geunhyeong.com/publications/lee2018magnetic/)
+- [Published version](https://doi.org/10.1016/j.anucene.2018.01.049)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee3.pdf)
+- [BibTeX](https://geunhyeong.com/publications/lee2018magnetic/citation.bib)
+
+### Design analysis of DC electromagnetic pump for liquid sodium–CO2 reaction experimental characterization (2017)
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: Annals of Nuclear Energy, 109, 490-497
+- Keywords: electromagnetic pump, sodium–CO2 reaction
+- Key finding: Equivalent-circuit and numerical design plus fabrication of a rectangular DC conduction electromagnetic pump (3 L/min, 0.05 bar at 300 C) for a liquid sodium and CO2 reaction experimental loop.
+- Citation: Lee, G., & Kim, H.R. (2017). Design analysis of DC electromagnetic pump for liquid sodium–CO2 reaction experimental characterization. Annals of Nuclear Energy, 109, 490-497. https://doi.org/10.1016/j.anucene.2017.05.054
+- [Abstract and citation](https://geunhyeong.com/publications/lee2017design/)
+- [Published version](https://doi.org/10.1016/j.anucene.2017.05.054)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee2.pdf)
+- [BibTeX](https://geunhyeong.com/publications/lee2017design/citation.bib)
+
+### Numerical investigation and comparison of the rectangular, cylindrical, and helical-type DC electromagnetic pumps (2017)
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: Magnetohydrodynamics, 53(2), 429-438
+- Keywords: electromagnetic pump comparison, rectangular EMP, cylindrical EMP, helical EMP
+- Key finding: Comparative numerical analysis of rectangular, cylindrical, and helical DC electromagnetic pumps (6 cc/s, 10 bar at 300 C liquid lithium), showing the helical design requires 12% of the current of rectangular and cylindrical pumps.
+- Citation: Lee, G., & Kim, H.R. (2017). Numerical investigation and comparison of the rectangular, cylindrical, and helical-type DC electromagnetic pumps. Magnetohydrodynamics, 53(2), 429-438. https://doi.org/10.22364/mhd.53.2.23
+- [Abstract and citation](https://geunhyeong.com/publications/lee2017numerical/)
+- [Published version](https://doi.org/10.22364/mhd.53.2.23)
+- [PDF](https://geunhyeong.com/assets/pdf/publications/Lee1.pdf)
+- [BibTeX](https://geunhyeong.com/publications/lee2017numerical/citation.bib)
+
+## Other peer-reviewed journal publication
+
+- Design and Analysis of an OLED Display Susceptor System Using Reinforcement Learning (2025). Lee, G.†*, Kim, T., Kim, Y., & Kim, G. Journal of Korean Applied Artificial Intelligence, 1(2), 1-6.
+

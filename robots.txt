@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /References/
+
+Sitemap: https://geunhyeong.com/sitemap.xml
+
+# Public pages are accessible to search and AI crawlers, including OAI-SearchBot.
+# Plain-text LLM discovery indexes:
+# - https://geunhyeong.com/llms.txt
+# - https://geunhyeong.com/llms-full.txt

@@ -1,0 +1,373 @@
+# Geunhyeong Lee, Ph.D. | Complete Academic Dossier
+
+- Canonical Website: https://geunhyeong.com/
+- Current Role: Scientist (Regular staff position, continuing appointment track), High Power Targetry Department, Facility for Rare Isotope Beams (FRIB), Michigan State University, East Lansing, MI, USA
+- Email: leeg@frib.msu.edu
+- ORCID: https://orcid.org/0000-0003-3141-4663
+- Google Scholar: https://scholar.google.com/citations?user=YPq9l98AAAAJ
+- Scopus: https://www.scopus.com/authid/detail.uri?authorId=56779304800
+- ResearchGate: https://www.researchgate.net/profile/Geunhyeong-Lee-3/
+- LinkedIn: https://www.linkedin.com/in/geunhyeong-lee-31a9842a4
+- Full CV PDF: https://geunhyeong.com/assets/pdf/CV_GLee_261128.pdf
+
+## Research Vision & Philosophy
+
+Engineering devices cannot keep growing as power and energy demands rise, so more performance must come from better design. My goal is an AI design method that needs only standard simulations and still works when the physics changes, so that engineers can design, print, and test their own devices and monitor them in operation with digital twins. AI searches for designs, a physics solver checks each one, and hardware tests check the solver. My background spans thermal, fluid, electromagnetic, magnetohydrodynamic (MHD), and structural analysis. BiSTO for turbulent cooling channels is the first step, and I am now generalizing it to 3D.
+
+Validation philosophy: An AI model is trusted only as far as it is checked. A physics solver checks every design the AI proposes, and hardware tests check the solver.
+
+Framework summary:
+BiSTO is the core engine: an AI model ranks changes to a layout, and a physics solver checks the best ones, so the method needs only standard simulations. I am now generalizing it to 3D. I plan to test printed designs in a benchtop loop, apply the same method to electromagnetic pumps and liquid metal MHD, and then use test data to correct the models and build digital twins that detect abnormal behavior.
+
+Research plan (figure on the Research page):
+A cycle linking BiSTO design, metal printing, loop tests, and digital twins. The images in the figure show my earlier work; 3D BiSTO, BiSTO hardware tests, and digital twins are planned.
+
+Planned research thrusts:
+1. Core engine (BiSTO): A neural network surrogate ranks changes between water and solid in a 2D layout, and a turbulent heat transfer solver evaluates the best candidates, so no flow or turbulence adjoints are needed. I am now generalizing BiSTO to 3D.
+2. Thermal, fluid, and structural design in 3D: Extend BiSTO to 3D compact heat exchangers and cooling channels under high heat flux, and add manufacturing limits and structural limits (thermal stress, fatigue, and pressure loads) to the search.
+3. Electromagnetic pumps and liquid metal MHD: Apply the same method to electromagnetic pumps, where the search must couple current, magnetic field, and flow.
+4. Loop tests and digital twins: Test printed designs in a benchtop loop, then combine simulations, the AI models trained during design, and test data to build digital twins that detect abnormal behavior.
+5. Sharing: Share benchmark problems and, where permitted, code and test data.
+
+## Academic Appointments
+
+### Scientist | Facility for Rare Isotope Beams (FRIB), Michigan State University (Dec 2023 - Present)
+- Department: High Power Targetry Department (Regular staff position, continuing appointment track)
+- Location: East Lansing, MI
+- Developed BiSTO (Binary Surrogate-based Topology Optimization), an AI framework combining surrogate guided topology search, solver verification, and geometric connectivity constraints for turbulent cooling channel design.
+- Lead the overall fabrication and installation effort for the FRIB Rotating Beam Dump, coordinating specialists in materials, systems engineering, thermomechanics, and radiation, with implementation targeted for 2028.
+- Developed a hybrid genetic algorithm and reinforcement learning approach for FRIB static beam dump design optimization, increasing simulated average power handling capability by 72% over the existing design.
+- Developed a CNN and MLP surrogate for rotating beam dump thermal limits (2.8% mean error against FEM in cross validation; millisecond scale inference).
+
+### Postdoctoral Researcher | Korea Atomic Energy Research Institute (KAERI) (Aug 2021 - Dec 2023)
+- Department: Applied Artificial Intelligence Lab
+- Location: Daejeon, Korea
+- Developed a deep reinforcement learning approach for heat exchanger optimization, achieving 14.8% higher simulated heat transfer than conventional topology optimization; tested a metal printed prototype.
+- Designed a single body, 3D printable DC electromagnetic pump with 52% lower simulated current demand than a helical pump at matched pressure and flow rate.
+- Designed flow channels for Samsung OLED susceptors using reinforcement learning.
+- Applied AI anomaly detection to the KOMAC accelerator for operational stability.
+
+
+## Education
+
+- Ph.D. in Nuclear Engineering (Combined M.S./Ph.D.), Ulsan National Institute of Science and Technology (UNIST) (Mar 2016 - Aug 2021, Ulsan, Korea) | Advisor: Hee Reyoung Kim. Thesis: Optimization of Lithium Charge Stripper through MHD Circulator Development
+
+- B.S. in Nuclear Engineering & Mechanical Engineering, Ulsan National Institute of Science and Technology (UNIST) (Mar 2010 - Feb 2016, Ulsan, Korea) | Dual Major
+
+
+## Teaching & Mentoring
+
+Philosophy: Project based learning following the same loop as research (design, simulate, build, and test), training students to verify AI and simulation predictions against physical principles and experimental measurements.
+
+Pedagogical Training: Michigan State University Academy for Teaching (course design, student engagement, generative AI in education).
+
+### Mentoring
+- (2026-Present) Kate Brown, undergraduate student, Michigan State University: Primary research mentor for experimental validation of the FRIB Rotating Beam Dump using electromagnetic induction heating, alongside electromagnetic, fluid flow, and thermal simulations.
+- (2026-Present) Zhuoqun Wu, graduate student, Michigan State University: Research mentor for the application of reinforcement learning to wedge geometry optimization.
+- (2026) Adam Sypitkowski, undergraduate student, Michigan State University: Accelerator Science and Engineering Traineeship (ASET) program at FRIB. Research mentor for AI geometry optimization in accelerator simulations.
+
+### Teaching experience
+- (2023) Lecturer, Foundation of AI, International School on Beam Dynamics and Accelerator Technology
+- (2016) Instructor, Nuclear Comprehensive Design Project (engineering analysis and COMSOL), UNIST
+
+### Teaching assistant
+- (2021) Liquid Metal Magnetohydrodynamics I, UNIST
+- (2020) Liquid Metal Magnetohydrodynamics II, UNIST
+- (2019) Special Lecture on Nuclear Engineering (MHD electrical power generation), UNIST
+- (2017-2019) Fundamentals of Electromagnetics, UNIST
+
+### Teaching development
+- (2026) Academy for Teaching, Center for Teaching and Learning Innovation, Michigan State University: Completed courses on course design, student engagement, and generative AI in teaching.
+
+
+## Projects
+
+### 3D printable electromagnetic pump (KAERI, 2023 - 2024)
+- URL: https://geunhyeong.com/projects/em_01_3d_printable_emp/
+- Summary: A single body DC pump concept designed for liquid metal circulation and metal 3D printing.
+- Scope / Result: Simulation result: 52% lower current demand than a helical pump at matched pressure and flow rate.
+
+### Liquid lithium charge stripper (UNIST, 2020 - 2021)
+- URL: https://geunhyeong.com/projects/em_02_raon_charge_stripper/
+- Summary: MHD circulator development and experimental characterization of liquid lithium films.
+- Scope / Result: Prototype study: Liquid lithium film formation characterized for a prototype heavy ion charge stripper.
+
+### Electromagnetic pumps & MHD generators (UNIST, 2014 - 2021)
+- URL: https://geunhyeong.com/projects/em_99_other/
+- Summary: Liquid metal circulation for reactors and accelerators, and magnetohydrodynamic power generation.
+- Scope / Result: Research scope: Liquid metal circulation and magnetohydrodynamic power generation design studies.
+
+### AI anomaly detection for the KOMAC linac (KAERI, 2022 - 2023)
+- URL: https://geunhyeong.com/projects/ot_01_komac_linac/
+- Summary: An LSTM autoencoder for early detection of anomalies in quadrupole magnet operation.
+- Scope / Result: Study result: Early anomaly signatures in five of ten historical voltage-fault cases, 30.7-286.6 minutes before the recorded voltage fault.
+
+### Static beam dump AI optimization (FRIB, 2023 - 2026)
+- URL: https://geunhyeong.com/projects/tf_01_frib_beam_dump/
+- Summary: Global and local AI search with thermal model evaluation and 3D verification for static beam dump design.
+- Scope / Result: Simulation result: 72% higher average power handling capability than the existing design.
+
+### AI designed heat exchangers for small modular reactors (KAERI, 2021 - 2023)
+- URL: https://geunhyeong.com/projects/tf_02_smr_heat_exchanger/
+- Summary: Reinforcement learning for heat exchanger design, connected to metal 3D printing and experimental testing.
+- Scope / Result: Study result: 14.8% higher simulated heat transfer than conventional topology optimization; metal printed prototype tested.
+
+### Flow channel design for OLED manufacturing (KAERI, 2022)
+- URL: https://geunhyeong.com/projects/tf_03_oled_display/
+- Summary: Reinforcement learning for temperature uniformity in display manufacturing susceptors.
+- Scope / Result: Design study: Flow-channel layouts targeting temperature uniformity in a susceptor thermal model.
+
+### Rotating beam dump development (FRIB, 2024 - Present)
+- URL: https://geunhyeong.com/projects/tf_04_rotating_beam_dump/
+- Summary: Leading fabrication and installation across materials, systems engineering, thermomechanics, and radiation.
+- Scope / Result: Development target: 100 kW primary beam power by 2028.
+
+### Thermal and structural engineering at FRIB (FRIB, 2024 - 2026)
+- URL: https://geunhyeong.com/projects/tf_99_other/
+- Summary: Thermal and structural analysis of beam intercepting devices, shielding, and target systems.
+- Scope / Result: Engineering studies: Simulation studies and experimental comparisons for shielding, plasma-chamber, charge-selector, and target systems.
+
+
+## Under-Review Manuscripts
+
+
+- A hybrid deep learning surrogate for thermal analysis of high-heat-flux devices. Lee, G.†*, & Kanemura, T. Under review at Engineering Applications of Artificial Intelligence; not a published journal article. Preprint: https://doi.org/10.2139/ssrn.7128856
+
+- BiSTO: binary surrogate based topology optimization of turbulent cooling channels using deep learning. Lee, G.†*, & Kanemura, T. Under review at Applied Thermal Engineering; not a published journal article.
+
+
+## Published SCIE Journal Articles (14 total; 13 first or co-first author; 5 corresponding author)
+
+### 1. Optimization of the FRIB Beam Dump: A Hybrid Genetic Algorithm and Reinforcement Learning Approach (2026)
+- Authors: Geunhyeong Lee, J. Song, R. Quispe-Abad, M. Patil, T. Kanemura
+- Journal: Nuclear Science and Techniques, 37, 184
+- DOI: https://doi.org/10.1007/s41365-026-02020-2
+- Keywords: genetic algorithm, reinforcement learning, FRIB, beam dump, optimization
+- Key finding: Hybrid genetic algorithm and soft actor-critic (SAC) deep reinforcement learning redesign of the FRIB static beam dump for 20 kW to 50 kW operation, increasing simulated average power-handling capability by 72%.
+- Plain citation: Lee, G., Song, J., Quispe-Abad, R., Patil, M., & Kanemura, T. (2026). Optimization of the FRIB Beam Dump: A Hybrid Genetic Algorithm and Reinforcement Learning Approach. Nuclear Science and Techniques, 37, 184. https://doi.org/10.1007/s41365-026-02020-2
+- Page: https://geunhyeong.com/publications/lee2025optimization/
+- PDF: https://geunhyeong.com/assets/pdf/publications/Lee14.pdf
+- BibTeX: https://geunhyeong.com/publications/lee2025optimization/citation.bib
+- Abstract: The operational envelope of high-power-density systems, such as particle accelerators and advanced nuclear energy systems, is critically constrained by the need to manage extreme thermal loads. To address this, we present a novel hybrid optimization framework combining a genetic algorithm (GA) with a soft actor-critic (SAC) deep reinforcement learning agent. This framework was applied to a practical high-heat-flux problem: redesigning the beam dump at the Facility for Rare Isotope Beams (FRIB) for a power upgrade from 20 kW to 50 kW. The resulting design, validated by three-dimensional conjugate heat transfer simulations, suppresses hazardous hot spots and yields a markedly more uniform temperature distribution. This provides a robust operating margin, increasing the average power-handling capability by 72% relative to the current design, demonstrating the framework’s potential to solve complex thermal management challenges in both accelerator technology and advanced nuclear systems.
+
+### 2. Conceptual Design of a 3D-Printable DC Electromagnetic Pump for Additive Manufacturing (2026)
+- Authors: Geunhyeong Lee
+- Journal: Nuclear Engineering and Technology, 58(1), 103916
+- DOI: https://doi.org/10.1016/j.net.2025.103916
+- Keywords: electromagnetic pump, 3D printing, additive manufacturing, liquid metal
+- Key finding: Solo-authored conceptual design of a 3D-printable DC electromagnetic pump using opposing permanent magnets, achieving 10.5 bar simulated developed pressure at 330 A (52% less input current than a helical pump).
+- Plain citation: Lee, G. (2026). Conceptual Design of a 3D-Printable DC Electromagnetic Pump for Additive Manufacturing. Nuclear Engineering and Technology, 58(1), 103916. https://doi.org/10.1016/j.net.2025.103916
+- Page: https://geunhyeong.com/publications/lee2026conceptual/
+- PDF: https://geunhyeong.com/assets/pdf/publications/Lee13.pdf
+- BibTeX: https://geunhyeong.com/publications/lee2026conceptual/citation.bib
+- Abstract: Electromagnetic pumps offer advantages in handling high-temperature or corrosive fluids by generating flow through Lorentz forces rather than mechanical impellers. However, direct current electromagnetic pumps typically require large currents, resulting in increased manufacturing costs due to thicker copper wires. This study proposes a novel direct current electromagnetic pump for metal additive manufacturing, potentially suitable for advanced Small Modular Reactors cooled by liquid sodium and liquid-metal charge stripper systems used in accelerators. Permanent magnets arranged in opposing directions generate concentrated magnetic flux around constrained flow paths, thereby producing multiple Lorentz forces and reducing the required input current. Numerical simulations demonstrate that the proposed design achieves a developed pressure of 10.5 bar at a significantly reduced current of 330 A, corresponding to a 52 % reduction in current compared to conventional helical-type pumps operating under similar conditions. Additionally, the new pump geometry simplifies fabrication by eliminating brazed joints and enabling a more compact design. These results indicate that 3D-printable electromagnetic pumps provide improvements in performance and ease of fabrication for high-pressure applications.
+
+### 3. Deep learning-based anomaly detection in drift tube quadrupole operation for the KOMAC LINAC (2025)
+- Authors: D.H. Kim, H.S. Kim, H.J. Kwon, Y. Yu, Geunhyeong Lee
+- Journal: Journal of Nuclear Science and Technology, 62(8), 709-714
+- DOI: https://doi.org/10.1080/00223131.2025.2464742
+- Keywords: deep learning, anomaly detection, LSTM, particle accelerator
+- Key finding: LSTM autoencoder anomaly detection for KOMAC LINAC drift-tube quadrupole power supplies, detecting early anomaly signatures in five of ten historical voltage-fault cases, 30.7 to 286.6 minutes before the recorded voltage fault.
+- Plain citation: Kim, D.H., Kim, H.S., Kwon, H.J., Yu, Y., & Lee, G. (2025). Deep learning-based anomaly detection in drift tube quadrupole operation for the KOMAC LINAC. Journal of Nuclear Science and Technology, 62(8), 709-714. https://doi.org/10.1080/00223131.2025.2464742
+- Page: https://geunhyeong.com/publications/kim2025deep/
+- PDF: https://geunhyeong.com/assets/pdf/publications/Lee12.pdf
+- BibTeX: https://geunhyeong.com/publications/kim2025deep/citation.bib
+- Abstract: The Korea Multi-purpose Accelerator Complex linear accelerator encompasses a Drift Tube LINAC (DTL) structure for high-frequency beam bunches accelerated by a radio frequency quadrupole. The existing anomaly detection system triggers shutdown when anomalies are detected. This study aims to detect anomalies to prevent unnecessary shutdowns through pre-adjustments. Drift-tube quadrupoles (DTQs) focus the beam within the DTL tank, but prolonged usage can degrade performance. To ensure stable beam focusing, the operational status of DTQ power supplies must be monitored. The EPICS input/output controller monitors these operational parameters and triggers alarms when thresholds are exceeded. However, this approach fails to consider changes, such as equipment aging. A machine learning-driven method can assimilate historical data related to the magnet power supply, enabling deriving adaptive thresholds, facilitating anomaly detection. A long short-term memory (LSTM) autoencoder model is employed to detect anomalies in DTQ magnets. Exploratory DTQ magnet operation data analysis was conducted to identify potential failures. The LSTM autoencoder offered a more adaptive and proactive detection model than conventional threshold-based methods. The results show that voltage fault events can be detected range from 30.7 to 286.6 minutes before they may cause a breakdown, enhancing device maintenance and performance through proactive prognostication of impending failures.
+
+### 4. Design optimization of heat exchanger using deep reinforcement learning (2024)
+- Authors: Geunhyeong Lee, Y. Joo, S.U. Lee, T. Kim, Y. Yu, H.G. Kim
+- Journal: International Communications in Heat and Mass Transfer, 159, 107991
+- DOI: https://doi.org/10.1016/j.icheatmasstransfer.2024.107991
+- Keywords: deep reinforcement learning, topology optimization, heat exchanger, experimental validation
+- Key finding: Deep reinforcement learning initialization for printed-circuit heat exchanger (PCHE) topology optimization, improving simulated heat transfer by 14.8% over conventional topology optimization and validated with metal 3D printing.
+- Plain citation: Lee, G., Joo, Y., Lee, S.U., Kim, T., Yu, Y., & Kim, H.G. (2024). Design optimization of heat exchanger using deep reinforcement learning. International Communications in Heat and Mass Transfer, 159, 107991. https://doi.org/10.1016/j.icheatmasstransfer.2024.107991
+- Page: https://geunhyeong.com/publications/lee2024design/
+- PDF: https://geunhyeong.com/assets/pdf/publications/Lee11.pdf
+- BibTeX: https://geunhyeong.com/publications/lee2024design/citation.bib
+- Abstract: A micronuclear reactor is currently being developed using 3D printing technology, with a focus on refining the design of its heat exchanger. The objective is to optimize the topology of heat exchangers to improve their performance. The initial thermofluidic topology design is a crucial factor influencing the efficiency of the final optimized heat exchanger. This paper presents a novel approach for the topology optimization of heat exchangers using initial designs generated via deep reinforcement learning (DRL). A printed circuit heat exchanger (PCHE) served as the target for this optimization. Extensive simulations demonstrated that the DRL-assisted optimization method enhanced the heat exchange efficiency by 14.8% compared with that of conventional topology-optimized PCHEs. The optimized heat exchanger was fabricated using 3D printing, and its feasibility was confirmed by comparison with simulation data. The integration of DRL into the topology optimization and production processes via 3D printing lays the groundwork for the development of more efficient thermal systems and demonstrates a viable method for complex engineering applications.
+
+### 5. Dual-fluid Topology Optimization of Printed-circuit Heat Exchanger with Low-pumping-power Design (2023)
+- Authors: Geunhyeong Lee, Y. Joo, Y. Yu, H.G. Kim
+- Journal: Case Studies in Thermal Engineering, 49, 103318
+- DOI: https://doi.org/10.1016/j.csite.2023.103318
+- Keywords: topology optimization, PCHE, printed-circuit heat exchanger
+- Key finding: Dual-fluid topology optimization for a 3D-printable printed-circuit heat exchanger (PCHE), achieving up to 66% higher simulated heat transfer rate than a conventional PCHE at identical pumping power.
+- Plain citation: Lee, G., Joo, Y., Yu, Y., & Kim, H.G. (2023). Dual-fluid Topology Optimization of Printed-circuit Heat Exchanger with Low-pumping-power Design. Case Studies in Thermal Engineering, 49, 103318. https://doi.org/10.1016/j.csite.2023.103318
+- Page: https://geunhyeong.com/publications/lee2023dual/
+- PDF: https://geunhyeong.com/assets/pdf/publications/Lee10.pdf
+- BibTeX: https://geunhyeong.com/publications/lee2023dual/citation.bib
+- Abstract: This study proposes a novel design for a printed-circuit heat exchanger (PCHE) using a dual-fluid topology optimization method. To account for the three-dimensional (3D) heat transfer phenomena using the two-dimensional (2D) computational domains, three distinct physical domains are defined: two design domains with density fields of hot and cold fluids, and a thermal conduction domain placed between both fluid fields. To account for the local heat transfer variation within a design domain, the local heat transfer coefficient is expressed using the density fields for the hot- and cold-fluid domains. Here, the design geometry had pillar-shaped fixed density values considering the metal 3D printing. Each flow region had a constant flow rate as the boundary condition with the constraint of the maximum pressure drop between the inlet and outlet. The total amount of the heat transferred between the hot and cold domains was maximized as an objective function. For the validation, the thermal performance of the topology-optimized PCHE was compared to that of a conventional PCHE. The topology-optimized PCHE showed a 66% higher heat transfer rate compared to the conventional PCHE under identical pumping-power conditions.
+
+### 6. Experimental characterization of the flowline of a lithium film formed using an electromagnetic thruster for a RAON prototype charge stripper (2023)
+- Authors: T.U. Kang, Geunhyeong Lee, H.R. Kim
+- Journal: Nuclear Engineering and Design, 412, 112481
+- DOI: https://doi.org/10.1016/j.nucengdes.2023.112481
+- Keywords: electromagnetic pump, lithium film, RAON, charge stripper
+- Key finding: Optimization and experimental validation of a liquid lithium MHD charge stripper for RAON, reducing MHD circulator input current to 57% and weight to 6% while forming a 22 micrometer lithium film at 107 A.
+- Plain citation: Kang, T.U., Lee, G., & Kim, H.R. (2023). Experimental characterization of the flowline of a lithium film formed using an electromagnetic thruster for a RAON prototype charge stripper. Nuclear Engineering and Design, 412, 112481. https://doi.org/10.1016/j.nucengdes.2023.112481
+- Page: https://geunhyeong.com/publications/kang2023experimental/
+- PDF: https://geunhyeong.com/assets/pdf/publications/Lee9.pdf
+- BibTeX: https://geunhyeong.com/publications/kang2023experimental/citation.bib
+- Abstract: This paper describes the variable optimization of a lithium charge-stripper device and experimental characterization of lithium film formation for the charge removal of uranium using a magnetohydrodynamic liquid metal circulation system. To this end, liquid lithium thin films were developed using an electromagnetic thruster through collisions between a liquid lithium jet and a planar deflector. The lithium film flow characteristics were analyzed through simulation and waterjet experiments in terms of the liquid lithium film thickness. To circulate liquid lithium, a mechanically safe electromagnetic thruster with precise pressure control was designed by analyzing its electromagnetic and hydraulic parameters through finite element simulation. The analysis of the geometric arrangement of the permanent magnet and input current of the thruster revealed that that compared to the existing electromagnetic thruster, the nominal input current of the newly-constructed one reduce by 57% and its weight reduced to 6%, and it required minimized input power, while facilitating maintenance. Further, the formation of a liquid lithium thin film with a thickness of 22 μm required to obtain the 79+ charge state of uranium was verified at an input current of 107 A.
+
+### 7. Numerical study of Faraday-type nitrogen plasma magnetohydrodynamic generator (2021)
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: Journal of the Korean Physical Society, 78(7), 600-606
+- DOI: https://doi.org/10.1007/s40042-021-00116-z
+- Keywords: MHD generator, plasma, magnetohydrodynamics
+- Key finding: Numerical analysis of a 3000 K Faraday-type nitrogen plasma MHD generator with a de Laval nozzle for cogeneration, quantifying electrical output scaling with velocity, magnetic flux density, and geometry.
+- Plain citation: Lee, G., & Kim, H.R. (2021). Numerical study of Faraday-type nitrogen plasma magnetohydrodynamic generator. Journal of the Korean Physical Society, 78(7), 600-606. https://doi.org/10.1007/s40042-021-00116-z
+- Page: https://geunhyeong.com/publications/lee2021numerical/
+- PDF: https://geunhyeong.com/assets/pdf/publications/Lee8.pdf
+- BibTeX: https://geunhyeong.com/publications/lee2021numerical/citation.bib
+- Abstract: The variables of a magnetohydrodynamic (MHD) generator were analyzed for the application of a cogeneration system in a coal-fired power station. The MHD generator system is more efficient than other generation systems, owing to its high working temperature. The system is typically combined with a steam generator because high-temperature conditions result in significant residual heat. The magnetic and electric fields, which directly affect the electric output, should be analyzed under this condition. The electric field, velocity, and magnetic flux density of the MHD generator were analyzed, and nitrogen plasma in the temperature range of 3000 K was employed. The electric power was affected by velocity, magnetic flux density, and electric conductivity. The electric power was proportional to the square of the velocity and magnetic flux density and proportional to the electrical conductivity. A de Laval nozzle was adopted to increase the velocity. The electric power was optimized according to the angle of the de Laval nozzle. Power generation was derived through the geometrical size and magnetic flux density of the prototype Faraday-type nitrogen plasma MHD generator.
+
+### 8. The variable analysis of an MHD generator with electrical output of 10 kW for application to bi-plant method electricity generation (2020)
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: International Journal of Energy Research, 44(10), 8125-8132
+- DOI: https://doi.org/10.1002/er.5100
+- Keywords: MHD generator, electricity generation, bi-plant method
+- Key finding: Parametric ANSYS MHD analysis of a 10 kW plasma flue-gas generator (3000 K) for fossil power plant bi-plant cogeneration, establishing design scaling with magnetic flux density, velocity, and geometry.
+- Plain citation: Lee, G., & Kim, H.R. (2020). The variable analysis of an MHD generator with electrical output of 10 kW for application to bi-plant method electricity generation. International Journal of Energy Research, 44(10), 8125-8132. https://doi.org/10.1002/er.5100
+- Page: https://geunhyeong.com/publications/lee2020variable/
+- PDF: https://geunhyeong.com/assets/pdf/publications/Lee7.pdf
+- BibTeX: https://geunhyeong.com/publications/lee2020variable/citation.bib
+- Abstract: Magnetohydrodynamic (MHD) generators can be used to increase the total efficiencies of fossil power plants by adopting a bi-plant design, in which electricity is generated using both a turbine and the MHD generator. An MHD generator with an electric output of 10 kW is numerically analyzed herein for application to bi-plant method electricity generation. An electrically conductive plasma flue gas, with a high temperature of approximately 3000 K from the power plant, was considered for the generation of electricity from its flow in the magnetic field, where electricity was produced directly without the turbine facility from the MHD generator. Velocity profiles were calculated using an ANSYS code simulation. Then, using the magnetic flux density, the electrical output was calculated to design the MHD generator. The magnetic flux density, velocity, and geometrical variables affected the power output of the MHD generator. The power was proportional to the square of magnetic flux density, whereas velocity and power density were constant.
+
+### 9. Mathematical approach for optimization of magnetohydrodynamic circulation system (2019)
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: Nuclear Engineering and Technology, 51(3), 654-664
+- DOI: https://doi.org/10.1016/j.net.2018.12.008
+- Keywords: MHD optimization, liquid metal circulation
+- Key finding: Analytical and numerical MHD optimization of a rectangular liquid-sodium circulation system (2 kPa, 0.02 m3/s at 499 K) for a Gen-IV SFR active decay heat removal system, finding minimum current of 3976 A at 0.037 T.
+- Plain citation: Lee, G., & Kim, H.R. (2019). Mathematical approach for optimization of magnetohydrodynamic circulation system. Nuclear Engineering and Technology, 51(3), 654-664. https://doi.org/10.1016/j.net.2018.12.008
+- Page: https://geunhyeong.com/publications/lee2019mathematical/
+- PDF: https://geunhyeong.com/assets/pdf/publications/Lee6.pdf
+- BibTeX: https://geunhyeong.com/publications/lee2019mathematical/citation.bib
+- Abstract: The geometrical and electromagnetic variables of a rectangular-type magnetohydrodynamic (MHD) circulation system are optimized to solve MHD equations for the active decay heat removal system of a prototype Gen-IV sodium fast reactor. Decay heat must be actively removed from the reactor coolant to prevent the reactor system from exceeding its temperature limit. A rectangular-type MHD circulation system is adopted to remove this heat via an active system that produces developed pressure through the Lorentz force of the circulating sodium. Thus, the rectangular-type MHD circulation system for a circulating loop is modeled with the following specifications: a developed pressure of 2 kPa and flow rate of 0.02 m3/s at a temperature of 499 K. The MHD equations, which consist of momentum and Maxwell's equations, are solved to find the minimum input current satisfying the nominal developed pressure and flow rate according to the change of variables including the magnetic flux density and geometrical variables. The optimization shows that the rectangular-type MHD circulation system requires a current of 3976 A and a magnetic flux density of 0.037 T under the conditions of the active decay heat removal system.
+
+### 10. Magnetohydrodynamics approach for active decay heat removal system in future generation IV reactor (2018)
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: International Journal of Energy Research, 42(10), 3266-3278
+- DOI: https://doi.org/10.1002/er.4080
+- Keywords: decay heat removal, Generation IV reactor, MHD
+- Key finding: Numerical design optimization of a helical MHD liquid-sodium pump (10 kPa, 0.005 m3/s at 468.75 K) for a 150 MWe Gen-IV SFR decay heat removal loop, reducing required current to 352 A at 0.466 T.
+- Plain citation: Lee, G., & Kim, H.R. (2018). Magnetohydrodynamics approach for active decay heat removal system in future generation IV reactor. International Journal of Energy Research, 42(10), 3266-3278. https://doi.org/10.1002/er.4080
+- Page: https://geunhyeong.com/publications/lee2018magnetohydrodynamics/
+- PDF: https://geunhyeong.com/assets/pdf/publications/Lee5.pdf
+- BibTeX: https://geunhyeong.com/publications/lee2018magnetohydrodynamics/citation.bib
+- Abstract: In this work, a helical-type magnetohydrodynamics transportation system for active decay-heat-removal system in a prototype fourth-generation sodium fast reactor was numerically analysed considering operational conditions of atmospheric pressure, for liquid sodium transportation in a loop. The prototype fourth-generation sodium fast reactor is a reactor with high uranium utilisation and an electric power output of 150 MWe, subjected to a developed pressure of 10 kPa and flowrate of 0.005 m3/s under a temperature condition of 468.75 K for the active decay-heat-removal system. A helical-type magnetohydrodynamics transportation system was used to develop pressure in such a loop to reduce the current compared with that in a rectangular-type one; this could overcome the principal limitation of the requirement of a high current in a magnetohydrodynamics transportation system. The main parameters of the considered helical-type magnetohydrodynamics transportation system were: the inner diameter, silver brazing, number of turns, and radius of pump, which affect the current, magnetic-flux density, and its velocity. The parameters were analysed in relation to the minimisation of the pump current while maximising the pressure. The specifications of the optimised helical-type magnetohydrodynamics transportation system—current of 352 A and magnetic-flux density of 0.466 T—were derived to satisfy the conditions of the active decay-heat-removal system.
+
+### 11. Numerical analysis of the electromagnetic force for design optimization of a rectangular direct current electromagnetic pump (2018)
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: Nuclear Engineering and Technology, 50(6), 869-876
+- DOI: https://doi.org/10.1016/j.net.2018.04.010
+- Keywords: electromagnetic pump, DC EMP, design optimization
+- Key finding: Numerical electromagnetic force and end-effect analysis of a rectangular DC electromagnetic pump using Sm2Co17 magnets for a 200 C liquid lithium loop (6 cm3/s, 1.5 MPa) in a heavy-ion accelerator.
+- Plain citation: Lee, G., & Kim, H.R. (2018). Numerical analysis of the electromagnetic force for design optimization of a rectangular direct current electromagnetic pump. Nuclear Engineering and Technology, 50(6), 869-876. https://doi.org/10.1016/j.net.2018.04.010
+- Page: https://geunhyeong.com/publications/lee2018numerical/
+- PDF: https://geunhyeong.com/assets/pdf/publications/Lee4.pdf
+- BibTeX: https://geunhyeong.com/publications/lee2018numerical/citation.bib
+- Abstract: The force of a direct current (DC) electromagnetic pump used to transport liquid lithium was analyzed to optimize its geometrical and electrical parameters by numerical simulation. In a heavy-ion accelerator, which is being developed in Korea, a liquid lithium film is utilized for its high charge-stripping efficiency for heavy ions of uranium. A DC electromagnetic pump with a flow rate of 6 cm3/s and a developed pressure of 1.5 MPa at a temperature of 200 °C was required to circulate the liquid lithium to form liquid lithium films. The current and magnetic flux densities in the flow gap, where a Sm2Co17 permanent magnet was used to generate a magnetic field, were analyzed for the electromagnetic force distribution generated in the pump. The pressure developed by the Lorentz force on the electromagnetic force was calculated by considering the electromotive force and hydraulic pressure drop in the narrow flow channel. The opposite force at the end part due to the magnetic flux density in the opposite direction depended on the pump geometrical parameters such as the pump duct length and width that defines the rectangular channels in the nonhomogeneous distributions of the current and magnetic fields.
+
+### 12. Magnetic-field analysis of an MHD channel in a liquid-metal circulation system of a prototype GenIV sodium fast reactor (2018)
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: Annals of Nuclear Energy, 115, 343-351
+- DOI: https://doi.org/10.1016/j.anucene.2018.01.049
+- Keywords: MHD channel, sodium fast reactor, Generation IV
+- Key finding: Magnetic-field optimization of a Sm2Co17 permanent-magnet and ferromagnetic yoke system for a helical DC electromagnetic pump (10 kPa, 0.005 m3/s at 226 C) in a Gen-IV SFR loop, achieving 0.848 T average channel flux density.
+- Plain citation: Lee, G., & Kim, H.R. (2018). Magnetic-field analysis of an MHD channel in a liquid-metal circulation system of a prototype GenIV sodium fast reactor. Annals of Nuclear Energy, 115, 343-351. https://doi.org/10.1016/j.anucene.2018.01.049
+- Page: https://geunhyeong.com/publications/lee2018magnetic/
+- PDF: https://geunhyeong.com/assets/pdf/publications/Lee3.pdf
+- BibTeX: https://geunhyeong.com/publications/lee2018magnetic/citation.bib
+- Abstract: A helical-type direct current (DC) electromagnetic pump with a developed pressure of 10 kPa and flow rate of 0.005 m3/s was analyzed at a temperature of 226 °C for an active decay heat-removal system (ADHRS) of a prototype GenIV sodium fast reactor. The rectangular-type DC electromagnetic pump, which was selected for the ADHRS, requires a very large current (>1000 A). The helical-type DC electromagnetic pump was considered to provide multiple current to a pump duct to reduce the input current requirement. The magnetic flux density of a permanent magnet is one of the important factors that determine the performance of the electromagnetic pump. The magnetic field for the flow channel of the helical-type DC electromagnetic pump was analyzed in which a Sm2Co17 permanent magnet was used to generate the Lorentz force for the circulation of liquid metal. The Lorentz force, which directly affected the developed pressure of the electromagnetic pump, was increased proportional to the magnetic flux density, which led to the increase in the velocity of the liquid metal in the flow channel. The permanent magnet in the +z and −z directions and the ferromagnetic material added in the r direction increased the magnitude of the magnetic flux density, which led the magnetic flux line to the flow channel. The arrangement of the permanent magnet system showed the optimized geometry of the inner ferromagnetic material with a radius of 110 mm and outer ferromagnetic material with a thickness of 30 mm and height of 70 mm. The average value of the magnetic flux density in the liquid-metal flow channel was 0.848 T under maximum condition by considering the mechanical and spatial restrictions.
+
+### 13. Design analysis of DC electromagnetic pump for liquid sodium–CO2 reaction experimental characterization (2017)
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: Annals of Nuclear Energy, 109, 490-497
+- DOI: https://doi.org/10.1016/j.anucene.2017.05.054
+- Keywords: electromagnetic pump, sodium–CO2 reaction
+- Key finding: Equivalent-circuit and numerical design plus fabrication of a rectangular DC conduction electromagnetic pump (3 L/min, 0.05 bar at 300 C) for a liquid sodium and CO2 reaction experimental loop.
+- Plain citation: Lee, G., & Kim, H.R. (2017). Design analysis of DC electromagnetic pump for liquid sodium–CO2 reaction experimental characterization. Annals of Nuclear Energy, 109, 490-497. https://doi.org/10.1016/j.anucene.2017.05.054
+- Page: https://geunhyeong.com/publications/lee2017design/
+- PDF: https://geunhyeong.com/assets/pdf/publications/Lee2.pdf
+- BibTeX: https://geunhyeong.com/publications/lee2017design/citation.bib
+- Abstract: A DC electromagnetic pump with a rectangular channel was optimally designed and fabricated for studying the reaction between liquid sodium and carbon dioxide (CO2) gas in a sodium fast reactor. Heat exchange using CO2 gas has recently been proposed for the secondary sodium loop of the sodium fast reactor being developed in Korea because of the strong chemical reaction between liquid sodium and water. A DC conduction-type electromagnetic pump with a rectangular channel was selected to circulate liquid sodium in the experimental test loop for the sodium–CO2 reaction. Electromagnetic force, which was generated by the Lorentz force of an electrical equivalent circuit, was used to drive the liquid sodium. The developed pressure of the pump was investigated using optimization of the geometrical and electromagnetic variables of the pump considering Lorentz force, electromotive force, and hydraulic loss in the narrow channel of the pump. The characteristics of the developed pressure were studied with respect to the flow rate, and the pump was fabricated using the optimized design specifications. The distributions of current and magnetic flux density in the narrow channel were calculated for the fabricated DC electromagnetic pump with a flow rate of 3 L/min and developed pressure of 0.05 bar, operated at a temperature of 300°C. A comparative analysis of the performance of the designed pump was investigated by considering the fringe effects and Lorentz force using both the equivalent circuit method and numerical analysis.
+
+### 14. Numerical investigation and comparison of the rectangular, cylindrical, and helical-type DC electromagnetic pumps (2017)
+- Authors: Geunhyeong Lee, H.R. Kim
+- Journal: Magnetohydrodynamics, 53(2), 429-438
+- DOI: https://doi.org/10.22364/mhd.53.2.23
+- Keywords: electromagnetic pump comparison, rectangular EMP, cylindrical EMP, helical EMP
+- Key finding: Comparative numerical analysis of rectangular, cylindrical, and helical DC electromagnetic pumps (6 cc/s, 10 bar at 300 C liquid lithium), showing the helical design requires 12% of the current of rectangular and cylindrical pumps.
+- Plain citation: Lee, G., & Kim, H.R. (2017). Numerical investigation and comparison of the rectangular, cylindrical, and helical-type DC electromagnetic pumps. Magnetohydrodynamics, 53(2), 429-438. https://doi.org/10.22364/mhd.53.2.23
+- Page: https://geunhyeong.com/publications/lee2017numerical/
+- PDF: https://geunhyeong.com/assets/pdf/publications/Lee1.pdf
+- BibTeX: https://geunhyeong.com/publications/lee2017numerical/citation.bib
+- Abstract: Rectangular-, cylindrical-, and helical-type DC electromagnetic pumps with a low flowrate of 6 cc/s and a developed pressure of 10 bar were comparatively analyzed for a liquid lithium transportation system operating at a temperature of 300 °C. The design variables for DC electromagnetic pumps with different types of geometries were optimized to attain the required flowrate and developed pressure. The relation between the developed pressure and the input current was analyzed for an incompressible liquid metal flow in the channels of all three types of DC electromagnetic pumps. Theoretical calculations showed that the helical-type DC electromagnetic pump, which had multiple connected ducts with parallel contacts for a reduced input current, needed 12% of the current of the rectangular- and cylindrical-type pumps in order to satisfy the hydrodynamic conditions, despite the more or less complex geometry.
+
+
+## Other Peer-Reviewed Journal Publications
+
+- (2025) Lee, G.†*, Kim, T., Kim, Y., & Kim, G. Design and Analysis of an OLED Display Susceptor System Using Reinforcement Learning. Journal of Korean Applied Artificial Intelligence, 1(2), 1-6.
+
+
+## Invited Talks
+
+- (2026) AI-Driven Design Optimization for FRIB Beam Intercepting Devices. KAERI.
+
+- (2023) The Optimal Nuclear Heat Exchanger Design through Reinforcement Learning. BrainLink X-Lab.
+
+- (2023) Optimal design of 3D printing-based heat exchanger using reinforcement learning. UNIST.
+
+- (2023) Optimal design of nuclear power plant heat exchanger using 3D printing-based deep reinforcement learning. 2023 Korean Institute of Metals and Materials Fall Meeting.
+
+- (2022) Optimal design analysis of major reactor parts using AI technology. UNIST.
+
+- (2022) Development of Small Nuclear Reactor Main Part, 3D printing AI-based Optimization Design Technology. 2022 Korean Institute of Metals and Materials Spring Meeting.
+
+
+## Registered Patents (Republic of Korea)
+
+- (2021) Kim, H.R., Kang, T.U., & Lee, G. Thermal storage heat exchanger using liquid metal. Registration No. 10-2237876 (Application No. 10-2019-0171058).
+
+- (2019) Kim, H.R., & Lee, G. Conductive material transfer device. Registration No. 10-1971612 (Application No. 10-2017-0075794).
+
+- (2019) Kim, H.R., & Lee, G. Conductive material transfer device. Registration No. 10-2017117 (Application No. 10-2017-0063580).
+
+- (2018) Kim, H.R., & Lee, G. Conductive material transfer device. Registration No. 10-1860895 (Application No. 10-2017-0025724).
+
+- (2018) Kim, H.R., & Lee, G. Conductive material transfer device. Registration No. 10-1860898 (Application No. 10-2017-0015538).
+
+- (2018) Kim, H.R., & Lee, G. Electromagnetic pump. Registration No. 10-1908115 (Application No. 10-2016-0177052).
+
+
+## Journal Peer Review Service
+
+- Energy: 6 reviews (2024-2026)
+
+- International Communications in Heat and Mass Transfer: 9 reviews (2025-2026)
+
+- Annals of Nuclear Energy: 4 reviews (2025-2026)
+
+- Electronic Research Archive: 9 reviews (2025-2026)
+
+- Journal of Thermal Analysis and Calorimetry: 1 reviews (2026)
+
+- Journal of the Korean Physical Society: 1 reviews (2023)
+
+- Energy Engineering: 2 reviews (2024)
+
+
+## Awards, Software & Certification
+
+- [Awards] (2019) Doosan Heavy Industries & Construction Research Scholarship | Korean Nuclear Society
+
+- [Awards] (2016) Excellent Poster Award | Korean Nuclear Society
+
+- [Awards] (2015) First Award of Excellence for MNE Research Internship | UNIST
+
+- [Software registration] (2022) Heat exchanger path generation program through reinforcement learning | Lee, G., Yu, Y., & Kim, T.. Republic of Korea. Registration No. C-2022-049451.
+
+- [Certification] (2021) Certified AI Expert | Korean Standards Association. No. C-2021-0004668.
+
