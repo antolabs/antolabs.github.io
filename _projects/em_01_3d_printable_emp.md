@@ -19,7 +19,7 @@ project_group: "Liquid metal & electromagnetic systems"
 summary: "A single body DC pump concept designed for liquid metal circulation and metal 3D printing."
 detail_intro: "I designed a 3D printable DC electromagnetic pump and analyzed its coupled electromagnetic and fluid performance."
 detail_summary_label: Simulation result
-detail_summary: "52% lower current demand at matched pressure and flow rate."
+detail_summary: "52% lower current demand than a helical pump at matched pressure and flow rate."
 contribution: "Designed a 3D-printable DC electromagnetic pump and analyzed its coupled electromagnetic and fluid performance."
 evidence: "Simulation result"
 outcome: "52% lower simulated current demand than a helical pump at matched pressure and flow rate."
@@ -28,7 +28,7 @@ outcome: "52% lower simulated current demand than a helical pump at matched pres
 <div class="project-overview">
   <section class="project-overview-purpose" aria-labelledby="project-purpose">
     <h2 id="project-purpose">Purpose</h2>
-    <p>Direct-current (DC) electromagnetic pumps circulate liquid metals without mechanical impellers, including liquid sodium for fast-reactor systems. This study addresses the high input current and multi-part manufacturing requirements of conventional helical pumps.</p>
+    <p>Direct-current (DC) electromagnetic pumps circulate liquid metals, such as liquid sodium in fast-reactor systems, without mechanical impellers. This study addresses the high input current and multi-part manufacturing requirements of conventional helical pumps.</p>
   </section>
   <section class="project-overview-approach" aria-labelledby="project-approach">
     <h2 id="project-approach">Approach</h2>

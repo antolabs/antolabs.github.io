@@ -23,7 +23,7 @@ outcome: "Generated heat-exchanger flow paths targeting a more uniform susceptor
 <div class="project-overview">
   <section class="project-overview-purpose" aria-labelledby="project-purpose">
     <h2 id="project-purpose">Purpose</h2>
-    <p>Susceptor heat exchangers in plasma chemical vapor deposition (CVD) manufacturing need to maintain a uniform temperature across large glass substrates. This study investigates flow-channel design as an alternative to repeated manual layout and thermal analysis.</p>
+    <p>Susceptor heat exchangers in plasma chemical vapor deposition (CVD) manufacturing need to maintain a uniform temperature across large glass substrates. This study investigates whether reinforcement learning can generate flow-channel layouts in place of repeated manual layout and thermal analysis.</p>
   </section>
   <section class="project-overview-approach" aria-labelledby="project-approach">
     <h2 id="project-approach">Approach</h2>

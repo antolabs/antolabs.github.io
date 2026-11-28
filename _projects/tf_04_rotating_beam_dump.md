@@ -2,9 +2,9 @@
 layout: project
 title: "FRIB rotating beam dump: engineering development"
 card_title: Rotating beam dump development
-description: Leading the rotating beam dump upgrade beyond the static design, targeting 100 kW primary beam power by 2028 through integrated engineering and multiphysics simulation.
+description: Leading the overall fabrication and installation effort for the FRIB rotating beam dump, the upgrade beyond the static design, targeting 100 kW primary beam power by 2028 through integrated engineering and multiphysics simulation.
 summary: Leading fabrication and installation across materials, systems engineering, thermomechanics, and radiation.
-detail_intro: I lead the FRIB rotating beam dump effort from manufacturability assessment through fabrication and installation.
+detail_intro: I lead the overall fabrication and installation effort for the FRIB rotating beam dump, running the simulations and working with specialists in materials, systems engineering, thermomechanics, and radiation.
 detail_summary_label: Development target
 detail_summary: "100 kW primary beam power by 2028."
 institution: FRIB

@@ -14,10 +14,10 @@ project_group: "AI fault detection"
 summary: "An LSTM autoencoder for early detection of anomalies in quadrupole magnet operation."
 detail_intro: "I applied AI anomaly detection to KOMAC accelerator operating data as part of the intelligent-operation research program."
 detail_summary_label: Study result
-detail_summary: "Early anomaly signatures in five of ten historical voltage-fault cases, 30.7-286.6 minutes before recorded fault signal-off."
+detail_summary: "Early anomaly signatures in five of ten historical voltage-fault cases, 30.7-286.6 minutes before the recorded voltage fault."
 contribution: "Applied AI anomaly detection to KOMAC accelerator operating data as part of the intelligent-operation research program."
 evidence: "Operational-data study"
-outcome: "Detected early anomaly signatures in five of ten historical voltage-fault cases, 30.7-286.6 minutes before the recorded fault signal-off."
+outcome: "Detected early anomaly signatures in five of ten historical voltage-fault cases, 30.7-286.6 minutes before the recorded voltage fault."
 ---
 
 <div class="project-overview">
@@ -85,7 +85,7 @@ outcome: "Detected early anomaly signatures in five of ten historical voltage-fa
 | Mean early detection (detected cases)    |    **166.4 min**     |
 | False alarms in normal operating periods |  **2 of 76 (2.6%)**  |
 
-These results come from a retrospective analysis of historical operating data. Detection time is counted from the anomaly-score threshold crossing to the recorded voltage-fault signal-off.
+These results come from a retrospective analysis of historical operating data. Detection time is counted from the anomaly-score threshold crossing to the recorded voltage fault.
 
 ---
 

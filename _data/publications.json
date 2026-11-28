@@ -236,7 +236,7 @@
     "topics": [
       "mhd"
     ],
-    "summary": "Optimization and experimental validation of a liquid lithium MHD charge stripper for RAON, reducing electromagnetic thruster input current by 57% and weight to 6% while forming a 22 micrometer lithium film at 107 A."
+    "summary": "Optimization and experimental validation of a liquid lithium MHD charge stripper for RAON, reducing MHD circulator input current to 57% and weight to 6% while forming a 22 micrometer lithium film at 107 A."
   },
   {
     "id": "lee2021numerical",

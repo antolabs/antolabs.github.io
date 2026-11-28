@@ -29,7 +29,7 @@ This discovery index links to public research, teaching, project, and publicatio
 - FRIB Static Beam Dump AI Optimization (Nuclear Science and Techniques, 2026): Hybrid genetic algorithm and reinforcement learning approach increasing simulated average power handling capability by 72% over the baseline design.
 - AI Designed Nuclear Heat Exchangers (International Communications in Heat and Mass Transfer, 2024; Case Studies in Thermal Engineering, 2023): DRL assisted topology optimization achieving 14.8% higher simulated heat transfer than conventional topology optimization, fabricated via metal 3D printing (SUS316L) and tested in a thermal loop.
 - 3D Printable DC Electromagnetic Pump (Nuclear Engineering and Technology, 2026; solo author): Single body additive manufacturing concept requiring 52% less simulated input current than a helical pump at matched pressure (10.5 bar) and flow rate.
-- Liquid Lithium Charge Stripper & MHD Circulator (Nuclear Engineering and Design, 2023): Reduced electromagnetic thruster weight by 94% (340 kg to 21 kg) and experimentally formed a 22 micrometer liquid lithium film at 200 C.
+- Liquid Lithium Charge Stripper & MHD Circulator (Nuclear Engineering and Design, 2023): Reduced MHD circulator weight by 94% (340 kg to 21 kg) and experimentally formed a 22 micrometer liquid lithium film at 200 C.
 - Deep Learning Anomaly Detection for KOMAC Linac (Journal of Nuclear Science and Technology, 2025): LSTM autoencoder detecting early fault signatures 30.7 to 286.6 minutes before recorded voltage faults in retrospective operating data.
 
 ## Teaching, mentoring & service summary

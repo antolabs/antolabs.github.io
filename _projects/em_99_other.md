@@ -43,7 +43,7 @@ outcome: "Coupled electromagnetic and flow analysis for liquid-metal transport a
 
 ### Sodium fast reactor applications
 
-I designed and analyzed rectangular, cylindrical, and helical-type DC electromagnetic pumps for liquid sodium circulation in GenIV sodium fast reactors. I compared the pump geometries and analyzed their magnetic flux density, current distribution, and Lorentz force.
+I designed and analyzed rectangular, cylindrical, and helical-type DC electromagnetic pumps for liquid sodium circulation, in design studies for the coolant test loop of a prototype Gen-IV sodium-cooled fast reactor. I compared the pump geometries and analyzed their magnetic flux density, current distribution, and Lorentz force.
 
 ### Heavy-ion accelerator applications
 

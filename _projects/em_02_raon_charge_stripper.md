@@ -23,30 +23,30 @@ outcome: "Characterized liquid-lithium film formation for a prototype heavy-ion 
 <div class="project-overview">
   <section class="project-overview-purpose" aria-labelledby="project-purpose">
     <h2 id="project-purpose">Purpose</h2>
-    <p>RAON's prototype charge stripper requires a thin liquid-lithium film to support the target uranium charge state. This study addresses film formation and the maintenance burden of a heavy electromagnetic thruster.</p>
+    <p>RAON's prototype charge stripper requires a thin liquid-lithium film to reach the target uranium charge state. This study addresses film formation and the maintenance burden of a heavy MHD circulator.</p>
   </section>
   <section class="project-overview-approach" aria-labelledby="project-approach">
     <h2 id="project-approach">Approach</h2>
-    <p>A lighter helical electromagnetic thruster supplies the lithium loop. Multiphysics analysis, nozzle and deflector design, and laser thickness measurements support experimental characterization of the film.</p>
+    <p>A lighter helical MHD circulator supplies the lithium loop. Multiphysics analysis, nozzle and deflector design, and laser thickness measurements support experimental characterization of the film.</p>
   </section>
 </div>
 
 ## System requirements
 
-The RAON design targets a uranium beam charge-state increase from **34+ to 79+** to reach 200 MeV/u, which requires a **22 μm liquid-lithium film**. The conventional electromagnetic thruster weighed **340 kg**, so a lighter design was needed for maintenance.
+The RAON design targets a uranium beam charge-state increase from **34+ to 79+** to reach 200 MeV/u, which requires a **22 μm liquid-lithium film**. The conventional MHD circulator weighed **340 kg**, so a lighter design was needed for maintenance.
 
-## Thruster and film system
+## Circulator and film system
 
 <div class="row justify-content-center">
     <div class="col-sm-10">
-        {% include figure.liquid loading="eager" path="assets/img/raon_charge_stripper/fig_thruster_design.png" zoomable=true alt="EM Thruster Design" title="EM Thruster Design" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/raon_charge_stripper/fig_thruster_design.png" zoomable=true alt="MHD Circulator Design" title="MHD Circulator Design" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Conventional EM thruster (left) and redesigned lightweight thruster (right)
+    Conventional MHD circulator (left) and redesigned lightweight circulator (right)
 </div>
 
-### Electromagnetic thruster optimization
+### MHD circulator optimization
 
 - Helical-type MHD design with Sm₂Co₁₇ permanent magnets
 - Single-direction magnet arrangement to reduce weight
@@ -78,7 +78,7 @@ The RAON design targets a uranium beam charge-state increase from **34+ to 79+**
 
 - Formed a **22 μm** lithium film at 107 A input current
 - **94%** weight reduction, which makes maintenance easier
-- Laser-based thickness measurement replaces the electron-beam method
+- Laser-based thickness measurement replaces the electron-gun method
 - Reached the film thickness required for a **79+** uranium charge state
 
 ---

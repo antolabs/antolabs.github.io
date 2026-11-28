@@ -11,10 +11,10 @@ card_title: "Thermal and structural engineering at FRIB"
 institution: "FRIB"
 project_group: "Thermal fluid engineering"
 summary: "Thermal and structural analysis of beam intercepting devices, shielding, and target systems."
-detail_intro: "I performed thermal-fluid and structural analyses to support design reviews, operating limits, and device qualification at FRIB."
+detail_intro: "I performed thermal-fluid and structural analyses to support design reviews, set operating limits, and qualify devices at FRIB."
 detail_summary_label: Engineering studies
 detail_summary: "Simulation studies and experimental comparisons for shielding, plasma-chamber, charge-selector, and target systems."
-contribution: "Performed thermal-fluid and structural analyses to support design reviews, operating limits, and device qualification."
+contribution: "Performed thermal-fluid and structural analyses to support design reviews, set operating limits, and qualify devices."
 evidence: "Engineering analysis & validation"
 outcome: "Simulation evidence and experimental comparisons supporting FRIB device design and operation."
 ---

@@ -5,7 +5,7 @@ description: Global and local AI search with thermal model evaluation and 3D ver
 img: assets/img/frib_beam_dump/fig_temperature_comparison.png
 importance: 1
 category: Thermo-fluid devices
-year: "2023 - 2025"
+year: "2023 - 2026"
 body_class: "project-view"
 footer_static: true
 card_title: "Static beam dump AI optimization"
@@ -40,7 +40,7 @@ outcome: "72% higher average power handling capability than the existing design 
 
 ### 1. Genetic algorithm: global search
 
-The GA varies the section dimensions, plate angle, and beam position, evaluating three representative beam sizes. The maximum temperature in the optimization model falls from **554.7 °C to 345.9 °C**, providing the starting geometry for RL.
+The GA varies the section dimensions, plate angle, and beam position, evaluating three representative beam sizes. The maximum temperature in the optimization model falls from **554.7 °C to 345.9 °C**. The resulting design is the starting geometry for RL.
 
 <figure class="project-demo project-demo-wide">
   <video data-project-animation controls muted loop playsinline preload="metadata" width="1656" height="974" poster="{{ '/assets/img/frib_beam_dump/ga_search_poster.webp' | relative_url }}" aria-label="Genetic algorithm optimization of the static beam dump" aria-describedby="beam-dump-ga-caption">
