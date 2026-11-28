@@ -1,8 +1,8 @@
-# Source: assets/pdf/CV_GLee_261117.pdf (November 17, 2026).
+# Source: assets/pdf/CV_GLee_261127.pdf (November 27, 2026).
 # Statuses and totals are a CV snapshot, not automatically inferred from today.
 # Keep unpublished manuscripts separate from published SCIE papers.
 # Phone and residency information remain in the downloadable PDF only.
-source_pdf: "CV_GLee_261117.pdf"
+source_pdf: "CV_GLee_261127.pdf"
 name: "Geunhyeong Lee, Ph.D."
 email: "leeg@frib.msu.edu"
 research:
@@ -18,7 +18,7 @@ appointments:
     description:
       - "Developed BiSTO (Binary Surrogate-based Topology Optimization), an AI framework combining surrogate guided topology search, solver verification, and geometric connectivity constraints for turbulent cooling channel design."
       - "Lead the overall fabrication and installation effort for the FRIB Rotating Beam Dump, coordinating specialists in materials, systems engineering, thermomechanics, and radiation, with implementation targeted for 2028."
-      - "Developed a hybrid genetic algorithm and reinforcement learning approach for FRIB beam dump design optimization, increasing simulated average power handling capability by 72% over the existing design."
+      - "Developed a hybrid genetic algorithm and reinforcement learning approach for FRIB static beam dump design optimization, increasing simulated average power handling capability by 72% over the existing design."
       - "Developed a CNN and MLP surrogate for rotating beam dump thermal limits (2.8% mean error against FEM in cross validation; millisecond scale inference)."
   - title: "Postdoctoral Researcher"
     institution: "Korea Atomic Energy Research Institute (KAERI)"
@@ -209,7 +209,7 @@ teaching:
         title: "Lecturer, Foundation of AI"
         institution: "International School on Beam Dynamics and Accelerator Technology"
       - year: "2016"
-        title: "Instructor, Nuclear Comprehensive Design Project"
+        title: "Instructor, Nuclear Comprehensive Design Project (engineering analysis and COMSOL)"
         institution: "UNIST"
   - title: "Teaching assistant"
     items:
@@ -223,8 +223,14 @@ teaching:
         title: "Special Lecture on Nuclear Engineering (MHD electrical power generation)"
         institution: "UNIST"
       - year: "2017-2019"
-        title: "Fundamental of Electromagnetics"
+        title: "Fundamentals of Electromagnetics"
         institution: "UNIST"
+  - title: "Teaching development"
+    items:
+      - year: "2025-2026"
+        title: "Academy for Teaching, Center for Teaching and Learning Innovation"
+        institution: "Michigan State University"
+        description: "Completed courses on course design, student engagement, and generative AI in teaching."
 achievements:
   - title: "Awards"
     items:
