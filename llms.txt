@@ -5,23 +5,23 @@ sitemap: false
 ---
 # Geunhyeong Lee, Ph.D.
 
-> Scientist at the Facility for Rare Isotope Beams (FRIB), Michigan State University. Engineering devices cannot keep growing larger as power and energy demands rise; Geunhyeong Lee establishes general, physics verified AI design methods (including BiSTO) that push real hardware closer to its physical limits inside fixed space across thermal, fluid, structural, and electromagnetic systems, verified by physics solvers, metal additive manufacturing, experimental validation, and uncertainty aware digital twins.
+> Scientist at the Facility for Rare Isotope Beams (FRIB), Michigan State University. Engineering devices cannot keep growing larger as power and energy demands rise; Geunhyeong Lee develops AI design methods (including BiSTO) that push real hardware closer to its physical limits within a fixed space. A physics solver checks each design the AI proposes, and hardware tests check the solver. Background: thermal, fluid, structural, and electromagnetic systems. Generalizing BiSTO to 3D is in progress; digital twins are planned.
 
 This discovery index links to public research, teaching, project, and publication records for Geunhyeong Lee (ORCID: 0000-0003-3141-4663). For the complete plain text academic dossier including full abstracts and career records, see [llms-full.txt]({{ '/llms-full.txt' | absolute_url }}).
 
 ## Core pages
 - [About]({{ '/' | absolute_url }}): Biography, current BiSTO focus, and researcher links.
-- [Research & Projects]({{ '/research/' | absolute_url }}): Generalizable AI methods for multiphysics design, closed loop architecture, and selected engineering case studies.
+- [Research & Projects]({{ '/research/' | absolute_url }}): Generalizable AI methods for multiphysics design, research framework, and selected engineering case studies.
 - [Publications (SCIE)]({{ '/publications/' | absolute_url }}): 14 published SCIE journal articles (13 first or co-first author, 5 corresponding author), 2 under review manuscripts, abstracts, PDFs, and BibTeX/RIS citations.
 - [Curriculum Vitae]({{ '/cv/' | absolute_url }}): Full career timeline, education, mentoring, teaching, invited talks, patents, peer review service, and PDF CV download.
 - [ORCID](https://orcid.org/0000-0003-3141-4663): Canonical researcher identifier.
 - [Google Scholar](https://scholar.google.com/citations?user=YPq9l98AAAAJ): Citation profile.
 
 ## Research philosophy & framework
-- Broad vision: Modern engineering hardware across thermal, energy, electronics, aerospace, nuclear, and fusion domains must achieve higher performance inside fixed physical envelopes. Rather than hand crafting separate device specific heuristics, this research builds generalized, adjoint free AI design methods (anchored by BiSTO) verified by physics solvers, metal additive manufacturing, experimental loops, and digital twins.
-- Validation philosophy: Trust an AI model only as far as it is checked. A physics solver checks each design proposed by AI, and hardware tests of metal-printed prototypes check the solver.
-- Framework direction: The goal is one adjoint-free design method that still works when the physics changes and delivers reliable, manufacturable hardware within a fixed space. The next planned step is to combine the surrogate models trained during design with test data to build digital twins that detect abnormal behavior in the tested hardware.
-- Closed loop architecture: Core Engine (BiSTO 2D binary core to 3D multiphysics, adjoint free across physics solvers, with planned printability and stress limits) -> Application Domains (Thermal, Fluid & Structural systems; Electromagnetic & Liquid Metal MHD systems) -> Build & Validation (Metal additive manufacturing, thermal fluid and liquid metal loops) -> Digital Twins & Closed Loop Feedback (Uncertainty aware digital twins with unseen regime prediction, anomaly flags, and sim to real feedback refining BiSTO rules).
+- Broad vision: Engineering hardware must deliver more performance within a fixed space. Rather than writing separate rules by hand for each device, this research aims at one AI design method, starting from BiSTO, that needs no adjoints and still works when the physics changes.
+- Validation philosophy: Trust an AI model only as far as it is checked. A physics solver checks each design proposed by AI, and hardware tests of metal printed prototypes check the solver.
+- Framework direction: The goal is one adjoint free design method that still works when the physics changes and delivers reliable, manufacturable hardware within a fixed space. The next planned step is to combine the surrogate models trained during design with test data to build digital twins that detect abnormal behavior in the tested hardware.
+- Research plan (figure on the Research page): a cycle linking BiSTO design, metal printing, loop tests, and digital twins. Core engine: BiSTO, where an AI model ranks changes and a physics solver checks them. Planned thrusts: thermal, fluid, and structural design in 3D (printable compact heat exchangers and cooling channels); electromagnetic pumps and liquid metal MHD (the same method on new physics); digital twins and anomaly detection (test data corrects the models and the design search). The images in the figure show earlier work; 3D BiSTO, BiSTO hardware tests, and digital twins are planned.
 
 ## Research areas & verified highlights
 - BiSTO (Binary Surrogate-based Topology Optimization): Neural network surrogate ranks binary solid and fluid updates while connected candidate layouts are verified directly by a turbulent heat transfer solver without flow or turbulence adjoints. Manuscript under review at Applied Thermal Engineering; presented at AM2F 2026 (MIT Plasma Science and Fusion Center).

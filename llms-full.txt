@@ -17,22 +17,22 @@ sitemap: false
 
 ## Research Vision & Philosophy
 
-Engineering devices cannot keep growing larger as power and energy demands rise. My goal is to establish general, physics verified AI design methods that push real hardware closer to its physical limits inside fixed space across thermal, fluid, structural, and electromagnetic domains, verified directly by physics solvers, metal additive manufacturing, experimental testing, and uncertainty aware digital twins.
+Engineering devices cannot keep growing larger as power and energy demands rise. My goal is to establish AI design methods that work across physics and push real hardware closer to its physical limits within a fixed space. My background spans thermal, fluid, structural, and electromagnetic systems.
 
-Validation philosophy: I trust an AI model only as far as it is checked. A physics solver checks every design the AI proposes, and hardware tests of metal-printed prototypes check the solver.
+Validation philosophy: I trust an AI model only as far as it is checked. A physics solver checks every design the AI proposes, and hardware tests of metal printed prototypes check the solver.
 
 Framework summary:
-My goal is one adjoint-free design method that still works when the physics changes and delivers reliable, manufacturable hardware within a fixed space. Next, I plan to combine the surrogate models trained during design with test data to build digital twins that detect abnormal behavior in the tested hardware.
+My goal is one adjoint free design method that still works when the physics changes and delivers reliable, manufacturable hardware within a fixed space. Next, I plan to combine the surrogate models trained during design with test data to build digital twins that detect abnormal behavior in the tested hardware.
 
-Closed loop framework:
-Core Engine (BiSTO 2D binary core to 3D multiphysics) -> Application Domains (Thermal, Fluid & Structural; EM & Liquid Metal MHD) -> Build & Validation (Metal additive manufacturing; thermal fluid and liquid metal loops) -> Digital Twins & Closed Loop Feedback (Uncertainty aware digital twins with unseen regime prediction and sim to real feedback revising BiSTO rules).
+Research plan (figure on the Research page):
+A cycle linking BiSTO design, metal printing, loop tests, and digital twins. The images in the figure show my earlier work; 3D BiSTO, BiSTO hardware tests, and digital twins are planned.
 
-Research framework components:
-1. Core Engine (Generalized BiSTO): Extend the adjoint free 2D binary BiSTO core to 3D multiphysics across physics solvers, with planned printability and structural stress limits.
-2. Thermal, Fluid & Structural Systems: Maximize heat removal and efficiency inside fixed envelopes for compact heat exchangers, intense cooling channels, electronics cooling, and nuclear, fusion, and accelerator hardware under pressure drop, thermal stress, and fatigue limits.
-3. EM & Liquid Metal MHD Systems: Apply the same generalized framework to coupled electric current, magnetic fields, and conducting flows to maximize pumping head, improve flow uniformity, and reduce MHD losses in compact electromagnetic pumps and liquid metal transport loops.
-4. Validation & Uncertainty Aware Digital Twins: Fabricate and test metal prototypes in benchtop and liquid metal loops, combining physics solvers, design surrogates, and loop sensor data (temperature, pressure drop, flow, roughness) into uncertainty aware digital twins with unseen regime prediction and anomaly flags that feed back into BiSTO rules.
-5. Open Engineering Impact: Share multiphysics benchmark design problems, equal cost comparison protocols, and (where permitted) code and experimental validation datasets.
+Planned research thrusts:
+1. Core engine (BiSTO): A neural network surrogate ranks changes between water and solid in a 2D layout, and a turbulent heat transfer solver evaluates the best candidates, so no flow or turbulence adjoints are needed. I am now generalizing BiSTO to 3D.
+2. Thermal, fluid, and structural design in 3D: Extend BiSTO to 3D compact heat exchangers and cooling channels under high heat flux, and add manufacturing limits and structural limits (thermal stress, fatigue, and pressure loads) to the search.
+3. Electromagnetic pumps and liquid metal MHD: Apply the same method to electromagnetic pumps, where the search must couple current, magnetic field, and flow.
+4. Loop tests and digital twins: Test printed designs in a benchtop loop, then combine simulations, the AI models trained during design, and test data to build digital twins that detect abnormal behavior.
+5. Sharing: Share benchmark problems and, where permitted, code and test data.
 
 ## Academic Appointments
 {% for item in site.data.cv.appointments %}

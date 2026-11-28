@@ -9,7 +9,7 @@ footer_static: true
 
 bio_paragraphs:
   - Engineering devices cannot keep growing larger as power and energy demands rise. My goal is to establish AI design methods that work across physics and push real hardware closer to its physical limits within a fixed space.
-  - "I trust an AI model only as far as it is checked. A physics solver checks every design the AI proposes, and hardware tests of metal-printed prototypes check the solver."
+  - "I trust an AI model only as far as it is checked. A physics solver checks every design the AI proposes, and hardware tests of metal printed prototypes check the solver."
 
 profile:
   image: prof_pic.jpg
