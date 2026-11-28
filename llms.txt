@@ -5,7 +5,7 @@ sitemap: false
 ---
 # Geunhyeong Lee, Ph.D.
 
-> Scientist at the Facility for Rare Isotope Beams (FRIB), Michigan State University. Engineering devices cannot keep growing larger as power and energy demands rise; Geunhyeong Lee develops AI design methods (including BiSTO) that push real hardware closer to its physical limits within a fixed space. A physics solver checks each design the AI proposes, and hardware tests check the solver. Background: thermal, fluid, structural, and electromagnetic systems. Generalizing BiSTO to 3D is in progress; digital twins are planned.
+> Scientist at the Facility for Rare Isotope Beams (FRIB), Michigan State University. Engineering devices cannot keep growing as power and energy demands rise, so more performance must come from better design. Geunhyeong Lee's goal is an AI design method, starting from BiSTO, that needs only standard simulations and still works when the physics changes, so that engineers can design, print, and test their own devices and monitor them in operation with digital twins. A physics solver checks each design the AI proposes, and hardware tests check the solver. Background: thermal, fluid, structural, and electromagnetic systems. Generalizing BiSTO to 3D is in progress; digital twins are planned.
 
 This discovery index links to public research, teaching, project, and publication records for Geunhyeong Lee (ORCID: 0000-0003-3141-4663). For the complete plain text academic dossier including full abstracts and career records, see [llms-full.txt]({{ '/llms-full.txt' | absolute_url }}).
 

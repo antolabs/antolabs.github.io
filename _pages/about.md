@@ -3,12 +3,12 @@ layout: about
 title: About
 permalink: /
 subtitle: Scientist, <a href="https://frib.msu.edu/">Facility for Rare Isotope Beams (FRIB)</a> &middot; <a href="https://msu.edu/">Michigan State University</a>
-description: Geunhyeong Lee, Ph.D., Scientist at FRIB, Michigan State University. Building general AI design methods that push real hardware closer to its physical limits.
+description: Geunhyeong Lee, Ph.D., Scientist at FRIB, Michigan State University. Building a general AI design method that still works when the physics changes.
 body_class: about-site
 footer_static: true
 
 bio_paragraphs:
-  - Engineering devices cannot keep growing larger as power and energy demands rise. My goal is to establish AI design methods that work across physics and push real hardware closer to its physical limits within a fixed space.
+  - Engineering devices cannot keep growing as power and energy demands rise, so more performance must come from better design. My goal is an AI design method that needs only standard simulations and still works when the physics changes, so that engineers can design, print, and test their own devices and monitor them in operation with digital twins.
   - "I trust an AI model only as far as it is checked. A physics solver checks every design the AI proposes, and hardware tests of metal printed prototypes check the solver."
 
 profile:

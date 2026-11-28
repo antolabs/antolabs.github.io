@@ -17,7 +17,7 @@ sitemap: false
 
 ## Research Vision & Philosophy
 
-Engineering devices cannot keep growing larger as power and energy demands rise. My goal is to establish AI design methods that work across physics and push real hardware closer to its physical limits within a fixed space. My background spans thermal, fluid, structural, and electromagnetic systems.
+Engineering devices cannot keep growing as power and energy demands rise, so more performance must come from better design. My goal is an AI design method that needs only standard simulations and still works when the physics changes, so that engineers can design, print, and test their own devices and monitor them in operation with digital twins. My background spans thermal, fluid, structural, and electromagnetic systems.
 
 Validation philosophy: I trust an AI model only as far as it is checked. A physics solver checks every design the AI proposes, and hardware tests of metal printed prototypes check the solver.
 

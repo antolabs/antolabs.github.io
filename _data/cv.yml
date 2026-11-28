@@ -7,7 +7,7 @@ name: "Geunhyeong Lee, Ph.D."
 email: "leeg@frib.msu.edu"
 research:
   title: "Generalizable AI Methods for Multiphysics Design"
-  description: "Engineering devices cannot keep growing larger as power and energy demands rise. My goal is to establish general, physics verified AI design methods that push real hardware closer to its physical limits inside fixed space, verified by physics solvers, metal additive manufacturing, hardware testing, and digital twins."
+  description: "Engineering devices cannot keep growing as power and energy demands rise, so more performance must come from better design. My goal is an AI design method that needs only standard simulations and still works when the physics changes, so that engineers can design, print, and test their own devices and monitor them in operation with digital twins."
 appointments:
   - title: "Scientist"
     institution: "Facility for Rare Isotope Beams (FRIB), Michigan State University"
