@@ -81,7 +81,7 @@ I performed transient and stationary thermal simulations of the low-power charge
 
 ## Target system (2024-2025)
 
-I performed system-level thermal analysis for the graphite-based rotating target, including radiation effects on the target door cooling and flow rate requirements. Simulations and experiments were conducted to evaluate the thermal conductance and operational limits of the bearing system.
+I performed system-level thermal analysis for the graphite-based rotating target, including the effects of thermal radiation on the target door cooling and flow rate requirements. Simulations and experiments were conducted to evaluate the thermal conductance and operational limits of the bearing system.
 
 <div class="row justify-content-center">
     <div class="col-sm-10">

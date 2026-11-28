@@ -117,7 +117,7 @@
     "topics": [
       "ai"
     ],
-    "summary": "LSTM autoencoder anomaly detection for KOMAC LINAC drift-tube quadrupole power supplies, detecting voltage faults 30.7 to 286.6 minutes before recorded breakdown events."
+    "summary": "LSTM autoencoder anomaly detection for KOMAC LINAC drift-tube quadrupole power supplies, detecting early anomaly signatures in five of ten historical voltage-fault cases, 30.7 to 286.6 minutes before the recorded voltage fault."
   },
   {
     "id": "lee2024design",
@@ -161,7 +161,7 @@
       "ai",
       "thermal"
     ],
-    "summary": "Deep reinforcement learning initialization for printed-circuit heat exchanger (PCHE) topology optimization, improving simulated heat exchange efficiency by 14.8% over conventional topology optimization and validated with metal 3D printing."
+    "summary": "Deep reinforcement learning initialization for printed-circuit heat exchanger (PCHE) topology optimization, improving simulated heat transfer by 14.8% over conventional topology optimization and validated with metal 3D printing."
   },
   {
     "id": "lee2023dual",
@@ -199,7 +199,7 @@
     "topics": [
       "thermal"
     ],
-    "summary": "Dual-fluid topology optimization for a 3D-printable printed-circuit heat exchanger (PCHE), achieving 66% higher simulated heat transfer rate than a conventional PCHE at identical pumping power."
+    "summary": "Dual-fluid topology optimization for a 3D-printable printed-circuit heat exchanger (PCHE), achieving up to 66% higher simulated heat transfer rate than a conventional PCHE at identical pumping power."
   },
   {
     "id": "kang2023experimental",

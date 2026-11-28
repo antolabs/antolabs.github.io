@@ -47,7 +47,7 @@ I designed and analyzed rectangular, cylindrical, and helical-type DC electromag
 
 ### Heavy-ion accelerator applications
 
-I optimized a rectangular DC electromagnetic pump for liquid lithium circulation in a heavy-ion accelerator. The pump achieved 1.5 MPa developed pressure at 6 cm³/s flow rate for forming liquid lithium films used in uranium charge stripping.
+I optimized a rectangular DC electromagnetic pump for liquid lithium circulation in a heavy-ion accelerator. In the numerical analysis, the pump reached a developed pressure of 1.5 MPa at a flow rate of 6 cm³/s, for forming the liquid lithium films used in uranium charge stripping.
 
 ## MHD generators (2018-2021)
 
