@@ -22,7 +22,7 @@ detail_summary_label: Simulation result
 detail_summary: "52% lower current demand at matched pressure and flow rate."
 contribution: "Designed a 3D-printable DC electromagnetic pump and analyzed its coupled electromagnetic and fluid performance."
 evidence: "Simulation result"
-outcome: "52% lower simulated current demand at matched pressure and flow rate."
+outcome: "52% lower simulated current demand than a helical pump at matched pressure and flow rate."
 ---
 
 <div class="project-overview">

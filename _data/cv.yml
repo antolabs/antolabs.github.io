@@ -1,13 +1,13 @@
-# Source: assets/pdf/CV_GLee_261127.pdf (November 27, 2026).
+# Source: assets/pdf/CV_GLee_261128.pdf (November 28, 2026).
 # Statuses and totals are a CV snapshot, not automatically inferred from today.
 # Keep unpublished manuscripts separate from published SCIE papers.
 # Phone and residency information remain in the downloadable PDF only.
-source_pdf: "CV_GLee_261127.pdf"
+source_pdf: "CV_GLee_261128.pdf"
 name: "Geunhyeong Lee, Ph.D."
 email: "leeg@frib.msu.edu"
 research:
   title: "Generalizable AI Methods for Multiphysics Design"
-  description: "Engineering devices cannot keep growing as power and energy demands rise, so more performance must come from better design. My goal is an AI design method that needs only standard simulations and still works when the physics changes, so that engineers can design, print, and test their own devices and monitor them in operation with digital twins."
+  description: "Engineering devices cannot keep growing as power and energy demands rise, so more performance must come from better design. My goal is an AI design method that needs only standard simulations and still works when the physics changes, so that engineers can design, print, and test their own devices and monitor them in operation with digital twins. AI searches for designs, a physics solver checks each one, and hardware tests check the solver. My background spans thermal, fluid, electromagnetic, magnetohydrodynamic (MHD), and structural analysis. BiSTO for turbulent cooling channels is the first step, and I am now generalizing it to 3D."
 appointments:
   - title: "Scientist"
     institution: "Facility for Rare Isotope Beams (FRIB), Michigan State University"
