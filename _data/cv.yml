@@ -6,7 +6,7 @@ source_pdf: "CV_GLee_261117.pdf"
 name: "Geunhyeong Lee, Ph.D."
 email: "leeg@frib.msu.edu"
 research:
-  title: "Generalized AI Multiphysics Design"
+  title: "Generalizable AI Methods for Multiphysics Design"
   description: "Engineering devices cannot keep growing larger as power and energy demands rise. My goal is to establish general, physics verified AI design methods that push real hardware closer to its physical limits inside fixed space, verified by physics solvers, metal additive manufacturing, hardware testing, and digital twins."
 appointments:
   - title: "Scientist"

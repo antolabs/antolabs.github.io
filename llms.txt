@@ -11,7 +11,7 @@ This discovery index links to public research, teaching, project, and publicatio
 
 ## Core pages
 - [About]({{ '/' | absolute_url }}): Biography, current BiSTO focus, and researcher links.
-- [Research & Projects]({{ '/research/' | absolute_url }}): Generalized AI multiphysics design framework, closed loop architecture, and selected engineering case studies.
+- [Research & Projects]({{ '/research/' | absolute_url }}): Generalizable AI methods for multiphysics design, closed loop architecture, and selected engineering case studies.
 - [Publications (SCIE)]({{ '/publications/' | absolute_url }}): 14 published SCIE journal articles (13 first or co-first author, 5 corresponding author), 2 under review manuscripts, abstracts, PDFs, and BibTeX/RIS citations.
 - [Curriculum Vitae]({{ '/cv/' | absolute_url }}): Full career timeline, education, mentoring, teaching, invited talks, patents, peer review service, and PDF CV download.
 - [ORCID](https://orcid.org/0000-0003-3141-4663): Canonical researcher identifier.
@@ -20,7 +20,7 @@ This discovery index links to public research, teaching, project, and publicatio
 ## Research philosophy & framework
 - Broad vision: Modern engineering hardware across thermal, energy, electronics, aerospace, nuclear, and fusion domains must achieve higher performance inside fixed physical envelopes. Rather than hand crafting separate device specific heuristics, this research builds generalized, adjoint free AI design methods (anchored by BiSTO) verified by physics solvers, metal additive manufacturing, experimental loops, and digital twins.
 - Validation philosophy: Trust an AI model only as far as it is checked. A physics solver checks each design proposed by AI, and metal additive manufacturing and hardware testing check the solver.
-- Framework direction: Develops a single adjoint free optimization method across physical domains to deliver reliable, manufacturable hardware within fixed space, and combines the surrogate models trained during optimization with experimental data to build digital twins that monitor real hardware.
+- Framework direction: The goal is one adjoint-free design method that still works when the physics changes and delivers reliable, manufacturable hardware within a fixed space. The next planned step is to combine the surrogate models trained during design with test data to build digital twins that detect abnormal behavior in the tested hardware.
 - Closed loop architecture: Core Engine (BiSTO 2D binary core to 3D multiphysics, adjoint free across physics solvers, with planned printability and stress limits) -> Application Domains (Thermal, Fluid & Structural systems; Electromagnetic & Liquid Metal MHD systems) -> Build & Validation (Metal additive manufacturing, thermal fluid and liquid metal loops) -> Digital Twins & Closed Loop Feedback (Uncertainty aware digital twins with unseen regime prediction, anomaly flags, and sim to real feedback refining BiSTO rules).
 
 ## Research areas & verified highlights

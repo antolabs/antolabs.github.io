@@ -22,7 +22,7 @@
     {% capture title %}{{ site.title }}{% endcapture %}
   {% endif %}
   {% if page.url == '/' %}
-    {{ title }} | Generalized AI Multiphysics Design
+    {{ title }} | Generalizable AI Methods for Multiphysics Design
   {% elsif page.title != 'blank' and page.title != null and page.title != '' %}
     {{ page.title | escape }} | {{ title | escape }}
   {% else %}
@@ -31,7 +31,7 @@
 </title>
 <meta name="author" content="{{ author_name }}">
 {% assign seo_description = page.description | default: site.description | strip_html | normalize_whitespace %}
-{% capture seo_title %}{% if page.url == '/' %}{{ title }} | Generalized AI Multiphysics Design{% else %}{{ page.title | default: title }} | {{ title }}{% endif %}{% endcapture %}
+{% capture seo_title %}{% if page.url == '/' %}{{ title }} | Generalizable AI Methods for Multiphysics Design{% else %}{{ page.title | default: title }} | {{ title }}{% endif %}{% endcapture %}
 <meta name="description" content="{{ seo_description | escape }}">
 <meta name="robots" content="{% if page.sitemap == false %}noindex, follow{% else %}index, follow, max-image-preview:large{% endif %}">
 {% if page.keywords or site.keywords %}
